@@ -12,10 +12,9 @@ public class ThankForTheOrderPage extends MainTestBase {
     private Logger logger = LogManager.getLogger(ThankForTheOrderPage.class);
 
     //элементы
-    private static final String THANKS_ORDER_SELF_XPATH = "xpath;//h2[contains(.,'Спасибо за ваш заказ!')]";
+    private static final String THANKS_ORDER_SELF_XPATH = "xpath;//h1[contains(.,'Спасибо за ваш заказ!')]";
     private static final String ERROR_PAYMENT_XPATH = "xpath;//a[contains(.,'Вернуться в магазин')]";
     private static final String THANKS_ORDER_DELIVERY_XPATH = "xpath;//input[@id='pan']";
-    private static final String THANKS_ORDER_SPLIT_XPATH = "xpath;//input[@id='pan']";
 
 
     //конструктор
@@ -27,10 +26,6 @@ public class ThankForTheOrderPage extends MainTestBase {
     //геттеры элементов с получением доступа к действиям с элементами
     public PageElementActions getThanksOrderSelf() {
         return new PageElementActions(THANKS_ORDER_SELF_XPATH, driver);
-    }
-
-    public PageElementActions getThanksOrderDelivery() {
-        return new PageElementActions(THANKS_ORDER_DELIVERY_XPATH, driver);
     }
 
     public PageElementActions getErrorPayment() {

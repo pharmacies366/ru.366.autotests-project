@@ -20,6 +20,7 @@ public class CartPage extends MainTestBase {
     private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
     private static final String CARD_BUTTON_XPATH = "xpath;//div[contains(@class,'count js-mini-cart-count')]";
     private static final String MAKE_ORDER_XPATH = "xpath;//a[@href='/cart/checkout']";
+    private static final String PRODUCT_CARD_XPATH = "xpath;//a[@data-gtm-source='search list']";
 
     //конструктор
     public CartPage(WebDriver driver) {
@@ -54,6 +55,11 @@ public class CartPage extends MainTestBase {
     public PageElementActions getMakeOrder() {
         return new PageElementActions(MAKE_ORDER_XPATH, driver);
     }
+
+    public PageElementActions getProductCard() {
+        return new PageElementActions(PRODUCT_CARD_XPATH, driver);
+    }
+
 
     //Методы
     @Step("Проверка состояния корзины: Если корзина не пустая, удаляем все содержимое")
@@ -97,4 +103,12 @@ public class CartPage extends MainTestBase {
         logger.info("Пользователь нажимае на кнопку 'Оформить заказ'");
         saveAllureScreenshot();
     }
+
+    @Step("Пользователь нажимает на товар")
+    public void clickProductCard() {
+        getProductCard().click();
+        logger.info("Пользователь нажимает на товар");
+        saveAllureScreenshot();
+    }
+
 }
