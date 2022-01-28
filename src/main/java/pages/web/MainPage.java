@@ -12,6 +12,7 @@ public class MainPage extends MainTestBase {
 
     //элементы
     private static final String SITE_LOGO_XPATH = "xpath;//img[contains(@alt,'9477014323230.png')]";
+    private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
 
 
     //конструктор
@@ -24,6 +25,10 @@ public class MainPage extends MainTestBase {
         return new PageElementActions(SITE_LOGO_XPATH, driver);
     }
 
+    public PageElementActions getPopUpButton() {
+        return new PageElementActions(POP_UP_BUTTON_XPATH, driver);
+    }
+
 
     //Методы
 
@@ -31,6 +36,13 @@ public class MainPage extends MainTestBase {
     public void checkElementIsCorrect(){
         getSiteLogo().elementIsVisibility();
         logger.info("Лого отображается");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь закрывает попап куки: 'Спасибо, понятно")
+    public void clickClosePopUp(){
+        getPopUpButton().click();
+        logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
         saveAllureScreenshot();
     }
 

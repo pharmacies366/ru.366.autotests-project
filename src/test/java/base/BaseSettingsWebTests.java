@@ -12,9 +12,10 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected CookiePage cookiePage;
     protected TopPanelPage topPanelPage;
     protected AuthPopUpPage authPopUpPage;
- /*
     protected ProductCardPage productCardPage;
     protected CartPage cartPage;
+ /*
+
     protected CheckOutPage checkOutPage;
     protected SberPage sberPage;
     protected ThankForTheOrderPage thankForTheOrderPage;
@@ -30,9 +31,9 @@ public class BaseSettingsWebTests extends MainTestBase {
         cookiePage = new CookiePage(driver);
         topPanelPage = new TopPanelPage(driver);
         authPopUpPage = new AuthPopUpPage(driver);
-   /*
         productCardPage = new ProductCardPage(driver);
         cartPage = new CartPage(driver);
+   /*
         checkOutPage = new CheckOutPage(driver);
         sberPage = new SberPage(driver);
         thankForTheOrderPage = new ThankForTheOrderPage(driver);

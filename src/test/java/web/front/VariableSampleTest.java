@@ -12,9 +12,10 @@ import org.junit.Test;
 @DisplayName("Проверка суммы 2-х товаров в корзине")
 public class VariableSampleTest extends BaseSettingsWebTests {
 
-   /* @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
+    @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void test() {
+        mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         pageActions.waitPageLoad();
         productCardPage.clickToCartButton();
@@ -29,7 +30,7 @@ public class VariableSampleTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         int totalPrice = cartPage.getPriceTotal();
         Assert.assertEquals(firstPrice + secondPrice, totalPrice);
-    }*/
+    }
 }
 
 
