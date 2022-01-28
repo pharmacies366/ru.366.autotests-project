@@ -16,7 +16,10 @@ public class CartPage extends MainTestBase {
     private static final String TOTAL_PRICE_XPATH = "xpath;//div[@class='cart-summary_value js-revenue']";
     private static final String CLEAR_ALL_FROM_CARD_XPATH = "xpath;//a[contains(.,'Очистить все')]";
     private static final String CONFIRM_CLEAN_ALL_XPATH = "xpath;//input[@value='Да, подтверждаю']";
-    private static final String CARD_COUNT_CSS = "css;.js-mini-cart-count";
+    private static final String CARD_COUNT_XPATH = "xpath;//div[contains(@class,'count js-mini-cart-count')]";
+    private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
+    private static final String CARD_BUTTON_XPATH = "xpath;//div[contains(@class,'count js-mini-cart-count')]";
+    private static final String MAKE_ORDER_XPATH = "xpath;//a[@href='/cart/checkout']";
 
     //конструктор
     public CartPage(WebDriver driver) {
@@ -37,7 +40,19 @@ public class CartPage extends MainTestBase {
     }
 
     public PageElementActions getCartCount() {
-        return new PageElementActions(CARD_COUNT_CSS, driver);
+        return new PageElementActions(CARD_COUNT_XPATH, driver);
+    }
+
+    public PageElementActions getClickAddCartButton() {
+        return new PageElementActions(ADD_CART_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getCartButton() {
+        return new PageElementActions(CARD_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getMakeOrder() {
+        return new PageElementActions(MAKE_ORDER_XPATH, driver);
     }
 
     //Методы
@@ -60,5 +75,26 @@ public class CartPage extends MainTestBase {
         int price = getTotalPrice().formatElementToValue();
         logger.info("Запоминаем цену товара");
         return price;
+    }
+
+    @Step("Пользователь нажимает на кнопку 'В корзину'")
+    public void сlickAddCartButton() {
+        getClickAddCartButton().click();
+        logger.info("Пользователь нажимает на кнопку 'В корзину'");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь нажимает на иконку корзины")
+    public void clickToCartButton() {
+        getCartButton().click();
+        logger.info("Пользователь нажимает на иконку корзины");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь нажимае на кнопку 'Оформить заказ'")
+    public void clickToMakeOrder() {
+        getMakeOrder().click();
+        logger.info("Пользователь нажимае на кнопку 'Оформить заказ'");
+        saveAllureScreenshot();
     }
 }

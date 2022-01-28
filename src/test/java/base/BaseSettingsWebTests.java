@@ -14,11 +14,10 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected AuthPopUpPage authPopUpPage;
     protected ProductCardPage productCardPage;
     protected CartPage cartPage;
- /*
-
     protected CheckOutPage checkOutPage;
     protected SberPage sberPage;
     protected ThankForTheOrderPage thankForTheOrderPage;
+ /*
     protected OspPage ospPage;
     protected CatalogPage catalogPage;
     protected MedicationsPage medicationsPage;*/
@@ -33,10 +32,10 @@ public class BaseSettingsWebTests extends MainTestBase {
         authPopUpPage = new AuthPopUpPage(driver);
         productCardPage = new ProductCardPage(driver);
         cartPage = new CartPage(driver);
-   /*
         checkOutPage = new CheckOutPage(driver);
         sberPage = new SberPage(driver);
         thankForTheOrderPage = new ThankForTheOrderPage(driver);
+   /*
         ospPage = new OspPage(driver);
         catalogPage = new CatalogPage(driver);
         medicationsPage = new MedicationsPage(driver);*/
