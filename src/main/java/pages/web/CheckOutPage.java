@@ -25,6 +25,11 @@ public class CheckOutPage extends MainTestBase{
     private static final String FINAL_BUY_BUTTON_XPATH = "xpath;//button[contains(.,'Оформить заказ')]";
     private static final String INPUT_PHONE_NUMBER_XPATH = "xpath;//input[@name='phone']";
     private static final String BOOKING_BUTTON_XPATH = "xpath;//input[@value='Забронировать']";
+    private static final String SELECT_APTEKA_XPATH = "xpath;//span[contains(.,'Выбрать аптеку')]";
+    private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//span[contains(.,'Списком')]";
+    private static final String AVAILABILITY_XPATH= "xpath;(//span[contains(.,'Узнать о наличии')])[1]";
+    private static final String CHOOSE_THIS_PHARMACY_XPATH = "xpath;(//span[contains(.,'Выбрать эту аптеку')])[1]";
+    private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;(//button[contains(.,'Оформить заказ')])[1]";
 
     //конструктор
     public CheckOutPage(WebDriver driver) {
@@ -56,6 +61,27 @@ public class CheckOutPage extends MainTestBase{
     public PageElementActions getBookingButton() {
         return new PageElementActions(BOOKING_BUTTON_XPATH, driver);
     }
+
+    public PageElementActions getChangeAptekaList() {
+        return new PageElementActions(CHANGE_APTEKA_LIST_XPATH, driver);
+    }
+
+    public PageElementActions getSelectApteka() {
+        return new PageElementActions(SELECT_APTEKA_XPATH, driver);
+    }
+
+    public PageElementActions getAvailability() {
+        return new PageElementActions(AVAILABILITY_XPATH, driver);
+    }
+
+    public PageElementActions getChooseThisPharmacy() {
+        return new PageElementActions(CHOOSE_THIS_PHARMACY_XPATH, driver);
+    }
+
+    public PageElementActions getMakeOrderButton() {
+        return new PageElementActions(MAKE_ORDER_BUTTON_XPATH, driver);
+    }
+
 
 
     //Методы
@@ -101,6 +127,35 @@ public class CheckOutPage extends MainTestBase{
     public void clickBookingButton(){
         getBookingButton().click();
         logger.info("Пользователь нажимает на кнопку 'Забронировать'");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь нажимает кнопку 'Выбрать Аптеку'")
+    public void clickSelectApteka() {
+        getSelectApteka().click();
+        logger.info("Пользователь нажимает кнопку 'Выбрать Аптеку'");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь нажимает на список доступных Аптек")
+    public void clickChangeAptekaList() {
+        getChangeAptekaList().click();
+        logger.info("Пользователь нажимает на список доступных Аптек");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь нажимает на кнопки 'Узнать о наличии' и 'Выбрать эту аптеку'")
+    public void getAvailabilityAndChooseThisPharmacy(){
+        getAvailability().click();
+        getChooseThisPharmacy().click();
+        logger.info("Пользователь нажимает на кнопки 'Узнать о наличии' и 'Выбрать эту аптеку'");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь нажимает на кнопку 'Сделать заказ'")
+    public void clickMakeOrder(){
+        getMakeOrderButton().click();
+        logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
         saveAllureScreenshot();
     }
 
