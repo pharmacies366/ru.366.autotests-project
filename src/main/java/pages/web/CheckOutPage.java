@@ -30,6 +30,8 @@ public class CheckOutPage extends MainTestBase{
     private static final String AVAILABILITY_XPATH= "xpath;(//span[contains(.,'Узнать о наличии')])[1]";
     private static final String CHOOSE_THIS_PHARMACY_XPATH = "xpath;(//span[contains(.,'Выбрать эту аптеку')])[1]";
     private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;(//button[contains(.,'Оформить заказ')])[1]";
+    private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
+    private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
 
     //конструктор
     public CheckOutPage(WebDriver driver) {
@@ -80,6 +82,14 @@ public class CheckOutPage extends MainTestBase{
 
     public PageElementActions getMakeOrderButton() {
         return new PageElementActions(MAKE_ORDER_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getPharmacyAddressInput() {
+        return new PageElementActions(PHARMACY_ADDRESS_INPUT_XPATH, driver);
+    }
+
+    public PageElementActions getAptekaMap() {
+        return new PageElementActions(APTEKA_MAP_XPATH, driver);
     }
 
 
@@ -158,5 +168,19 @@ public class CheckOutPage extends MainTestBase{
         logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
         saveAllureScreenshot();
     }
+
+    @Step("Пользователь вводит адрес - {addres}")
+    public void setInputSearchAddres(String addres) {
+        getPharmacyAddressInput().sendKeysAndEnter(addres);
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь проверяет отображении карты на странице")
+    public void checkVisibilityMap() {
+        getAptekaMap().elementIsVisibility();
+        logger.info("Пользователь проверяет отображении карты на странице");
+        saveAllureScreenshot();
+    }
+
 
 }
