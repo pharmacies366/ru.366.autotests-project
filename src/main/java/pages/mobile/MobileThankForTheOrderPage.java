@@ -13,6 +13,7 @@ public class MobileThankForTheOrderPage extends MainTestBase {
 
 
     //элементы
+    private static final String ERROR_PAYMENT_XPATH = "xpath;//a[contains(.,'Вернуться в магазин')]";
 
 
 
@@ -23,10 +24,20 @@ public class MobileThankForTheOrderPage extends MainTestBase {
 
 
     //геттеры элементов с получением доступа к действиям с элементами
+    public PageElementActions getErrorPayment() {
+        return new PageElementActions(ERROR_PAYMENT_XPATH, driver);
+    }
 
 
 
     //Методы
+
+    @Step("Пользователь после отлаты тестовой картой получает ошибку об оплате")
+    public void checkPaymentError(){
+        getErrorPayment().elementIsVisibility();
+        logger.info("Пользователь получает ошибку об оплате");
+        saveAllureScreenshot();
+    }
 
 
 }

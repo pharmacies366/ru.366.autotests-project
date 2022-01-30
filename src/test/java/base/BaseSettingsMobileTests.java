@@ -28,8 +28,8 @@ public class BaseSettingsMobileTests extends MainTestBase {
     protected MobileSberPage mobileSberPage;
     protected MobileThankForTheOrderPage mobileThankForTheOrderPage;
     protected MobileCatalogPage mobileCatalogPage;
-    protected MobileMedicationsPage mobileMedicationsPage;
     protected MobileCookiePage mobileCookiePage;
+    protected MobileMedicationsCategoryPage mobileMedicationsCategoryPage;
 
 
     @Before
@@ -45,8 +45,8 @@ public class BaseSettingsMobileTests extends MainTestBase {
         mobileSberPage = new MobileSberPage(driver);
         mobileThankForTheOrderPage = new MobileThankForTheOrderPage(driver);
         mobileCatalogPage = new MobileCatalogPage(driver);
-        mobileMedicationsPage = new MobileMedicationsPage(driver);
         mobileCookiePage = new MobileCookiePage(driver);
+        mobileMedicationsCategoryPage = new MobileMedicationsCategoryPage(driver);
     }
 
 }

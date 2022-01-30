@@ -15,6 +15,7 @@ public class MobileTopPanelPage extends MainTestBase {
     //элементы
     private static final String BURGER_BUTTON_XPATH = "xpath;//div[contains(@class,'toggle js-toggle-sm-navigation')]";
     private static final String LOGIN_ICON_XPATH = "xpath;(//a[contains(.,'Войти')])[3]";
+    private static final String MEDICATIONS_BUTTON_XPATH = "xpath;(//a[contains(.,'Лекарства')])[3]";
 
 
 
@@ -32,6 +33,10 @@ public class MobileTopPanelPage extends MainTestBase {
         return new PageElementActions(LOGIN_ICON_XPATH, driver);
     }
 
+    public PageElementActions getMedicationsPageButton() {
+        return new PageElementActions(MEDICATIONS_BUTTON_XPATH, driver);
+    }
+
 
     //Методы
     @Step("Пользователь нажимает на иконку выпадающего списка")
@@ -45,6 +50,13 @@ public class MobileTopPanelPage extends MainTestBase {
     public void clickToLoginIcon(){
         getLoginIcon().click();
         logger.info("Пользователь нажимает на иконку авторизации");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь нажимает на категорию 'Лекарства")
+    public void clickMedicationsButton() {
+        getMedicationsPageButton().click();
+        logger.info("Пользователь нажимает на категорию 'Лекарства'");
         saveAllureScreenshot();
     }
 
