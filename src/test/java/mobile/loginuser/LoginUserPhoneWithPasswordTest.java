@@ -1,24 +1,25 @@
-package web.loginuser;
+package mobile.loginuser;
 
-import base.BaseSettingsWebTests;
+import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
-@Feature(value = "Web")
+@Feature(value = "Мобильная версия")
 @Story("Авторизация пользователя")
 @DisplayName("Авторизация пользователя по номеру телефона и паролю")
-public class LoginUserPhoneWithPasswordTest extends BaseSettingsWebTests {
+public class LoginUserPhoneWithPasswordTest extends BaseSettingsMobileTests {
 
     @DisplayName("Пользователь авторизовывается на сайте по номеру телефона и паролю")
     @Test
     public void loginUserCardNumber() {
-        cookiePage.reCaptchaKey();
-        topPanelPage.clickToLoginIcon();
-        authPopUpPage.setPhoneAndPassword(propertiesManager.getProperty("userauthphone"), "userpass");
-        authPopUpPage.clickToLoginButton();
+        mobileCookiePage.reCaptchaKey();
+        mobileTopPanelPage.clickBurgerButton();
+        mobileTopPanelPage.clickToLoginIcon();
+        mobileAuthPopUpPage.setPhoneAndPassword(propertiesManager.getProperty("userauthphone"), "userpass");
+        mobileAuthPopUpPage.clickToLoginButton();
         pageActions.waitPageLoad();
-        mainPage.checkElementIsCorrect();
+        mobileMainPage.checkElementIsCorrect();
     }
 }
