@@ -94,4 +94,5 @@ public class ProductCardPage extends MainTestBase {
         logger.info("Пользователь нажимает на {number} - ую кнопку 'Купить в 1 клик' напротив выбранной аптеки");
         saveAllureScreenshot();
     }
+
 }

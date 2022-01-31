@@ -15,6 +15,7 @@ public class OspPage extends MainTestBase {
     //элементы
     private static final String PRODUCT_NAME_XPATH = "xpath;//a[@href='/g/nurofen']";
 
+
     //конструктор
     public OspPage(WebDriver driver) {
         this.driver = driver;

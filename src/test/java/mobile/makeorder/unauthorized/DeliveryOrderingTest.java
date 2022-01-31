@@ -14,9 +14,12 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
     @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
     @Test
     public void delivery() {
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        pageActions.waitPageLoad();
+        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         pageActions.waitPageLoad();
         pageActions.reloadPage();
+        //mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+       // pageActions.waitPageLoad();
         mobileMainPage.clickClosePopUp();
         mobileCartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
@@ -35,8 +38,8 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-        mobileSberPage.clickOnSubmitButton();
-        mobileThankForTheOrderPage.checkPaymentError();
+        //mobileSberPage.clickOnSubmitButton();
+       // mobileThankForTheOrderPage.checkPaymentError();
     }
 
 }

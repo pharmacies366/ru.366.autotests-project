@@ -24,6 +24,8 @@ public class MobileCheckOutPage extends MainTestBase {
     private static final String Fio = "fio";
     private static final String Email = "email";
     private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;//button[contains(.,'Оформить заказ')]";
+    private static final String INPUT_PHONE_NUMBER_XPATH = "xpath;//input[@name='phone']";
+    private static final String BOOKING_BUTTON_XPATH = "xpath;//input[@value='Забронировать']";
 
 
 
@@ -43,6 +45,14 @@ public class MobileCheckOutPage extends MainTestBase {
 
     public PageElementActions getMakeOrderButton() {
         return new PageElementActions(MAKE_ORDER_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getInputPhoneNumber() {
+        return new PageElementActions(INPUT_PHONE_NUMBER_XPATH, driver);
+    }
+
+    public PageElementActions getBookingButton() {
+        return new PageElementActions(BOOKING_BUTTON_XPATH, driver);
     }
 
 
@@ -67,6 +77,20 @@ public class MobileCheckOutPage extends MainTestBase {
     public void clickMakeOrder(){
         getMakeOrderButton().click();
         logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь вводит номер телефона при покупке в 1-клик")
+    public void setInputOneClickPhoneNumber(String number) {
+        getInputPhoneNumber().sendKeys(number);
+        logger.info("Пользователь вводит номер телефона при покупке в 1-клик");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь нажимает на кнопку 'Забронировать'")
+    public void clickBookingButton(){
+        getBookingButton().click();
+        logger.info("Пользователь нажимает на кнопку 'Забронировать'");
         saveAllureScreenshot();
     }
 

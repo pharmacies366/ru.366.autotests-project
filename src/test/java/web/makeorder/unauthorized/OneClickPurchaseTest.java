@@ -22,7 +22,6 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
         productCardPage.checkVisibilityMap();
         productCardPage.setInputSearchAddres("метро Фили");
         pageActions.waitPageLoad();
-        pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
         checkOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         checkOutPage.clickBookingButton();

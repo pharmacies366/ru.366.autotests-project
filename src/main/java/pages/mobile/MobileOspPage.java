@@ -14,6 +14,8 @@ public class MobileOspPage extends MainTestBase {
 
 
     //элементы
+    private static final String SHOW_ALL_BUTTON_XPATH = "xpath;//span[contains(.,'Показать все')]";
+    private static final String PRODUCT_NAME_XPATH = "xpath;//a[@href='/g/nurofen']";
 
 
 
@@ -24,8 +26,29 @@ public class MobileOspPage extends MainTestBase {
 
     
     //геттеры элементов с получением доступа к действиям с элементами
+    public PageElementActions getProductName() {
+        return new PageElementActions(PRODUCT_NAME_XPATH, driver);
+    }
+
+    public PageElementActions getShowAllButton() {
+        return new PageElementActions(SHOW_ALL_BUTTON_XPATH, driver);
+    }
 
 
+    //Методы
+    @Step("Пользователь нажимает на товар 'Нурофен'")
+    public void clickProductName() {
+        getProductName().click();
+        logger.info("Пользователь нажимает на товар 'Нурофен'");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь нажимает на унокпу 'Показать все'")
+    public void clickShowAll(){
+        getShowAllButton().click();
+        logger.info("Пользователь нажимает на унокпу 'Показать все'");
+        saveAllureScreenshot();
+    }
     
 
 }

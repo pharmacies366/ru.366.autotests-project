@@ -38,7 +38,7 @@ public class WebDriverFactory {
         String driverURL = System.getProperty("driverurl");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName("chrome");
-        capabilities.setVersion("91.0");
+        capabilities.setVersion("97.0");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", false);
 

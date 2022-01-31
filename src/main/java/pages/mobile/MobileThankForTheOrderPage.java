@@ -14,6 +14,7 @@ public class MobileThankForTheOrderPage extends MainTestBase {
 
     //элементы
     private static final String ERROR_PAYMENT_XPATH = "xpath;//a[contains(.,'Вернуться в магазин')]";
+    private static final String THANKS_ORDER_SELF_XPATH = "xpath;//h1[contains(.,'Спасибо за ваш заказ!')]";
 
 
 
@@ -28,6 +29,10 @@ public class MobileThankForTheOrderPage extends MainTestBase {
         return new PageElementActions(ERROR_PAYMENT_XPATH, driver);
     }
 
+    public PageElementActions getThanksOrderSelf() {
+        return new PageElementActions(THANKS_ORDER_SELF_XPATH, driver);
+    }
+
 
 
     //Методы
@@ -36,6 +41,13 @@ public class MobileThankForTheOrderPage extends MainTestBase {
     public void checkPaymentError(){
         getErrorPayment().elementIsVisibility();
         logger.info("Пользователь получает ошибку об оплате");
+        saveAllureScreenshot();
+    }
+
+    @Step("Пользователь проверяет отображение сообщения 'Спасибо за ваш заказ!'")
+    public void checkSuccessMessage(){
+        getThanksOrderSelf().elementIsVisibility();
+        logger.info("Пользователь проверяет отображение сообщения 'Спасибо за ваш заказ!'");
         saveAllureScreenshot();
     }
 

@@ -3,7 +3,6 @@ package core;
 import actions.PageActions;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
-import listener.RetryRule;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
@@ -40,6 +39,8 @@ public class MainTestBase {
         pageActions = new PageActions(driver);
         driver.get(propertiesManager.getProperty("baseurl"));
         logger.info("Открывается главная страница сайта 36.6");
+        driver.manage().deleteAllCookies();
+
     }
 
     @After
@@ -49,8 +50,8 @@ public class MainTestBase {
     /**
      * Повторный запуск тестов при падении
      */
-    @Rule
-    public RetryRule rule = new RetryRule(3);
+    /*@Rule
+    public RetryRule rule = new RetryRule(3);*/
 
     /**
      * Управление действиями, при различных исходах теста
