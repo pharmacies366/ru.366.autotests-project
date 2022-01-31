@@ -14,9 +14,10 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
     @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
     @Test
     public void delivery() {
-        //mobileMainPage.clickClosePopUp();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.waitPageLoad();
+        pageActions.reloadPage();
+        mobileMainPage.clickClosePopUp();
         mobileCartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
