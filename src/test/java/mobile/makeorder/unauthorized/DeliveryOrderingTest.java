@@ -6,7 +6,7 @@ import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
-@Feature(value = "Web")
+@Feature(value = "Мобильная версия")
 @Story(value = "Оформление заказа доставкой")
 @DisplayName("Оформление заказа доставкой")
 public class DeliveryOrderingTest extends BaseSettingsMobileTests {
