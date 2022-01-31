@@ -17,7 +17,9 @@ public class LoginUserPhoneWithPasswordTest extends BaseSettingsMobileTests {
         mobileCookiePage.reCaptchaKey();
         mobileTopPanelPage.clickBurgerButton();
         mobileTopPanelPage.clickToLoginIcon();
-        mobileAuthPopUpPage.setPhoneAndPassword(propertiesManager.getProperty("userauthphone"), "userpass");
+        mobileAuthPopUpPage.setPhoneAndPassword(
+                propertiesManager.getProperty("userauthphone"),
+                propertiesManager.getProperty("userpass"));
         mobileAuthPopUpPage.clickToLoginButton();
         pageActions.waitPageLoad();
         mobileMainPage.checkElementIsCorrect();

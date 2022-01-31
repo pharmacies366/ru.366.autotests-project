@@ -17,7 +17,9 @@ public class LoginUserEmailTest extends BaseSettingsWebTests {
         cookiePage.reCaptchaKey();
         topPanelPage.clickToLoginIcon();
         authPopUpPage.setChangeToEmail();
-        authPopUpPage.setEmailAndPassword(propertiesManager.getProperty("userauthmail"), "userpass");
+        authPopUpPage.setEmailAndPassword(
+                propertiesManager.getProperty("userauthmail"),
+                propertiesManager.getProperty("userpass"));
         authPopUpPage.clickToLoginButton();
         pageActions.waitPageLoad();
         mainPage.checkElementIsCorrect();

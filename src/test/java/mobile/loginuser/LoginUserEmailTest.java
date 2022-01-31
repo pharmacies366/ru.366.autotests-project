@@ -18,7 +18,9 @@ public class LoginUserEmailTest extends BaseSettingsMobileTests {
         mobileTopPanelPage.clickBurgerButton();
         mobileTopPanelPage.clickToLoginIcon();
         mobileAuthPopUpPage.setChangeToEmail();
-        mobileAuthPopUpPage.setEmailAndPassword(propertiesManager.getProperty("userauthmail"), "userpass");
+        mobileAuthPopUpPage.setEmailAndPassword(
+                propertiesManager.getProperty("userauthmail"),
+                propertiesManager.getProperty("userpass"));
         mobileAuthPopUpPage.clickToLoginButton();
         pageActions.waitPageLoad();
         mobileMainPage.checkElementIsCorrect();

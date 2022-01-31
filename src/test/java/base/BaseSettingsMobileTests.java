@@ -13,7 +13,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
     @Override
     public void beforeClass_StartBrowser() {
         super.beforeClass_StartBrowser();
-        driver.manage().window().setSize(new Dimension(414, 736));
+        driver.manage().window().setSize(new Dimension(414, 896));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 

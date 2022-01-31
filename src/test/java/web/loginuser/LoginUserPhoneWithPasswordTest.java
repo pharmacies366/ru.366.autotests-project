@@ -16,7 +16,9 @@ public class LoginUserPhoneWithPasswordTest extends BaseSettingsWebTests {
     public void loginUserCardNumber() {
         cookiePage.reCaptchaKey();
         topPanelPage.clickToLoginIcon();
-        authPopUpPage.setPhoneAndPassword(propertiesManager.getProperty("userauthphone"), "userpass");
+        authPopUpPage.setPhoneAndPassword(
+                propertiesManager.getProperty("userauthphone"),
+                propertiesManager.getProperty("userpass"));
         authPopUpPage.clickToLoginButton();
         pageActions.waitPageLoad();
         mainPage.checkElementIsCorrect();
