@@ -64,10 +64,10 @@ public class MobileCheckOutPage extends MainTestBase {
     }
 
     @Step("Пользователь заполняет контактные данные")
-    public void contactDetails(String email, String phoneNumber, String fio) {
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
+    public void contactDetails(String fio, String phoneNumber, String email) {
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Fio)).sendKeys(fio);
+        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
+        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
         logger.info("Пользователь заполнил контактные данные");
     }
 

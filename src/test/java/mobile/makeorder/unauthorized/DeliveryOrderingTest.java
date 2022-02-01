@@ -13,10 +13,9 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
 
     @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
     @Test
-    public void delivery() throws InterruptedException {
-        //mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1")); -переделать
-        pageActions.waitPageLoad();
+    public void delivery() {
         mobileMainPage.clickClosePopUp();
+        pageActions.waitPageLoad();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileCartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
@@ -25,14 +24,13 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
         mobileCartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
-                propertiesManager.getProperty("usermail"),
+                propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("username"));
+                propertiesManager.getProperty("usermail"));
         mobileCheckOutPage.clickDeliveryMethod();
         pageActions.waitPageLoad();
         mobileCheckOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
         pageActions.waitPageLoad();
-        Thread.sleep(10000);
         mobileCheckOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
         mobileSberPage.bankCardDetails(
