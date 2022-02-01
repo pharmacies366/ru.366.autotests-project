@@ -3,13 +3,9 @@ package pages.mobile;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class MobileCheckOutPage extends MainTestBase {
-
-    private Logger logger = LogManager.getLogger(MobileCheckOutPage.class);
 
 
     //элементы
@@ -61,7 +57,6 @@ public class MobileCheckOutPage extends MainTestBase {
     @Step("Пользователь выбирает способ получения - Доставка")
     public void clickDeliveryMethod() {
         getChooseDeliveryMethod().click();
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь заполняет контактные данные")
@@ -70,28 +65,24 @@ public class MobileCheckOutPage extends MainTestBase {
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Fio)).sendKeys(fio);
         logger.info("Пользователь заполнил контактные данные");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на кнопку 'Сделать заказ'")
     public void clickMakeOrder(){
         getMakeOrderButton().click();
         logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь вводит номер телефона при покупке в 1-клик")
     public void setInputOneClickPhoneNumber(String number) {
         getInputPhoneNumber().sendKeys(number);
         logger.info("Пользователь вводит номер телефона при покупке в 1-клик");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на кнопку 'Забронировать'")
     public void clickBookingButton(){
         getBookingButton().click();
         logger.info("Пользователь нажимает на кнопку 'Забронировать'");
-        saveAllureScreenshot();
     }
 
 

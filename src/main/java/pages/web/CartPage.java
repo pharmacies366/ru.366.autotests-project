@@ -3,14 +3,9 @@ package pages.web;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import utils.PropertiesManager;
 
 public class CartPage extends MainTestBase {
-    private Logger logger = LogManager.getLogger(CartPage.class);
-    private PropertiesManager propertiesManager = new PropertiesManager();
 
     //элементы
     private static final String TOTAL_PRICE_XPATH = "xpath;//div[@class='cart-summary_value js-revenue']";
@@ -72,6 +67,7 @@ public class CartPage extends MainTestBase {
             getClearAllFromCart().click();
             getConfirmCleanAll().click();
             logger.info("ТОВАРЫ В КОРЗИНЕ УДАЛЕНЫ");
+            saveAllureScreenshot();
         }
     }
 
@@ -87,28 +83,24 @@ public class CartPage extends MainTestBase {
     public void сlickAddCartButton() {
         getClickAddCartButton().click();
         logger.info("Пользователь нажимает на кнопку 'В корзину'");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на иконку корзины")
     public void clickToCartButton() {
         getCartButton().click();
         logger.info("Пользователь нажимает на иконку корзины");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимае на кнопку 'Оформить заказ'")
     public void clickToMakeOrder() {
         getMakeOrder().click();
         logger.info("Пользователь нажимае на кнопку 'Оформить заказ'");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на товар")
     public void clickProductCard() {
         getProductCard().click();
         logger.info("Пользователь нажимает на товар");
-        saveAllureScreenshot();
     }
 
 }

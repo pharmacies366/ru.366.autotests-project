@@ -2,17 +2,13 @@ package pages.web;
 
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-
 import java.util.HashSet;
 import java.util.Set;
 
 public class CookiePage extends MainTestBase {
 
-    private Logger logger = LogManager.getLogger(CookiePage.class);
 
     //конструктор
     public CookiePage(WebDriver driver) {

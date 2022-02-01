@@ -3,13 +3,11 @@ package pages.web;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+
 
 public class ProductCardPage extends MainTestBase {
 
-    private Logger logger = LogManager.getLogger(ProductCardPage.class);
 
     //элементы
     private static final String PRICE_LABLE_XPATH = "xpath;(//span[@class='product_price__val'])[1]";
@@ -58,7 +56,6 @@ public class ProductCardPage extends MainTestBase {
     public void clickToCartButton() {
         getAddToCartButton().click();
         logger.info("Пользователь нажимает на кнопку 'в корзину'");
-        saveAllureScreenshot();
     }
 
     @Step("Запоминаем цену товара")
@@ -72,27 +69,23 @@ public class ProductCardPage extends MainTestBase {
     public void buyOneClick() {
         getOneClick().click();
         logger.info("Пользователь нажимает на кнопку 'Купить в 1 клик'");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь проверяет отображении карты на странице")
     public void checkVisibilityMap() {
         getAptekaMap().elementIsVisibility();
         logger.info("Пользователь проверяет отображении карты на странице");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь вводит адрес - {addres}")
     public void setInputSearchAddres(String addres) {
         getPharmacyAddressInput().sendKeysAndEnter(addres);
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на {number} - ую кнопку 'Купить в 1 клик' напротив выбранной аптеки")
     public void clickBuyOneClick() {
         getOneClickAptekaButtons().clickIndex(0);
         logger.info("Пользователь нажимает на {number} - ую кнопку 'Купить в 1 клик' напротив выбранной аптеки");
-        saveAllureScreenshot();
     }
 
 }

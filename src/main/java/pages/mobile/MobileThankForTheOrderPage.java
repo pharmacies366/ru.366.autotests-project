@@ -3,13 +3,9 @@ package pages.mobile;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class MobileThankForTheOrderPage extends MainTestBase {
-
-    private Logger logger = LogManager.getLogger(MobileThankForTheOrderPage.class);
 
 
     //элементы
@@ -41,14 +37,12 @@ public class MobileThankForTheOrderPage extends MainTestBase {
     public void checkPaymentError(){
         getErrorPayment().elementIsVisibility();
         logger.info("Пользователь получает ошибку об оплате");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь проверяет отображение сообщения 'Спасибо за ваш заказ!'")
     public void checkSuccessMessage(){
         getThanksOrderSelf().elementIsVisibility();
         logger.info("Пользователь проверяет отображение сообщения 'Спасибо за ваш заказ!'");
-        saveAllureScreenshot();
     }
 
 

@@ -3,13 +3,10 @@ package pages.web;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class CheckOutPage extends MainTestBase{
 
-    private Logger logger = LogManager.getLogger(CheckOutPage.class);
 
     //элементы
     private static final String BASE_INPUT_DELIVERY_XPATH = "xpath;//input[@id='address%s']";
@@ -101,7 +98,6 @@ public class CheckOutPage extends MainTestBase{
         getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Entrance)).sendKeys(entrance);
         getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Level)).sendKeys(level);
         getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Flat)).sendKeys(flat);
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь заполняет контактные данные")
@@ -110,48 +106,41 @@ public class CheckOutPage extends MainTestBase{
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Fio)).sendKeys(fio);
         logger.info("Пользователь заполнил контактные данные");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь выбирает способ получения - Доставка")
     public void clickDeliveryMethod() {
         getChooseDeliveryMethod().click();
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на кнопку купить")
     public void clickToFinalButton() {
         getFinalBuyButton().click();
         logger.info("ПОЛЬЗОВАТЕЛЬ ПЕРЕШЕЛ НА СТРАНИЦУ СБЕРА");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь вводит номер телефона при покупке в 1-клик")
     public void setInputOneClickPhoneNumber(String number) {
         getInputPhoneNumber().sendKeys(number);
         logger.info("Пользователь вводит номер телефона при покупке в 1-клик");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на кнопку 'Забронировать'")
     public void clickBookingButton(){
         getBookingButton().click();
         logger.info("Пользователь нажимает на кнопку 'Забронировать'");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает кнопку 'Выбрать Аптеку'")
     public void clickSelectApteka() {
         getSelectApteka().click();
         logger.info("Пользователь нажимает кнопку 'Выбрать Аптеку'");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на список доступных Аптек")
     public void clickChangeAptekaList() {
         getChangeAptekaList().click();
         logger.info("Пользователь нажимает на список доступных Аптек");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на кнопки 'Узнать о наличии' и 'Выбрать эту аптеку'")
@@ -159,27 +148,23 @@ public class CheckOutPage extends MainTestBase{
         getAvailability().click();
         getChooseThisPharmacy().click();
         logger.info("Пользователь нажимает на кнопки 'Узнать о наличии' и 'Выбрать эту аптеку'");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на кнопку 'Сделать заказ'")
     public void clickMakeOrder(){
         getMakeOrderButton().click();
         logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь вводит адрес - {addres}")
     public void setInputSearchAddres(String addres) {
         getPharmacyAddressInput().sendKeysAndEnter(addres);
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь проверяет отображении карты на странице")
     public void checkVisibilityMap() {
         getAptekaMap().elementIsVisibility();
         logger.info("Пользователь проверяет отображении карты на странице");
-        saveAllureScreenshot();
     }
 
 

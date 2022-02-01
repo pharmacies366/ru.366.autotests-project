@@ -35,12 +35,10 @@ public class SberPage extends MainTestBase {
         getInputbankCardDetails(String.format(BASE_INPUT_BANK_CARD_DETAILS_XPATH, CARD_NUMBER)).sendKeys(cardNumber);
         getInputbankCardDetails(String.format(BASE_INPUT_BANK_CARD_DETAILS_XPATH, MONTH_YEAR)).sendKeys(monthYear);
         getInputbankCardDetails(String.format(BASE_INPUT_BANK_CARD_DETAILS_XPATH, CVV)).sendKeys(cvv);
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на кнопку 'Оплатить'")
     public void clickOnSubmitButton() {
         getSubmitButton().click();
-        saveAllureScreenshot();
     }
 }

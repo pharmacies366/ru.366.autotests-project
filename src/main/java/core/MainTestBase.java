@@ -19,11 +19,11 @@ import utils.WebDriverFactory;
 public class MainTestBase {
 
     public WebDriver driver;
-    protected PropertiesManager propertiesManager = new PropertiesManager();
+    public static PropertiesManager propertiesManager = new PropertiesManager();
     protected PageActions pageActions;
     private WebDriverFactory driverFactory;
     public static String nameOfPackage;
-    private Logger logger = LogManager.getLogger(MainTestBase.class);
+    public static Logger logger = LogManager.getLogger(MainTestBase.class);
 
 
     @Step("Пользователь переходит в карточку товара")

@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class TopPanelPage extends MainTestBase {
-    private Logger logger = LogManager.getLogger(pages.web.TopPanelPage.class);
 
     //элементы
     private static final String LOGIN_ICON_XPATH = "xpath;(//a[contains(.,'Войти')])[1]";
@@ -29,7 +28,6 @@ public class TopPanelPage extends MainTestBase {
         public void clickToLoginIcon() {
             getLoginIcon().click();
             logger.info("Пользователь нажимает на иконку авторизации");
-            saveAllureScreenshot();
         }
 
     }

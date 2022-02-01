@@ -3,12 +3,9 @@ package pages.web;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage extends MainTestBase {
-    private Logger logger = LogManager.getLogger(MainPage.class);
 
     //элементы
     private static final String SITE_LOGO_XPATH = "xpath;//img[contains(@alt,'9477014323230.png')]";
@@ -44,28 +41,24 @@ public class MainPage extends MainTestBase {
     public void clickClosePopUp(){
         getPopUpButton().click();
         logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
-        saveAllureScreenshot();
     }
 
     @Step("Проверка отображения логотипа сайта на главной странице")
     public void checkElementIsCorrect(){
         getSiteLogo().elementIsVisibility();
         logger.info("Лого отображается");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь вводит артикул товара в поисковую строку - {search}")
     public void setSearchInput(String search) {
         getSearchInput().sendKeys(search);
         logger.info("Пользователь вводит артикул не партнерсского товара в поисковую строку");
-        saveAllureScreenshot();
     }
 
     @Step("Пользователь нажимает на букву 'Н' Русского алфавита")
     public void clickLetterN(){
         getLetterN().click();
         logger.info("Пользователь нажимает на букву 'Н' Русского алфавита");
-        saveAllureScreenshot();
     }
 
 
