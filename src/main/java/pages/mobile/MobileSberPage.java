@@ -40,6 +40,7 @@ public class MobileSberPage extends MainTestBase {
         getInputbankCardDetails(String.format(BASE_INPUT_BANK_CARD_DETAILS_XPATH, CARD_NUMBER)).sendKeys(cardNumber);
         getInputbankCardDetails(String.format(BASE_INPUT_BANK_CARD_DETAILS_XPATH, MONTH_YEAR)).sendKeys(monthYear);
         getInputbankCardDetails(String.format(BASE_INPUT_BANK_CARD_DETAILS_XPATH, CVV)).sendKeys(cvv);
+        logger.info("Пользователь заполнил данные банковской карты");
     }
 
     @Step("Пользователь нажимает на кнопку 'Оплатить'")

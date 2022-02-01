@@ -47,10 +47,10 @@ public class MobileCartPage extends MainTestBase {
         return price;
     }
 
-    @Step("Пользователь нажимает на кнопку 'В корзину'")
+    @Step("Пользователь добавляет товар в корзину")
     public void сlickAddCartButton() {
         getClickAddCartButton().click();
-        logger.info("Пользователь нажимает на кнопку 'В корзину'");
+        logger.info("Пользователь добавляет товар в корзину");
     }
 
     @Step("Пользователь нажимает на иконку корзины")

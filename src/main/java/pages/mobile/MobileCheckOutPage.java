@@ -77,6 +77,7 @@ public class MobileCheckOutPage extends MainTestBase {
         getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Entrance)).sendKeys(entrance);
         getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Level)).sendKeys(level);
         getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Flat)).sendKeys(flat);
+        logger.info("Пользователь заполнил адрес доставки");
     }
 
     @Step("Пользователь нажимает на кнопку 'Сделать заказ'")
