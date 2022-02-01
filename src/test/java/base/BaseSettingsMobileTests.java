@@ -3,27 +3,9 @@ package base;
 import actions.PageElementActions;
 import core.MainTestBase;
 import org.junit.Before;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import pages.mobile.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class BaseSettingsMobileTests extends MainTestBase {
-
-    /*@Override
-    public void beforeClass_StartBrowser() {
-        super.beforeClass_StartBrowser();
-
-        Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "iPhone 6");
-
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-
-        driver = new ChromeDriver(chromeOptions);
-
-    }*/
 
 
     protected PageElementActions pageElementActions;

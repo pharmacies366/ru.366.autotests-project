@@ -4,6 +4,7 @@ import actions.PageElementActions;
 import core.MainTestBase;
 import org.junit.Before;
 import pages.web.*;
+import utils.PropertiesManager;
 
 public class BaseSettingsWebTests extends MainTestBase {
 

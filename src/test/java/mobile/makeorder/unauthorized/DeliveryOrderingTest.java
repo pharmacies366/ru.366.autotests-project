@@ -13,33 +13,34 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
 
     @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
     @Test
-    public void delivery() {
+    public void delivery() throws InterruptedException {
+        //mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1")); -переделать
         pageActions.waitPageLoad();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
-        pageActions.waitPageLoad();
-        pageActions.reloadPage();
-        //mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
-       // pageActions.waitPageLoad();
         mobileMainPage.clickClosePopUp();
+        mobileMainPage.clickCloseMobileAppPopUp();
         mobileCartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
-        mobileCheckOutPage.clickDeliveryMethod();
         pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
                 propertiesManager.getProperty("usermail"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("username"));
+        mobileCheckOutPage.clickDeliveryMethod();
         pageActions.waitPageLoad();
+        mobileCheckOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
+        pageActions.waitPageLoad();
+        Thread.sleep(10000);
         mobileCheckOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
         mobileSberPage.bankCardDetails(
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-        //mobileSberPage.clickOnSubmitButton();
-       // mobileThankForTheOrderPage.checkPaymentError();
+        mobileSberPage.clickOnSubmitButton();
+        mobileThankForTheOrderPage.checkPaymentError();
     }
 
 }

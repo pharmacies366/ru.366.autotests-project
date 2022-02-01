@@ -59,10 +59,10 @@ public class MobileCartPage extends MainTestBase {
         logger.info("Пользователь нажимает на иконку корзины");
     }
 
-    @Step("Пользователь нажимае на кнопку 'Оформить заказ'")
+    @Step("Пользователь нажимает на кнопку 'Оформить заказ'")
     public void clickToMakeOrder() {
         getMakeOrder().click();
-        logger.info("Пользователь нажимае на кнопку 'Оформить заказ'");
+        logger.info("Пользователь нажимает на кнопку 'Оформить заказ'");
     }
 
 

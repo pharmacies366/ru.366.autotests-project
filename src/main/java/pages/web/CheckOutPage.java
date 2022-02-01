@@ -9,15 +9,15 @@ public class CheckOutPage extends MainTestBase{
 
 
     //элементы
+    private static final String BASE_INPUT_CONTACT_DETAILS_XPATH = "xpath;//input[@id='%s']";
+    private static final String Fio = "fio";
+    private static final String PhoneNumber = "phone";
+    private static final String Email = "email";
     private static final String BASE_INPUT_DELIVERY_XPATH = "xpath;//input[@id='address%s']";
     private static final String Address = "";
     private static final String Entrance = "-entrance";
     private static final String Level = "-level";
     private static final String Flat = "-flat";
-    private static final String BASE_INPUT_CONTACT_DETAILS_XPATH = "xpath;//input[@id='%s']";
-    private static final String PhoneNumber = "phone";
-    private static final String Fio = "fio";
-    private static final String Email = "email";
     private static final String CHOOSE_DELIVERY_METHOD_XPATH = "xpath;(//span[contains(@class,'checkout_delivery_info__mark')])[2]";
     private static final String FINAL_BUY_BUTTON_XPATH = "xpath;//button[contains(.,'Оформить заказ')]";
     private static final String INPUT_PHONE_NUMBER_XPATH = "xpath;//input[@name='phone']";
@@ -101,10 +101,10 @@ public class CheckOutPage extends MainTestBase{
     }
 
     @Step("Пользователь заполняет контактные данные")
-    public void contactDetails(String email, String phoneNumber, String fio) {
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
+    public void contactDetails(String fio, String phoneNumber, String email ) {
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Fio)).sendKeys(fio);
+        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
+        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
         logger.info("Пользователь заполнил контактные данные");
     }
 

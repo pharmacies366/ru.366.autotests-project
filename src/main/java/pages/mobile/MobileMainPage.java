@@ -11,6 +11,7 @@ public class MobileMainPage extends MainTestBase {
     //элементы
     private static final String SITE_LOGO_XPATH = "xpath;//img[contains(@alt,'9477014323230.png')]";
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
+    private static final String MOBILE_APP_POP_UP_BUTTON_XPATH = "xpath;//div[contains(@class,'flyer--close')]";
     private static final String SEARCH_INPUT_XPATH = "xpath;//input[@class='b-search__input']";
     private static final String LETTER_N_XPATH = "xpath;//a[@href='/littera-Н/']";
 
@@ -37,12 +38,22 @@ public class MobileMainPage extends MainTestBase {
         return new PageElementActions(LETTER_N_XPATH, driver);
     }
 
+    public PageElementActions getMobileAppPopUpButton() {
+        return new PageElementActions(MOBILE_APP_POP_UP_BUTTON_XPATH, driver);
+    }
+
 
     //Методы
     @Step("Пользователь закрывает попап куки: 'Спасибо, понятно")
     public void clickClosePopUp(){
         getPopUpButton().click();
         logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
+    }
+
+    @Step("Пользователь закрывает попап мобильного приложения: 'Приложение 36.6'")
+    public void clickCloseMobileAppPopUp(){
+        getMobileAppPopUpButton().click();
+        logger.info("Пользователь закрывает попап мобильного приложения: 'Приложение 36.6'");
     }
 
     @Step("Проверка отображения логотипа сайта на главной странице")

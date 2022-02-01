@@ -19,7 +19,7 @@ public class MobileCheckOutPage extends MainTestBase {
     private static final String PhoneNumber = "phone";
     private static final String Fio = "fio";
     private static final String Email = "email";
-    private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;//button[contains(.,'Оформить заказ')]";
+    private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;//button[contains(@class,'contacts')]";
     private static final String INPUT_PHONE_NUMBER_XPATH = "xpath;//input[@name='phone']";
     private static final String BOOKING_BUTTON_XPATH = "xpath;//input[@value='Забронировать']";
 
@@ -51,6 +51,10 @@ public class MobileCheckOutPage extends MainTestBase {
         return new PageElementActions(BOOKING_BUTTON_XPATH, driver);
     }
 
+    public PageElementActions getBaseInputDelivery(String xpath) {
+        return new PageElementActions(xpath, driver);
+    }
+
 
 
     //Методы
@@ -65,6 +69,14 @@ public class MobileCheckOutPage extends MainTestBase {
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Fio)).sendKeys(fio);
         logger.info("Пользователь заполнил контактные данные");
+    }
+
+    @Step("Заполнение данных адреса доставки")
+    public void addressDelivery(String address, String entrance, String level, String flat) {
+        getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Address)).sendKeys(address);
+        getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Entrance)).sendKeys(entrance);
+        getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Level)).sendKeys(level);
+        getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Flat)).sendKeys(flat);
     }
 
     @Step("Пользователь нажимает на кнопку 'Сделать заказ'")
