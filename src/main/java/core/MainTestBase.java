@@ -22,6 +22,7 @@ public class MainTestBase {
     protected PropertiesManager propertiesManager = new PropertiesManager();
     protected PageActions pageActions;
     private WebDriverFactory driverFactory;
+    public static String nameOfPackage;
     private Logger logger = LogManager.getLogger(MainTestBase.class);
 
 
@@ -39,7 +40,7 @@ public class MainTestBase {
         pageActions = new PageActions(driver);
         driver.get(propertiesManager.getProperty("baseurl"));
         logger.info("Открывается главная страница сайта 36.6");
-        driver.manage().deleteAllCookies();
+        //driver.manage().deleteAllCookies();
 
     }
 
@@ -56,6 +57,7 @@ public class MainTestBase {
     /**
      * Управление действиями, при различных исходах теста
      */
+
     @Rule
     public TestWatcher watchman = new TestWatcher() {
         @Override
@@ -75,8 +77,10 @@ public class MainTestBase {
 
         @Override
         protected void starting(Description description) {
-            logger.info("Тест старт");
+            nameOfPackage = description.getTestClass().getPackage().getName();
+            logger.info("Тест старт " + description.getMethodName());
         }
+
     };
 
     /**

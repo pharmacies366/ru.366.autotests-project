@@ -14,7 +14,7 @@ public class LoginUserEmailTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь авторизовывается на сайте через E-mail")
     @Test
     public void loginUserEmail() {
-        mobileCookiePage.reCaptchaKey();
+        //mobileCookiePage.reCaptchaKey();
         mobileTopPanelPage.clickBurgerButton();
         mobileTopPanelPage.clickToLoginIcon();
         mobileAuthPopUpPage.setChangeToEmail();
