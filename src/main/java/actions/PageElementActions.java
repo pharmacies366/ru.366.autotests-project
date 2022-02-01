@@ -130,11 +130,11 @@ public class PageElementActions extends MainTestBase {
     }
 
     //Пользователь скроллит страницу вверх
-    public void ScrollToObject() {
-        ((JavascriptExecutor) driver).executeScript("scroll(0,400)");
-        // ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -250)");
-        logger.info("СТРАНИЦА ПРОСКРОЛЛЕНА ВВЕРХ НА N ПИКСЕЛЕЙ");
+    public void scrollToObject() {
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", getBySelector(element));
+        logger.info("СТРАНИЦА ПРОСКРОЛЛЕНА ДО ЭЛЕМЕНТА");
     }
+
 
     public String getText() {
         this.moveToElement();

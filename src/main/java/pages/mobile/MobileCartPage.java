@@ -12,6 +12,7 @@ public class MobileCartPage extends MainTestBase {
     private static final String ADD_CART_BUTTON_XPATH = "xpath;//span[contains(.,'В корзину')]";
     private static final String CARD_BUTTON_XPATH = "xpath;//span[@class='mini_cart_link__icon']";
     private static final String MAKE_ORDER_XPATH = "xpath;//a[@href='/cart/checkout']";
+    private static final String PRODUCT_CARD_XPATH = "xpath;//a[@data-gtm-source='search list']";
 
 
 
@@ -35,6 +36,10 @@ public class MobileCartPage extends MainTestBase {
 
     public PageElementActions getMakeOrder() {
         return new PageElementActions(MAKE_ORDER_XPATH, driver);
+    }
+
+    public PageElementActions getProductCard() {
+        return new PageElementActions(PRODUCT_CARD_XPATH, driver);
     }
 
 
@@ -63,6 +68,12 @@ public class MobileCartPage extends MainTestBase {
     public void clickToMakeOrder() {
         getMakeOrder().click();
         logger.info("Пользователь нажимает на кнопку 'Оформить заказ'");
+    }
+
+    @Step("Пользователь нажимает на товар")
+    public void clickProductCard() {
+        getProductCard().click();
+        logger.info("Пользователь нажимает на товар");
     }
 
 

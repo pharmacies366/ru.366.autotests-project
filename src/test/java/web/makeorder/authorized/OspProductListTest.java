@@ -30,9 +30,9 @@ public class OspProductListTest extends BaseSettingsWebTests {
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
         pageActions.waitPageLoad();
         checkOutPage.contactDetails(
-                propertiesManager.getProperty("usermail"),
+                propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("username"));
+                propertiesManager.getProperty("usermail"));
         checkOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();

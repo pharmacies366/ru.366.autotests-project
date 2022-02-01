@@ -25,9 +25,9 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
         cartPage.clickToMakeOrder();
         checkOutPage.clickDeliveryMethod();
         checkOutPage.contactDetails(
-                propertiesManager.getProperty("usermail"),
+                propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("username"));
+                propertiesManager.getProperty("usermail"));
         pageActions.waitPageLoad();
         checkOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
         pageActions.waitPageLoad();

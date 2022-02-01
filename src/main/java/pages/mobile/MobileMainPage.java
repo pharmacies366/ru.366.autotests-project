@@ -12,7 +12,8 @@ public class MobileMainPage extends MainTestBase {
     private static final String SITE_LOGO_XPATH = "xpath;//img[contains(@alt,'9477014323230.png')]";
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
     private static final String MOBILE_APP_POP_UP_BUTTON_XPATH = "xpath;//div[contains(@class,'flyer--close')]";
-    private static final String SEARCH_INPUT_XPATH = "xpath;//input[@class='b-search__input']";
+    private static final String SEARCH_INPUT1_XPATH = "xpath;//input[@class='b-search__input']";
+    private static final String SEARCH_INPUT_XPATH = "xpath;//input[@id='js-site-search-input']";
     private static final String LETTER_N_XPATH = "xpath;//a[@href='/littera-Н/']";
 
 
@@ -30,6 +31,9 @@ public class MobileMainPage extends MainTestBase {
         return new PageElementActions(POP_UP_BUTTON_XPATH, driver);
     }
 
+    public PageElementActions getSearchInput1() {
+        return new PageElementActions(SEARCH_INPUT1_XPATH, driver);
+    }
     public PageElementActions getSearchInput() {
         return new PageElementActions(SEARCH_INPUT_XPATH, driver);
     }
@@ -62,9 +66,10 @@ public class MobileMainPage extends MainTestBase {
         logger.info("Лого отображается");
     }
 
-    @Step("Пользователь вводит артикул товара в поисковую строку - {search}")
-    public void setSearchInput(String search) {
-        getSearchInput().sendKeys(search);
+    @Step("Пользователь вводит артикул товара в поисковую строку - {vendorCode}")
+    public void setSearchInput(String vendorCode) {
+        getSearchInput1().click();
+        getSearchInput().sendKeys(vendorCode);
         logger.info("Пользователь вводит артикул не партнерсского товара в поисковую строку");
     }
 

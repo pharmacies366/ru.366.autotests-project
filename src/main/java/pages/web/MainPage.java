@@ -49,9 +49,9 @@ public class MainPage extends MainTestBase {
         logger.info("Лого отображается");
     }
 
-    @Step("Пользователь вводит артикул товара в поисковую строку - {search}")
-    public void setSearchInput(String search) {
-        getSearchInput().sendKeys(search);
+    @Step("Пользователь вводит артикул товара в поисковую строку - {vendorCode}")
+    public void setSearchInput(String vendorCode) {
+        getSearchInput().sendKeys(vendorCode);
         logger.info("Пользователь вводит артикул не партнерсского товара в поисковую строку");
     }
 
