@@ -15,27 +15,34 @@ public class OspProductListTest extends BaseSettingsMobileTests {
     @DisplayName("Неавторизованный пользователь покупает товар со страниц ОСП")
     @Test
     public void checkOsp() {
-       // mobileMainPage.clickClosePopUp();
-        pageActions.reloadPage();
+        mobileMainPage.clickClosePopUp();
+        mobileMainPage.clickCloseMobileAppPopUp();
+        pageActions.waitPageLoad();
         mobileMainPage.clickLetterN();
+        pageActions.waitPageLoad();
         mobileOspPage.clickShowAll();
+        pageActions.waitPageLoad();
         mobileOspPage.clickProductName();
         mobileCartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
-  /*      mobileCheckOutPage.clickSelectApteka();
-        mobileCheckOutPage.setInputSearchAddres("метро Автозаводская");//возможно нужно кликнуть в пустое место
-        mobileCheckOutPage.clickChangeAptekaList();
-        mobileCheckOutPage.getAvailabilityAndChooseThisPharmacy();
-        pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
-                propertiesManager.getProperty("usermail"),
+                propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("username"));
+                propertiesManager.getProperty("usermail"));
+        pageActions.waitPageLoad();
+        mobileCheckOutPage.clickSelectApteka();
+        pageActions.waitPageLoad();
+        mobileCheckOutPage.setInputSearchAddres("метро Автозаводская");//возможно нужно кликнуть в пустое место
+        pageActions.waitPageLoad();
+        mobileCheckOutPage.clickChangeAptekaList();
+        mobileCheckOutPage.ckickSelect();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
-        mobileThankForTheOrderPage.checkSuccessMessage();*/
+        mobileThankForTheOrderPage.checkSuccessMessage();
     }
 }

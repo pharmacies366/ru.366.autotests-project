@@ -28,7 +28,7 @@ public class OspProductListTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("usermail"));
         pageActions.waitPageLoad();
         checkOutPage.clickSelectApteka();
-        productCardPage.setInputSearchAddres("метро Автозаводская");
+        productCardPage.setInputSearchAddres("метро Автозаводская");//Перенести в чекаут
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
         checkOutPage.clickMakeOrder();

@@ -22,6 +22,10 @@ public class MobileCheckOutPage extends MainTestBase {
     private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;//button[contains(@class,'contacts')]";
     private static final String INPUT_PHONE_NUMBER_XPATH = "xpath;//input[@name='phone']";
     private static final String BOOKING_BUTTON_XPATH = "xpath;//input[@value='Забронировать']";
+    private static final String SELECT_APTEKA_XPATH = "xpath;//span[contains(.,'Выбрать аптеку')]";
+    private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
+    private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//label[@class='js-storefinder-sort js-product-stores__head-item js-storefinder-recommend']";
+    private static final String SELECT_XPATH= "xpath;(//span[contains(@class,'desc js-confirm-store-on-list')])[1]";
 
 
 
@@ -53,6 +57,22 @@ public class MobileCheckOutPage extends MainTestBase {
 
     public PageElementActions getBaseInputDelivery(String xpath) {
         return new PageElementActions(xpath, driver);
+    }
+
+    public PageElementActions getSelectApteka() {
+        return new PageElementActions(SELECT_APTEKA_XPATH, driver);
+    }
+
+    public PageElementActions getPharmacyAddressInput() {
+        return new PageElementActions(PHARMACY_ADDRESS_INPUT_XPATH, driver);
+    }
+
+    public PageElementActions getChangeAptekaList() {
+        return new PageElementActions(CHANGE_APTEKA_LIST_XPATH, driver);
+    }
+
+    public PageElementActions getSelect() {
+        return new PageElementActions(SELECT_XPATH, driver);
     }
 
 
@@ -96,6 +116,30 @@ public class MobileCheckOutPage extends MainTestBase {
     public void clickBookingButton(){
         getBookingButton().click();
         logger.info("Пользователь нажимает на кнопку 'Забронировать'");
+    }
+
+    @Step("Пользователь нажимает кнопку 'Выбрать Аптеку'")
+    public void clickSelectApteka() {
+        getSelectApteka().click();
+        logger.info("Пользователь нажимает кнопку 'Выбрать Аптеку'");
+    }
+
+    @Step("Пользователь вводит адрес - {addres}")
+    public void setInputSearchAddres(String addres) {
+        getPharmacyAddressInput().sendKeysAndEnter(addres);
+        logger.info("Пользователь вводит адрес");
+    }
+
+    @Step("Пользователь нажимает на список доступных Аптек")
+    public void clickChangeAptekaList() {
+        getChangeAptekaList().click();
+        logger.info("Пользователь нажимает на список доступных Аптек");
+    }
+
+    @Step("Пользователь нажимает на кнопку 'Выбрать'")
+    public void ckickSelect(){
+        getSelect().click();
+        logger.info("Пользователь нажимает на кнопку 'Выбрать'");
     }
 
 
