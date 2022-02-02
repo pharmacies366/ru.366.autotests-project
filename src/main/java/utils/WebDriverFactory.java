@@ -78,7 +78,7 @@ public class WebDriverFactory {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @Step("Изменить разрешение экрана")
+    @Step("Запуск мобильного драйвера")
     public RemoteWebDriver setupMobileDriver() {
         WebDriverManager.chromedriver().setup();
         Map<String, String> mobileEmulation = new HashMap<>();
