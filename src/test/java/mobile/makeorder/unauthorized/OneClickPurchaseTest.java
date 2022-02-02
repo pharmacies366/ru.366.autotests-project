@@ -17,6 +17,7 @@ public class OneClickPurchaseTest extends BaseSettingsMobileTests {
     @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
+        mobileCookiePage.reCaptchaKey();
         mobileMainPage.clickClosePopUp();
         pageActions.waitPageLoad();
         mobileMainPage.clickCloseMobileAppPopUp();
@@ -24,12 +25,16 @@ public class OneClickPurchaseTest extends BaseSettingsMobileTests {
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         mobileCartPage.clickProductCard();
         pageActions.waitPageLoad();
-        mobileProductCardPage.buyOneClick();
         mobileProductCardPage.checkVisibilityMap();
         mobileProductCardPage.setInputSearchAddres("метро Фили");
         pageActions.waitPageLoad();
+        mobileProductCardPage.buyOneClick();
+        pageActions.waitPageLoad();
+        mobileProductCardPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickBookingButton();
         pageActions.waitPageLoad();
         mobileThankForTheOrderPage.checkSuccessMessage();

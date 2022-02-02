@@ -94,10 +94,11 @@ public class MobileProductCardPage extends MainTestBase {
         logger.info("Пользователь нажимает на список доступных Аптек");
     }
 
-    @Step("Пользователь нажимает на {number} - ую кнопку 'Купить в 1 клик' напротив выбранной аптеки")
+    @Step("Пользователь нажимает на 1-ую кнопку 'Купить в 1 клик' напротив выбранной аптеки")
     public void clickBuyOneClick() {
         getOneClickAptekaButtons().clickIndex(0);
         logger.info("Пользователь нажимает на {number} - ую кнопку 'Купить в 1 клик' напротив выбранной аптеки");
     }
+
 
 }
