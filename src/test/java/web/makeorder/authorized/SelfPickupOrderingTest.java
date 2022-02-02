@@ -15,7 +15,6 @@ public class SelfPickupOrderingTest extends BaseSettingsWebTests {
     @Test
     public void pickup() {
         mainPage.clickClosePopUp();
-        cookiePage.cookieAuthorization();
         cartPage.checkCartQuantity();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
