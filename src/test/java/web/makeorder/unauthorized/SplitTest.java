@@ -17,6 +17,7 @@ public class SplitTest extends BaseSettingsWebTests {
     public void split() {
         mainPage.clickClosePopUp();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         cartPage.clickToCartButton();
