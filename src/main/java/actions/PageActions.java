@@ -1,8 +1,6 @@
 package actions;
 
 import core.MainTestBase;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageActions extends MainTestBase {
 
-    private Logger logger = LogManager.getLogger(MainTestBase.class);
 
     //конструктор
     public PageActions(WebDriver driver) {
