@@ -22,15 +22,15 @@ public class OspProductListTest extends BaseSettingsWebTests {
         cartPage.clickToCartButton();
         cartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
-        checkOutPage.clickSelectApteka();
-        productCardPage.setInputSearchAddres("метро Автозаводская");//возможно нужно кликнуть в пустое место
-        checkOutPage.clickChangeAptekaList();
-        checkOutPage.getAvailabilityAndChooseThisPharmacy();
-        pageActions.waitPageLoad();
         checkOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
+        pageActions.waitPageLoad();
+        checkOutPage.clickSelectApteka();
+        productCardPage.setInputSearchAddres("метро Автозаводская");
+        checkOutPage.clickChangeAptekaList();
+        checkOutPage.getAvailabilityAndChooseThisPharmacy();
         checkOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
