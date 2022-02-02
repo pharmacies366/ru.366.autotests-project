@@ -11,12 +11,14 @@ import org.junit.Test;
 @DisplayName("Оформление заказа самовывозом")
 public class SelfPickupOrderingTest extends BaseSettingsWebTests {
 
-    @DisplayName("Неавторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
+    @DisplayName("Авторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
     @Test
     public void pickup() {
         mainPage.clickClosePopUp();
+        pageActions.waitPageLoad();
         cartPage.checkCartQuantity();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         cartPage.clickToCartButton();

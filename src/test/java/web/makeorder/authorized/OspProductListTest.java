@@ -11,7 +11,7 @@ import org.junit.Test;
 @DisplayName("Оформление товара со страниц ОСП")
 public class OspProductListTest extends BaseSettingsWebTests {
 
-    @DisplayName("Неавторизованный пользователь покупает товар со страниц ОСП")
+    @DisplayName("Авторизованный пользователь покупает товар со страниц ОСП")
     @Test
     public void checkOsp() {
         mainPage.clickClosePopUp();

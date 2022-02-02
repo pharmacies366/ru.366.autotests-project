@@ -11,7 +11,7 @@ import org.junit.Test;
 @DisplayName("Оформление основного товара в 1 клик")
 public class OneClickPurchaseTest extends BaseSettingsWebTests {
 
-    @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
+    @DisplayName("Аавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
         cookiePage.reCaptchaKey();

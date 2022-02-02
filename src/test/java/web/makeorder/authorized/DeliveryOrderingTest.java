@@ -11,19 +11,16 @@ import org.junit.Test;
 @DisplayName("Оформление заказа доставкой")
 public class DeliveryOrderingTest extends BaseSettingsWebTests {
 
-    @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
+    @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
     @Test
     public void delivery() {
         mainPage.clickClosePopUp();
-        cookiePage.cookieAuthorization();
-        cartPage.checkCartQuantity();
         pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         cartPage.clickToCartButton();
-        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
         checkOutPage.contactDetails(
@@ -44,7 +41,6 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
         sberPage.clickOnSubmitButton();
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkPaymentError();
-        cookiePage.deleteAllCookie();
     }
 
 }
