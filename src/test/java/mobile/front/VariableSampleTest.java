@@ -15,21 +15,23 @@ public class VariableSampleTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void test() {
-        //mobileMainPage.clickClosePopUp();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
+        mobileMainPage.clickClosePopUp();
+        mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.waitPageLoad();
-        pageActions.reloadPage();;
-        mobileProductCardPage.clickToCartButton();
-        pageActions.waitPageLoad();
+        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         int firstPrice = mobileProductCardPage.getProductPrice();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
         pageActions.waitPageLoad();
-        mobileProductCardPage.clickToCartButton();
+        mobileCartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
+        mobileMainPage.clickSiteLogo();
+        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode3"));
         int secondPrice = mobileProductCardPage.getProductPrice();
-        openUrl(propertiesManager.getProperty("baseurl") + "cart");
+        pageActions.waitPageLoad();
+        mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
+        mobileCartPage.clickToCartButton();
         pageActions.waitPageLoad();
         int totalPrice = mobileCartPage.getPriceTotal();
-        Assert.assertEquals(firstPrice + secondPrice,totalPrice);
+        Assert.assertEquals(firstPrice + secondPrice, totalPrice);
     }
 }

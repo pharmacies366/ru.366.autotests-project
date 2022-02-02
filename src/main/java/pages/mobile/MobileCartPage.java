@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class MobileCartPage extends MainTestBase {
 
     //элементы
-    private static final String TOTAL_PRICE_XPATH = "xpath;//div[@class='cart-summary_value js-revenue']";
+    private static final String TOTAL_PRICE_XPATH = "xpath;//div[contains(@class,'cart-summary_value js-revenue')]";
     private static final String ADD_CART_BUTTON_XPATH = "xpath;//span[contains(.,'В корзину')]";
     private static final String CARD_BUTTON_XPATH = "xpath;//span[@class='mini_cart_link__icon']";
     private static final String MAKE_ORDER_XPATH = "xpath;//a[@href='/cart/checkout']";
