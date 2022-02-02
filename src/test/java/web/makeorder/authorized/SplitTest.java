@@ -20,7 +20,8 @@ public class SplitTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
-        cartPage.clickToCartButton();
+        mainPage.clickSiteLogo();
+        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode2"));
         pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();

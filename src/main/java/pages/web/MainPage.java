@@ -49,9 +49,15 @@ public class MainPage extends MainTestBase {
         logger.info("Лого отображается");
     }
 
+    @Step("Пользователь нажимает на иконку 36.6 и переходит на главную страницу")
+    public void clickSiteLogo(){
+        getSiteLogo().click();
+        logger.info("Пользователь нажимает на иконку 36.6 и переходит на главную страницу");
+    }
+
     @Step("Пользователь вводит артикул товара в поисковую строку - {vendorCode}")
     public void setSearchInput(String vendorCode) {
-        getSearchInput().sendKeys(vendorCode);
+        getSearchInput().sendKeysAndEnter(vendorCode);
         logger.info("Пользователь вводит артикул не партнерсского товара в поисковую строку");
     }
 
