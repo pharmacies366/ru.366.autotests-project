@@ -11,15 +11,17 @@ import org.junit.Test;
 @DisplayName("Оформление заказа доставкой")
 public class DeliveryOrderingTest extends BaseSettingsMobileTests {
 
-    @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
+    @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
     @Test
     public void delivery() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileCookiePage.cookieAuthorization();
+        mobileCookiePage.reCaptchaKey();
         pageActions.reloadPage();
         mobileCartPage.checkCartQuantity();
         pageActions.waitPageLoad();
+        mobileMainPage.clickSiteLogo();
         mobileCartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();

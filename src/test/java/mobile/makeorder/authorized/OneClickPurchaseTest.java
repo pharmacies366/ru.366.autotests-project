@@ -12,16 +12,17 @@ import org.junit.Test;
 public class OneClickPurchaseTest extends BaseSettingsMobileTests {
 
 
-    @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
+    @DisplayName("Аавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileCookiePage.cookieAuthorization();
+        mobileCookiePage.reCaptchaKey();
         pageActions.reloadPage();
         mobileCartPage.checkCartQuantity();
         pageActions.waitPageLoad();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         mobileCartPage.clickProductCard();
         pageActions.waitPageLoad();
         mobileProductCardPage.checkVisibilityMap();

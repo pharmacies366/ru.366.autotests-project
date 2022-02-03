@@ -13,8 +13,6 @@ public class SplitTest extends BaseSettingsMobileTests {
 
     @DisplayName("Неавторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
     @Test
-    /*Данный тест ещё дублирует проверку на недоступность одного из товаров в корзине,
-            но по хорошему нужно получать эти данные из БД*/
     public void split() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();

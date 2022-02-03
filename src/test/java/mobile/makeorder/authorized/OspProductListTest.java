@@ -11,14 +11,16 @@ import org.junit.Test;
 @DisplayName("Оформление товара со страниц ОСП")
 public class OspProductListTest extends BaseSettingsMobileTests {
 
-    @DisplayName("Неавторизованный пользователь покупает товар со страниц ОСП")
+    @DisplayName("Авторизованный пользователь покупает товар со страниц ОСП")
     @Test
     public void checkOsp() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileCookiePage.cookieAuthorization();
+        mobileCookiePage.reCaptchaKey();
         pageActions.reloadPage();
         mobileCartPage.checkCartQuantity();
+        pageActions.waitPageLoad();
         mobileMainPage.clickSiteLogo();
         pageActions.waitPageLoad();
         mobileMainPage.clickLetterN();

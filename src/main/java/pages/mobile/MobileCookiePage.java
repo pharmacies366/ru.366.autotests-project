@@ -30,7 +30,7 @@ public class MobileCookiePage extends MainTestBase {
 
 }
     public void reCaptchaKey(){
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "cadf2ba7f4b29a7548f2ad7aedb05f52453ab8ef"));//кука для обхода каптчи
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));//кука для обхода каптчи
     }
 
 
