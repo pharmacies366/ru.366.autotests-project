@@ -14,7 +14,9 @@ public class SplitTest extends BaseSettingsMobileTests {
     @DisplayName("Неавторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
     @Test
     public void split() {
+        mobileCookiePage.reCaptchaKey();
         mobileMainPage.clickClosePopUp();
+        pageActions.waitPageLoad();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.waitPageLoad();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));

@@ -17,7 +17,7 @@ public class OneClickPurchaseTest extends BaseSettingsMobileTests {
     @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
-        //mobileCookiePage.reCaptchaKey();
+        mobileCookiePage.reCaptchaKey();
         mobileMainPage.clickClosePopUp();
         pageActions.waitPageLoad();
         mobileMainPage.clickCloseMobileAppPopUp();
@@ -26,7 +26,7 @@ public class OneClickPurchaseTest extends BaseSettingsMobileTests {
         mobileCartPage.clickProductCard();
         pageActions.waitPageLoad();
         mobileProductCardPage.checkVisibilityMap();
-        mobileProductCardPage.setInputSearchAddres("Москва");
+        mobileProductCardPage.setInputSearchAddres("метро Фили");
         pageActions.waitPageLoad();
         mobileProductCardPage.buyOneClick();
         pageActions.waitPageLoad();
