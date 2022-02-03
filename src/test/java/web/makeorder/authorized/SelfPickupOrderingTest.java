@@ -14,9 +14,10 @@ public class SelfPickupOrderingTest extends BaseSettingsWebTests {
     @DisplayName("Авторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
     @Test
     public void pickup() {
-        mainPage.clickClosePopUp();
-        pageActions.waitPageLoad();
+        cookiePage.cookieAuthorization();
+        pageActions.reloadPage();
         cartPage.checkCartQuantity();
+        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
@@ -28,11 +29,9 @@ public class SelfPickupOrderingTest extends BaseSettingsWebTests {
         checkOutPage.checkVisibilityMap();
         pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
-        checkOutPage.contactDetails(
-                propertiesManager.getProperty("username"),
-                propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("usermail"));
+        pageActions.waitPageLoad();
         checkOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();

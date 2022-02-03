@@ -12,7 +12,7 @@ public class MobileMainPage extends MainTestBase {
     private static final String SITE_LOGO_XPATH = "xpath;//img[contains(@alt,'9477014323230.png')]";
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
     private static final String MOBILE_APP_POP_UP_BUTTON_XPATH = "xpath;//div[contains(@class,'flyer--close')]";
-    private static final String SEARCH_INPUT1_XPATH = "xpath;//input[@class='b-search__input']";
+    private static final String SEARCH_INPUT1_XPATH = "xpath;//div[@class='header_search_mobile__toggle js-toggle-xs-search js-header-search-mobile-toggle']";
     private static final String SEARCH_INPUT_XPATH = "xpath;//input[@id='js-site-search-input']";
     private static final String LETTER_N_XPATH = "xpath;//a[@href='/littera-Н/']";
 

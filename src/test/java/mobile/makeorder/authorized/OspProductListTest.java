@@ -1,7 +1,6 @@
-package mobile.makeorder.unauthorized;
+package mobile.makeorder.authorized;
 
 import base.BaseSettingsMobileTests;
-import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
@@ -17,7 +16,10 @@ public class OspProductListTest extends BaseSettingsMobileTests {
     public void checkOsp() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
+        mobileCookiePage.cookieAuthorization();
         pageActions.reloadPage();
+        mobileCartPage.checkCartQuantity();
+        mobileMainPage.clickSiteLogo();
         pageActions.waitPageLoad();
         mobileMainPage.clickLetterN();
         pageActions.waitPageLoad();
@@ -29,11 +31,6 @@ public class OspProductListTest extends BaseSettingsMobileTests {
         mobileCartPage.clickToCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
-        mobileCheckOutPage.contactDetails(
-                propertiesManager.getProperty("username"),
-                propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("usermail"));
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         pageActions.waitPageLoad();

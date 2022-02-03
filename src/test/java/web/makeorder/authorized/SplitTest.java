@@ -13,9 +13,11 @@ public class SplitTest extends BaseSettingsWebTests {
 
     @DisplayName("Авторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
     @Test
-    //Данный тест ещё дублирует проверку на недоступность одного из товаров в корзине
     public void split() {
-        mainPage.clickClosePopUp();
+        cookiePage.cookieAuthorization();
+        pageActions.reloadPage();
+        cartPage.checkCartQuantity();
+        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
@@ -29,10 +31,6 @@ public class SplitTest extends BaseSettingsWebTests {
         cartPage.clickToCartButton();
         cartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
-        checkOutPage.contactDetails(
-                propertiesManager.getProperty("username"),
-                propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("usermail"));
         checkOutPage.clickSelectApteka();
         checkOutPage.clickChangeAptekaList();
         pageActions.waitPageLoad();

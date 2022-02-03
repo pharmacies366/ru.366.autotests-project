@@ -8,6 +8,9 @@ import org.openqa.selenium.WebDriver;
 public class MobileCartPage extends MainTestBase {
 
     //элементы
+    private static final String CARD_COUNT_XPATH = "xpath;//div[contains(@class,'count js-mini-cart-count')]";
+    private static final String CLEAR_ALL_FROM_CARD_XPATH = "xpath;//a[contains(.,'Очистить все')]";
+    private static final String CONFIRM_CLEAN_ALL_XPATH = "xpath;//input[@value='Да, подтверждаю']";
     private static final String TOTAL_PRICE_XPATH = "xpath;//div[contains(@class,'cart-summary_value js-revenue')]";
     private static final String ADD_CART_BUTTON_XPATH = "xpath;//span[contains(.,'В корзину')]";
     private static final String CARD_BUTTON_XPATH = "xpath;//span[@class='mini_cart_link__icon']";
@@ -21,7 +24,20 @@ public class MobileCartPage extends MainTestBase {
         this.driver = driver;
     }
 
+
     //геттеры элементов с получением доступа к действиям с элементами
+    public PageElementActions getCartCount() {
+        return new PageElementActions(CARD_COUNT_XPATH, driver);
+    }
+
+    public PageElementActions getClearAllFromCart() {
+        return new PageElementActions(CLEAR_ALL_FROM_CARD_XPATH, driver);
+    }
+
+    public PageElementActions getConfirmCleanAll() {
+        return new PageElementActions(CONFIRM_CLEAN_ALL_XPATH, driver);
+    }
+
     public PageElementActions getTotalPrice() {
         return new PageElementActions(TOTAL_PRICE_XPATH, driver);
     }
@@ -45,6 +61,21 @@ public class MobileCartPage extends MainTestBase {
 
 
     //Методы
+    @Step("Проверка состояния корзины: Если корзина не пустая, удаляем все содержимое")
+    public void checkCartQuantity() {
+        String stringCartQuantity = getCartCount().getText();
+        int quantity = Integer.parseInt(stringCartQuantity);
+        if (quantity != 0) {
+            logger.info("В КОРЗИНЕ ЕСТЬ ТОВАРЫ");
+            driver.get(propertiesManager.getProperty("baseurl") + "/cart");
+            getClearAllFromCart().click();
+            getConfirmCleanAll().click();
+            logger.info("ТОВАРЫ В КОРЗИНЕ УДАЛЕНЫ");
+            saveAllureScreenshot();
+        }
+    }
+
+
     @Step("Сохранение итоговой суммы в корзине")
     public int getPriceTotal() {
         int price = getTotalPrice().formatElementToValue();

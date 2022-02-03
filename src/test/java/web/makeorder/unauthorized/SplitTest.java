@@ -13,9 +13,7 @@ public class SplitTest extends BaseSettingsWebTests {
 
     @DisplayName("Неавторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
     @Test
-    //Данный тест ещё дублирует проверку на недоступность одного из товаров в корзине
     public void split() {
-        mainPage.clickClosePopUp();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();

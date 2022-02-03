@@ -1,5 +1,5 @@
 /*
-package mobile.makeorder.unauthorized;
+package mobile.makeorder.authorized;
 
 import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
@@ -16,18 +16,16 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
     @Test
     public void delivery() {
         mobileMainPage.clickClosePopUp();
-        pageActions.waitPageLoad();
         mobileMainPage.clickCloseMobileAppPopUp();
+        mobileCookiePage.cookieAuthorization();
+        pageActions.reloadPage();
+        mobileCartPage.checkCartQuantity();
+        pageActions.waitPageLoad();
         mobileCartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
-        mobileCheckOutPage.contactDetails(
-                propertiesManager.getProperty("username"),
-                propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("usermail"));
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickDeliveryMethod();
         pageActions.waitPageLoad();

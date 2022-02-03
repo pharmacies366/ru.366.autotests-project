@@ -20,35 +20,32 @@ public class MobileCookiePage extends MainTestBase {
     @Step("Пользователь авторизовывается через Cookie")
     public void cookieAuthorization() {
         logger.info("ПРОИЗОШЛА АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ЧЕРЕЗ COOKIE");
-        //stg1
-//        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "9b05b8068651765e8437cc2a75de9dc37589c1c7"));
-//        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "W2dvcnpkcmF2XTk0MDMzOTQ1NTU6MTYzMTI3MzMxMDMzMTo5OGRmMTViMDUzMWM2MTM5OGFjYzFhMTU2MzI4MTlhMQ"));
-//        driver.manage().addCookie(new Cookie("JSESSIONID", "B1149196AB51CDBE16C43E6A13E07A76.stg-hybris-app-03"));
+
+
+        /*
+    // S1
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "cadf2ba7f4b29a7548f2ad7aedb05f52453ab8ef"));
+        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDc1NjUyMjI2OjUxZWI2ZWMwNTA4NzhlNDc4ODVlZTI1YjExZmQ0OWY1"));
+        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-569ff799ff-lk62h"));
+
+
+}
+    public void reCaptchaKey(){
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "cadf2ba7f4b29a7548f2ad7aedb05f52453ab8ef"));//кука для обхода каптчи
+    }
+*/
+
+
 
         // D1
-//        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "332091cf3bcec54cf1a586a85ac2aeac70a285d4"));
-//        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "W2dvcnpkcmF2XTk0MDc4Nzg1NTM6MTYzMTcwOTExNjY5MzpmZDVkZWU2MzJjNmU0YmVkMzgzN2U3NWEwZDFmYmI3MA"));
-//        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-595bfb867d-ppvx8"));
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "040b78b58009efd8a6659b9fd2c09010d52c85a0"));
+        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDcwODY1OTU1OjY3MWYwNjNiYmYzMmU3M2JhZTM1NDk1MmVkODZjMDA2"));
+        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-5885446974-zv94f"));
 
-//        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe")); //кука для обхода каптчи
-        // S1
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "3eb864fcbd666984c5bd8109917b78e5ed4d1c53"));
-        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "W2dvcnpkcmF2XTk0MDEyMTMxNDQ6MTYzNDY0MTE3Mzc4ODo4NWQ2ODNjN2EyOGYzNzZmZmNhMjFmYzk0ZWZhMmU0Ng"));
-        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-8f8fc67f4-txp2g"));
-
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));
-//        print();
-
-        //P1
-//        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "43f1f64d87a81b03107e775ddad83cee45395e48"));
-//        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "W2dvcnpkcmF2XTk0MDMzOTQ0NDQ6MTYzMzc3NTk3Nzk2OTpkMDM2M2FmNGIyM2E3OTA5MTU5OGI4ZGYzZTk0ZWE3ZQ"));
-//        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-86875989fb-9srpz"));
-//
-//        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));
 
     }
     public void reCaptchaKey(){
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "040b78b58009efd8a6659b9fd2c09010d52c85a0"));
     }
 
     @Step("Получение всех кук и вывод их в консоль")

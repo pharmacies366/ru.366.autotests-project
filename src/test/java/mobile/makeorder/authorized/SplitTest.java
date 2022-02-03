@@ -1,4 +1,4 @@
-package mobile.makeorder.unauthorized;
+package mobile.makeorder.authorized;
 
 import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
@@ -18,6 +18,9 @@ public class SplitTest extends BaseSettingsMobileTests {
     public void split() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
+        mobileCookiePage.cookieAuthorization();
+        pageActions.reloadPage();
+        mobileCartPage.checkCartQuantity();
         pageActions.waitPageLoad();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         mobileCartPage.сlickAddCartButton();
@@ -36,13 +39,7 @@ public class SplitTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
-        pageActions.waitPageLoad();
         mobileCheckOutPage.ckickSelect();
-        pageActions.waitPageLoad();
-        mobileCheckOutPage.contactDetails(
-                propertiesManager.getProperty("username"),
-                propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("usermail"));
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickMakeOrder();
         pageActions.waitPageLoad();

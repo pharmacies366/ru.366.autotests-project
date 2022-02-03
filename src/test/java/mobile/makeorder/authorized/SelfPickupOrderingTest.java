@@ -1,4 +1,4 @@
-package mobile.makeorder.unauthorized;
+package mobile.makeorder.authorized;
 
 import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
@@ -16,9 +16,11 @@ public class SelfPickupOrderingTest extends BaseSettingsMobileTests {
     public void pickup() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
+        mobileCookiePage.cookieAuthorization();
+        pageActions.reloadPage();
+        mobileCartPage.checkCartQuantity();
         pageActions.waitPageLoad();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
-        pageActions.reloadPage();
         mobileCartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
@@ -28,13 +30,7 @@ public class SelfPickupOrderingTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
-        pageActions.waitPageLoad();
         mobileCheckOutPage.ckickSelect();
-        pageActions.waitPageLoad();
-        mobileCheckOutPage.contactDetails(
-                propertiesManager.getProperty("username"),
-                propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("usermail"));
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
