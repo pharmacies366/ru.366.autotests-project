@@ -1,4 +1,3 @@
-/*
 package mobile.makeorder.unauthorized;
 
 import base.BaseSettingsMobileTests;
@@ -18,16 +17,16 @@ public class OneClickPurchaseTest extends BaseSettingsMobileTests {
     @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
-        mobileCookiePage.reCaptchaKey();
+        //mobileCookiePage.reCaptchaKey();
         mobileMainPage.clickClosePopUp();
         pageActions.waitPageLoad();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.waitPageLoad();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         mobileCartPage.clickProductCard();
         pageActions.waitPageLoad();
         mobileProductCardPage.checkVisibilityMap();
-        mobileProductCardPage.setInputSearchAddres("метро Фили");
+        mobileProductCardPage.setInputSearchAddres("Москва");
         pageActions.waitPageLoad();
         mobileProductCardPage.buyOneClick();
         pageActions.waitPageLoad();
@@ -43,4 +42,3 @@ public class OneClickPurchaseTest extends BaseSettingsMobileTests {
 
 
 }
-*/

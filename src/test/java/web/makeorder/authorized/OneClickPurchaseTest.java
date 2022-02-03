@@ -1,4 +1,4 @@
-/*
+
 package web.makeorder.authorized;
 
 import base.BaseSettingsWebTests;
@@ -16,20 +16,19 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
     @Test
     public void oneClick() {
         cookiePage.cookieAuthorization();
+        cookiePage.reCaptchaKey();
         pageActions.reloadPage();
         cartPage.checkCartQuantity();
         pageActions.waitPageLoad();
-        //mainPage.clickClosePopUp();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.clickProductCard();
         pageActions.waitPageLoad();
         productCardPage.buyOneClick();
         productCardPage.checkVisibilityMap();
-        productCardPage.setInputSearchAddres("метро Фили");
+        productCardPage.setInputSearchAddres("Москва");
         pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
-        //checkOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
-        checkOutPage.clickBookingButton();
+        checkOutPage.clickBookingButton();// капча
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
         cookiePage.deleteAllCookie();
@@ -37,4 +36,4 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
 
 
 }
-*/
+

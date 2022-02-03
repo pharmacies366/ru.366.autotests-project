@@ -21,7 +21,6 @@ public class CookiePage extends MainTestBase {
         logger.info("ПРОИЗОШЛА АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ЧЕРЕЗ COOKIE");
 
 
-/*
     // S1
         driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "fd327da881f1f239f5c6bcfe2253ac95f6f92cb8"));
         driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDc1NTE1Mzg3OjRhNWUxZjIzOGNiYWMwNDA3N2ZkODBhMDU1YmI2NTEz"));
@@ -30,11 +29,11 @@ public class CookiePage extends MainTestBase {
 
 }
     public void reCaptchaKey(){
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "fd327da881f1f239f5c6bcfe2253ac95f6f92cb8"));//кука для обхода каптчи
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));//кука для обхода каптчи
     }
-*/
 
 
+/*
         // D1
         driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "16ea6cf91e935cba1204795f042c197272e8972e"));
         driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDcwNzE4NTIxOmI3MjE4YzQ5ZjdmMmU3ZDc3MmNmNzg0M2FmODQzNDFk"));
@@ -46,6 +45,7 @@ public class CookiePage extends MainTestBase {
         driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "16ea6cf91e935cba1204795f042c197272e8972e"));//кука для обхода каптчи
     }
 
+*/
 
 
 
