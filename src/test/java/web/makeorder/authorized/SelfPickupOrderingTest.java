@@ -14,7 +14,9 @@ public class SelfPickupOrderingTest extends BaseSettingsWebTests {
     @DisplayName("Авторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
     @Test
     public void pickup() {
+        mainPage.clickClosePopUp();
         cookiePage.cookieAuthorization();
+        cookiePage.reCaptchaKey();
         pageActions.reloadPage();
         cartPage.checkCartQuantity();
         pageActions.waitPageLoad();

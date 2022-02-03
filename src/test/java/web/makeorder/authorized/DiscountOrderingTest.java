@@ -1,5 +1,5 @@
-package web.makeorder.authorized;/*
-package web.makeorder.unauthorized;
+/*
+package web.makeorder.authorized;
 
 import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;

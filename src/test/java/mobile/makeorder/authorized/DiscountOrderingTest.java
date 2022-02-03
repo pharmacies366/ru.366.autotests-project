@@ -1,9 +1,7 @@
-package mobile.makeorder.authorized;/*
-
-package mobile.makeorder.unauthorized;
+/*
+package mobile.makeorder.authorized;
 
 import base.BaseSettingsMobileTests;
-import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
@@ -47,6 +45,4 @@ public class DiscountOrderingTest extends BaseSettingsMobileTests {
     }
 
 }
-
-
 */

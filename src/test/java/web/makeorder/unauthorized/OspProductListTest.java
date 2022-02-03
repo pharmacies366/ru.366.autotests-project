@@ -14,6 +14,7 @@ public class OspProductListTest extends BaseSettingsWebTests {
     @DisplayName("Неавторизованный пользователь покупает товар со страниц ОСП")
     @Test
     public void checkOsp() {
+        cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
         mainPage.clickLetterN();
         ospPage.clickProductName();

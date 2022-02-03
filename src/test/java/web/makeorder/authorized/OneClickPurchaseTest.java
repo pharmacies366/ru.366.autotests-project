@@ -15,6 +15,7 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
     @DisplayName("Аавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
+        mainPage.clickClosePopUp();
         cookiePage.cookieAuthorization();
         cookiePage.reCaptchaKey();
         pageActions.reloadPage();

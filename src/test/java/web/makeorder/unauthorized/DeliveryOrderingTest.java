@@ -1,4 +1,3 @@
-/*
 package web.makeorder.unauthorized;
 
 import base.BaseSettingsWebTests;
@@ -15,6 +14,7 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
     @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
     @Test
     public void delivery() {
+        cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
         pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
@@ -45,4 +45,4 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
     }
 
 }
-*/
+
