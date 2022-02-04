@@ -39,6 +39,7 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
+        pageActions.waitPageLoad();
         sberPage.clickOnSubmitButton();
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkPaymentError();

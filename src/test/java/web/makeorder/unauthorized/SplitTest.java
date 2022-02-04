@@ -34,6 +34,7 @@ public class SplitTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
         checkOutPage.clickSelectApteka();
+        pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
         pageActions.waitPageLoad();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();

@@ -36,6 +36,7 @@ public class SelfPickupOrderingTest extends BaseSettingsWebTests {
         checkOutPage.setInputSearchAddres("метро Фили");
         pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
         checkOutPage.clickMakeOrder();
         pageActions.waitPageLoad();

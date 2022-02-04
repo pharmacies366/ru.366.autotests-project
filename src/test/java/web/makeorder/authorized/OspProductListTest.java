@@ -22,21 +22,26 @@ public class OspProductListTest extends BaseSettingsWebTests {
         cartPage.checkCartQuantity();
         pageActions.waitPageLoad();
         mainPage.clickSiteLogo();
+        pageActions.waitPageLoad();
         mainPage.clickLetterN();
+        pageActions.waitPageLoad();
         ospPage.clickProductName();
+        pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         cartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
         checkOutPage.clickSelectApteka();
         productCardPage.setInputSearchAddres("метро Автозаводская");
         pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
+        pageActions.waitPageLoad();
         checkOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
-        cookiePage.deleteAllCookie();
     }
 }

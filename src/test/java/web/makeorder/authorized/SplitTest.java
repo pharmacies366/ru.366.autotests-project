@@ -20,7 +20,9 @@ public class SplitTest extends BaseSettingsWebTests {
         pageActions.reloadPage();
         cartPage.checkCartQuantity();
         pageActions.waitPageLoad();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        mainPage.clickSiteLogo();
+        pageActions.waitPageLoad();
+        mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
@@ -31,12 +33,15 @@ public class SplitTest extends BaseSettingsWebTests {
         cartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         cartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
         checkOutPage.clickSelectApteka();
+        pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
         pageActions.waitPageLoad();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
+        pageActions.waitPageLoad();
         checkOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();

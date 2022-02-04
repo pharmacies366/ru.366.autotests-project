@@ -29,10 +29,10 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
         productCardPage.setInputSearchAddres("Москва");
         pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
-        checkOutPage.clickBookingButton();// капча
+        pageActions.waitPageLoad();
+        checkOutPage.clickBookingButton();
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
-        cookiePage.deleteAllCookie();
     }
 
 

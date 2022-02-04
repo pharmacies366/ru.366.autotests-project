@@ -36,7 +36,7 @@ public class OspProductListTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         pageActions.waitPageLoad();
-        mobileCheckOutPage.setInputSearchAddres("метро Автозаводская");//возможно нужно кликнуть в пустое место
+        mobileCheckOutPage.setInputSearchAddres("Москва");
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.ckickSelect();

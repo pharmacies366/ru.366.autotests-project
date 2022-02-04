@@ -36,8 +36,6 @@ public class SelfPickupOrderingTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         checkOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
-        thankForTheOrderPage.checkSuccessMessage();
-        cookiePage.deleteAllCookie();
     }
 
 }

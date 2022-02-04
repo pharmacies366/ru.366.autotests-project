@@ -38,7 +38,9 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
+        pageActions.waitPageLoad();
         mobileSberPage.clickOnSubmitButton();
+        pageActions.waitPageLoad();
         mobileThankForTheOrderPage.checkPaymentError();
     }
 

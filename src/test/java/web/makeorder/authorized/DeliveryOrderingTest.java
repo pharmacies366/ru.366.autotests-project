@@ -25,12 +25,8 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
         cartPage.сlickAddCartButton();
         pageActions.waitPageLoad();
         cartPage.clickToCartButton();
-        cartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
-        checkOutPage.contactDetails(
-                propertiesManager.getProperty("username"),
-                propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("usermail"));
+        cartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
         checkOutPage.clickDeliveryMethod();
         pageActions.waitPageLoad();
@@ -42,6 +38,7 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
+        pageActions.waitPageLoad();
         sberPage.clickOnSubmitButton();
         pageActions.waitPageLoad();
         thankForTheOrderPage.checkPaymentError();
