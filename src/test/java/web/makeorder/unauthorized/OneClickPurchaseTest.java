@@ -18,16 +18,12 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.clickProductCard();
-        pageActions.waitPageLoad();
         productCardPage.buyOneClick();
         productCardPage.checkVisibilityMap();
-        pageActions.waitPageLoad();
         productCardPage.setInputSearchAddres("Москва");
-        pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
         checkOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         checkOutPage.clickBookingButton();
-        pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
     }
 

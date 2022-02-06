@@ -14,33 +14,24 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
     @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
     @Test
     public void delivery() {
-        mainPage.clickClosePopUp();
-        cookiePage.cookieAuthorization();
         cookiePage.reCaptchaKey();
-        pageActions.reloadPage();
+        topPanelPage.clickToLoginIcon();
+        authPopUpPage.authorizeWithEmailAndPassword(
+                propertiesManager.getProperty("userauthphone1"),
+                propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
-        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
-        pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         cartPage.clickToCartButton();
-        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
         checkOutPage.clickDeliveryMethod();
-        pageActions.waitPageLoad();
         checkOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
-        pageActions.waitPageLoad();
         checkOutPage.clickToFinalButton();
-        pageActions.waitPageLoad();
         sberPage.bankCardDetails(
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-        pageActions.waitPageLoad();
         sberPage.clickOnSubmitButton();
-        pageActions.waitPageLoad();
         thankForTheOrderPage.checkPaymentError();
     }
 

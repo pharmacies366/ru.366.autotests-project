@@ -71,12 +71,19 @@ public class AuthPopUpPage extends MainTestBase {
     public void setEmailAndPassword(String email, String password) {
         getInputEmail().sendKeys(email);
         getPassword().sendKeys(password);
-       // saveAllureScreenshot();
     }
 
     @Step("клик на кнопку \"войти\"")
     public void clickToLoginButton() {
         getLoginButton().click();
+    }
+
+    @Step("Пользователь вводит номер телефона, пароль и нажимает войти")
+    public void authorizeWithEmailAndPassword(String phone, String password) {
+        getPhoneNumberInput().sendKeys(phone);
+        getGoPassword().click();
+        getPassword().sendKeys(password);
+        clickToLoginButton();
     }
 
 

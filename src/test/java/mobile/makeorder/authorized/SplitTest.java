@@ -20,28 +20,19 @@ public class SplitTest extends BaseSettingsMobileTests {
         mobileCookiePage.reCaptchaKey();
         pageActions.reloadPage();
         mobileCartPage.checkCartQuantity();
-        pageActions.waitPageLoad();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         mobileMainPage.clickSiteLogo();
-        pageActions.waitPageLoad();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode2"));
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
-        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
-        pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.ckickSelect();
-        pageActions.waitPageLoad();
         mobileCheckOutPage.clickMakeOrder();
-        pageActions.waitPageLoad();
         mobileThankForTheOrderPage.checkSuccessMessage();
     }
 

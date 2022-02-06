@@ -26,17 +26,13 @@ public class WebDriverFactory {
     @Step("Получение типа драйвера")
     public WebDriver getDriver() {
         DriverType driverType = DriverType.valueOf(System.getProperty("driver").toUpperCase());
-        if (nameOfPackage.contains("mobile")) {
-            driver = setupMobileDriver();
-        } else {
-            switch (driverType) {
-                case LOCAL:
-                    setupLocalDriver();
-                    break;
-                case REMOTE:
-                    setupRemoteDriver();
-                    break;
-            }
+        switch (driverType) {
+            case LOCAL:
+                setupLocalDriver();
+                break;
+            case REMOTE:
+                setupRemoteDriver();
+                break;
         }
         return driver;
     }
@@ -47,9 +43,17 @@ public class WebDriverFactory {
         String driverURL = System.getProperty("driverurl");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName("chrome");
-        capabilities.setVersion("97.0");
+        capabilities.setVersion("91.0");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", false);
+        if (nameOfPackage.contains("mobile")) {
+            Map<String, String> mobileEmulation = new HashMap<>();
+            mobileEmulation.put("deviceName", "iPhone X");
+
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+            capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        }
 
         try {
             driver = new RemoteWebDriver(
@@ -66,11 +70,21 @@ public class WebDriverFactory {
     @Step("Настройка локального драйвера")
     public void setupLocalDriver() {
         logger.info("setup local web driver");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        if (nameOfPackage.contains("mobile")) {
+            WebDriverManager.chromedriver().setup();
+            Map<String, String> mobileEmulation = new HashMap<>();
+            mobileEmulation.put("deviceName", "iPhone X");
+
+
+            chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+        }
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(chromeOptions);
         configureDriver();
         logger.info("ЗАПУЩЕН ЛОКАЛЬНЫЙ ДРАЙВЕР");
     }
+
 
     @Step("Конфигурация драйвера")
     private void configureDriver() {
@@ -78,18 +92,5 @@ public class WebDriverFactory {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @Step("Запуск мобильного драйвера")
-    public RemoteWebDriver setupMobileDriver() {
-        WebDriverManager.chromedriver().setup();
-        Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "iPhone X");
-
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-
-        driver = new ChromeDriver(chromeOptions);
-
-        return driver;
-    }
 
 }

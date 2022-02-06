@@ -15,23 +15,19 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
     @DisplayName("Аавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
-        mainPage.clickClosePopUp();
-        cookiePage.cookieAuthorization();
         cookiePage.reCaptchaKey();
-        pageActions.reloadPage();
+        topPanelPage.clickToLoginIcon();
+        authPopUpPage.authorizeWithEmailAndPassword(
+                propertiesManager.getProperty("userauthphone2"),
+                propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
-        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.clickProductCard();
-        pageActions.waitPageLoad();
         productCardPage.buyOneClick();
         productCardPage.checkVisibilityMap();
         productCardPage.setInputSearchAddres("Москва");
-        pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
-        pageActions.waitPageLoad();
         checkOutPage.clickBookingButton();
-        pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
     }
 

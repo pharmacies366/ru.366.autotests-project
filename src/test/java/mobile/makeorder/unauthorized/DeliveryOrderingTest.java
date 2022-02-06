@@ -16,26 +16,17 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
     public void delivery() {
         mobileCookiePage.reCaptchaKey();
         mobileMainPage.clickClosePopUp();
-        pageActions.waitPageLoad();
         mobileMainPage.clickCloseMobileAppPopUp();
-        pageActions.waitPageLoad();
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
-        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
-        pageActions.waitPageLoad();
         mobileCheckOutPage.clickDeliveryMethod();
-        pageActions.waitPageLoad();
         mobileCheckOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
-        pageActions.waitPageLoad();
         mobileCheckOutPage.clickMakeOrder();
-        pageActions.waitPageLoad();
         mobileSberPage.bankCardDetails(
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
