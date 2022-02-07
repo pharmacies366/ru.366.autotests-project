@@ -21,7 +21,7 @@ public class MainTestBase {
 
     public WebDriver driver;
     protected PropertiesManager propertiesManager = new PropertiesManager();
-    protected PageActions pageActions;
+    public static PageActions pageActions;
     private WebDriverFactory driverFactory;
     public static String nameOfPackage;
     protected Logger logger = LogManager.getLogger(MainTestBase.class);

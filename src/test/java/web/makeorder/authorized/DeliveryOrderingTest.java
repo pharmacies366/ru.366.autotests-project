@@ -19,27 +19,18 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
         cookiePage.reCaptchaKey();
         pageActions.reloadPage();
         cartPage.checkCartQuantity();
-        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         cartPage.clickToCartButton();
-        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
         checkOutPage.clickDeliveryMethod();
-        pageActions.waitPageLoad();
         checkOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
-        pageActions.waitPageLoad();
         checkOutPage.clickToFinalButton();
-        pageActions.waitPageLoad();
         sberPage.bankCardDetails(
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-        pageActions.waitPageLoad();
         sberPage.clickOnSubmitButton();
-        pageActions.waitPageLoad();
         thankForTheOrderPage.checkPaymentError();
     }
 

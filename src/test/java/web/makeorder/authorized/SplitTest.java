@@ -19,27 +19,18 @@ public class SplitTest extends BaseSettingsWebTests {
         cookiePage.reCaptchaKey();
         pageActions.reloadPage();
         cartPage.checkCartQuantity();
-        pageActions.waitPageLoad();
         mainPage.clickSiteLogo();
-        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         mainPage.clickSiteLogo();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode2"));
         cartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         cartPage.clickToCartButton();
         cartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
         checkOutPage.clickSelectApteka();
-        pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
-        pageActions.waitPageLoad();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
-        pageActions.waitPageLoad();
         checkOutPage.clickMakeOrder();
-        pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
     }
 
