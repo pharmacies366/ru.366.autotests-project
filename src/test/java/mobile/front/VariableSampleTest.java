@@ -24,7 +24,6 @@ public class VariableSampleTest extends BaseSettingsMobileTests {
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode3"));
         int secondPrice = mobileProductCardPage.getProductPrice();
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
         int totalPrice = mobileCartPage.getPriceTotal();
         Assert.assertEquals(firstPrice + secondPrice, totalPrice);

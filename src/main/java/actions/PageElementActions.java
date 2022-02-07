@@ -32,6 +32,7 @@ public class PageElementActions extends MainTestBase {
         this.moveToElement();
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).click();
         saveAllureScreenshot();
+        pageActions.waitPageLoad();
     }
 
 
@@ -41,6 +42,7 @@ public class PageElementActions extends MainTestBase {
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
         driver.findElements(getBySelector(element)).get(number).click();
         saveAllureScreenshot();
+        pageActions.waitPageLoad();
     }
 
     //Перевести строку в числовое значение
@@ -56,6 +58,7 @@ public class PageElementActions extends MainTestBase {
         this.moveToElement();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend);
         saveAllureScreenshot();
+        pageActions.waitPageLoad();
     }
 
     //Перейти к элементу, кликнуть и ввести текст
@@ -64,6 +67,7 @@ public class PageElementActions extends MainTestBase {
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).click();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend);
         saveAllureScreenshot();
+        pageActions.waitPageLoad();
     }
 
     //Перейти к элементу, ввести текст и нажать Enter
@@ -71,6 +75,7 @@ public class PageElementActions extends MainTestBase {
         this.moveToElement();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend, Keys.ENTER);
         saveAllureScreenshot();
+        pageActions.waitPageLoad();
     }
 
     //Очистить содержимое элемента
@@ -78,6 +83,7 @@ public class PageElementActions extends MainTestBase {
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).clear();
        // pageActions.waitPageLoad();
         saveAllureScreenshot();
+        pageActions.waitPageLoad();
     }
 
     //Ожидание загрузки видимости элемента

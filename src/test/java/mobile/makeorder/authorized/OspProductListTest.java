@@ -16,36 +16,36 @@ public class OspProductListTest extends BaseSettingsMobileTests {
     public void checkOsp() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        pageActions.waitPageLoad();
+        
         mobileCookiePage.cookieAuthorization();
         mobileCookiePage.reCaptchaKey();
         pageActions.reloadPage();
-        pageActions.waitPageLoad();
+        
         mobileCartPage.checkCartQuantity();
-        pageActions.waitPageLoad();
+        
         mobileMainPage.clickSiteLogo();
-        pageActions.waitPageLoad();
+        
         mobileMainPage.clickLetterN();
         mobileOspPage.clickShowAll();
-        pageActions.waitPageLoad();
+        
         mobileOspPage.clickProductName();
-        pageActions.waitPageLoad();
+        
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
+        
         mobileCartPage.clickToCartButton();
-        pageActions.waitPageLoad();
+        
         mobileCartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.clickSelectApteka();
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.setInputSearchAddres("Москва");
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.clickChangeAptekaList();
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.ckickSelect();
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.clickMakeOrder();
-        pageActions.waitPageLoad();
+        
         mobileThankForTheOrderPage.checkSuccessMessage();
     }
 }

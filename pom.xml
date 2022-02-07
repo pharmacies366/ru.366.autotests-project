@@ -15,7 +15,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <driver>local</driver>
-        <env>s1</env>
+        <env>p1</env>
         <driverurl>http://10.250.226.11:4444/wd/hub/</driverurl>
     </properties>
 
@@ -27,7 +27,7 @@
                     local
                 </driver>
                 <env>
-                    s1
+                    p1
                 </env>
             </properties>
         </profile>
@@ -41,7 +41,7 @@
                     http://10.250.226.11/:4444/wd/hub/
                 </driverurl>
                 <env>
-                    s3
+                    p1
                 </env>
             </properties>
         </profile>

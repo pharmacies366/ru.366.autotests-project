@@ -16,33 +16,33 @@ public class SelfPickupOrderingTest extends BaseSettingsMobileTests {
     public void pickup() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        pageActions.waitPageLoad();
+        
         mobileCookiePage.cookieAuthorization();
         mobileCookiePage.reCaptchaKey();
         pageActions.reloadPage();
-        pageActions.waitPageLoad();
+        
         mobileCartPage.checkCartQuantity();
         pageActions.reloadPage();
-        pageActions.waitPageLoad();
+        
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
+        
         mobileCartPage.clickToCartButton();
-        pageActions.waitPageLoad();
+        
         mobileCartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.clickSelectApteka();
-        pageActions.waitPageLoad();
+        
         mobileProductCardPage.checkVisibilityMap();
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.clickChangeAptekaList();
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.ckickSelect();
-        pageActions.waitPageLoad();
+        
         mobileCheckOutPage.clickMakeOrder();
-        pageActions.waitPageLoad();
+        
         mobileThankForTheOrderPage.checkSuccessMessage();
     }
 

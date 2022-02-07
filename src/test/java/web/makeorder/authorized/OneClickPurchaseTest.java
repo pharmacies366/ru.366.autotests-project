@@ -19,22 +19,14 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
         cookiePage.cookieAuthorization();
         cookiePage.reCaptchaKey();
         pageActions.reloadPage();
-        pageActions.waitPageLoad();
         cartPage.checkCartQuantity();
-        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.clickProductCard();
-        pageActions.waitPageLoad();
         productCardPage.buyOneClick();
-        pageActions.waitPageLoad();
         productCardPage.checkVisibilityMap();
-        pageActions.waitPageLoad();
         productCardPage.setInputSearchAddres("Москва");
-        pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
-        pageActions.waitPageLoad();
         checkOutPage.clickBookingButton();
-        pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
     }
 
