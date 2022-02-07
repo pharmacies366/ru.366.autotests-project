@@ -21,13 +21,19 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("userauthphone2"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
+        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.clickProductCard();
+        pageActions.waitPageLoad();
         productCardPage.buyOneClick();
+        pageActions.waitPageLoad();
         productCardPage.checkVisibilityMap();
+        pageActions.waitPageLoad();
         productCardPage.setInputSearchAddres("Москва");
         productCardPage.clickBuyOneClick();
+        pageActions.waitPageLoad();
         checkOutPage.clickBookingButton();
+        pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
     }
 

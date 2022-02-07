@@ -31,8 +31,8 @@ public class PageElementActions extends MainTestBase {
     public void click() {
         this.moveToElement();
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).click();
-        pageActions.waitPageLoad();
         saveAllureScreenshot();
+       // pageActions.waitPageLoad();
     }
 
 
@@ -41,7 +41,7 @@ public class PageElementActions extends MainTestBase {
         this.moveToElement();
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
         driver.findElements(getBySelector(element)).get(number).click();
-        pageActions.waitPageLoad();
+       // pageActions.waitPageLoad();
         saveAllureScreenshot();
     }
 
@@ -57,7 +57,7 @@ public class PageElementActions extends MainTestBase {
     public void sendKeys(String keysToSend) {
         this.moveToElement();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend);
-        pageActions.waitPageLoad();
+       // pageActions.waitPageLoad();
         saveAllureScreenshot();
     }
 
@@ -66,7 +66,7 @@ public class PageElementActions extends MainTestBase {
         this.moveToElement();
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).click();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend);
-        pageActions.waitPageLoad();
+        //pageActions.waitPageLoad();
         saveAllureScreenshot();
     }
 
@@ -74,14 +74,14 @@ public class PageElementActions extends MainTestBase {
     public void sendKeysAndEnter(String keysToSend) {
         this.moveToElement();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend, Keys.ENTER);
-        pageActions.waitPageLoad();
+       // pageActions.waitPageLoad();
         saveAllureScreenshot();
     }
 
     //Очистить содержимое элемента
     public void clean() {
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).clear();
-        pageActions.waitPageLoad();
+       // pageActions.waitPageLoad();
         saveAllureScreenshot();
     }
 

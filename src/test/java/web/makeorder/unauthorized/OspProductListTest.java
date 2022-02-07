@@ -16,20 +16,30 @@ public class OspProductListTest extends BaseSettingsWebTests {
     public void checkOsp() {
         cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
+        pageActions.waitPageLoad();
         mainPage.clickLetterN();
+        pageActions.waitPageLoad();
         ospPage.clickProductName();
+        pageActions.waitPageLoad();
         cartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         cartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         checkOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
         checkOutPage.clickSelectApteka();
+        pageActions.waitPageLoad();
         productCardPage.setInputSearchAddres("метро Автозаводская");//Перенести в чекаут
         checkOutPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
+        pageActions.waitPageLoad();
         checkOutPage.clickMakeOrder();
+        pageActions.waitPageLoad();
         thankForTheOrderPage.checkSuccessMessage();
     }
 }

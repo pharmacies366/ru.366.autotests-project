@@ -19,12 +19,18 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithEmailAndPassword(
                 propertiesManager.getProperty("userauthphone1"),
                 propertiesManager.getProperty("userpass"));
+        pageActions.waitPageLoad();
         cartPage.checkCartQuantity();
+        pageActions.waitPageLoad();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         cartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         checkOutPage.clickDeliveryMethod();
+        pageActions.waitPageLoad();
         checkOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
         checkOutPage.clickToFinalButton();
         sberPage.bankCardDetails(
@@ -32,6 +38,7 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
         sberPage.clickOnSubmitButton();
+        pageActions.waitPageLoad();
         thankForTheOrderPage.checkPaymentError();
     }
 
