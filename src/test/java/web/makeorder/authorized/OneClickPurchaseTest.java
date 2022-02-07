@@ -30,6 +30,7 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
         productCardPage.checkVisibilityMap();
         pageActions.waitPageLoad();
         productCardPage.setInputSearchAddres("Москва");
+        pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
         pageActions.waitPageLoad();
         checkOutPage.clickBookingButton();
