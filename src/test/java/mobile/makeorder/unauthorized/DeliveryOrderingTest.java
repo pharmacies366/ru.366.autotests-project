@@ -32,6 +32,7 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.clickDeliveryMethod();
         pageActions.waitPageLoad();
         mobileCheckOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
         mobileSberPage.bankCardDetails(
