@@ -7,7 +7,7 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
 @Feature(value = "Мобильная версия")
-@Story("Авторизация пользователя")
+@Story("Авторизация пользователя на сайте 36.6")
 @DisplayName("Авторизация пользователя")
 public class SignInPositive extends BaseSettingsMobileTests {
 

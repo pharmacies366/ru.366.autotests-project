@@ -7,7 +7,7 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
 @Feature(value = "Мобильная версия")
-@Story(value = "Покупка в 1 клик")
+@Story(value = "Покупка в 1 клик на сайте 36.6")
 @DisplayName("Оформление основного товара в 1 клик")
 public class OneClickPurchaseTest extends BaseSettingsMobileTests {
 

@@ -7,7 +7,7 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
 @Feature(value = "Web")
-@Story("Проверка главной страницы сайта")
+@Story("Проверка главной страницы сайта 36.6")
 @DisplayName("Проверка главной страницы")
 public class MainPageTest extends BaseSettingsWebTests {
 

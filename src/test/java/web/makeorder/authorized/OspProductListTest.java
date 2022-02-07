@@ -8,7 +8,7 @@ import org.junit.Test;
 import pages.web.MainPage;
 
 @Feature(value = "Web")
-@Story("Пользователь покупает товар со страницы ОСП")
+@Story("Пользователь покупает товар со страницы ОСП на сайте 36.6")
 @DisplayName("Оформление товара со страниц ОСП")
 public class OspProductListTest extends BaseSettingsWebTests {
 
