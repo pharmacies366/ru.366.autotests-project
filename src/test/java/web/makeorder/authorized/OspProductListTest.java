@@ -16,9 +16,11 @@ public class OspProductListTest extends BaseSettingsWebTests {
     @Test
     public void checkOsp() {
         mainPage.clickClosePopUp();
-        cookiePage.cookieAuthorization();
+        topPanelPage.clickToLoginIcon();
         cookiePage.reCaptchaKey();
-        pageActions.reloadPage();
+        authPopUpPage.authorizeWithEmailAndPassword(
+                propertiesManager.getProperty("userauthmail6"),
+                propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
         mainPage.clickSiteLogo();
         mainPage.clickLetterN();

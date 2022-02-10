@@ -11,7 +11,23 @@ import org.junit.Test;
 @DisplayName("Авторизация пользователя")
 public class SignInPositive extends BaseSettingsMobileTests {
 
-    @DisplayName("Авторизация пользователя на сайте через E-mail")
+    @DisplayName("Авторизация пользователя на сайте по номеру телефона и паролю")
+    @Test
+    public void loginUserPhoneNumberAndPassword() {
+        mobileCookiePage.reCaptchaKey();
+        mobileTopPanelPage.clickBurgerButton();
+        mobileTopPanelPage.clickToLoginIcon();
+        mobileAuthPopUpPage.setPhoneAndPassword(
+                propertiesManager.getProperty("userauthphone"),
+                propertiesManager.getProperty("userpass"));
+        mobileAuthPopUpPage.clickToLoginButton();
+        mobileMainPage.checkElementIsCorrect();
+    }
+
+    /*    @DisplayName("Авторизация пользователя на сайте через E-mail")
+     *//*работает только для старых пользователей у которых нет номера телефона
+    нужно каждый раз как то создавать предварительно такого пользователя
+    так как тест отработает только 1 раз и нужно будет ввести номер телефона*//*
     @Test
     public void loginUserEmail() {
         mobileCookiePage.reCaptchaKey();
@@ -23,9 +39,11 @@ public class SignInPositive extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("userpass"));
         mobileAuthPopUpPage.clickToLoginButton();
         mobileMainPage.checkElementIsCorrect();
-    }
+    }*/
 
-    @DisplayName("Авторизация пользователя на сайте по номеру телефона")
+
+/*    @DisplayName("Авторизация пользователя на сайте по номеру телефона")
+    // Нужно как то отлавливать код, который приходит на телефон
     @Test
     public void loginUserPhone() {
         mobileCookiePage.reCaptchaKey();
@@ -35,19 +53,6 @@ public class SignInPositive extends BaseSettingsMobileTests {
         mobileAuthPopUpPage.setPhoneNumber(propertiesManager.getProperty("userauthphone"));
         mobileAuthPopUpPage.clickToLoginButton();
         mobileMainPage.checkElementIsCorrect();
-    }
-
-    @DisplayName("Авторизация пользователя на сайте по номеру телефона и паролю")
-    @Test
-    public void loginUserCardNumber() {
-        mobileCookiePage.reCaptchaKey();
-        mobileTopPanelPage.clickBurgerButton();
-        mobileTopPanelPage.clickToLoginIcon();
-        mobileAuthPopUpPage.setPhoneAndPassword(
-                propertiesManager.getProperty("userauthphone"),
-                propertiesManager.getProperty("userpass"));
-        mobileAuthPopUpPage.clickToLoginButton();
-        mobileMainPage.checkElementIsCorrect();
-    }
+    }*/
 
 }

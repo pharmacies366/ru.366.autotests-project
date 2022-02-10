@@ -15,11 +15,13 @@ public class SplitTest extends BaseSettingsMobileTests {
     @Test
     public void split() {
         mobileMainPage.clickClosePopUp();
-        
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileCookiePage.cookieAuthorization();
+        mobileTopPanelPage.clickBurgerButton();
+        mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
-        pageActions.reloadPage();
+        mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("mobileuserauthmail5"),
+                propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         mobileCartPage.сlickAddCartButton();

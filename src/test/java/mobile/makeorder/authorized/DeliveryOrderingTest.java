@@ -16,9 +16,12 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
     public void delivery() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileCookiePage.cookieAuthorization();
+        mobileTopPanelPage.clickBurgerButton();
+        mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
-        pageActions.reloadPage();
+        mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("mobileuserauthmail1"),
+                propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         mobileMainPage.clickSiteLogo();
         mobileCartPage.сlickAddCartButton();

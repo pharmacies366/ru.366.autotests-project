@@ -16,9 +16,12 @@ public class SelfPickupOrderingTest extends BaseSettingsMobileTests {
     public void pickup() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileCookiePage.cookieAuthorization();
+        mobileTopPanelPage.clickBurgerButton();
+        mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
-        pageActions.reloadPage();
+        mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("mobileuserauthmail4"),
+                propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         pageActions.reloadPage();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));

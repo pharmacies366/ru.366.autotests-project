@@ -68,10 +68,12 @@ public class MobileAuthPopUpPage extends MainTestBase {
         getPassword().sendKeys(password);
     }
 
-    @Step("Пользователь вводит Email и пароль")
-    public void setEmailAndPassword(String email, String password) {
-        getInputEmail().sendKeys(email);
+    @Step("Пользователь вводит Email, пароль и нажимает войти")
+    public void authorizeWithPhoneAndPassword(String phone, String password) {
+        getPhoneNumberInput().sendKeys(phone);
+        getGoPassword().click();
         getPassword().sendKeys(password);
+        clickToLoginButton();
     }
 
     @Step("клик на кнопку \"войти\"")
