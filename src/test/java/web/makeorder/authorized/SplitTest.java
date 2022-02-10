@@ -18,7 +18,7 @@ public class SplitTest extends BaseSettingsWebTests {
         topPanelPage.clickToLoginIcon();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithEmailAndPassword(
-                propertiesManager.getProperty("userauthmail7"),
+                propertiesManager.getProperty("userauthmail5"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
