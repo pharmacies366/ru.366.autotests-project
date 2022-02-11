@@ -17,8 +17,8 @@ public class OspProductListTest extends BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         topPanelPage.clickToLoginIcon();
         cookiePage.reCaptchaKey();
-        authPopUpPage.authorizeWithEmailAndPassword(
-                propertiesManager.getProperty("userauthmail3"),
+        authPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("phonenumber3"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
         mainPage.clickSiteLogo();

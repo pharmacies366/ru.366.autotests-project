@@ -20,7 +20,7 @@ public class SplitTest extends BaseSettingsMobileTests {
         mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
-                propertiesManager.getProperty("mobileuserauthmail5"),
+                propertiesManager.getProperty("mobilephonenumber5"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));

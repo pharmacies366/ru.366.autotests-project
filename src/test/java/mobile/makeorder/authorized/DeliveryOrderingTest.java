@@ -25,7 +25,7 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
         mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
-                propertiesManager.getProperty("mobileuserauthmail1"),
+                propertiesManager.getProperty("mobilephonenumber1"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         mobileMainPage.clickSiteLogo();
