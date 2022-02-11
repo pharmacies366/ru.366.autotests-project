@@ -1,5 +1,11 @@
 package mobile.makeorder.unauthorized;
 
+//Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
+
+
+/*
+package mobile.makeorder.unauthorized;
+
 import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
@@ -37,3 +43,4 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
 
 }
 
+*/

@@ -1,4 +1,9 @@
 package web.makeorder.authorized;
+//Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
+
+
+/*
+package web.makeorder.authorized;
 
 import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
@@ -17,8 +22,8 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         topPanelPage.clickToLoginIcon();
         cookiePage.reCaptchaKey();
-        authPopUpPage.authorizeWithEmailAndPassword(
-                propertiesManager.getProperty("userauthmail1"),
+        authPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("phonenumber1"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
@@ -37,3 +42,4 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
     }
 
 }
+*/

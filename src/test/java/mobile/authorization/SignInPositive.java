@@ -18,7 +18,7 @@ public class SignInPositive extends BaseSettingsMobileTests {
         mobileTopPanelPage.clickBurgerButton();
         mobileTopPanelPage.clickToLoginIcon();
         mobileAuthPopUpPage.setPhoneAndPassword(
-                propertiesManager.getProperty("userauthphone"),
+                propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("userpass"));
         mobileAuthPopUpPage.clickToLoginButton();
         mobileMainPage.checkElementIsCorrect();

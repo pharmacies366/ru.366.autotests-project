@@ -79,7 +79,7 @@ public class AuthPopUpPage extends MainTestBase {
     }
 
     @Step("Пользователь вводит номер телефона, пароль и нажимает войти")
-    public void authorizeWithEmailAndPassword(String phone, String password) {
+    public void authorizeWithPhoneAndPassword(String phone, String password) {
         getPhoneNumberInput().sendKeys(phone);
         getGoPassword().click();
         getPassword().sendKeys(password);

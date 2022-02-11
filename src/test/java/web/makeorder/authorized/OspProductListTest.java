@@ -5,7 +5,6 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import pages.web.MainPage;
 
 @Feature(value = "Web")
 @Story("Пользователь покупает товар со страницы ОСП на сайте 36.6")
@@ -18,8 +17,8 @@ public class OspProductListTest extends BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         topPanelPage.clickToLoginIcon();
         cookiePage.reCaptchaKey();
-        authPopUpPage.authorizeWithEmailAndPassword(
-                propertiesManager.getProperty("userauthmail3"),
+        authPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("phonenumber3"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
         mainPage.clickSiteLogo();

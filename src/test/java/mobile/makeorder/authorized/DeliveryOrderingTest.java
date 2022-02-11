@@ -1,4 +1,9 @@
 package mobile.makeorder.authorized;
+//Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
+
+
+/*
+package mobile.makeorder.authorized;
 
 import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
@@ -20,7 +25,7 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
         mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
-                propertiesManager.getProperty("mobileuserauthmail1"),
+                propertiesManager.getProperty("mobilephonenumber1"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         mobileMainPage.clickSiteLogo();
@@ -40,3 +45,4 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
 
 }
 
+*/

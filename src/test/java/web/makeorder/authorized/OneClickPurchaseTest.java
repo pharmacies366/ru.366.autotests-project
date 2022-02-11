@@ -18,8 +18,8 @@ public class OneClickPurchaseTest extends BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         topPanelPage.clickToLoginIcon();
         cookiePage.reCaptchaKey();
-        authPopUpPage.authorizeWithEmailAndPassword(
-                propertiesManager.getProperty("userauthmail2"),
+        authPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("phonenumber2"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));

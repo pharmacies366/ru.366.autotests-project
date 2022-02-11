@@ -20,7 +20,7 @@ public class OspProductListTest extends BaseSettingsMobileTests {
         mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
-                propertiesManager.getProperty("mobileuserauthmail3"),
+                propertiesManager.getProperty("mobilephonenumber3"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         mobileMainPage.clickSiteLogo();

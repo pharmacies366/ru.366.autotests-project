@@ -21,7 +21,7 @@ public class OneClickPurchaseTest extends BaseSettingsMobileTests {
         mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
-                propertiesManager.getProperty("mobileuserauthmail2"),
+                propertiesManager.getProperty("mobilephonenumber2"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));

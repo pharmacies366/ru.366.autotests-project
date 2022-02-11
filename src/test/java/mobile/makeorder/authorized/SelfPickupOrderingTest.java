@@ -20,7 +20,7 @@ public class SelfPickupOrderingTest extends BaseSettingsMobileTests {
         mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
-                propertiesManager.getProperty("mobileuserauthmail4"),
+                propertiesManager.getProperty("mobilephonenumber4"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         pageActions.reloadPage();
