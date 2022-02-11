@@ -15,36 +15,26 @@ public class SplitTest extends BaseSettingsMobileTests {
     @Test
     public void split() {
         mobileMainPage.clickClosePopUp();
-        
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileCookiePage.cookieAuthorization();
+        mobileTopPanelPage.clickBurgerButton();
+        mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
-        pageActions.reloadPage();
-        
+        mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("mobileuserauthmail5"),
+                propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
-        
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
-        
         mobileCartPage.сlickAddCartButton();
-        
         mobileMainPage.clickSiteLogo();
-        
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode2"));
-        
         mobileCartPage.сlickAddCartButton();
-        
         mobileCartPage.clickToCartButton();
-        
         mobileCartPage.clickToMakeOrder();
-        
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
-        
         mobileCheckOutPage.clickChangeAptekaList();
-        
         mobileCheckOutPage.ckickSelect();
-        
         mobileCheckOutPage.clickMakeOrder();
         mobileThankForTheOrderPage.checkSuccessMessage();
     }

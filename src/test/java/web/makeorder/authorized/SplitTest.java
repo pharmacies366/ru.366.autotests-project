@@ -15,11 +15,12 @@ public class SplitTest extends BaseSettingsWebTests {
     @Test
     public void split() {
         mainPage.clickClosePopUp();
-        cookiePage.cookieAuthorization();
+        topPanelPage.clickToLoginIcon();
         cookiePage.reCaptchaKey();
-        pageActions.reloadPage();
+        authPopUpPage.authorizeWithEmailAndPassword(
+                propertiesManager.getProperty("userauthmail5"),
+                propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
-        mainPage.clickSiteLogo();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.сlickAddCartButton();
         mainPage.clickSiteLogo();

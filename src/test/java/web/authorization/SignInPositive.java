@@ -11,39 +11,44 @@ import org.junit.Test;
 @DisplayName("Авторизация пользователя")
 public class SignInPositive extends BaseSettingsWebTests {
 
-    @DisplayName("Авторизация пользователя на сайте через E-mail")
+    @DisplayName("Авторизация пользователя на сайте по номеру телефона и паролю")
+    @Test
+    public void loginUserPhoneNumberAndPassword() {
+        cookiePage.reCaptchaKey();
+        topPanelPage.clickToLoginIcon();
+        authPopUpPage.setPhoneAndPassword(
+                propertiesManager.getProperty("phonenumber"),
+                propertiesManager.getProperty("userpass"));
+        authPopUpPage.clickToLoginButton();
+        mainPage.checkElementIsCorrect();
+    }
+
+    /*    @DisplayName("Авторизация пользователя на сайте через E-mail")
+     *//*  работает только для старых пользователей у которых нет номера телефона
+    нужно каждый раз как то создавать предварительно такого пользователя
+    так как тест отработает только 1 раз и нужно будет ввести номер телефона*//*
     @Test
     public void loginUserEmail() {
         cookiePage.reCaptchaKey();
         topPanelPage.clickToLoginIcon();
         authPopUpPage.setChangeToEmail();
         authPopUpPage.setEmailAndPassword(
-                propertiesManager.getProperty("userauthmail"),
+                propertiesManager.getProperty("usermail"),
                 propertiesManager.getProperty("userpass"));
         authPopUpPage.clickToLoginButton();
         mainPage.checkElementIsCorrect();
-    }
+    */
 
-    @DisplayName("Авторизация пользователя на сайте по номеру телефона")
+/*    @DisplayName("Авторизация пользователя на сайте по номеру телефона")
+// Нужно как то отлавливать код, который приходит на телефон
     @Test
     public void loginUserPhone() {
         cookiePage.reCaptchaKey();
         topPanelPage.clickToLoginIcon();
         authPopUpPage.getPhoneNumberInput().click();
-        authPopUpPage.setPhoneNumber(propertiesManager.getProperty("userauthphone"));
+        authPopUpPage.setPhoneNumber(propertiesManager.getProperty("phonenumber"));
         authPopUpPage.clickToLoginButton();
         mainPage.checkElementIsCorrect();
-    }
+    }*/
 
-    @DisplayName("Авторизация пользователя на сайте по номеру телефона и паролю")
-    @Test
-    public void loginUserCardNumber() {
-        cookiePage.reCaptchaKey();
-        topPanelPage.clickToLoginIcon();
-        authPopUpPage.setPhoneAndPassword(
-                propertiesManager.getProperty("userauthphone"),
-                propertiesManager.getProperty("userpass"));
-        authPopUpPage.clickToLoginButton();
-        mainPage.checkElementIsCorrect();
-    }
 }

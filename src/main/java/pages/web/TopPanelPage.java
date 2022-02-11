@@ -3,8 +3,6 @@ package pages.web;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class TopPanelPage extends MainTestBase {

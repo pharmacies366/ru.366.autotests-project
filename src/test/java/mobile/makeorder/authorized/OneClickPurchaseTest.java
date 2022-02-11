@@ -17,9 +17,12 @@ public class OneClickPurchaseTest extends BaseSettingsMobileTests {
     public void oneClick() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileCookiePage.cookieAuthorization();
+        mobileTopPanelPage.clickBurgerButton();
+        mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
-        pageActions.reloadPage();
+        mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("mobileuserauthmail2"),
+                propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
         mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
         mobileCartPage.clickProductCard();
@@ -29,6 +32,7 @@ public class OneClickPurchaseTest extends BaseSettingsMobileTests {
         mobileProductCardPage.clickChangeAptekaList();
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
+        mobileCookiePage.reCaptchaKey();
         mobileCheckOutPage.clickBookingButton();
         mobileThankForTheOrderPage.checkSuccessMessage();
     }

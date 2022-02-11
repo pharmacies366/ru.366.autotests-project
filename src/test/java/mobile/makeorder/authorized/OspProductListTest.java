@@ -16,36 +16,25 @@ public class OspProductListTest extends BaseSettingsMobileTests {
     public void checkOsp() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        
-        mobileCookiePage.cookieAuthorization();
+        mobileTopPanelPage.clickBurgerButton();
+        mobileTopPanelPage.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
-        pageActions.reloadPage();
-        
+        mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
+                propertiesManager.getProperty("mobileuserauthmail3"),
+                propertiesManager.getProperty("userpass"));
         mobileCartPage.checkCartQuantity();
-        
         mobileMainPage.clickSiteLogo();
-        
         mobileMainPage.clickLetterN();
         mobileOspPage.clickShowAll();
-        
         mobileOspPage.clickProductName();
-        
         mobileCartPage.сlickAddCartButton();
-        
         mobileCartPage.clickToCartButton();
-        
         mobileCartPage.clickToMakeOrder();
-        
         mobileCheckOutPage.clickSelectApteka();
-        
         mobileCheckOutPage.setInputSearchAddres("Москва");
-        
         mobileCheckOutPage.clickChangeAptekaList();
-        
         mobileCheckOutPage.ckickSelect();
-        
         mobileCheckOutPage.clickMakeOrder();
-        
         mobileThankForTheOrderPage.checkSuccessMessage();
     }
 }

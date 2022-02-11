@@ -1,3 +1,9 @@
+
+
+//Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
+
+
+/*
 package mobile.makeorder.unauthorized;
 
 import base.BaseSettingsMobileTests;
@@ -37,3 +43,4 @@ public class DeliveryOrderingTest extends BaseSettingsMobileTests {
 
 }
 
+*/

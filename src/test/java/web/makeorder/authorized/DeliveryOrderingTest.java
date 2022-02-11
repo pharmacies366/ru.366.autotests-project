@@ -1,3 +1,8 @@
+
+//Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
+
+
+/*
 package web.makeorder.authorized;
 
 import base.BaseSettingsWebTests;
@@ -14,10 +19,11 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
     @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
     @Test
     public void delivery() {
-        cookiePage.reCaptchaKey();
+        mainPage.clickClosePopUp();
         topPanelPage.clickToLoginIcon();
+        cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithEmailAndPassword(
-                propertiesManager.getProperty("userauthphone1"),
+                propertiesManager.getProperty("userauthmail1"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkCartQuantity();
         mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
@@ -36,3 +42,4 @@ public class DeliveryOrderingTest extends BaseSettingsWebTests {
     }
 
 }
+*/
