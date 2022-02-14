@@ -13,6 +13,8 @@ public class MobileTopPanelPage extends MainTestBase {
     private static final String BURGER_BUTTON_XPATH = "xpath;//div[contains(@class,'toggle js-toggle-sm-navigation')]";
     private static final String LOGIN_ICON_XPATH = "xpath;(//a[contains(.,'Войти')])[3]";
     private static final String MEDICATIONS_BUTTON_XPATH = "xpath;(//a[contains(.,'Лекарства')])[3]";
+    private static final String PERSONAL_ACCOUNT_XPATH = "xpath;(//span[@class='js-check-user-status'])[3]";
+    private static final String MY_ORDERS_XPATH = "xpath;(//a[@href='/my-account/orders'])[3]";
 
 
 
@@ -34,6 +36,14 @@ public class MobileTopPanelPage extends MainTestBase {
         return new PageElementActions(MEDICATIONS_BUTTON_XPATH, driver);
     }
 
+    public PageElementActions getPersonalAccount() {
+        return new PageElementActions(PERSONAL_ACCOUNT_XPATH, driver);
+    }
+
+    public PageElementActions getMyOrders() {
+        return new PageElementActions(MY_ORDERS_XPATH, driver);
+    }
+
 
     //Методы
     @Step("Пользователь нажимает на иконку выпадающего списка")
@@ -52,6 +62,18 @@ public class MobileTopPanelPage extends MainTestBase {
     public void clickMedicationsButton() {
         getMedicationsPageButton().click();
         logger.info("Пользователь нажимает на категорию 'Лекарства'");
+    }
+
+    @Step("Пользователь нажимает на иконку личного кабинета")
+    public void clickToPersonalAccount() {
+        getPersonalAccount().click();
+        logger.info("Пользователь нажимает на иконку личного кабинета");
+    }
+
+    @Step("Пользователь нажимает на иконку авторизации")
+    public void clickMyOrders() {
+        getMyOrders().click();
+        logger.info("Пользователь нажимает на иконку авторизации");
     }
 
 

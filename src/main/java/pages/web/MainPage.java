@@ -12,6 +12,11 @@ public class MainPage extends MainTestBase {
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
     private static final String SEARCH_INPUT_XPATH = "xpath;//input[@id='js-site-search-input']";
     private static final String LETTER_N_XPATH = "xpath;//a[@href='/littera-Н/']";
+    private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
+    private static final String QUANTITY_MATERIALS_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
+    private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_plus')])[1]";
+    private static final String DECREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_minus')])[1]";
+    private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
 
 
     //конструктор
@@ -34,6 +39,26 @@ public class MainPage extends MainTestBase {
 
     public PageElementActions getLetterN() {
         return new PageElementActions(LETTER_N_XPATH, driver);
+    }
+
+    public PageElementActions getClickAddCartButton() {
+        return new PageElementActions(ADD_CART_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getMaterialsQuantity() {
+        return new PageElementActions(QUANTITY_MATERIALS_XPATH, driver);
+    }
+
+    public PageElementActions getIncreaseQuantity() {
+        return new PageElementActions(INCREASE_QUANTITY_XPATH, driver);
+    }
+
+    public PageElementActions getDecreaseQuantity() {
+        return new PageElementActions(DECREASE_QUANTITY_XPATH, driver);
+    }
+
+    public PageElementActions getCartButton() {
+        return new PageElementActions(CARD_BUTTON_XPATH, driver);
     }
 
     //Методы
@@ -66,6 +91,38 @@ public class MainPage extends MainTestBase {
         getLetterN().click();
         logger.info("Пользователь нажимает на букву 'Н' Русского алфавита");
     }
+
+    @Step("Пользователь нажимает на кнопку 'В корзину'")
+    public void AddToCartClick(){
+        getClickAddCartButton().click();
+        logger.info("Пользователь нажимает на кнопку 'В корзину'");
+    }
+
+    @Step("Сохранение количества товаров")
+    public int getQuantityMaterials() {
+        int quantity = getMaterialsQuantity().formatElementToValue();
+        logger.info("Запоминаем количество товара");
+        return quantity;
+    }
+
+    @Step("Пользователь нажимает '+' увеличивая количество шт. товара")
+    public void clickIncreaseQuantity(){
+        getIncreaseQuantity().click();
+        logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
+    }
+
+    @Step("Пользователь нажимает '-' уменьшая количество шт. товара")
+    public void clickDecreaseQuantity(){
+        getDecreaseQuantity().click();
+        logger.info("Пользователь нажимает '-' уменьшая количество шт. товара");
+    }
+
+    @Step("Пользователь нажимает на иконку корзины")
+    public void clickToCartButton() {
+        getCartButton().click();
+        logger.info("Пользователь нажимает на иконку корзины");
+    }
+
 
 
 }

@@ -39,6 +39,11 @@ public class PageActions extends MainTestBase {
             driver.switchTo().window(windowHandle);
     }
 
+    //Переключиться на iFrame по title
+    public void switchToiFrame(String name) {
+        driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='"+name+"']")));
+    }
+
 
     //Проверка url
     public void checkUrl(String url) {

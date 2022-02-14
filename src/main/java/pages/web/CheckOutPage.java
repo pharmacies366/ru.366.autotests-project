@@ -30,6 +30,7 @@ public class CheckOutPage extends MainTestBase{
     private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
     private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
 
+
     //конструктор
     public CheckOutPage(WebDriver driver) {
         this.driver = driver;
@@ -88,7 +89,6 @@ public class CheckOutPage extends MainTestBase{
     public PageElementActions getAptekaMap() {
         return new PageElementActions(APTEKA_MAP_XPATH, driver);
     }
-
 
 
     //Методы
@@ -166,6 +166,5 @@ public class CheckOutPage extends MainTestBase{
         getAptekaMap().elementIsVisibility();
         logger.info("Пользователь проверяет отображении карты на странице");
     }
-
 
 }

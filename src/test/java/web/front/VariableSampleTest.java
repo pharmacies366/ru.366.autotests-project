@@ -17,10 +17,10 @@ public class VariableSampleTest extends BaseSettingsWebTests {
     public void test() {
         mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
-        productCardPage.clickToCartButton();
+        productCardPage.clickAddCartButton();
         int firstPrice = productCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
-        productCardPage.clickToCartButton();
+        productCardPage.clickAddCartButton();
         int secondPrice = productCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         int totalPrice = cartPage.getPriceTotal();

@@ -26,6 +26,7 @@ public class MobileCheckOutPage extends MainTestBase {
     private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
     private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//label[@class='js-storefinder-sort js-product-stores__head-item js-storefinder-recommend']";
     private static final String SELECT_XPATH= "xpath;(//span[contains(@class,'desc js-confirm-store-on-list')])[1]";
+    private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
 
 
 
@@ -73,6 +74,10 @@ public class MobileCheckOutPage extends MainTestBase {
 
     public PageElementActions getSelect() {
         return new PageElementActions(SELECT_XPATH, driver);
+    }
+
+    public PageElementActions getAptekaMap() {
+        return new PageElementActions(APTEKA_MAP_XPATH, driver);
     }
 
 
@@ -140,6 +145,12 @@ public class MobileCheckOutPage extends MainTestBase {
     public void ckickSelect(){
         getSelect().click();
         logger.info("Пользователь нажимает на кнопку 'Выбрать'");
+    }
+
+    @Step("Пользователь проверяет отображении карты на странице")
+    public void checkVisibilityMap() {
+        getAptekaMap().elementIsVisibility();
+        logger.info("Пользователь проверяет отображении карты на странице");
     }
 
 
