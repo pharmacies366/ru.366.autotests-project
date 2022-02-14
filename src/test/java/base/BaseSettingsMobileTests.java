@@ -21,6 +21,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
     protected MobileCatalogPage mobileCatalogPage;
     protected MobileCookiePage mobileCookiePage;
     protected MobileMedicationsCategoryPage mobileMedicationsCategoryPage;
+    protected MobileMyOrdersPage mobileMyOrdersPage;
 
 
     @Before
@@ -38,6 +39,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
         mobileCatalogPage = new MobileCatalogPage(driver);
         mobileCookiePage = new MobileCookiePage(driver);
         mobileMedicationsCategoryPage = new MobileMedicationsCategoryPage(driver);
+        mobileMyOrdersPage = new MobileMyOrdersPage(driver);
     }
 
 }

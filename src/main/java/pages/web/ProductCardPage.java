@@ -16,6 +16,9 @@ public class ProductCardPage extends MainTestBase {
     private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
     private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
     private static final String ONE_CKICK_APTEKA_BUTTONS_XPATH = "xpath;(//button[contains(.,'Купить в 1 клик')])";
+    private static final String INCREASE_QUANTITY_XPATH = "xpath;(//span[contains(@class, 'product_counter_short__plus')])[1]";
+    private static final String QUANTITY_PRODUCT_XPATH = "xpath;(//span[contains(@class,'product_counter_short__qty')])[1]";
+    private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
 
 
     //конструктор
@@ -49,11 +52,23 @@ public class ProductCardPage extends MainTestBase {
         return new PageElementActions(ONE_CKICK_APTEKA_BUTTONS_XPATH, driver);
     }
 
+    public PageElementActions getIncreaseQuantity() {
+        return new PageElementActions(INCREASE_QUANTITY_XPATH, driver);
+    }
+
+    public PageElementActions getProductQuantity() {
+        return new PageElementActions(QUANTITY_PRODUCT_XPATH, driver);
+    }
+
+    public PageElementActions getCartButton() {
+        return new PageElementActions(CARD_BUTTON_XPATH, driver);
+    }
+
 
     //Методы
 
     @Step("Пользователь нажимает на кнопку 'в корзину'")
-    public void clickToCartButton() {
+    public void clickAddCartButton() {
         getAddToCartButton().click();
         logger.info("Пользователь нажимает на кнопку 'в корзину'");
     }
@@ -86,6 +101,25 @@ public class ProductCardPage extends MainTestBase {
     public void clickBuyOneClick() {
         getOneClickAptekaButtons().clickIndex(0);
         logger.info("Пользователь нажимает на {number} - ую кнопку 'Купить в 1 клик' напротив выбранной аптеки");
+    }
+
+    @Step("Пользователь нажимает '+' увеличивая количество шт. товара")
+    public void clickIncreaseQuantity() {
+        getIncreaseQuantity().click();
+        logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
+    }
+
+    @Step("Сохранение количества товара")
+    public int getQuantityProduct() {
+        int quantity = getProductQuantity().formatElementToValue();
+        logger.info("Запоминаем количество товара");
+        return quantity;
+    }
+
+    @Step("Пользователь нажимает на иконку корзины")
+    public void clickToCartButton() {
+        getCartButton().click();
+        logger.info("Пользователь нажимает на иконку корзины");
     }
 
 }

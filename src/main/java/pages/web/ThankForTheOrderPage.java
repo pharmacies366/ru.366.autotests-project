@@ -13,6 +13,7 @@ public class ThankForTheOrderPage extends MainTestBase {
     private static final String THANKS_ORDER_SELF_XPATH = "xpath;//h1[contains(.,'Спасибо за ваш заказ!')]";
     private static final String ERROR_PAYMENT_XPATH = "xpath;//a[contains(.,'Вернуться в магазин')]";
     private static final String THANKS_ORDER_DELIVERY_XPATH = "xpath;//input[@id='pan']";
+    private static final String SAVING_ORDER_NUMBER_XPATH = "xpath;//div[@class='order-number-code']";
 
 
     //конструктор
@@ -30,6 +31,10 @@ public class ThankForTheOrderPage extends MainTestBase {
         return new PageElementActions(ERROR_PAYMENT_XPATH, driver);
     }
 
+    public PageElementActions getOrderNumber() {
+        return new PageElementActions(SAVING_ORDER_NUMBER_XPATH, driver);
+    }
+
 
     //Методы
 
@@ -43,5 +48,12 @@ public class ThankForTheOrderPage extends MainTestBase {
     public void checkPaymentError(){
         getErrorPayment().elementIsVisibility();
         logger.info("Пользователь получает ошибку об оплате");
+    }
+
+    @Step("Сохранение номера заказа")
+    public String savingOrderNumber() {
+        String orderNumber = getOrderNumber().getText();
+        logger.info("Сохранение номера заказа");
+        return orderNumber;
     }
 }

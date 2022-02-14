@@ -19,6 +19,7 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected SberPage sberPage;
     protected ThankForTheOrderPage thankForTheOrderPage;
     protected OspPage ospPage;
+    protected MyOrdersPage myOrdersPage;
  /*
     protected CatalogPage catalogPage;
     protected MedicationsPage medicationsPage;*/
@@ -37,6 +38,7 @@ public class BaseSettingsWebTests extends MainTestBase {
         sberPage = new SberPage(driver);
         thankForTheOrderPage = new ThankForTheOrderPage(driver);
         ospPage = new OspPage(driver);
+        myOrdersPage = new MyOrdersPage(driver);
    /*
         catalogPage = new CatalogPage(driver);
         medicationsPage = new MedicationsPage(driver);*/
