@@ -39,7 +39,7 @@ public class OrderCancellationTest extends BaseSettingsMobileTests {
         pageActions.reloadPage();
         // String orderNumber = mobileThankForTheOrderPage.savingOrderNumber();
         mobileTopPanelPage.clickBurgerButton();
-        mobileMyOrdersPage.clickClosePopUp();
+        //mobileMyOrdersPage.clickClosePopUp(); - только на проде?
         mobileTopPanelPage.clickToPersonalAccount();
         mobileTopPanelPage.clickMyOrders();
         //Assert.assertEquals(MobileMyOrdersPage.getOrderNumber(), orderNumber);
