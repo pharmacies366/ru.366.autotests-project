@@ -1,6 +1,7 @@
 package base;
 
 import actions.PageElementActions;
+import blocks.BasementBlock;
 import core.MainTestBase;
 import org.junit.Before;
 import pages.web.*;
@@ -20,6 +21,7 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected ThankForTheOrderPage thankForTheOrderPage;
     protected OspPage ospPage;
     protected MyOrdersPage myOrdersPage;
+    protected BasementBlock basementBlock;
  /*
     protected CatalogPage catalogPage;
     protected MedicationsPage medicationsPage;*/
@@ -39,6 +41,7 @@ public class BaseSettingsWebTests extends MainTestBase {
         thankForTheOrderPage = new ThankForTheOrderPage(driver);
         ospPage = new OspPage(driver);
         myOrdersPage = new MyOrdersPage(driver);
+        basementBlock = new BasementBlock(driver);
    /*
         catalogPage = new CatalogPage(driver);
         medicationsPage = new MedicationsPage(driver);*/

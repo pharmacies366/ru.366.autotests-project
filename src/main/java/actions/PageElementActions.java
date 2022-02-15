@@ -104,6 +104,11 @@ public class PageElementActions extends MainTestBase {
         saveAllureScreenshot();
     }
 
+    //Проверяет видимость текста {string} на странице
+    public void contentIsDisplayed(String text) {
+        driver.findElement(By.xpath("//*[text()='" + text + "']")).isDisplayed();
+    }
+
 
     //Ожидание кликабельности элемента
     public WebElement waitUntilElementToBeClickable(By by, int _secondsToWait) {

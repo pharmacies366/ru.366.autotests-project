@@ -44,7 +44,7 @@ public class MyOrdersPage extends MainTestBase {
 
     @Step("номера заказа")
     public String getOrderNumber() {
-        String orderNumber = getOrder().getText();
+        String orderNumber = getOrder().getText().replaceAll("[^1-12]", "").trim();
         logger.info("номера заказа");
         return orderNumber;
     }

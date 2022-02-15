@@ -64,6 +64,7 @@ public class PageActions extends MainTestBase {
     //Проверка видимости текста на странице
     public void contentIsDisplayed(String text) {
         driver.findElement(By.xpath("//*[text()='" + text + "']")).isDisplayed();
+        saveAllureScreenshot();
     }
 
     //Ожидание загрузки на странице Javascript
