@@ -1,6 +1,8 @@
 package base;
 
 import actions.PageElementActions;
+import blocks.mobile.MobileBasementBlock;
+import blocks.mobile.MobileHeaderBlock;
 import core.MainTestBase;
 import org.junit.Before;
 import pages.mobile.*;
@@ -9,7 +11,6 @@ public class BaseSettingsMobileTests extends MainTestBase {
 
 
     protected PageElementActions pageElementActions;
-    protected MobileTopPanelPage mobileTopPanelPage;
     protected MobileAuthPopUpPage mobileAuthPopUpPage;
     protected MobileCartPage mobileCartPage;
     protected MobileCheckOutPage mobileCheckOutPage;
@@ -22,12 +23,13 @@ public class BaseSettingsMobileTests extends MainTestBase {
     protected MobileCookiePage mobileCookiePage;
     protected MobileMedicationsCategoryPage mobileMedicationsCategoryPage;
     protected MobileMyOrdersPage mobileMyOrdersPage;
+    protected MobileHeaderBlock mobileHeaderBlock;
+    protected MobileBasementBlock mobileBasementBlock;
 
 
     @Before
     public void PagesInitialization() {
         pageElementActions = new PageElementActions(driver);
-        mobileTopPanelPage = new MobileTopPanelPage(driver);
         mobileCheckOutPage = new MobileCheckOutPage(driver);
         mobileCartPage = new MobileCartPage(driver);
         mobileAuthPopUpPage = new MobileAuthPopUpPage(driver);
@@ -40,6 +42,8 @@ public class BaseSettingsMobileTests extends MainTestBase {
         mobileCookiePage = new MobileCookiePage(driver);
         mobileMedicationsCategoryPage = new MobileMedicationsCategoryPage(driver);
         mobileMyOrdersPage = new MobileMyOrdersPage(driver);
+        mobileHeaderBlock = new MobileHeaderBlock(driver);
+        mobileBasementBlock = new MobileBasementBlock(driver);
     }
 
 }

@@ -18,8 +18,8 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
     public void delivery() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileTopPanelPage.clickBurgerButton();
-        mobileTopPanelPage.clickToLoginIcon();
+        mobileHeaderBlock.clickBurgerButton();
+        mobileHeaderBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber1"),
@@ -45,8 +45,8 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
     public void oneClick() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileTopPanelPage.clickBurgerButton();
-        mobileTopPanelPage.clickToLoginIcon();
+        mobileHeaderBlock.clickBurgerButton();
+        mobileHeaderBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber2"),
@@ -70,8 +70,8 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
     public void checkOsp() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileTopPanelPage.clickBurgerButton();
-        mobileTopPanelPage.clickToLoginIcon();
+        mobileHeaderBlock.clickBurgerButton();
+        mobileHeaderBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber3"),
@@ -97,8 +97,8 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
     public void pickup() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileTopPanelPage.clickBurgerButton();
-        mobileTopPanelPage.clickToLoginIcon();
+        mobileHeaderBlock.clickBurgerButton();
+        mobileHeaderBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber4"),
@@ -123,8 +123,8 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
     public void split() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileTopPanelPage.clickBurgerButton();
-        mobileTopPanelPage.clickToLoginIcon();
+        mobileHeaderBlock.clickBurgerButton();
+        mobileHeaderBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber5"),

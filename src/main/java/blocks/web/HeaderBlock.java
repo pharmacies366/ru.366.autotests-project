@@ -1,4 +1,4 @@
-package blocks;
+package blocks.web;
 
 import actions.PageElementActions;
 import core.MainTestBase;
@@ -179,7 +179,6 @@ public class HeaderBlock extends MainTestBase {
     @Step("Кликает по локатору {LOCATOR}")
     public void selectHeaderButtons(String LOCATOR) {
         this.headerButton(LOCATOR).click();
-        new BasementBlock(driver);
     }
 
     private WebElement headerButton(String LOCATOR) {

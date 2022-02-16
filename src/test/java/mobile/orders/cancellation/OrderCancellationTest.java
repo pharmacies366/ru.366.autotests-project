@@ -17,8 +17,8 @@ public class OrderCancellationTest extends BaseSettingsMobileTests {
     public void OrderCancellation() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileTopPanelPage.clickBurgerButton();
-        mobileTopPanelPage.clickToLoginIcon();
+        mobileHeaderBlock.clickBurgerButton();
+        mobileHeaderBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber6"),
@@ -38,10 +38,10 @@ public class OrderCancellationTest extends BaseSettingsMobileTests {
         mobileThankForTheOrderPage.checkSuccessMessage();
         pageActions.reloadPage();
         // String orderNumber = mobileThankForTheOrderPage.savingOrderNumber();
-        mobileTopPanelPage.clickBurgerButton();
+        mobileHeaderBlock.clickBurgerButton();
         mobileMyOrdersPage.clickClosePopUp();
-        mobileTopPanelPage.clickToPersonalAccount();
-        mobileTopPanelPage.clickMyOrders();
+        mobileHeaderBlock.clickToPersonalAccount();
+        mobileHeaderBlock.clickMyOrders();
         //Assert.assertEquals(MobileMyOrdersPage.getOrderNumber(), orderNumber);
         mobileMyOrdersPage.clickOrderNumber();
         mobileMyOrdersPage.clickCancelNumber();

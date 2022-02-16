@@ -1,8 +1,8 @@
 package base;
 
 import actions.PageElementActions;
-import blocks.BasementBlock;
-import blocks.HeaderBlock;
+import blocks.web.BasementBlock;
+import blocks.web.HeaderBlock;
 import core.MainTestBase;
 import org.junit.Before;
 import pages.web.*;

@@ -1,4 +1,4 @@
-package blocks;
+package blocks.web;
 
 import actions.PageElementActions;
 import core.MainTestBase;
@@ -33,7 +33,6 @@ public class BasementBlock extends MainTestBase {
     @Step("Кликает по локатору {LOCATOR}")
     public void selectBasementButtons(String LOCATOR) {
         this.basementButton(LOCATOR).click();
-        new BasementBlock(driver);
     }
 
     private WebElement basementButton(String LOCATOR) {

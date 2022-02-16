@@ -1,14 +1,11 @@
-package pages.mobile;
+package blocks.mobile;
 
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
-
-public class MobileTopPanelPage extends MainTestBase {
-
-
+public class MobileHeaderBlock extends MainTestBase {
     //элементы
     private static final String BURGER_BUTTON_XPATH = "xpath;//div[contains(@class,'toggle js-toggle-sm-navigation')]";
     private static final String LOGIN_ICON_XPATH = "xpath;(//a[contains(.,'Войти')])[3]";
@@ -19,11 +16,12 @@ public class MobileTopPanelPage extends MainTestBase {
 
 
     //конструктор
-    public MobileTopPanelPage(WebDriver driver) {
+    public MobileHeaderBlock(WebDriver driver) {
         this.driver = driver;
     }
 
     //геттеры элементов с получением доступа к действиям с элементами
+
     public PageElementActions getBurgerButton() {
         return new PageElementActions(BURGER_BUTTON_XPATH, driver);
     }
@@ -75,6 +73,4 @@ public class MobileTopPanelPage extends MainTestBase {
         getMyOrders().click();
         logger.info("Пользователь нажимает на иконку авторизации");
     }
-
-
 }
