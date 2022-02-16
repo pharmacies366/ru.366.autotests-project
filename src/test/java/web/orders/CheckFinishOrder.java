@@ -15,15 +15,15 @@ public class CheckFinishOrder extends BaseSettingsWebTests {
     @Test
     public void OrderCancellation() {
         mainPage.clickClosePopUp();
-        topPanelPage.clickToLoginIcon();
+        headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber6"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkAndClearCartQuantity();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
-        cartPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickSelectApteka();
         checkOutPage.setInputSearchAddres("метро Фили");

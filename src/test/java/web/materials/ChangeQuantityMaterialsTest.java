@@ -22,7 +22,7 @@ public class ChangeQuantityMaterialsTest extends BaseSettingsWebTests {
         int firstQuantity = mainPage.getQuantityMaterials();
         Assert.assertEquals(2, firstQuantity);
         logger.info("Количество товара равно 2-м");
-        mainPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         int finalQuantity = cartPage.getQuantityMaterials();
         Assert.assertEquals(2, finalQuantity);
         logger.info("Количество товара равно 2-м");
@@ -41,7 +41,7 @@ public class ChangeQuantityMaterialsTest extends BaseSettingsWebTests {
         int secondQuantity = mainPage.getQuantityMaterials();
         Assert.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");
-        mainPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         int finalQuantity = cartPage.getQuantityMaterials();
         Assert.assertEquals(1, finalQuantity);
         logger.info("Количество товара равно 1-му");
@@ -52,7 +52,7 @@ public class ChangeQuantityMaterialsTest extends BaseSettingsWebTests {
     public void increaseQuantityMaterialOnCartPage() {
         mainPage.clickClosePopUp();
         mainPage.AddToCartClick();
-        mainPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickIncreaseQuantity();
         int quantity = cartPage.getQuantityMaterials();
         Assert.assertEquals(2, quantity);
@@ -72,7 +72,7 @@ public class ChangeQuantityMaterialsTest extends BaseSettingsWebTests {
         int secondQuantity = mainPage.getQuantityMaterials();
         Assert.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");
-        mainPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         int finalQuantity = cartPage.getQuantityMaterials();
         Assert.assertEquals(1, finalQuantity);
         logger.info("Количество товара равно 1-му");

@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 @Story("Проверка главной страницы сайта 36.6")
 @DisplayName("Проверка подвала сайта")
 @RunWith(DataProviderRunner.class)
-public class BasementTest extends BaseSettingsWebTests {
+public class BasementBlockTest extends BaseSettingsWebTests {
 
     @DataProvider
     public static Object[][] data() {

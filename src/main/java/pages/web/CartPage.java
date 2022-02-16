@@ -13,11 +13,9 @@ public class CartPage extends MainTestBase {
     private static final String CONFIRM_CLEAN_ALL_XPATH = "xpath;//input[@value='Да, подтверждаю']";
     private static final String TOTAL_PRICE_XPATH = "xpath;//div[@class='cart-summary_value js-revenue']";
     private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
-    private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
     private static final String MAKE_ORDER_XPATH = "xpath;//a[@href='/cart/checkout']";
     private static final String PRODUCT_CARD_XPATH = "xpath;//a[@data-gtm-source='search list']";
     private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_plus')])[1]";
-    private static final String DECREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_minus')])[1]";
     private static final String QUANTITY_PRODUCT_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
     private static final String DELETE_PRODUCT_XPATH = "xpath;//button[@class='js-remove-entry-button b-btn--clean']";
 
@@ -47,10 +45,6 @@ public class CartPage extends MainTestBase {
         return new PageElementActions(ADD_CART_BUTTON_XPATH, driver);
     }
 
-    public PageElementActions getCartButton() {
-        return new PageElementActions(CARD_BUTTON_XPATH, driver);
-    }
-
     public PageElementActions getMakeOrder() {
         return new PageElementActions(MAKE_ORDER_XPATH, driver);
     }
@@ -61,10 +55,6 @@ public class CartPage extends MainTestBase {
 
     public PageElementActions getIncreaseQuantity() {
         return new PageElementActions(INCREASE_QUANTITY_XPATH, driver);
-    }
-
-    public PageElementActions getDecreaseQuantity() {
-        return new PageElementActions(DECREASE_QUANTITY_XPATH, driver);
     }
 
     public PageElementActions getProductQuantity() {
@@ -118,12 +108,6 @@ public class CartPage extends MainTestBase {
         logger.info("Пользователь нажимает на кнопку 'В корзину'");
     }
 
-    @Step("Пользователь нажимает на иконку корзины")
-    public void clickToCartButton() {
-        getCartButton().click();
-        logger.info("Пользователь нажимает на иконку корзины");
-    }
-
     @Step("Пользователь нажимае на кнопку 'Оформить заказ'")
     public void clickToMakeOrder() {
         getMakeOrder().click();
@@ -140,12 +124,6 @@ public class CartPage extends MainTestBase {
     public void clickIncreaseQuantity(){
         getIncreaseQuantity().click();
         logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
-    }
-
-    @Step("Пользователь нажимает '-' уменьшая количество шт. товара")
-    public void clickDecreaseQuantity(){
-        getDecreaseQuantity().click();
-        logger.info("Пользователь нажимает '-' уменьшая количество шт. товара");
     }
 
     @Step("Сохранение количества товаров")

@@ -1,3 +1,4 @@
+/*
 package web.front;
 
 import base.BaseSettingsWebTests;
@@ -11,16 +12,6 @@ import org.junit.Test;
 @DisplayName("Проверка главной страницы")
 public class MainPageTest extends BaseSettingsWebTests {
 
-    @DisplayName("Проверка отображения логотипа")
-    @Test
-    public void checkVisibilityLogoMainPage(){
-        mainPage.getSiteLogo().elementIsVisibility();
-    }
 
-    @DisplayName("Проверка кликабельности логотипа")
-    @Test
-    public void checkClickableLogoMainPage(){
-        mainPage.getSiteLogo().elementIsClickable();
-        logger.info("Логотип кликабелен");
-    }
 }
+*/

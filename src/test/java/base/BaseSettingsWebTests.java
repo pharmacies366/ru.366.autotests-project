@@ -2,17 +2,16 @@ package base;
 
 import actions.PageElementActions;
 import blocks.BasementBlock;
+import blocks.HeaderBlock;
 import core.MainTestBase;
 import org.junit.Before;
 import pages.web.*;
-import utils.PropertiesManager;
 
 public class BaseSettingsWebTests extends MainTestBase {
 
     protected MainPage mainPage;
     protected PageElementActions pageElementActions;
     protected CookiePage cookiePage;
-    protected TopPanelPage topPanelPage;
     protected AuthPopUpPage authPopUpPage;
     protected ProductCardPage productCardPage;
     protected CartPage cartPage;
@@ -21,10 +20,9 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected ThankForTheOrderPage thankForTheOrderPage;
     protected OspPage ospPage;
     protected MyOrdersPage myOrdersPage;
+    protected HeaderBlock headerBlock;
     protected BasementBlock basementBlock;
- /*
-    protected CatalogPage catalogPage;
-    protected MedicationsPage medicationsPage;*/
+
 
 
     @Before
@@ -32,7 +30,6 @@ public class BaseSettingsWebTests extends MainTestBase {
         mainPage = new MainPage(driver);
         pageElementActions = new PageElementActions(driver);
         cookiePage = new CookiePage(driver);
-        topPanelPage = new TopPanelPage(driver);
         authPopUpPage = new AuthPopUpPage(driver);
         productCardPage = new ProductCardPage(driver);
         cartPage = new CartPage(driver);
@@ -41,10 +38,8 @@ public class BaseSettingsWebTests extends MainTestBase {
         thankForTheOrderPage = new ThankForTheOrderPage(driver);
         ospPage = new OspPage(driver);
         myOrdersPage = new MyOrdersPage(driver);
+        headerBlock = new HeaderBlock(driver);
         basementBlock = new BasementBlock(driver);
-   /*
-        catalogPage = new CatalogPage(driver);
-        medicationsPage = new MedicationsPage(driver);*/
 
     }
 

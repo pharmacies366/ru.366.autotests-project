@@ -19,9 +19,9 @@ public class MakeOrdersUnauthorizedTest extends BaseSettingsWebTests {
     public void delivery() {
         cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
-        cartPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
@@ -43,7 +43,7 @@ public class MakeOrdersUnauthorizedTest extends BaseSettingsWebTests {
     public void oneClick() {
         cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.clickProductCard();
         productCardPage.buyOneClick();
         productCardPage.checkVisibilityMap();
@@ -62,7 +62,7 @@ public class MakeOrdersUnauthorizedTest extends BaseSettingsWebTests {
         mainPage.clickLetterN();
         ospPage.clickProductName();
         cartPage.сlickAddCartButton();
-        cartPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
@@ -81,9 +81,9 @@ public class MakeOrdersUnauthorizedTest extends BaseSettingsWebTests {
     public void pickup() {
         cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
-        cartPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
@@ -103,12 +103,12 @@ public class MakeOrdersUnauthorizedTest extends BaseSettingsWebTests {
     public void split() {
         cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
-        mainPage.clickSiteLogo();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode2"));
+        headerBlock.clickSiteLogo();
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
         cartPage.сlickAddCartButton();
-        cartPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.contactDetails(
                 propertiesManager.getProperty("username"),

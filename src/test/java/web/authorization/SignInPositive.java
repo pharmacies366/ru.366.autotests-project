@@ -15,12 +15,12 @@ public class SignInPositive extends BaseSettingsWebTests {
     @Test
     public void loginUserPhoneNumberAndPassword() {
         cookiePage.reCaptchaKey();
-        topPanelPage.clickToLoginIcon();
+        headerBlock.clickToSignInButton();
         authPopUpPage.setPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("userpass"));
         authPopUpPage.clickToLoginButton();
-        mainPage.checkElementIsCorrect();
+        headerBlock.checkElementIsCorrect();
     }
 
     /*    @DisplayName("Авторизация пользователя на сайте через E-mail")
@@ -30,13 +30,13 @@ public class SignInPositive extends BaseSettingsWebTests {
     @Test
     public void loginUserEmail() {
         cookiePage.reCaptchaKey();
-        topPanelPage.clickToLoginIcon();
+        headerBlock.clickToSignInButton();
         authPopUpPage.setChangeToEmail();
         authPopUpPage.setEmailAndPassword(
                 propertiesManager.getProperty("usermail"),
                 propertiesManager.getProperty("userpass"));
         authPopUpPage.clickToLoginButton();
-        mainPage.checkElementIsCorrect();
+        headerBlock.checkElementIsCorrect();
     */
 
 /*    @DisplayName("Авторизация пользователя на сайте по номеру телефона")
@@ -44,11 +44,11 @@ public class SignInPositive extends BaseSettingsWebTests {
     @Test
     public void loginUserPhone() {
         cookiePage.reCaptchaKey();
-        topPanelPage.clickToLoginIcon();
+        headerBlock.clickToSignInButton();
         authPopUpPage.getPhoneNumberInput().click();
         authPopUpPage.setPhoneNumber(propertiesManager.getProperty("phonenumber"));
         authPopUpPage.clickToLoginButton();
-        mainPage.checkElementIsCorrect();
+        headerBlock.checkElementIsCorrect();
     }*/
 
 }

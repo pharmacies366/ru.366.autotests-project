@@ -23,6 +23,7 @@ public class AuthPopUpPage extends MainTestBase {
     }
 
     //геттеры элементов с получением доступа к действиям с элементами
+
     public PageElementActions getPhoneNumberInput() {
         return new PageElementActions(_PHONE_NUMBER_INPUT_XPATH, driver);
     }

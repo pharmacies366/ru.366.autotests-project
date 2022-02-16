@@ -17,15 +17,15 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsWebTests {
     @Test
     public void delivery() {
         mainPage.clickClosePopUp();
-        topPanelPage.clickToLoginIcon();
+        headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber1"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkAndClearCartQuantity();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
-        cartPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickDeliveryMethod();
         checkOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
@@ -42,13 +42,13 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsWebTests {
     @Test
     public void oneClick() {
         mainPage.clickClosePopUp();
-        topPanelPage.clickToLoginIcon();
+        headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber2"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkAndClearCartQuantity();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.clickProductCard();
         productCardPage.buyOneClick();
         productCardPage.checkVisibilityMap();
@@ -63,17 +63,17 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsWebTests {
     @Test
     public void checkOsp() {
         mainPage.clickClosePopUp();
-        topPanelPage.clickToLoginIcon();
+        headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber3"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkAndClearCartQuantity();
-        mainPage.clickSiteLogo();
+        headerBlock.clickSiteLogo();
         mainPage.clickLetterN();
         ospPage.clickProductName();
         cartPage.сlickAddCartButton();
-        cartPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickSelectApteka();
         productCardPage.setInputSearchAddres("метро Автозаводская");
@@ -87,15 +87,15 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsWebTests {
     @Test
     public void pickup() {
         mainPage.clickClosePopUp();
-        topPanelPage.clickToLoginIcon();
+        headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber4"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkAndClearCartQuantity();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
-        cartPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickSelectApteka();
         checkOutPage.setInputSearchAddres("метро Фили");
@@ -109,18 +109,18 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsWebTests {
     @Test
     public void split() {
         mainPage.clickClosePopUp();
-        topPanelPage.clickToLoginIcon();
+        headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber5"),
                 propertiesManager.getProperty("userpass"));
         cartPage.checkAndClearCartQuantity();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.сlickAddCartButton();
-        mainPage.clickSiteLogo();
-        mainPage.setSearchInput(propertiesManager.getProperty("productcode2"));
+        headerBlock.clickSiteLogo();
+        headerBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
         cartPage.сlickAddCartButton();
-        cartPage.clickToCartButton();
+        headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickSelectApteka();
         checkOutPage.clickChangeAptekaList();
