@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -75,6 +76,7 @@ public class WebDriverFactory {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
             mobileEmulation.put("deviceName", "iPhone X");
+            //options.setPageLoadStrategy(PageLoadStrategy.NORMAL);//нужно ли?
 
 
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);

@@ -68,6 +68,15 @@ public class PageActions extends MainTestBase {
         saveAllureScreenshot();
     }
 
+    //Статичное ожидание на странице
+    public void staticWait(int time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     //Ожидание загрузки на странице Javascript
     public void waitPageLoad() {
 
