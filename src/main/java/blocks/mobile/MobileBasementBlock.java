@@ -13,6 +13,7 @@ public class MobileBasementBlock extends MainTestBase {
     private static final String HELP_BUTTON_XPATH = "xpath;(//div[@class='c-footer__title'])[1]";
     private static final String SERVICE_BUTTON_XPATH = "xpath;(//div[@class='c-footer__title'])[2]";
     private static final String ABOUT_COMPANY_BUTTON_XPATH = "xpath;(//div[@class='c-footer__title'])[3]";
+    private static final String PHONE_NUMBER_XPATH = "xpath;(//a[contains(.,'+7 495 797-63-36')])[3]";
 
     //конструктор
     public MobileBasementBlock(WebDriver driver) {
@@ -38,6 +39,10 @@ public class MobileBasementBlock extends MainTestBase {
 
     public PageElementActions getBaseInput(String format) {
         return new PageElementActions(BASE_INPUT_XPATH, driver);
+    }
+
+    public PageElementActions getPhoneNumber() {
+        return new PageElementActions(PHONE_NUMBER_XPATH, driver);
     }
 
 
