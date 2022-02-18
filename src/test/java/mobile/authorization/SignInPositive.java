@@ -16,7 +16,7 @@ public class SignInPositive extends BaseSettingsMobileTests {
     public void loginUserPhoneNumberAndPassword() {
         mobileCookiePage.reCaptchaKey();
         mobileHeaderBlock.clickBurgerButton();
-        mobileHeaderBlock.clickToLoginIcon();
+        mobileMainPopUpBlock.clickToLoginIcon();
         mobileAuthPopUpPage.setPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("userpass"));
@@ -32,7 +32,7 @@ public class SignInPositive extends BaseSettingsMobileTests {
     public void loginUserEmail() {
         mobileCookiePage.reCaptchaKey();
         mobileHeaderBlock.clickBurgerButton();
-        mobileHeaderBlock.clickToLoginIcon();
+        mobileMainPopUpBlock.clickToLoginIcon();
         mobileAuthPopUpPage.setChangeToEmail();
         mobileAuthPopUpPage.setEmailAndPassword(
                 propertiesManager.getProperty("userauthmail"),
@@ -48,7 +48,7 @@ public class SignInPositive extends BaseSettingsMobileTests {
     public void loginUserPhone() {
         mobileCookiePage.reCaptchaKey();
         mobileHeaderBlock.clickBurgerButton();
-        mobileHeaderBlock.clickToLoginIcon();
+        mobileMainPopUpBlock.clickToLoginIcon();
         mobileAuthPopUpPage.getPhoneNumberInput().click();
         mobileAuthPopUpPage.setPhoneNumber(propertiesManager.getProperty("userauthphone"));
         mobileAuthPopUpPage.clickToLoginButton();

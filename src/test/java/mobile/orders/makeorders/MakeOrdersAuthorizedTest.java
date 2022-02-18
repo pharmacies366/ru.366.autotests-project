@@ -19,7 +19,7 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
-        mobileHeaderBlock.clickToLoginIcon();
+        mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber1"),
@@ -46,13 +46,13 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
-        mobileHeaderBlock.clickToLoginIcon();
+        mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber2"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkAndClearCartQuantity();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         mobileCartPage.clickProductCard();
         mobileProductCardPage.checkVisibilityMap();
         mobileProductCardPage.setInputSearchAddres("метро Фили");
@@ -71,7 +71,7 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
-        mobileHeaderBlock.clickToLoginIcon();
+        mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber3"),
@@ -98,14 +98,14 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
-        mobileHeaderBlock.clickToLoginIcon();
+        mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber4"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkAndClearCartQuantity();
         pageActions.reloadPage();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         mobileCartPage.сlickAddCartButton();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
@@ -124,16 +124,16 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsMobileTests {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
-        mobileHeaderBlock.clickToLoginIcon();
+        mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber5"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkAndClearCartQuantity();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         mobileCartPage.сlickAddCartButton();
         mobileMainPage.clickSiteLogo();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode2"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
         mobileCartPage.сlickAddCartButton();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();

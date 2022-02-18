@@ -17,11 +17,11 @@ public class VariableSampleTest extends BaseSettingsMobileTests {
     public void test() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         int firstPrice = mobileProductCardPage.getProductPrice();
         mobileCartPage.сlickAddCartButton();
         mobileMainPage.clickSiteLogo();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode3"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode3"));
         int secondPrice = mobileProductCardPage.getProductPrice();
         mobileCartPage.сlickAddCartButton();
         mobileCartPage.clickToCartButton();

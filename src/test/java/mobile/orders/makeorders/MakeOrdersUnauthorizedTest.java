@@ -43,7 +43,7 @@ public class MakeOrdersUnauthorizedTest extends BaseSettingsMobileTests {
         mobileCookiePage.reCaptchaKey();
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode4"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         mobileCartPage.clickProductCard();
         mobileProductCardPage.checkVisibilityMap();
         mobileProductCardPage.setInputSearchAddres("метро Фили");
@@ -86,7 +86,7 @@ public class MakeOrdersUnauthorizedTest extends BaseSettingsMobileTests {
         mobileCookiePage.reCaptchaKey();
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.reloadPage();
         mobileCartPage.сlickAddCartButton();
         mobileCartPage.clickToCartButton();
@@ -110,10 +110,10 @@ public class MakeOrdersUnauthorizedTest extends BaseSettingsMobileTests {
         mobileCookiePage.reCaptchaKey();
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode1"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         mobileCartPage.сlickAddCartButton();
         mobileMainPage.clickSiteLogo();
-        mobileMainPage.setSearchInput(propertiesManager.getProperty("productcode2"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
         mobileCartPage.сlickAddCartButton();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();

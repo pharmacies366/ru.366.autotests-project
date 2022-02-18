@@ -3,6 +3,7 @@ package base;
 import actions.PageElementActions;
 import blocks.mobile.MobileBasementBlock;
 import blocks.mobile.MobileHeaderBlock;
+import blocks.mobile.MobileMainPopUpBlock;
 import core.MainTestBase;
 import org.junit.Before;
 import pages.mobile.*;
@@ -25,6 +26,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
     protected MobileMyOrdersPage mobileMyOrdersPage;
     protected MobileHeaderBlock mobileHeaderBlock;
     protected MobileBasementBlock mobileBasementBlock;
+    protected MobileMainPopUpBlock mobileMainPopUpBlock;
 
 
     @Before
@@ -44,6 +46,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
         mobileMyOrdersPage = new MobileMyOrdersPage(driver);
         mobileHeaderBlock = new MobileHeaderBlock(driver);
         mobileBasementBlock = new MobileBasementBlock(driver);
+        mobileMainPopUpBlock = new MobileMainPopUpBlock(driver);
     }
 
 }
