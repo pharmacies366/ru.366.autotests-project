@@ -10,9 +10,9 @@ import org.openqa.selenium.WebElement;
 public class MobileBasementBlock extends MainTestBase {
     //элементы
     private static final String BASE_INPUT_XPATH = "xpath;(//a[@href='%s'])";
-    private static final String HELP_BUTTON_XPATH = "xpath;(//label[contains(@class,'c-block-view-ch__label')])[1]";
-    private static final String SERVICE_BUTTON_XPATH = "xpath;(//label[contains(@for,'1')])[2]";
-    private static final String ABOUT_COMPANY_BUTTON_XPATH = "xpath;(//label[@class='c-block-view-ch__label'])[3]";
+    private static final String HELP_BUTTON_XPATH = "xpath;(//div[@class='c-footer__title'])[1]";
+    private static final String SERVICE_BUTTON_XPATH = "xpath;(//div[@class='c-footer__title'])[2]";
+    private static final String ABOUT_COMPANY_BUTTON_XPATH = "xpath;(//div[@class='c-footer__title'])[3]";
 
     //конструктор
     public MobileBasementBlock(WebDriver driver) {

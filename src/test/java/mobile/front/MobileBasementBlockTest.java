@@ -21,7 +21,7 @@ public class MobileBasementBlockTest extends BaseSettingsMobileTests {
     public static Object[][] help() {
         return new Object[][]{
                 //Помощь
-               // {"howToOrderNew", "Как сделать заказ", "Как оформить заказ на сайте?"},
+                /*{"howToOrderNew", "Как сделать заказ", "Как оформить заказ на сайте?"},*/
                 {"apteki/map", "Где получить заказ", "Работает сейчас"},
                 {"faq", "Вопрос-ответ", "Вопрос-ответ"},
                 {"feedback", "Задать вопрос", "Обратная связь"},
@@ -36,7 +36,6 @@ public class MobileBasementBlockTest extends BaseSettingsMobileTests {
     public void helpTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        pageActions.reloadPage();
         mobileBasementBlock.clickHelpButton();
         mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
         logger.info("Ссылка видна на странице и написана корректно");
@@ -65,7 +64,6 @@ public class MobileBasementBlockTest extends BaseSettingsMobileTests {
     public void serviceTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        pageActions.reloadPage();
         mobileBasementBlock.clickServiceButton();
         mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
         logger.info("Ссылка видна на странице и написана корректно");
@@ -95,7 +93,6 @@ public class MobileBasementBlockTest extends BaseSettingsMobileTests {
     public void aboutCompanyTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
-        pageActions.reloadPage();
         mobileBasementBlock.clickAboutCompanButton();
         mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
         logger.info("Ссылка видна на странице и написана корректно");
