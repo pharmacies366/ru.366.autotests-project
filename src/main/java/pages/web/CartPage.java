@@ -19,6 +19,7 @@ public class CartPage extends MainTestBase {
     private static final String QUANTITY_PRODUCT_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
     private static final String DELETE_PRODUCT_XPATH = "xpath;//button[@class='js-remove-entry-button b-btn--clean']";
 
+
     //конструктор
     public CartPage(WebDriver driver) {
         this.driver = driver;

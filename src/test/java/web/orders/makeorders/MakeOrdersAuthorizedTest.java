@@ -4,6 +4,7 @@ import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.Assert;
 import org.junit.Test;
 
 @Feature(value = "Web")
@@ -13,7 +14,7 @@ public class MakeOrdersAuthorizedTest extends BaseSettingsWebTests {
 
     //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
 
-  /*  @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
+/*    @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
     @Test
     public void delivery() {
         mainPage.clickClosePopUp();

@@ -53,6 +53,7 @@ public class WebDriverFactory {
 
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+            chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         }
 
@@ -72,17 +73,26 @@ public class WebDriverFactory {
     public void setupLocalDriver() {
         logger.info("setup local web driver");
         ChromeOptions chromeOptions = new ChromeOptions();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        chromeOptions.addArguments("--incognito");
+        chromeOptions.addArguments("--disable-notifications");
         if (nameOfPackage.contains("mobile")) {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
             mobileEmulation.put("deviceName", "iPhone X");
-            //options.setPageLoadStrategy(PageLoadStrategy.NORMAL);//нужно ли?
-
-
+            Map<String, Object> prefs = new HashMap<String, Object>();
+            Map<String, Object> profile = new HashMap<String, Object>();
+            prefs.put("googlegeolocationaccess.enabled", true);
+            prefs.put("profile.default_content_setting_values.geolocation", 2); // 1:allow 2:block
+            prefs.put("profile.default_content_setting_values.notifications", 1);
+            prefs.put("profile.managed_default_content_settings", 1);
+            chromeOptions.setExperimentalOption("prefs", prefs);
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+            capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+            chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         }
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(chromeOptions);
+        driver = new ChromeDriver(capabilities);
         configureDriver();
         logger.info("ЗАПУЩЕН ЛОКАЛЬНЫЙ ДРАЙВЕР");
     }

@@ -53,8 +53,8 @@ public class MainTestBase {
      * Повторный запуск тестов при падении
      */
 
-    @Rule
-    public RetryRule rule = new RetryRule(3);
+    /*@Rule
+    public RetryRule rule = new RetryRule(3);*/
 
     /**
      * Управление действиями, при различных исходах теста

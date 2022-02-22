@@ -100,9 +100,9 @@ public class HeaderBlockTest extends BaseSettingsWebTests {
     @DataProvider
     public static Object[][] data() {
         return new Object[][]{
-                {"howToOrderNew", "Как сделать заказ*", "Как оформить заказ на сайте?"},
-                {"pravila_programmy", "Клуб 36,6", "Условия выдачи карты"},
-                {"certificates", "Подарочные сертификаты", "Подарочные сертификаты"},
+                {"/howToOrderNew/", "Как сделать заказ*", "Как оформить заказ на сайте?"},
+                {"/pravila_programmy/", "Клуб 36,6", "Условия выдачи карты"},
+                {"/certificates/", "Подарочные сертификаты", "Подарочные сертификаты"},
         };
     }
 

@@ -32,7 +32,6 @@ public class PageElementActions extends MainTestBase {
         this.moveToElement();
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).click();
         saveAllureScreenshot();
-        pageActions.waitPageLoad();
     }
 
 
@@ -42,7 +41,6 @@ public class PageElementActions extends MainTestBase {
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
         driver.findElements(getBySelector(element)).get(number).click();
         saveAllureScreenshot();
-        pageActions.waitPageLoad();
     }
 
     //Перевести строку в числовое значение
@@ -58,7 +56,6 @@ public class PageElementActions extends MainTestBase {
         this.moveToElement();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend);
         saveAllureScreenshot();
-        pageActions.waitPageLoad();
     }
 
     //Перейти к элементу, кликнуть и ввести текст
@@ -67,7 +64,6 @@ public class PageElementActions extends MainTestBase {
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).click();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend);
         saveAllureScreenshot();
-        pageActions.waitPageLoad();
     }
 
     //Перейти к элементу, ввести текст и нажать Enter
@@ -75,15 +71,12 @@ public class PageElementActions extends MainTestBase {
         this.moveToElement();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend, Keys.ENTER);
         saveAllureScreenshot();
-        pageActions.waitPageLoad();
     }
 
     //Очистить содержимое элемента
     public void clean() {
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).clear();
-       // pageActions.waitPageLoad();
         saveAllureScreenshot();
-        pageActions.waitPageLoad();
     }
 
     //Ожидание загрузки видимости элемента
@@ -102,6 +95,11 @@ public class PageElementActions extends MainTestBase {
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
         Assert.assertTrue(driver.findElement(elementBy).isDisplayed());
         saveAllureScreenshot();
+    }
+
+    //Проверяет видимость элемента на странице, возвращает статус true либо false
+    public boolean IsElementDisplayed() {
+        return driver.findElement(getBySelector(element)).isDisplayed();
     }
 
     //Проверяет видимость текста {string} на странице
@@ -140,7 +138,7 @@ public class PageElementActions extends MainTestBase {
 
     //Пользователь скроллит страницу вверх
     public void scrollToObject() {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", getBySelector(element));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getBySelector(element));
         logger.info("СТРАНИЦА ПРОСКРОЛЛЕНА ДО ЭЛЕМЕНТА");
     }
 

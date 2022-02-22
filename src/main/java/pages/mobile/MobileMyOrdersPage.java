@@ -77,7 +77,8 @@ public class MobileMyOrdersPage extends MainTestBase {
 
     @Step("Пользователь закрывает попап с оценкой приложения")
     public void clickClosePopUp() {
-        pageActions.switchToiFrame(TITLE_IFRAME_POP_UP);
+       // pageActions.switchToiFrame(TITLE_IFRAME_POP_UP);
+        pageActions.switchToiFrame(0);
         getClosePopUp().click();
         logger.info("Пользователь закрывает попап с оценкой приложения");
     }

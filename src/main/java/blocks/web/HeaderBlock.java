@@ -3,9 +3,7 @@ package blocks.web;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HeaderBlock extends MainTestBase {
 
@@ -86,6 +84,10 @@ public class HeaderBlock extends MainTestBase {
 
     public PageElementActions getPhoneNumber() {
         return new PageElementActions(PHONE_NUMBER_XPATH, driver);
+    }
+
+    public PageElementActions getBaseInputHeaderLocators(String xpath) {
+        return new PageElementActions(xpath, driver);
     }
 
 
@@ -178,10 +180,7 @@ public class HeaderBlock extends MainTestBase {
 
     @Step("Кликает по локатору {LOCATOR}")
     public void selectHeaderButtons(String LOCATOR) {
-        this.headerButton(LOCATOR).click();
+        getBaseInputHeaderLocators(String.format(BASE_INPUT_XPATH, LOCATOR)).click();
     }
 
-    private WebElement headerButton(String LOCATOR) {
-        return driver.findElement(By.xpath("(//a[@href='/" + LOCATOR + "/'])"));
-    }
 }

@@ -29,6 +29,7 @@ public class CheckOutPage extends MainTestBase{
     private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;(//button[contains(.,'Оформить заказ')])[1]";
     private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
     private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
+    private static final String PICKAP_RADIO_BUTTON_XPATH = "xpath;(//span[@class='checkout_delivery_info__mark'])[1]";
 
 
     //конструктор
@@ -90,6 +91,11 @@ public class CheckOutPage extends MainTestBase{
         return new PageElementActions(APTEKA_MAP_XPATH, driver);
     }
 
+    public PageElementActions getPickupRadioButton() {
+        return new PageElementActions(PICKAP_RADIO_BUTTON_XPATH, driver);
+    }
+
+
 
     //Методы
     @Step("Заполнение данных адреса доставки")
@@ -110,7 +116,8 @@ public class CheckOutPage extends MainTestBase{
 
     @Step("Пользователь выбирает способ получения - Доставка")
     public void clickDeliveryMethod() {
-        getChooseDeliveryMethod().click();
+        chooseDeliveryMethod();
+        logger.info("Пользователь выбирает способ получения - Доставка");
     }
 
     @Step("Пользователь нажимает на кнопку купить")
@@ -131,9 +138,32 @@ public class CheckOutPage extends MainTestBase{
         logger.info("Пользователь нажимает на кнопку 'Забронировать'");
     }
 
+    @Step("Проверка выбранного способа получения 'Самовывоз'")
+    public void choosePickupMethod() {
+        if (getSelectApteka().IsElementDisplayed()) {
+            getSelectApteka().click();
+        }
+        else {
+            getPickupRadioButton().click();
+            getSelectApteka().click();
+        }
+        logger.info("Проверка выбранного способа получения 'Самовывоз'");
+    }
+
+    @Step("Проверка выбранного способа получения 'Доставка'")
+    public void chooseDeliveryMethod() {
+        if (getSelectApteka().IsElementDisplayed()) {
+            getChooseDeliveryMethod().click();
+        }
+        else {
+            getChooseDeliveryMethod().click();
+        }
+        logger.info("Проверка выбранного способа получения 'Доставка'");
+    }
+
     @Step("Пользователь нажимает кнопку 'Выбрать Аптеку'")
     public void clickSelectApteka() {
-        getSelectApteka().click();
+        choosePickupMethod();
         logger.info("Пользователь нажимает кнопку 'Выбрать Аптеку'");
     }
 

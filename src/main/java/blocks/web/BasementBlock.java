@@ -3,14 +3,13 @@ package blocks.web;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class BasementBlock extends MainTestBase {
 
     //элементы
-    private static final String BASE_INPUT_XPATH = "xpath;(//a[@href='%s'])";
+    private static final String BASE_INPUT_XPATH = "xpath;//a[@href='%s']";
+
 
     //конструктор
     public BasementBlock(WebDriver driver) {
@@ -18,6 +17,10 @@ public class BasementBlock extends MainTestBase {
     }
 
     //геттеры элементов с получением доступа к действиям с элементами
+    public PageElementActions getBaseInputBasementLocators(String xpath) {
+        return new PageElementActions(xpath, driver);
+    }
+
     public PageElementActions getBaseInputBasementLinks(String xpath) {
         return new PageElementActions(xpath, driver);
     }
@@ -25,18 +28,14 @@ public class BasementBlock extends MainTestBase {
 
     //Методы
 
+    @Step("Кликает по локатору {LOCATOR}")
+    public void selectBasementButtons(String LOCATOR) {
+        getBaseInputBasementLocators(String.format(BASE_INPUT_XPATH, LOCATOR)).click();
+    }
+
     @Step("Проверка видимости и названия ссылки => {LINKTEXT}")
     public void checkLinksValidation(String LOCATOR, String LINKTEXT) {
         getBaseInputBasementLinks(String.format(BASE_INPUT_XPATH, LOCATOR)).contentIsDisplayed(LINKTEXT);
-    }
-
-    @Step("Кликает по локатору {LOCATOR}")
-    public void selectBasementButtons(String LOCATOR) {
-        this.basementButton(LOCATOR).click();
-    }
-
-    private WebElement basementButton(String LOCATOR) {
-        return driver.findElement(By.xpath("(//a[@href='/" + LOCATOR + "/'])"));
     }
 
 }

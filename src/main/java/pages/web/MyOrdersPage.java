@@ -55,11 +55,11 @@ public class MyOrdersPage extends MainTestBase {
         logger.info("Пользователь открывает созданный заказ");
     }
 
-    @Step("Пользователь отменяет созданный заказ")
+    @Step("Пользователь нажимает кнопки отменить и подвердить отмену заказа")
     public void clickCancelNumber() {
         getCancelOrder().click();
         getApproveCancelOrder().click();
-        logger.info("Пользователь отменяет созданный заказ");
+        logger.info("Пользователь нажимает кнопки отменить и подвердить отмену заказа");
     }
 
     @Step("Пользователь проверяет статус заказа")
@@ -67,5 +67,16 @@ public class MyOrdersPage extends MainTestBase {
         String orderStatus = getStatusOrder().getText();
         logger.info("Пользователь проверяет статус заказа");
         return orderStatus;
+    }
+
+    @Step("Пользователь отменяет созданный заказ")
+    public void cancelOrder() {
+        openUrl(propertiesManager.getProperty("baseurl") + "my-account/orders/");
+        clickOrderNumber();
+        getCancelOrder().click();
+        pageActions.staticWait(2000);
+        getApproveCancelOrder().click();
+        pageActions.assertEqualsTwoObject("Отменен",getOrderStatus());
+        logger.info("Пользователь отменяет созданный заказ");
     }
 }
