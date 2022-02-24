@@ -4,7 +4,7 @@ import actions.PageElementActions;
 import blocks.web.BasementBlock;
 import blocks.web.HeaderBlock;
 import core.MainTestBase;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import pages.web.*;
 
 public class BaseSettingsWebTests extends MainTestBase {
@@ -25,7 +25,7 @@ public class BaseSettingsWebTests extends MainTestBase {
 
 
 
-    @Before
+    @BeforeEach
     public void PagesInitialization() {
         mainPage = new MainPage(driver);
         pageElementActions = new PageElementActions(driver);

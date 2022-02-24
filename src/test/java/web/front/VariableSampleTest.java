@@ -3,9 +3,9 @@ package web.front;
 import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 @Feature(value = "Web")
 @Story("Проверка суммы 2-х товаров в корзине на сайте 36.6")
@@ -24,7 +24,7 @@ public class VariableSampleTest extends BaseSettingsWebTests {
         int secondPrice = productCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         int totalPrice = cartPage.getPriceTotal();
-        Assert.assertEquals(firstPrice + secondPrice, totalPrice);
+        Assertions.assertEquals(firstPrice + secondPrice, totalPrice);
     }
 }
 

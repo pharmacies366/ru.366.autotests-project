@@ -76,7 +76,7 @@ public class WebDriverFactory {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         chromeOptions.addArguments("--incognito");
         chromeOptions.addArguments("--disable-notifications");
-        if (nameOfPackage.contains("mobile")) {
+   /*     if (nameOfPackage.contains("mobile")) {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
             mobileEmulation.put("deviceName", "iPhone X");
@@ -90,7 +90,7 @@ public class WebDriverFactory {
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
             capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
             chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        }
+        }*/
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(capabilities);
         configureDriver();

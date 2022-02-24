@@ -17,6 +17,14 @@
         <driver>local</driver>
         <env>p1</env>
         <driverurl>http://10.250.226.11:4444/wd/hub/</driverurl>
+
+        <selenium-java.version>3.141.59</selenium-java.version>
+        <junit-jupiter.version>5.6.2</junit-jupiter.version>
+        <allure-junit5.version>2.13.5</allure-junit5.version>
+        <webdrivermanager.version>4.2.0</webdrivermanager.version>
+        <aspectj.version>1.9.6</aspectj.version>
+
+        <maven-surefire.version>2.22.2</maven-surefire.version>
     </properties>
 
     <profiles>
@@ -48,43 +56,28 @@
     </profiles>
 
     <dependencies>
-
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.4.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit4</artifactId>
-            <version>2.14.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-        </dependency>
-        <!-- зависимость для параметризации тестов -->
-        <dependency>
-            <groupId>com.tngtech.java</groupId>
-            <artifactId>junit-dataprovider</artifactId>
-            <version>1.13.1</version>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>${selenium-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure-junit5.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>4.4.3</version>
+            <version>${webdrivermanager.version}</version>
         </dependency>
+
         <!--библиотеки для логирования-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -106,30 +99,33 @@
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
-
     </dependencies>
+
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20</version>
+                <version>${maven-surefire.version}</version>
                 <configuration>
-                    <!--параллелизация-->
-                    <forkCount>7</forkCount>
+
+                    <forkCount>5</forkCount>
                     <reuseForks>false</reuseForks>
 
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <rerunFailingTestsCount>3</rerunFailingTestsCount>
+
+
+                    <!--true - Статус билда не зависит от прохождения тестов-->
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <includes>
+                        <include>**/*WebTest*.java</include>
+                    </includes>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>io.qameta.allure.junit4.AllureJunit4</value>
-                        </property>
-                    </properties>
+
                     <!-- системные переменные -->
                     <systemPropertyVariables>
                         <!-- suppress UnresolvedMavenProperty -->
@@ -140,6 +136,7 @@
                         <env>${env}</env>
                     </systemPropertyVariables>
                     <!-- системные переменные -->
+
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -149,12 +146,18 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
+
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>2.13.0</reportVersion>
+                    <resultsDirectory>allure-results</resultsDirectory>
+                </configuration>
             </plugin>
         </plugins>
-    </build>
 
+    </build>
 </project>
