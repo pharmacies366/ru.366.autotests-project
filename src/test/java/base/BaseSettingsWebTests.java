@@ -1,16 +1,32 @@
 package base;
 
 import actions.PageElementActions;
+import blocks.web.WebBasementBlock;
+import blocks.web.WebHeaderBlock;
 import core.MainTestBase;
 import org.junit.Before;
-import pages.web.*;
+import pages.web.authorization.AuthPopUpPage;
+import pages.web.bonusCard.BonusCardPopUpPage;
+import pages.web.cart.CartPage;
+import pages.web.catalog.CatalogPage;
+import pages.web.categories.MedicationsCategoryPage;
+import pages.web.checkout.CheckOutPage;
+import pages.web.cookie.CookiePage;
+import pages.web.main.MainPage;
+import pages.web.orders.MyOrdersPage;
+import pages.web.osp.OspPage;
+import pages.web.privateOffice.ChangePasswordPage;
+import pages.web.privateOffice.FavoritesPage;
+import pages.web.privateOffice.PersonalDataPage;
+import pages.web.product.ProductCardPage;
+import pages.web.sber.SberPage;
+import pages.web.thanks.ThankForTheOrderPage;
 
 public class BaseSettingsWebTests extends MainTestBase {
 
     protected MainPage mainPage;
     protected PageElementActions pageElementActions;
     protected CookiePage cookiePage;
-    protected TopPanelPage topPanelPage;
     protected AuthPopUpPage authPopUpPage;
     protected ProductCardPage productCardPage;
     protected CartPage cartPage;
@@ -19,9 +35,15 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected ThankForTheOrderPage thankForTheOrderPage;
     protected OspPage ospPage;
     protected MyOrdersPage myOrdersPage;
- /*
+    protected WebHeaderBlock headerBlock;
+    protected WebBasementBlock basementBlock;
+    protected PersonalDataPage personalDataPage;
+    protected BonusCardPopUpPage bonusCardPopUpPage;
+    protected ChangePasswordPage changePasswordPage;
+    protected FavoritesPage favoritesPage;
     protected CatalogPage catalogPage;
-    protected MedicationsPage medicationsPage;*/
+    protected MedicationsCategoryPage medicationsCategoryPage;
+
 
 
     @Before
@@ -29,7 +51,6 @@ public class BaseSettingsWebTests extends MainTestBase {
         mainPage = new MainPage(driver);
         pageElementActions = new PageElementActions(driver);
         cookiePage = new CookiePage(driver);
-        topPanelPage = new TopPanelPage(driver);
         authPopUpPage = new AuthPopUpPage(driver);
         productCardPage = new ProductCardPage(driver);
         cartPage = new CartPage(driver);
@@ -38,9 +59,14 @@ public class BaseSettingsWebTests extends MainTestBase {
         thankForTheOrderPage = new ThankForTheOrderPage(driver);
         ospPage = new OspPage(driver);
         myOrdersPage = new MyOrdersPage(driver);
-   /*
+        headerBlock = new WebHeaderBlock(driver);
+        basementBlock = new WebBasementBlock(driver);
+        personalDataPage = new PersonalDataPage(driver);
+        bonusCardPopUpPage = new BonusCardPopUpPage(driver);
+        changePasswordPage = new ChangePasswordPage(driver);
+        favoritesPage = new FavoritesPage(driver);
         catalogPage = new CatalogPage(driver);
-        medicationsPage = new MedicationsPage(driver);*/
+        medicationsCategoryPage = new MedicationsCategoryPage(driver);
 
     }
 

@@ -41,19 +41,22 @@ public class MainTestBase {
         pageActions = new PageActions(driver);
         driver.get(propertiesManager.getProperty("baseurl"));
         logger.info("Открывается главная страница сайта 36.6");
-        //driver.manage().deleteAllCookies();
 
     }
 
     @After
     public void finish() {
-    driver.close();
+        driver.quit();
     }
+
     /**
      * Повторный запуск тестов при падении
      */
+
+
     @Rule
-    public RetryRule rule = new RetryRule(3);
+    public RetryRule rule = new RetryRule(4);
+
 
     /**
      * Управление действиями, при различных исходах теста

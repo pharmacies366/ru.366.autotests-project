@@ -4,22 +4,29 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.Proxy;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
 
 import static core.MainTestBase.nameOfPackage;
 
 
 public class WebDriverFactory {
+
     private Logger logger = LogManager.getLogger(WebDriverFactory.class);
     private RemoteWebDriver driver;
 
@@ -40,20 +47,34 @@ public class WebDriverFactory {
     @Step("Настройка удаленного драйвера")
     private void setupRemoteDriver() {
         logger.info("setup remote driver");
-        String driverURL = System.getProperty("driverurl");
+        ChromeOptions chromeOptions = new ChromeOptions();
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-        capabilities.setVersion("91.0");
+        chromeOptions.addArguments("--incognito");
+        chromeOptions.addArguments("--disable-notifications");
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        Map<String, Object> profile = new HashMap<String, Object>();
+        prefs.put("googlegeolocationaccess.enabled", true);
+        prefs.put("profile.default_content_setting_values.geolocation", 2); // 1:allow 2:block
+        prefs.put("profile.default_content_setting_values.notifications", 1);
+        prefs.put("profile.managed_default_content_settings", 1);
+        chromeOptions.setExperimentalOption("prefs", prefs);
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", false);
+
+
         if (nameOfPackage.contains("mobile")) {
             Map<String, String> mobileEmulation = new HashMap<>();
             mobileEmulation.put("deviceName", "iPhone X");
-
-            ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
             capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         }
+
+
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        String driverURL = System.getProperty("driverurl");
+        capabilities.setBrowserName("chrome");
+        capabilities.setVersion("91.0");
 
         try {
             driver = new RemoteWebDriver(
@@ -63,24 +84,64 @@ public class WebDriverFactory {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+
         configureDriver();
         logger.info("ЗАПУЩЕН УДАЛЕННЫЙ ДРАЙВЕР");
     }
 
+
     @Step("Настройка локального драйвера")
     public void setupLocalDriver() {
-        logger.info("setup local web driver");
+        logger.info("setup local driver");
         ChromeOptions chromeOptions = new ChromeOptions();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        //DesiredCapabilities capabilities = DesiredCapabilities.chrome(); //в чем разница?
+
+
+//1 вариант
+       /* String proxy = "81.163.252.30.86";
+        chromeOptions.addArguments("--proxy-server=http://" + proxy);
+        chromeOptions.addArguments("ignore-certificate-errors");*/
+
+
+
+
+//2 вариант
+  /*      Proxy proxy = new Proxy();
+        proxy.setAutodetect(false);
+        proxy.setHttpProxy("http_proxy-url:port");
+        proxy.setSslProxy("https_proxy-url:port");
+        proxy.setNoProxy("no_proxy-var");
+        chromeOptions.setCapability("proxy", proxy);*/
+
+
+        chromeOptions.addArguments("--incognito");
+        chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));//оставить
+        chromeOptions.addArguments("--disable-notifications");
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        Map<String, Object> profile = new HashMap<String, Object>();
+        prefs.put("googlegeolocationaccess.enabled", true);
+        prefs.put("profile.default_content_setting_values.geolocation", 2); // 1:allow 2:block
+        prefs.put("profile.default_content_setting_values.notifications", 1);
+        prefs.put("profile.managed_default_content_settings", 1);
+        chromeOptions.setExperimentalOption("prefs", prefs);
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        chromeOptions.addArguments("--ignore-certificate-errors");
+        chromeOptions.addArguments("--disabled-notifications");
+        chromeOptions.addArguments("--disabled-popup-blocking");
+
+
         if (nameOfPackage.contains("mobile")) {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
             mobileEmulation.put("deviceName", "iPhone X");
-
-
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         }
+
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(chromeOptions);
+        //driver = new ChromeDriver(capabilities);
+        driver = new ChromeDriver(chromeOptions);//2 и 3 -й вариант
         configureDriver();
         logger.info("ЗАПУЩЕН ЛОКАЛЬНЫЙ ДРАЙВЕР");
     }
@@ -88,8 +149,11 @@ public class WebDriverFactory {
 
     @Step("Конфигурация драйвера")
     private void configureDriver() {
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+
     }
 
 
