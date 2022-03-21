@@ -21,8 +21,8 @@ public class MobileProductCardPage extends MainTestBase {
     private static final String QUANTITY_PRODUCT_XPATH = "xpath;(//a[@class='product_counter_short__desc'])[2]";
     private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
     private static final String MAIN_BUTTON_XPATH = "xpath;//div[@class='breadcrumbs__item']";
-    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[2]";
-
+    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
+    private static final String REGION_TEXT_XPATH = "xpath;//h2[contains(.,'%s')]";
 
     //конструктор
     public MobileProductCardPage(WebDriver driver) {
@@ -77,6 +77,10 @@ public class MobileProductCardPage extends MainTestBase {
 
     public PageElementActions getBanner() {
         return new PageElementActions(BANNER_XPATH, driver);
+    }
+
+    public PageElementActions getRegionTest(String xpath) {
+        return new PageElementActions(xpath, driver);
     }
 
 
@@ -161,6 +165,12 @@ public class MobileProductCardPage extends MainTestBase {
         pageActions.staticWait(1000);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
+    }
+
+    @Step("Пользователь проверяет выбранный регион на странице")
+    public void checkSelectedRegion(String regionName) {
+        getRegionTest(String.format(REGION_TEXT_XPATH, regionName)).isElementDisplayed();
+        logger.info("Пользователь проверяет выбранный регион на странице");
     }
 
 

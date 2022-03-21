@@ -20,7 +20,7 @@ public class MobileCartPage extends MainTestBase {
     private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_plus')])[1]";
     private static final String DELETE_PRODUCT_XPATH = "xpath;//button[@class='js-remove-entry-button b-btn--clean']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;//button[@data-gtm-source='cart']";
-    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[2]";
+    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
 
 
 

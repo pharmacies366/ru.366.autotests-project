@@ -5,7 +5,7 @@ import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
-public class CheckOutPage extends MainTestBase{
+public class CheckOutPage extends MainTestBase {
 
 
     //элементы

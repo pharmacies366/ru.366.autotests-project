@@ -41,6 +41,7 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
+        pageActions .waitPageLoad();
         int quantity = mobileHeaderBlock.checkCartQuantity();
         Assert.assertEquals(1, quantity);
         mobileHeaderBlock.clickToCartButton();

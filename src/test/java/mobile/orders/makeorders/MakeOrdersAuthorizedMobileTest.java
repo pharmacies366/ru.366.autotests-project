@@ -84,8 +84,8 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickSiteLogo();
         pageActions.waitPageLoad();
         mobileMainPage.clickLetterN();
-        pageActions.waitPageLoad();
         mobileOspPage.clickShowAll();
+        pageActions.waitPageLoad();
         mobileOspPage.clickProductName();
         mobileCartPage.сlickAddCartButton();
         mobileCartPage.clickToCartButton();

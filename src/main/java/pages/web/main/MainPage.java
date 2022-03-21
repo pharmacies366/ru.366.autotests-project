@@ -25,7 +25,7 @@ public class MainPage extends MainTestBase {
     private static final String QUANTITY_BANNERS_XPATH = "xpath;//ul[contains(@role,'tablist')]";
     private static final String CLOSE_POP_UP_NEWS_BUTTON_XPATH = "xpath;//div[@class='popmechanic-close']";
     private static final String CATALOG_BUTTON_XPATH = "xpath;//div[@class='catalog_menu js-switch-menu']";
-
+    private static final String PRODUCT_BUTTON_XPATH = "xpath;(//img[@class=' lazyloaded'])[1]";
 
     //конструктор
     public MainPage(WebDriver driver) {
@@ -101,6 +101,10 @@ public class MainPage extends MainTestBase {
 
     public PageElementActions getCatalogButton() {
         return new PageElementActions(CATALOG_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getProductButton() {
+        return new PageElementActions(PRODUCT_BUTTON_XPATH, driver);
     }
 
 
@@ -212,6 +216,12 @@ public class MainPage extends MainTestBase {
     public void clickCatalogButton() {
         getCatalogButton().click();
         logger.info("Пользователь нажимает на кнопку каталог");
+    }
+
+    @Step("Пользователь нажимает на первый товар в списке на главной странице")
+    public void clickFirstProductOnMainPage() {
+        getProductButton().click();
+        logger.info("Пользователь нажимает на первый товар в списке на главной странице");
     }
 
 

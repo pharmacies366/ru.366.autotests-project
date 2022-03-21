@@ -46,7 +46,9 @@ public class BannersMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickSiteLogo();
         pageActions.waitPageLoad();
         mobileMainPage.clickLetterN();
+        pageActions.waitPageLoad();
         mobileOspPage.clickBanner();
+        pageActions.waitPageLoad();
         mobileProductCardPage.checkButtonToCartButton();
         mobileMainPage.clickSiteLogo();
     }
@@ -88,7 +90,7 @@ public class BannersMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет переход по банеру на странице корзины")
     @Test
     public void checkBannersClickableOnCartPage() {
-        driver.get(propertiesManager.getProperty("baseurl") + "/cart");
+        driver.get(propertiesManager.getProperty("baseurl") + "cart");
         mobileCartPage.clickBanner();
         mobileProductCardPage.checkButtonToCartButton();
         mobileMainPage.clickSiteLogo();

@@ -3,7 +3,7 @@ package pages.web.privateOffice;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
 
 
 public class FavoritesPage extends MainTestBase {

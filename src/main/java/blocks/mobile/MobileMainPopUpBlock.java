@@ -3,7 +3,6 @@ package blocks.mobile;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class MobileMainPopUpBlock extends MainTestBase {
@@ -17,7 +16,7 @@ public class MobileMainPopUpBlock extends MainTestBase {
     private static final String LOGOUT_BUTTON_XPATH = "xpath;(//a[@href='/logout/'])[3]";
     private static final String PERSONAL_DATA_XPATH = "xpath;(//a[@href='/my-account/profile'])[3]";
     private static final String MEDICATIONS_BUTTON_XPATH = "xpath;(//a[@href='/c/lekarstva/'])[3]";
-
+    private static final String CITIES_BUTTON_XPATH = "xpath;(//span[contains(@class,'b-login-link i-fw-b')])[3]";
 
 
 
@@ -58,6 +57,10 @@ public class MobileMainPopUpBlock extends MainTestBase {
 
     public PageElementActions getMedicationsButton() {
         return new PageElementActions(MEDICATIONS_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getCitiesButton() {
+        return new PageElementActions(CITIES_BUTTON_XPATH, driver);
     }
 
     //Методы
@@ -116,5 +119,11 @@ public class MobileMainPopUpBlock extends MainTestBase {
     public void clickMedicationsButtons() {
         getMedicationsButton().click();
         logger.info("Пользователь нажимает на категорию лекарства");
+    }
+
+    @Step("Пользователь нажимает на кнопку для выбора города")
+    public void clickCitiesButton(){
+        getCitiesButton().click();
+        logger.info("Пользователь нажимает на кнопку для выбора города");
     }
 }

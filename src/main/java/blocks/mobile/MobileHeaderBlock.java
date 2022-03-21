@@ -3,9 +3,11 @@ package blocks.mobile;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 public class MobileHeaderBlock extends MainTestBase {
+
     //элементы
     private static final String CARD_COUNT_XPATH = "xpath;//div[contains(@class,'count js-mini-cart-count')]";
     private static final String CLEAR_ALL_FROM_CARD_XPATH = "xpath;//a[contains(.,'Очистить все')]";
@@ -16,7 +18,7 @@ public class MobileHeaderBlock extends MainTestBase {
     private static final String SEARCH_INPUT_XPATH = "xpath;//input[@id='js-site-search-input']";
     private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;//span[contains(@class,'header_favorites_mobile__icon')]";
-
+    private static final String GET_SELECTED_REGION_XPATH = "xpath;(//span[contains(@class,'b-login-link i-fw-b')])[3]";
 
     //конструктор
     public MobileHeaderBlock(WebDriver driver) {
@@ -60,6 +62,9 @@ public class MobileHeaderBlock extends MainTestBase {
         return new PageElementActions(FAVORITES_BUTTON_XPATH, driver);
     }
 
+    public PageElementActions getSelectedRegion() {
+        return new PageElementActions(GET_SELECTED_REGION_XPATH, driver);
+    }
 
 
     //Методы
@@ -84,7 +89,7 @@ public class MobileHeaderBlock extends MainTestBase {
     @Step("Пользователь вводит артикул товара в поисковую строку - {vendorCode}")
     public void setSearchInput(String vendorCode) {
         getSearchInput1().click();
-        getSearchInput().sendKeys(vendorCode);
+        getSearchInput().sendKeysAndEnter(vendorCode);
         logger.info("Пользователь вводит артикул не партнерсского товара в поисковую строку");
     }
 
@@ -119,6 +124,13 @@ public class MobileHeaderBlock extends MainTestBase {
     public void clickFavoritesButton() {
         getFavoritesButton().click();
         logger.info("Пользователь нажимает кнопку избранное");
+    }
+
+    @Step("Пользователь проверяет выбранный регион")
+    public void checkSelectedRegion(String regionName) {
+        String region = getSelectedRegion().getText();
+        Assert.assertEquals(region, regionName);
+        logger.info("Пользователь проверяет выбранный регион");
     }
 
 

@@ -3,6 +3,7 @@ package blocks.web;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 public class WebHeaderBlock extends MainTestBase {
@@ -27,6 +28,7 @@ public class WebHeaderBlock extends MainTestBase {
     private static final String CHANGE_PASSWORD_BUTTON_XPATH = "xpath;(//a[@href='/my-account/update-password'])[1]";
    // private static final String FAVORITES_BUTTON_XPATH = "xpath;//div[@class='js-link-seo i-cr-pointer b-seo-link b-icn--favorites c-header__link--secondary js-header__favorites']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;(//div[contains(@class,'js-header__favorites')])[1]";
+    private static final String GET_SELECTED_REGION_XPATH = "xpath;(//span[@class='b-login-link i-fw-b'])[1]";
 
     //конструктор
     public WebHeaderBlock(WebDriver driver) {
@@ -111,6 +113,9 @@ public class WebHeaderBlock extends MainTestBase {
         return new PageElementActions(FAVORITES_BUTTON_XPATH, driver);
     }
 
+    public PageElementActions getSelectedRegion() {
+        return new PageElementActions(GET_SELECTED_REGION_XPATH, driver);
+    }
 
 
     //Методы
@@ -227,6 +232,13 @@ public class WebHeaderBlock extends MainTestBase {
     public void clickFavoritesButton() {
         getFavoritesButton().click();
         logger.info("Пользователь нажимает кнопку избранное");
+    }
+
+    @Step("Пользователь проверяет выбранный регион")
+    public void checkSelectedRegion(String regionName) {
+        String region = getSelectedRegion().getText();
+        Assert.assertEquals(region, regionName);
+        logger.info("Пользователь проверяет выбранный регион");
     }
 
 }

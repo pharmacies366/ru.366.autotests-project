@@ -3,7 +3,6 @@ package pages.mobile.main;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class MobileMainPage extends MainTestBase {
@@ -13,7 +12,7 @@ public class MobileMainPage extends MainTestBase {
     private static final String SITE_LOGO_XPATH = "xpath;//img[contains(@alt,'9477014323230.png')]";
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
     private static final String MOBILE_APP_POP_UP_BUTTON_XPATH = "xpath;//div[@class='b-apps-flyer--close js-apps-flyer--close']";
-    private static final String LETTER_N_XPATH = "xpath;//a[@href='/littera-Н/']";
+    private static final String LETTER_N_XPATH = "xpath;//div[@class='c-alphabet-widget']//a[@href='/littera-Н/']";
     private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
     private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_plus')])[1]";
     private static final String DECREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_minus')])[1]";
@@ -23,6 +22,7 @@ public class MobileMainPage extends MainTestBase {
     private static final String QUANTITY_BANNERS_XPATH = "xpath;//ul[contains(@role,'tablist')]";
     private static final String BANNER_PIN_BUTTONS_XPATH = "xpath;//button[@type='button'][contains(.,'%s')]";
     private static final String BANNERS_BUTTONS_XPATH = "xpath;(//div[@class='yCmsContentSlot'])[1]";
+    private static final String PRODUCT_BUTTON_XPATH = "xpath;(//img[@class=' lazyloaded'])[1]";
 
 
     //конструктор
@@ -83,6 +83,9 @@ public class MobileMainPage extends MainTestBase {
         return new PageElementActions(BANNERS_BUTTONS_XPATH, driver);
     }
 
+    public PageElementActions getProductButton() {
+        return new PageElementActions(PRODUCT_BUTTON_XPATH, driver);
+    }
 
     //Методы
     @Step("Пользователь закрывает попап куки: 'Спасибо, понятно")
@@ -150,6 +153,12 @@ public class MobileMainPage extends MainTestBase {
     public void clickFavoritesIcon() {
         getFavoritesIcon().click();
         logger.info("Пользователь добавляет товар в избранное");
+    }
+
+    @Step("Пользователь нажимает на первый товар в списке на главной странице")
+    public void clickFirstProductOnMainPage() {
+        getProductButton().click();
+        logger.info("Пользователь нажимает на первый товар в списке на главной странице");
     }
 
 

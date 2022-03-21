@@ -64,6 +64,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
     public void serviceTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
+        pageActions.waitPageLoad();
         mobileBasementBlock.clickServiceButton();
         mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
         logger.info("Ссылка видна на странице и написана корректно");

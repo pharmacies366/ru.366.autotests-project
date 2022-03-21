@@ -3,7 +3,6 @@ package pages.web.cart;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 public class CartPage extends MainTestBase {
@@ -20,7 +19,7 @@ public class CartPage extends MainTestBase {
     private static final String QUANTITY_PRODUCT_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
     private static final String DELETE_PRODUCT_XPATH = "xpath;//button[@class='js-remove-entry-button b-btn--clean']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;//button[@data-gtm-source='cart']";
-    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[2]";
+    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
 
 
     //конструктор
@@ -159,6 +158,7 @@ public class CartPage extends MainTestBase {
 
     @Step("Пользователь проверяет и переходит по банеру")
     public void clickBanner() {
+        pageActions.staticWait(1000);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
     }

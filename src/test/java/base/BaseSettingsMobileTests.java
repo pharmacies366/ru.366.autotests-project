@@ -9,6 +9,7 @@ import org.junit.Before;
 import pages.mobile.authorization.MobileAuthPopUpPage;
 import pages.mobile.cart.MobileCartPage;
 import pages.mobile.checkout.MobileCheckOutPage;
+import pages.mobile.cities.MobileCitiesPopUpPage;
 import pages.mobile.cookie.MobileCookiePage;
 import pages.mobile.main.MobileMainPage;
 import pages.mobile.categorys.medicationsCategorys.MobileMedicationsCategorysPopUpPage;
@@ -49,6 +50,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
     protected MobileMedicationsCategorysPopUpPage mobileMedicationsCategorysPopUpPage;
     protected MobileMedicationsPage mobileMedicationsPage;
     protected MobileAllergyPage mobileAllergyPage;
+    protected MobileCitiesPopUpPage mobileCitiesPopUpPage;
 
 
 
@@ -76,6 +78,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
         mobileAllergyPage = new MobileAllergyPage(driver);
         mobileMedicationsPage = new MobileMedicationsPage(driver);
         mobileMedicationsCategorysPopUpPage = new MobileMedicationsCategorysPopUpPage(driver);
+        mobileCitiesPopUpPage = new MobileCitiesPopUpPage(driver);
     }
 
 }

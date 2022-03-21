@@ -17,6 +17,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     @Test
     public void increaseQuantityMaterialOnMainPage() {
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         mainPage.clickIncreaseQuantity();
         int firstQuantity = mainPage.getQuantityMaterials();
@@ -32,6 +33,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     @Test
     public void decreaseQuantityMaterialOnMainPage() {
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         mainPage.clickIncreaseQuantity();
         int firstQuantity = mainPage.getQuantityMaterials();
@@ -51,6 +53,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     @Test
     public void increaseQuantityMaterialOnCartPage() {
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         headerBlock.clickToCartButton();
         cartPage.clickIncreaseQuantity();
@@ -63,6 +66,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     @Test
     public void decreaseQuantityMaterialOnCartPage() {
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         mainPage.clickIncreaseQuantity();
         int firstQuantity = mainPage.getQuantityMaterials();

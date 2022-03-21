@@ -9,7 +9,7 @@ public class MobileMedicationsPage extends MainTestBase {
 
 
     //элементы
-    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[2]";
+    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
 
 
     //конструктор

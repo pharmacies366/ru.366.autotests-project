@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class MedicationsCategoryPage extends MainTestBase {
 
     //элементы
-    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[2]";
+    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
 
 
     //конструктор
@@ -26,6 +26,7 @@ public class MedicationsCategoryPage extends MainTestBase {
     //Методы
     @Step("Пользователь проверяет и переходит по банеру")
     public void clickBanner() {
+        pageActions.staticWait(1000);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
     }

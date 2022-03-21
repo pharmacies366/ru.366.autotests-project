@@ -11,6 +11,7 @@ import pages.web.cart.CartPage;
 import pages.web.catalog.CatalogPage;
 import pages.web.categories.MedicationsCategoryPage;
 import pages.web.checkout.CheckOutPage;
+import pages.web.cities.CitiesPopUpPage;
 import pages.web.cookie.CookiePage;
 import pages.web.main.MainPage;
 import pages.web.orders.MyOrdersPage;
@@ -43,6 +44,7 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected FavoritesPage favoritesPage;
     protected CatalogPage catalogPage;
     protected MedicationsCategoryPage medicationsCategoryPage;
+    protected CitiesPopUpPage citiesPopUpPage;
 
 
 
@@ -67,6 +69,7 @@ public class BaseSettingsWebTests extends MainTestBase {
         favoritesPage = new FavoritesPage(driver);
         catalogPage = new CatalogPage(driver);
         medicationsCategoryPage = new MedicationsCategoryPage(driver);
+        citiesPopUpPage = new CitiesPopUpPage(driver);
 
     }
 

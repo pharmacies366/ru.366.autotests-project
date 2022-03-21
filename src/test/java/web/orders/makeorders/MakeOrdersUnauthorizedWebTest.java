@@ -5,7 +5,6 @@ import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
 import org.junit.Test;
 
 @Feature(value = "Web")
@@ -64,6 +63,7 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
     public void checkOsp() {
         cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickLetterN();
         ospPage.clickProductName();
         cartPage.сlickAddCartButton();

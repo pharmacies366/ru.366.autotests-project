@@ -79,7 +79,7 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет переход по банеру на странице корзины")
     @Test
     public void checkBannersClickableOnCartPage() {
-        driver.get(propertiesManager.getProperty("baseurl") + "/cart");
+        driver.get(propertiesManager.getProperty("baseurl") + "cart");
         cartPage.clickBanner();
         productCardPage.clickMainButton();
     }
