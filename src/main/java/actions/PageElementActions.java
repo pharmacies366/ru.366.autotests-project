@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.hamcrest.Matchers.not;
+import static org.hamcrest.core.IsNot.not;
 
 
 public class PageElementActions extends MainTestBase {
