@@ -7,6 +7,7 @@ import core.MainTestBase;
 import org.junit.Before;
 import pages.web.authorization.AuthPopUpPage;
 import pages.web.bonusCard.BonusCardPopUpPage;
+import pages.web.botConsultant.BotConsultantPopUpPage;
 import pages.web.cart.CartPage;
 import pages.web.catalog.CatalogPage;
 import pages.web.categories.MedicationsCategoryPage;
@@ -45,6 +46,7 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected CatalogPage catalogPage;
     protected MedicationsCategoryPage medicationsCategoryPage;
     protected CitiesPopUpPage citiesPopUpPage;
+    protected BotConsultantPopUpPage botConsultantPopUpPage;
 
 
 
@@ -70,7 +72,7 @@ public class BaseSettingsWebTests extends MainTestBase {
         catalogPage = new CatalogPage(driver);
         medicationsCategoryPage = new MedicationsCategoryPage(driver);
         citiesPopUpPage = new CitiesPopUpPage(driver);
-
+        botConsultantPopUpPage = new BotConsultantPopUpPage(driver);
     }
 
 }

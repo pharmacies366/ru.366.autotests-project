@@ -7,12 +7,13 @@ import blocks.mobile.MobileMainPopUpBlock;
 import core.MainTestBase;
 import org.junit.Before;
 import pages.mobile.authorization.MobileAuthPopUpPage;
+import pages.mobile.botConsultant.MobileBotConsultantPopUpPage;
 import pages.mobile.cart.MobileCartPage;
+import pages.mobile.categorys.medicationsCategorys.MobileMedicationsCategorysPopUpPage;
 import pages.mobile.checkout.MobileCheckOutPage;
 import pages.mobile.cities.MobileCitiesPopUpPage;
 import pages.mobile.cookie.MobileCookiePage;
 import pages.mobile.main.MobileMainPage;
-import pages.mobile.categorys.medicationsCategorys.MobileMedicationsCategorysPopUpPage;
 import pages.mobile.orders.MobileMyOrdersPage;
 import pages.mobile.osp.MobileOspPage;
 import pages.mobile.privateOffice.MobileChangePasswordPage;
@@ -51,6 +52,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
     protected MobileMedicationsPage mobileMedicationsPage;
     protected MobileAllergyPage mobileAllergyPage;
     protected MobileCitiesPopUpPage mobileCitiesPopUpPage;
+    protected MobileBotConsultantPopUpPage mobileBotConsultantPopUpPage;
 
 
 
@@ -79,6 +81,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
         mobileMedicationsPage = new MobileMedicationsPage(driver);
         mobileMedicationsCategorysPopUpPage = new MobileMedicationsCategorysPopUpPage(driver);
         mobileCitiesPopUpPage = new MobileCitiesPopUpPage(driver);
+        mobileBotConsultantPopUpPage = new MobileBotConsultantPopUpPage(driver);
     }
 
 }

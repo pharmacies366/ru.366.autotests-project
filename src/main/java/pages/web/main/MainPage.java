@@ -4,6 +4,7 @@ import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage extends MainTestBase {
 
@@ -26,6 +27,7 @@ public class MainPage extends MainTestBase {
     private static final String CLOSE_POP_UP_NEWS_BUTTON_XPATH = "xpath;//div[@class='popmechanic-close']";
     private static final String CATALOG_BUTTON_XPATH = "xpath;//div[@class='catalog_menu js-switch-menu']";
     private static final String PRODUCT_BUTTON_XPATH = "xpath;(//img[@class=' lazyloaded'])[1]";
+    private static final String BOT_CONSULTANT_BUTTON_XPATH = "xpath;//jdiv[@class='hoverl_dc7e']";
 
     //конструктор
     public MainPage(WebDriver driver) {
@@ -105,6 +107,10 @@ public class MainPage extends MainTestBase {
 
     public PageElementActions getProductButton() {
         return new PageElementActions(PRODUCT_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getBotConsultantButton() {
+        return new PageElementActions(BOT_CONSULTANT_BUTTON_XPATH, driver);
     }
 
 
@@ -205,7 +211,7 @@ public class MainPage extends MainTestBase {
         System.out.println(quantity);
         for (int i = 1; i <= quantity; i++) {
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, i)).click();
-            pageActions.staticWait(1000);
+            pageActions.staticWait(4000);
             getBannersLocators().click();
             getMainButton().click();
         }
@@ -222,6 +228,12 @@ public class MainPage extends MainTestBase {
     public void clickFirstProductOnMainPage() {
         getProductButton().click();
         logger.info("Пользователь нажимает на первый товар в списке на главной странице");
+    }
+
+    @Step("Пользователь нажимает на иконку консультант бота")
+    public void clickBotConsultantButton() {
+        getBotConsultantButton().click();
+        logger.info("Пользователь нажимает на иконку консультант бота");
     }
 
 

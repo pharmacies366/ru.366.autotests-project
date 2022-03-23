@@ -48,7 +48,7 @@ public class BasementBlockWebTest extends BaseSettingsWebTests {
     @UseDataProvider("data")
     public void test(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
+       // mainPage.ClickClosePopUpNewsButton();
         basementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
         logger.info("Ссылка видна на странице и написана корректно");
         basementBlock.selectBasementButtons(LOCATOR);

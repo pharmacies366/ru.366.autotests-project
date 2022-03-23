@@ -41,7 +41,7 @@ public class OspPage extends MainTestBase {
 
     @Step("Пользователь проверяет и переходит по банеру")
     public void clickBanner() {
-        pageActions.staticWait(1000);
+        pageActions.staticWait(2000);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
     }

@@ -35,7 +35,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @Test
     @UseDataProvider("checkDisplaedOptions")
     public void checkDisplaedOptions(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -57,7 +57,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь заполняет фамилию и отчество и сохраняет данные")
     @Test
     public void checkPersonalDeta() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -81,7 +81,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь очищает поля фамилии и отчества и сохраняет данные")
     @Test
     public void clearPersonalDeta() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -101,7 +101,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь очищает поля имя и получает ошибку")
     @Test
     public void clearNameAndGettingError() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -121,7 +121,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь изменяет и сохраняет имя")
     @Test
     public void chanchName() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -146,7 +146,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь изменяет дату рождения")
     @Test
     public void changeBirthday() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -167,7 +167,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь изменяет пол")
     @Test
     public void changeGender() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -190,7 +190,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь очищает поля email, нажимает сохранить и получает ошибку")
     @Test
     public void clearEmail() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -210,7 +210,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет, что поле с номером телефона нельзя редактировать")
     @Test
     public void checkPhone() {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -228,7 +228,7 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Проверка чекбокса с новостной рассылкой")
     @Test
     public void checkReceiveNews() {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();

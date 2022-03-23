@@ -126,7 +126,7 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         favoritesPage.checkButtonAddToCart();
         favoritesPage.clickAddToCardButton();
         headerBlock.clickToCartButton();
-        cartPage.checkActivFavoritesButton();
+        cartPage.clickFavoritesButton();
 
     }
 

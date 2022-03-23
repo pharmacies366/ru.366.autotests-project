@@ -41,7 +41,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @Test
     public void oneClick() {
         mobileCookiePage.reCaptchaKey();
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         pageActions.waitPageLoad();
@@ -62,7 +62,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @Test
     public void checkOsp() {
         mobileCookiePage.reCaptchaKey();
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.reloadPage();
         mobileMainPage.clickLetterN();
@@ -88,7 +88,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @Test
     public void pickup() {
         mobileCookiePage.reCaptchaKey();
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.reloadPage();
@@ -112,7 +112,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @Test
     public void split() {
         mobileCookiePage.reCaptchaKey();
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         mobileCartPage.сlickAddCartButton();

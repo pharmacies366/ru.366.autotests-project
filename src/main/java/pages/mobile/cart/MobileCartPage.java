@@ -18,9 +18,11 @@ public class MobileCartPage extends MainTestBase {
     private static final String PRODUCT_CARD_XPATH = "xpath;//a[@data-gtm-source='search list']";
     private static final String QUANTITY_PRODUCT_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
     private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_plus')])[1]";
-    private static final String DELETE_PRODUCT_XPATH = "xpath;//button[@class='js-remove-entry-button b-btn--clean']";
+    private static final String DELETE_PRODUCT_XPATH = "xpath;(//form[@action='/cart/update']//child::button)[2]";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;//button[@data-gtm-source='cart']";
     private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
+    private static final String TEXT_DO_NOT_ADD_TO_CART_XPATH = "xpath;//div[@class='c-gallery__header js-products__tabs__item active']//child::h2";
+    private static final String DO_NOT_ADD_TO_CART_PRODUCTS_LIST_XPATH = "xpath;//div[@class='owl-wrapper c-gallery__content-wrapper active']";
 
 
 
@@ -81,6 +83,14 @@ public class MobileCartPage extends MainTestBase {
 
     public PageElementActions getBanner() {
         return new PageElementActions(BANNER_XPATH, driver);
+    }
+
+    public PageElementActions getDoNotAddToCart() {
+        return new PageElementActions(TEXT_DO_NOT_ADD_TO_CART_XPATH, driver);
+    }
+
+    public PageElementActions getDoNotAddToCartProductsList() {
+        return new PageElementActions(DO_NOT_ADD_TO_CART_PRODUCTS_LIST_XPATH, driver);
     }
 
     //Методы
@@ -144,7 +154,8 @@ public class MobileCartPage extends MainTestBase {
 
     @Step("Пользователь нажимает на иконку удаления товара")
     public void clickDeleteMaterials(){
-        getDeleteMaterials().clickIndex(1);
+        getMakeOrder().moveToElement();
+        getDeleteMaterials().click();
         logger.info("Пользователь нажимает на иконку удаления товар");
     }
 
@@ -173,6 +184,26 @@ public class MobileCartPage extends MainTestBase {
         pageActions.staticWait(1500);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
+    }
+
+    @Step("Пользователь нажимает на звёздочку и добавляет товар в избранное")
+    public void clickFavoritesButton() {
+        getFavoritesButton().click();
+        logger.info("Пользователь нажимает на звёздочку и добавляет товар в избранное");
+    }
+
+    @Step("Пользователь проверяет отображение текстового блока: Не забудьте положить в корзину")
+    public String checkTextDoNotAddToCart() {
+        logger.info("Пользователь проверяет отображение текстового блока: Не забудьте положить в корзину");
+        String text = getDoNotAddToCart().getText();
+        return text;
+    }
+
+    @Step("Пользователь получает количество товаров в блоке: Не забудьте положить в корзину")
+    public int checkDoNotAddToCartProductsList() {
+        logger.info("Пользователь получает количество товаров в блоке: Не забудьте положить в корзину");
+        int count = getDoNotAddToCartProductsList().getSize();
+        return count;
     }
 
 

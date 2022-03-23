@@ -20,7 +20,8 @@ public class CartPage extends MainTestBase {
     private static final String DELETE_PRODUCT_XPATH = "xpath;//button[@class='js-remove-entry-button b-btn--clean']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;//button[@data-gtm-source='cart']";
     private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
-
+    private static final String TEXT_DO_NOT_ADD_TO_CART_XPATH = "xpath;//div[@class='c-gallery__header js-products__tabs__item active']//child::h2";
+    private static final String DO_NOT_ADD_TO_CART_PRODUCTS_LIST_XPATH = "xpath;//div[@class='owl-wrapper c-gallery__content-wrapper active']";
 
     //конструктор
     public CartPage(WebDriver driver) {
@@ -76,6 +77,15 @@ public class CartPage extends MainTestBase {
         return new PageElementActions(BANNER_XPATH, driver);
     }
 
+    public PageElementActions getDoNotAddToCart() {
+        return new PageElementActions(TEXT_DO_NOT_ADD_TO_CART_XPATH, driver);
+    }
+
+    public PageElementActions getDoNotAddToCartProductsList() {
+        return new PageElementActions(DO_NOT_ADD_TO_CART_PRODUCTS_LIST_XPATH, driver);
+    }
+
+
 
     //Методы
     @Step("Проверка состояния корзины: Если корзина не пустая, удаляем все содержимое")
@@ -96,7 +106,7 @@ public class CartPage extends MainTestBase {
         String stringCartQuantity = getCartCount().getText();
         int quantity = Integer.parseInt(stringCartQuantity);
         return quantity;
-        }
+    }
 
     @Step("Удаение всех товаров из корзины")
     public void deleteAllMaterials() {
@@ -132,7 +142,7 @@ public class CartPage extends MainTestBase {
     }
 
     @Step("Пользователь нажимает '+' увеличивая количество шт. товара")
-    public void clickIncreaseQuantity(){
+    public void clickIncreaseQuantity() {
         getIncreaseQuantity().click();
         logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
     }
@@ -145,9 +155,15 @@ public class CartPage extends MainTestBase {
     }
 
     @Step("Пользователь нажимает на иконку удаления товара")
-    public void clickDeleteMaterials(){
+    public void clickDeleteMaterials() {
         getDeleteMaterials().clickIndex(1);
         logger.info("Пользователь нажимает на иконку удаления товар");
+    }
+
+    @Step("Пользователь нажимает на звёздочку и добавляет товар в избранное")
+    public void clickFavoritesButton() {
+        getFavoritesButton().click();
+        logger.info("Пользователь нажимает на звёздочку и добавляет товар в избранное");
     }
 
     @Step("Пользователь проверяет, что кнопка избраное отмечена и данный товар находиться в избранном")
@@ -156,11 +172,30 @@ public class CartPage extends MainTestBase {
         logger.info("Пользователь проверяет, что кнопка избраное отмечена и данный товар находиться в избранном");
     }
 
+    @Step("Пользователь проверяет, что кнопка избраное присутствует на странице и не активна")
+    public void checkNotActivFavoritesButton() {
+        getFavoritesButton().checkAttribute("class", "btn btn_favorites js-favorites-add__button");
+        logger.info("Пользователь проверяет, что кнопка избраное присутствует на странице и не активна");
+    }
+
     @Step("Пользователь проверяет и переходит по банеру")
     public void clickBanner() {
-        pageActions.staticWait(1000);
+        pageActions.staticWait(2000);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
     }
 
+    @Step("Пользователь проверяет отображение текстового блока: Не забудьте положить в корзину")
+    public String checkTextDoNotAddToCart() {
+        logger.info("Пользователь проверяет отображение текстового блока: Не забудьте положить в корзину");
+        String text = getDoNotAddToCart().getText();
+        return text;
+    }
+
+    @Step("Пользователь получает количество товаров в блоке: Не забудьте положить в корзину")
+    public int checkDoNotAddToCartProductsList() {
+        logger.info("Пользователь получает количество товаров в блоке: Не забудьте положить в корзину");
+        int count = getDoNotAddToCartProductsList().getSize();
+        return count;
+    }
 }

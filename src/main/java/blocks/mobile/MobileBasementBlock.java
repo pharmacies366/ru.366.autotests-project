@@ -6,7 +6,6 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 public class MobileBasementBlock extends MainTestBase {
-
     //элементы
     private static final String BASE_INPUT_XPATH = "xpath;(//a[@href='%s'])";
     private static final String HELP_BUTTON_XPATH = "xpath;(//label[@class='c-block-view-ch__label']//child::div)[1]";

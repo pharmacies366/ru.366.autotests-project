@@ -7,8 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.hamcrest.core.IsNot.not;
-
 
 public class PageElementActions extends MainTestBase {
 
@@ -37,13 +35,20 @@ public class PageElementActions extends MainTestBase {
     }
 
 
- /*   //Перемещение элемента
+/*    //Перемещение элемента
     public void drugAndDrop(By by) {
         Actions actions = new Actions(driver);
         WebDriverWait wait = new WebDriverWait(driver, DEFAULT_ELEMENT_WAIT_TIME_S);
         WebElement element2 = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         actions.moveToElement(waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S)).clickAndHold().moveToElement(element2).release().build().perform();
     }*/
+
+
+    //Перемещение элемента по заданным координатам
+    public void drugAndDropToOffSet(int x, int y) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S)).clickAndHold().moveByOffset(x, y).release().build().perform();
+    }
 
 
     //Клик по индексу элемента
@@ -87,6 +92,8 @@ public class PageElementActions extends MainTestBase {
     //Очистить содержимое элемента
     public void clean() {
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).clear();
+        waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(Keys.chord(Keys.LEFT_CONTROL, "A"));
+        waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(Keys.BACK_SPACE);
         saveAllureScreenshot();
     }
 
@@ -160,6 +167,13 @@ public class PageElementActions extends MainTestBase {
         return element;
     }
 
+    //Ожидание что элимент не кликабелен
+    public void waitUntilElementToBeUnClickable(By by, int _secondsToWait) {
+        WebDriverWait wait = new WebDriverWait(driver, _secondsToWait);
+        wait.until(ExpectedConditions.not(
+                ExpectedConditions.elementToBeClickable(by)));
+    }
+
 
     //Ожидание кликабельности элемента
     public void elementIsClickable() {
@@ -168,7 +182,7 @@ public class PageElementActions extends MainTestBase {
 
     //Ожидание, что элемент не кликабелен
     public void elementIsNotClickable() {
-        not(waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S));
+        waitUntilElementToBeUnClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
     }
 
 

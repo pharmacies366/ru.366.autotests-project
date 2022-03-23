@@ -7,7 +7,6 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 public class MobileHeaderBlock extends MainTestBase {
-
     //элементы
     private static final String CARD_COUNT_XPATH = "xpath;//div[contains(@class,'count js-mini-cart-count')]";
     private static final String CLEAR_ALL_FROM_CARD_XPATH = "xpath;//a[contains(.,'Очистить все')]";
@@ -133,6 +132,13 @@ public class MobileHeaderBlock extends MainTestBase {
         logger.info("Пользователь проверяет выбранный регион");
     }
 
+    @Step("Пользователь получает количество товаров в избранном")
+    public int checkQuantityProductsOnFavoritesPage() {
+        String stringFavoritesQuantity = getCartCount().getText();
+        int quantity = Integer.parseInt(stringFavoritesQuantity);
+        logger.info("Пользователь получает количество товаров в избранном");
+        return quantity;
+    }
 
 
 }

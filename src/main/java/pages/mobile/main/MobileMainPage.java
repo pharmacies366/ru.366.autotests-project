@@ -23,6 +23,8 @@ public class MobileMainPage extends MainTestBase {
     private static final String BANNER_PIN_BUTTONS_XPATH = "xpath;//button[@type='button'][contains(.,'%s')]";
     private static final String BANNERS_BUTTONS_XPATH = "xpath;(//div[@class='yCmsContentSlot'])[1]";
     private static final String PRODUCT_BUTTON_XPATH = "xpath;(//img[@class=' lazyloaded'])[1]";
+    private static final String ADD_TO_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
+    private static final String BOT_CONSULTANT_BUTTON_XPATH = "xpath;//jdiv[@class='button_e5c6']";
 
 
     //конструктор
@@ -79,6 +81,10 @@ public class MobileMainPage extends MainTestBase {
         return new PageElementActions(xpath, driver);
     }
 
+    public PageElementActions getAddToCartButton() {
+        return new PageElementActions(ADD_TO_CART_BUTTON_XPATH, driver);
+    }
+
     public PageElementActions getBannersLocators() {
         return new PageElementActions(BANNERS_BUTTONS_XPATH, driver);
     }
@@ -86,6 +92,11 @@ public class MobileMainPage extends MainTestBase {
     public PageElementActions getProductButton() {
         return new PageElementActions(PRODUCT_BUTTON_XPATH, driver);
     }
+
+    public PageElementActions getBotConsultantButton() {
+        return new PageElementActions(BOT_CONSULTANT_BUTTON_XPATH, driver);
+    }
+
 
     //Методы
     @Step("Пользователь закрывает попап куки: 'Спасибо, понятно")
@@ -161,6 +172,12 @@ public class MobileMainPage extends MainTestBase {
         logger.info("Пользователь нажимает на первый товар в списке на главной странице");
     }
 
+    @Step("Пользователь нажимает на кнопку 'В корзину'")
+    public void clickAddToCardButton() {
+        getAddToCartButton().click();
+        logger.info("Пользователь нажимает на кнопку 'В корзину'");
+    }
+
 
 
 /*    @Step("Пользователь переключает вперед банеры и проверяет, что возвращается к первому")
@@ -202,5 +219,12 @@ public class MobileMainPage extends MainTestBase {
         }
         logger.info("Пользователь переключает банеры по пинам и возвращается на главную страницу");
     }
+
+    @Step("Пользователь нажимает на иконку консультант бота")
+    public void clickBotConsultantButton() {
+        getBotConsultantButton().click();
+        logger.info("Пользователь нажимает на иконку консультант бота");
+    }
+
 
 }
