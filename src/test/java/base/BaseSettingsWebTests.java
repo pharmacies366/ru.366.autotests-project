@@ -5,6 +5,7 @@ import blocks.web.WebBasementBlock;
 import blocks.web.WebHeaderBlock;
 import core.MainTestBase;
 import org.junit.Before;
+import pages.commonActions.web.CommonActionsOnWebPages;
 import pages.web.authorization.AuthPopUpPage;
 import pages.web.bonusCard.BonusCardPopUpPage;
 import pages.web.botConsultant.BotConsultantPopUpPage;
@@ -26,6 +27,7 @@ import pages.web.thanks.ThankForTheOrderPage;
 
 public class BaseSettingsWebTests extends MainTestBase {
 
+    protected CommonActionsOnWebPages commonActionsOnWebPages;
     protected MainPage mainPage;
     protected PageElementActions pageElementActions;
     protected CookiePage cookiePage;
@@ -52,6 +54,7 @@ public class BaseSettingsWebTests extends MainTestBase {
 
     @Before
     public void PagesInitialization() {
+        commonActionsOnWebPages = new CommonActionsOnWebPages(driver);
         mainPage = new MainPage(driver);
         pageElementActions = new PageElementActions(driver);
         cookiePage = new CookiePage(driver);

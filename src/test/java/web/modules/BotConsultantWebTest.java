@@ -1,3 +1,4 @@
+package web.modules;/*
 package web.modules;
 
 import base.BaseSettingsWebTests;
@@ -15,10 +16,10 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
     @Test
     public void checkItemCanNotCheckout() {
         mainPage.clickClosePopUp();
-        //mainPage.ClickClosePopUpNewsButton();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickCantNotOrder();
-        botConsultantPopUpPage.contactDetails("test", "00000000000", "test@gmail.com");
+        botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
         botConsultantPopUpPage.clicksendMessage();
         botConsultantPopUpPage.checkThanksMessage();
     }
@@ -27,10 +28,10 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
     @Test
     public void checkItemINeedADrug() {
         mainPage.clickClosePopUp();
-        //  mainPage.ClickClosePopUpNewsButton();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedADrug();
-        botConsultantPopUpPage.contactDetails("test", "00000000000", "test@gmail.com");
+        botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
         botConsultantPopUpPage.clicksendMessage();
         botConsultantPopUpPage.checkThanksMessage();
     }
@@ -39,10 +40,10 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
     @Test
     public void checkItemINeedDelivery() {
         mainPage.clickClosePopUp();
-        //  mainPage.ClickClosePopUpNewsButton();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedDelivery();
-        botConsultantPopUpPage.contactDetails("test", "00000000000", "test@gmail.com");
+        botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
         botConsultantPopUpPage.clicksendMessage();
         botConsultantPopUpPage.checkThanksMessage();
     }
@@ -51,10 +52,11 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
     @Test
     public void checkCloseBot() {
         mainPage.clickClosePopUp();
-        // mainPage.ClickClosePopUpNewsButton();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickCloseBot();
         botConsultantPopUpPage.checkCloseBot();
 
     }
 }
+*/

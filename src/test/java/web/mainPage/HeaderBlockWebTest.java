@@ -1,4 +1,4 @@
-package web.front;
+package web.mainPage;
 
 import base.BaseSettingsWebTests;
 import com.tngtech.java.junit.dataprovider.DataProvider;

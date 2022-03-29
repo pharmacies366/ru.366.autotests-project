@@ -41,7 +41,7 @@ public class PageActions extends MainTestBase {
 
     //Переключиться на iFrame по title
     public void switchToiFrame(String titleName) {
-        driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='"+ titleName +"']")));
+        driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='" + titleName + "']")));
     }
 
     //Переключиться на iFrame по индексу
@@ -53,6 +53,11 @@ public class PageActions extends MainTestBase {
     public void checkUrl(String url) {
         driver.getCurrentUrl();
         Assert.assertTrue(url.equals(url));
+    }
+
+    //Возвращение на предыдущую страницу
+    public void returnBackPage() {
+        driver.navigate().back();
     }
 
     //Получить Title

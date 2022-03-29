@@ -57,7 +57,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         productCardPage.buyOneClick();
         productCardPage.checkVisibilityMap();
-        productCardPage.setInputSearchAddres("Москва");
+        productCardPage.setInputSearchAddress("Москва");
         pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
         cookiePage.reCaptchaKey();
@@ -81,11 +81,11 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         headerBlock.clickSiteLogo();
         mainPage.clickLetterN();
         ospPage.clickProductName();
-        cartPage.сlickAddCartButton();
+        cartPage.clickAddCartButton();
         headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickSelectApteka();
-        productCardPage.setInputSearchAddres("метро Автозаводская");
+        productCardPage.setInputSearchAddress("метро Автозаводская");
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
        // checkOutPage.clickMakeOrder();
@@ -104,7 +104,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
-        cartPage.сlickAddCartButton();
+        cartPage.clickAddCartButton();
         headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickSelectApteka();
@@ -127,10 +127,10 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
-        cartPage.сlickAddCartButton();
+        cartPage.clickAddCartButton();
         headerBlock.clickSiteLogo();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
-        cartPage.сlickAddCartButton();
+        cartPage.clickAddCartButton();
         headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickSelectApteka();

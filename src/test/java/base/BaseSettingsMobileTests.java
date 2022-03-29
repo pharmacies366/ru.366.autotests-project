@@ -6,6 +6,7 @@ import blocks.mobile.MobileHeaderBlock;
 import blocks.mobile.MobileMainPopUpBlock;
 import core.MainTestBase;
 import org.junit.Before;
+import pages.commonActions.mobile.CommonActionsOnMobilePages;
 import pages.mobile.authorization.MobileAuthPopUpPage;
 import pages.mobile.botConsultant.MobileBotConsultantPopUpPage;
 import pages.mobile.cart.MobileCartPage;
@@ -29,6 +30,7 @@ import pages.mobile.thanks.MobileThankForTheOrderPage;
 public class BaseSettingsMobileTests extends MainTestBase {
 
 
+    protected CommonActionsOnMobilePages commonActionsOnMobilePages;
     protected PageElementActions pageElementActions;
     protected MobileAuthPopUpPage mobileAuthPopUpPage;
     protected MobileCartPage mobileCartPage;
@@ -58,6 +60,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
 
     @Before
     public void PagesInitialization() {
+        commonActionsOnMobilePages = new CommonActionsOnMobilePages(driver);
         pageElementActions = new PageElementActions(driver);
         mobileCheckOutPage = new MobileCheckOutPage(driver);
         mobileCartPage = new MobileCartPage(driver);

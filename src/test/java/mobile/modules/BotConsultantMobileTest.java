@@ -1,6 +1,8 @@
+package mobile.modules;/*
 package mobile.modules;
 
 import base.BaseSettingsMobileTests;
+import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
@@ -14,7 +16,7 @@ public class BotConsultantMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь выбирает пункт: Не могу оформить заказ, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemCanNotCheckout() {
-       // mobileMainPage.clickClosePopUp();
+        mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.reloadPage();
         mobileMainPage.clickBotConsultantButton();
@@ -27,7 +29,7 @@ public class BotConsultantMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь выбирает пункт: Мне нужен препарат, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemINeedADrug() {
-      //  mobileMainPage.clickClosePopUp();
+        mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.reloadPage();
         mobileMainPage.clickBotConsultantButton();
@@ -40,7 +42,7 @@ public class BotConsultantMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь выбирает пункт: Нужна доставка, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemINeedDelivery() {
-      //  mobileMainPage.clickClosePopUp();
+        mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.reloadPage();
         mobileMainPage.clickBotConsultantButton();
@@ -53,7 +55,7 @@ public class BotConsultantMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет закрытие консультант бота")
     @Test
     public void checkCloseBot() {
-      //  mobileMainPage.clickClosePopUp();
+        mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.reloadPage();
         mobileMainPage.clickBotConsultantButton();
@@ -62,3 +64,4 @@ public class BotConsultantMobileTest extends BaseSettingsMobileTests {
 
     }
 }
+*/

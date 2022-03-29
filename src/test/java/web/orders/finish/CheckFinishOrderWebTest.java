@@ -1,4 +1,4 @@
-package web.orders;
+package web.orders.finish;
 
 import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
@@ -22,7 +22,7 @@ public class CheckFinishOrderWebTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("userpass"));
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
-        cartPage.сlickAddCartButton();
+        cartPage.clickAddCartButton();
         headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickSelectApteka();

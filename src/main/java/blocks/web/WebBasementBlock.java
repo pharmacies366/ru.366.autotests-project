@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class WebBasementBlock extends MainTestBase {
 
     //элементы
-    private static final String BASE_INPUT_XPATH = "xpath;//a[@href='%s']";
+    private static final String BASE_INPUT_XPATH = "xpath;//div[@class='b-section--as-content']//child::a[@href='%s']";
 
 
     //конструктор
@@ -33,9 +33,9 @@ public class WebBasementBlock extends MainTestBase {
         getBaseInputBasementLocators(String.format(BASE_INPUT_XPATH, LOCATOR)).click();
     }
 
-    @Step("Проверка видимости и названия ссылки => {LINKTEXT}")
-    public void checkLinksValidation(String LOCATOR, String LINKTEXT) {
-        getBaseInputBasementLinks(String.format(BASE_INPUT_XPATH, LOCATOR)).contentIsDisplayed(LINKTEXT);
+    @Step("Проверка видимости и названия ссылки => {LINK_TEXT}")
+    public void checkLinksValidation(String LOCATOR, String LINK_TEXT) {
+        getBaseInputBasementLinks(String.format(BASE_INPUT_XPATH, LOCATOR)).contentIsDisplayed(LINK_TEXT);
     }
 
 }

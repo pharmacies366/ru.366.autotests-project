@@ -104,8 +104,7 @@ public class CartPage extends MainTestBase {
     @Step("Проверка количества товаров в корзине")
     public int checkCartQuantity() {
         String stringCartQuantity = getCartCount().getText();
-        int quantity = Integer.parseInt(stringCartQuantity);
-        return quantity;
+        return Integer.parseInt(stringCartQuantity);
     }
 
     @Step("Удаение всех товаров из корзины")
@@ -124,7 +123,7 @@ public class CartPage extends MainTestBase {
     }
 
     @Step("Пользователь нажимает на кнопку 'В корзину'")
-    public void сlickAddCartButton() {
+    public void clickAddCartButton() {
         getClickAddCartButton().click();
         logger.info("Пользователь нажимает на кнопку 'В корзину'");
     }
@@ -167,20 +166,20 @@ public class CartPage extends MainTestBase {
     }
 
     @Step("Пользователь проверяет, что кнопка избраное отмечена и данный товар находиться в избранном")
-    public void checkActivFavoritesButton() {
+    public void checkActiveFavoritesButton() {
         getFavoritesButton().checkAttribute("class", "btn btn_favorites js-favorites-add__button active");
         logger.info("Пользователь проверяет, что кнопка избраное отмечена и данный товар находиться в избранном");
     }
 
     @Step("Пользователь проверяет, что кнопка избраное присутствует на странице и не активна")
-    public void checkNotActivFavoritesButton() {
+    public void checkNotActiveFavoritesButton() {
         getFavoritesButton().checkAttribute("class", "btn btn_favorites js-favorites-add__button");
         logger.info("Пользователь проверяет, что кнопка избраное присутствует на странице и не активна");
     }
 
     @Step("Пользователь проверяет и переходит по банеру")
     public void clickBanner() {
-        pageActions.staticWait(2000);
+        pageActions.staticWait(1000);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
     }
@@ -188,14 +187,12 @@ public class CartPage extends MainTestBase {
     @Step("Пользователь проверяет отображение текстового блока: Не забудьте положить в корзину")
     public String checkTextDoNotAddToCart() {
         logger.info("Пользователь проверяет отображение текстового блока: Не забудьте положить в корзину");
-        String text = getDoNotAddToCart().getText();
-        return text;
+        return getDoNotAddToCart().getText();
     }
 
     @Step("Пользователь получает количество товаров в блоке: Не забудьте положить в корзину")
     public int checkDoNotAddToCartProductsList() {
         logger.info("Пользователь получает количество товаров в блоке: Не забудьте положить в корзину");
-        int count = getDoNotAddToCartProductsList().getSize();
-        return count;
+        return getDoNotAddToCartProductsList().getSize();
     }
 }

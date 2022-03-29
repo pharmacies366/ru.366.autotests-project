@@ -16,11 +16,11 @@ public class BotConsultantPopUpPage extends MainTestBase {
     private static final String PhoneNumber = "tel";
     private static final String Email = "email";
     private static final String CLOSE_BOT_BUTTON_XPATH = "xpath;//jdiv[@class='closeIcon_fc52']";
-    private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[@class='button_d428'])[1]";
-    private static final String NEED_A_DRUG_BUTTON_XPATH = "xpath;(//jdiv[@class='button_d428'])[2]";
-    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[@class='button_d428'])[3]";
-    private static final String ENTER_MESSAGE_INPUT_XPATH = "xpath;//jdiv[@class='button_c98f _blue_e6dd']";
-    private static final String THANKS_MESSAGE_XPATH = "xpath;//jdiv[@class='submitSuccess_ee4a __show_c0f4']";
+    private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[1]";
+    private static final String NEED_A_DRUG_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[2]";
+    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[3]";
+    private static final String ENTER_MESSAGE_INPUT_XPATH = "xpath;//jdiv[text()='Отправить']";
+    private static final String THANKS_MESSAGE_XPATH = "xpath;//jdiv[@class='submitSuccess_f0ba __show_ee7c']";
     private static final String ANIMATION_BOT_XPATH = "xpath;(//jdiv[@class='globalClass_bc43']//child::jdiv)[1]";
 
 
