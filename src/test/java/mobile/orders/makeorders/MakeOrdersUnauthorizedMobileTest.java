@@ -65,6 +65,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.reloadPage();
+        pageActions.waitPageLoad();
         mobileMainPage.clickLetterN();
         pageActions.waitPageLoad();
         mobileOspPage.clickShowAll();

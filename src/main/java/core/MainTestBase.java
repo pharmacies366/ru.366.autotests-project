@@ -54,8 +54,10 @@ public class MainTestBase {
      */
 
 
+/*
     @Rule
     public RetryRule rule = new RetryRule(4);
+*/
 
     /**
      * Управление действиями, при различных исходах теста

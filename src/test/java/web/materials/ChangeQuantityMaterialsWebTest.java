@@ -19,6 +19,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
+        pageActions.waitPageLoad();
         mainPage.clickIncreaseQuantity();
         int firstQuantity = mainPage.getQuantityMaterials();
         Assert.assertEquals(2, firstQuantity);
