@@ -101,6 +101,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.ckickSelect();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),

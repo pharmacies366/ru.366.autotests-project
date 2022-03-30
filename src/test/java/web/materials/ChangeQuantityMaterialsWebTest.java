@@ -36,6 +36,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
+        pageActions.waitPageLoad();
         mainPage.clickIncreaseQuantity();
         int firstQuantity = mainPage.getQuantityMaterials();
         Assert.assertEquals(2, firstQuantity);
@@ -56,6 +57,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         productCardPage.clickAddCartButton();
+        pageActions.waitPageLoad();
         productCardPage.clickIncreaseQuantity();
         int quantity = productCardPage.getQuantityProduct();
         Assert.assertEquals(2, quantity);

@@ -122,6 +122,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.ckickSelect();
+        //pageActions.waitPageLoad();
        // mobileCheckOutPage.clickMakeOrder();
       //  mobileThankForTheOrderPage.checkSuccessMessage();
     }

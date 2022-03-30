@@ -37,6 +37,7 @@ public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
+        pageActions.waitPageLoad();
         mobileMainPage.clickIncreaseQuantity();
         int firstQuantity = mobileMainPage.getQuantityMaterials();
         Assert.assertEquals(2, firstQuantity);
