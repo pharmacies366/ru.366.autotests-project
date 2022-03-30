@@ -4,9 +4,15 @@ import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
+import java.util.Arrays;
+import java.util.NoSuchElementException;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CommonActionsOnWebPages extends MainTestBase {
 
@@ -36,6 +42,13 @@ public class CommonActionsOnWebPages extends MainTestBase {
     private static final String BASE_INPUT_CHECKBOX_OPTION_XPATH = "xpath;(//span[@class='b-custom-input'])[%s]";
     private static final String ON_RECIPE_XPATH = "xpath;//span[@class='b-trim-str'][contains(.,'Отпуск по рецепту')]";
     private static final String WITHOUT_RECIPE_XPATH = "xpath;//span[contains(.,'Отпуск без рецепта')]";
+    private static final String SORTING_BUTTON_XPATH = "xpath;//span[contains(@class,'ui-selectmenu-text')]";
+    private static final String SORTING_NAME_XPATH = "xpath;//span[@class='ui-selectmenu-text']";
+    private static final String BASE_LIST_TITLE_PRODUCTS_XPATH = "xpath;(//a[@data-gtm-source='products list'])[%s]";
+    private static final String BASE_INPUT_SORTING_OPTIONS_XPATH = "xpath;//div[contains(@id,'ui-id-%s')]";
+    private static final String PRICE_REDUCTION = "5";
+    private static final String PRICE_INCREASE = "4";
+    private static final String SORTING_NAME = "3";
 
 
     //конструктор
@@ -142,6 +155,22 @@ public class CommonActionsOnWebPages extends MainTestBase {
         return new PageElementActions(WITHOUT_RECIPE_XPATH, driver);
     }
 
+    public PageElementActions getSortingButton() {
+        return new PageElementActions(SORTING_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getListTitleProducts() {
+        return new PageElementActions(BASE_LIST_TITLE_PRODUCTS_XPATH, driver);
+    }
+
+    public PageElementActions getSortingName() {
+        return new PageElementActions(SORTING_NAME_XPATH, driver);
+    }
+
+    public PageElementActions getSortingOptions(String xpath) {
+        return new PageElementActions(xpath, driver);
+    }
+
 
     //Методы
     @Step("Пользователь проверяет и переходит по банеру")
@@ -181,15 +210,15 @@ public class CommonActionsOnWebPages extends MainTestBase {
         logger.info("Пользователь прописывает нижный и верхний диапозон цены");
     }
 
-    @Step("Пользователь проверяет что после установки диапазона цен, цены на товары показываются в верном диапазоне")
-    public void checkChangeProductsPrices(int fromPrice, int toPrice) {
+    @Step("Пользователь проверяет цены на текущей странице выдачи")
+    public int checkProductsPrices() {
+        int price = 0;
         int par = getProductList().getSize();
         for (int i = 1; i <= par; i++) {
-            int price = getBaseInputCheckProductPrice(String.format(BASE_INPUT_CHECK_PRODUCT_PRICE_XPATH, i)).formatElementToValue();
-            Assert.assertTrue(price >= fromPrice);
-            Assert.assertTrue(price <= toPrice);
+            price = getBaseInputCheckProductPrice(String.format(BASE_INPUT_CHECK_PRODUCT_PRICE_XPATH, i)).formatElementToValue();
         }
-        logger.info("Пользователь проверяет что после установки диапазона цен, цены на товары показываются в верном диапазоне");
+        logger.info("Пользователь проверяет цены на текущей странице выдачи");
+        return price;
     }
 
     @Step("Пользователь выбирает чекбокс с доставкой")
@@ -218,6 +247,59 @@ public class CommonActionsOnWebPages extends MainTestBase {
         getCloseCheckboxDelivery().click();
         logger.info("Пользователь снимает чекбокс Доставка");
     }
+
+
+    @Step("Пользователь нажимает на кнопку для выбора сортировки товаров")
+    public void clickSortingButton() {
+        getSortingButton().click();
+        logger.info("Пользователь нажимает на кнопку для выбора сортировки товаров");
+    }
+
+    @Step("Пользователь нажимает на сортировку товаров по увеличению цены")
+    public void clickPriceIncreaseOption() {
+        getSortingOptions(String.format(BASE_INPUT_SORTING_OPTIONS_XPATH, PRICE_INCREASE)).click();
+        logger.info("Пользователь нажимает на сортировку товаров по увеличению цены");
+    }
+
+    @Step("Пользователь проверяет сортировку товаров по увеличению цены")
+    public void checkSortingPriceIncrease() {
+        int par = getProductList().getSize();
+        for (int i = 1; i <= par; i++) {
+            int price = getBaseInputCheckProductPrice(String.format(BASE_INPUT_CHECK_PRODUCT_PRICE_XPATH, i)).formatElementToValue();
+        Assert.assertTrue(price <= price + i);
+        }
+        logger.info("Пользователь проверяет сортировку товаров по увеличению цены");
+    }
+
+    @Step("Пользователь нажимает на сортировку товаров по уменьшению цены")
+    public void clickPriceReductionOption() {
+        getSortingOptions(String.format(BASE_INPUT_SORTING_OPTIONS_XPATH, PRICE_REDUCTION)).click();
+        logger.info("Пользователь нажимает на сортировку товаров по уменьшению цены");
+    }
+
+    @Step("Пользователь проверяет сортировку товаров по уменьшению цены")
+    public void checkSortingPriceReduction() {
+        int par = getProductList().getSize();
+        for (int i = 1; i <= par; i++) {
+            int price = getBaseInputCheckProductPrice(String.format(BASE_INPUT_CHECK_PRODUCT_PRICE_XPATH, i)).formatElementToValue();
+            Assert.assertTrue(price <= price + i);
+        }
+        logger.info("Пользователь проверяет сортировку товаров по уменьшению цены");
+    }
+
+    @Step("Пользователь нажимает на сортировку по названию")
+    public void clickSortingNameOption() {
+        getSortingOptions(String.format(BASE_INPUT_SORTING_OPTIONS_XPATH, SORTING_NAME)).click();
+        logger.info("Пользователь нажимает на сортировку по названию");
+    }
+
+    @Step("Пользователь проверяет результат сортировки")
+    public void checkSortingOption(String sortingOptionName) {
+        String sortingOption = getSortingName().getText();
+        Assert.assertEquals(sortingOptionName, sortingOption);
+        logger.info("Пользователь проверяет результат сортировки");
+    }
+
 
     @Step("Пользователь проверяет что после снятия чекбокса Доставка, товары показываются со всеми методами получения")
     public void checkSelectedProductsWithAllMethods() {

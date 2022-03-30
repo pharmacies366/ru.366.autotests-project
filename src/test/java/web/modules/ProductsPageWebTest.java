@@ -5,6 +5,7 @@ import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
@@ -27,7 +28,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         int startPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int finishPriceRange = commonActionsOnWebPages.getToPriceRange();
         commonActionsOnWebPages.changePricesRangeWithSlider();
-        pageActions.reloadPage();
+        pageActions.staticWait(500);
         int newStartPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int newFinishPriceRange = commonActionsOnWebPages.getToPriceRange();
         Assert.assertTrue(startPriceRange < newStartPriceRange);
@@ -41,8 +42,11 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
         commonActionsOnWebPages.changePricesRangeWithHands("100", "500");
-        commonActionsOnWebPages.checkChangeProductsPrices(100, 500);
-
+        int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
+        int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
+        int price = commonActionsOnWebPages.checkProductsPrices();
+        Assert.assertTrue(price >= FromPriceRange);
+        Assert.assertTrue(price <= ToPriceRange);
     }
 
     @DisplayName("Пользователь выбирет чекбокс Доставка и проверяет корректное изменение списка товаров")
@@ -135,5 +139,43 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         String recipeInfo = productCardPage.getRecipeInfo().getText();
         Assert.assertEquals(recipeInfo, "Без рецепта");
     }
+
+    @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
+    @Test
+    public void checkSortingPriceReduction() {
+        mainPage.clickClosePopUp();
+        headerBlock.clickCatalogButton();
+        catalogPage.clickMedicationsButtons();
+        commonActionsOnWebPages.clickSortingButton();
+        commonActionsOnWebPages.clickPriceReductionOption();
+        commonActionsOnWebPages.checkSortingOption("по уменьшению цены");
+        commonActionsOnWebPages.checkSortingPriceReduction();
+    }
+
+
+    @DisplayName("Пользователь проверяет сортировку выдачи товаров по увеличению цены")
+    @Test
+    public void checkSortingPriceIncrease() {
+        mainPage.clickClosePopUp();
+        headerBlock.clickCatalogButton();
+        catalogPage.clickMedicationsButtons();
+        commonActionsOnWebPages.clickSortingButton();
+        commonActionsOnWebPages.clickPriceIncreaseOption();
+        commonActionsOnWebPages.checkSortingOption("по увеличению цены");
+        commonActionsOnWebPages.checkSortingPriceIncrease();
+    }
+
+    @DisplayName("Пользователь проверяет сортировку выдачи товаров по названию")
+    @Test
+    public void checkSortingName() {
+        mainPage.clickClosePopUp();
+        headerBlock.clickCatalogButton();
+        catalogPage.clickMedicationsButtons();
+        commonActionsOnWebPages.clickSortingButton();
+        commonActionsOnWebPages.clickSortingNameOption();
+        commonActionsOnWebPages.checkSortingOption("по названию");
+    }
+
+
 
 }
