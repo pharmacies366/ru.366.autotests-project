@@ -34,6 +34,14 @@ public class PageElementActions extends MainTestBase {
         saveAllureScreenshot();
     }
 
+    //Клик по элементу с помощью JS
+    public void clickJs() {
+        moveToElementJs();
+        WebElement ele = waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click()", ele);
+        saveAllureScreenshot();
+    }
 
 /*
     //Перемещение элемента
@@ -216,7 +224,7 @@ public class PageElementActions extends MainTestBase {
     }
 
     public String getText() {
-        this.moveToElement();
+       // this.moveToElement();
         String result = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getText();
         return result;
     }

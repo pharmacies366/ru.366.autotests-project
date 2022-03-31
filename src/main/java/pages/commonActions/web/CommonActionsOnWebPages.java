@@ -388,7 +388,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
 
     @Step("Пользователь листает вперёд страницы и проверяет релевантный переход")
     public void clickNextPage() {
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 1; i < 4; i++) {
             getNexPaginationButton().click();
             String stringPageOpenNumber = getPageNumberOpen().getAttribute("innerHTML");
             int pageOpenNumber = Integer.parseInt(stringPageOpenNumber);
@@ -400,7 +400,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
 
     @Step("Пользователь листает назад страницы и проверяет релевантный переход")
     public void clickPrevPage() {
-        for (int i = 4; i >= 2; i--) {
+        for (int i = 4; i > 2; i--) {
             getPrevPaginationButton().click();
             String stringPageOpenNumber = getPageNumberOpen().getAttribute("innerHTML");
             int pageOpenNumber = Integer.parseInt(stringPageOpenNumber);
