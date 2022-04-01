@@ -53,7 +53,9 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
+        pageActions.waitPageLoad();
         cartPage.clickDeleteMaterials();
+        pageActions.waitPageLoad();
         Assert.assertEquals(1, cartPage.checkCartQuantity());
     }
 
@@ -66,7 +68,9 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
+        pageActions.waitPageLoad();
         cartPage.deleteAllMaterials();
+        pageActions.waitPageLoad();
         Assert.assertEquals(0, cartPage.checkCartQuantity());
     }
 
@@ -99,6 +103,7 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         int totalPrice = cartPage.getPriceTotal();
         Assert.assertEquals(firstPrice + secondPrice, totalPrice);
         cartPage.clickDeleteMaterials();
+        pageActions.waitPageLoad();
         Assert.assertEquals(1, cartPage.checkCartQuantity());
         int finalPrice = cartPage.getPriceTotal();
         Assert.assertEquals(firstPrice, finalPrice);
