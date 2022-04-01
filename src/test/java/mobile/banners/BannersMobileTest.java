@@ -37,7 +37,10 @@ public class BannersMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.checkBannersClickable();
     }
 
-    @DisplayName("Пользователь проверяет переход по банерау на странице OSP")
+
+    //нет банера на странице
+
+  /*  @DisplayName("Пользователь проверяет переход по банерау на странице OSP")
     @Test
     public void checkBannersClickableOnOspPage() {
         mobileMainPage.clickClosePopUp();
@@ -94,5 +97,5 @@ public class BannersMobileTest extends BaseSettingsMobileTests {
         mobileCartPage.clickBanner();
         mobileProductCardPage.checkButtonToCartButton();
         mobileMainPage.clickSiteLogo();
-    }
+    }*/
 }

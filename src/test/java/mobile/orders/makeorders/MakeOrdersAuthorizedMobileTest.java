@@ -59,7 +59,8 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileProductCardPage.setInputSearchAddres("метро Фили");
         mobileProductCardPage.buyOneClick();
         pageActions.waitPageLoad();
-        mobileProductCardPage.clickChangeAptekaList();
+        mobileProductCardPage.clickChangeAptekaList();//
+        pageActions.waitPageLoad();
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         mobileCookiePage.reCaptchaKey();

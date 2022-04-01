@@ -59,6 +59,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         mobileCartPage.clickDeleteMaterials();
+        pageActions.waitPageLoad();
         Assert.assertEquals(1, mobileCartPage.checkCartQuantity());
     }
 
@@ -75,6 +76,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         mobileCartPage.deleteAllMaterials();
+        pageActions.waitPageLoad();
         Assert.assertEquals(0, mobileCartPage.checkCartQuantity());
     }
 
@@ -113,6 +115,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         int totalPrice = mobileCartPage.getPriceTotal();
         Assert.assertEquals(firstPrice + secondPrice, totalPrice);
         mobileCartPage.clickDeleteMaterials();
+        pageActions.waitPageLoad();
         Assert.assertEquals(1, mobileCartPage.checkCartQuantity());
         int finalPrice = mobileCartPage.getPriceTotal();
         Assert.assertEquals(firstPrice, finalPrice);

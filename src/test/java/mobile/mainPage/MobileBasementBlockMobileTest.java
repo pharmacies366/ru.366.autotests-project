@@ -25,7 +25,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
                 {"/apteki/map/", "Где получить заказ", "Работает сейчас"},
                 {"/faq/", "Вопрос-ответ", "Вопрос-ответ"},
                 {"/feedback/", "Задать вопрос", "Обратная связь"},
-                {"/delivery/", "Доставка", "Курьерская доставка заказов"},
+               // {"/delivery/", "Доставка", "Курьерская доставка заказов"}, //нет на s1
         };
     }
 
@@ -51,7 +51,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
                     //Сервис
                     {"/polzovatelskoe-soglashenie/", "Пользовательское соглашение", "Пользовательское соглашение"},
                     {"/politika-konfidencialnosti/", "Политика конфиденциальности", "Политика конфиденциальности"},
-                    {"/mnn/", "Действующие вещества", "Все вещества"},
+                    {"/mnn/", "Действующие вещества", "Действующие вещества"},
                     {"/promotions/", "Акции", "Акции"},
                     {"/articles/", "Статьи", "Статьи"},
         };

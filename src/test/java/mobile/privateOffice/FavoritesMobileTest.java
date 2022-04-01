@@ -47,6 +47,7 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("userpass"));
         pageActions.waitPageLoad();
         mobileCartPage.checkAndClearCartQuantity();
+        pageActions.waitPageLoad();
         mobileHeaderBlock.clickFavoritesButton();
         mobileFavoritesPage.checkProductsOnFavoritesPage();
         mobileFavoritesPage.clickMainPageButton();
