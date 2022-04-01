@@ -241,7 +241,7 @@ public class WebHeaderBlock extends MainTestBase {
 
     @Step("Пользователь получает количество товаров в избранном")
     public int checkQuantityProductsOnFavoritesPage() {
-        String stringFavoritesQuantity = getCartCount().getText();
+        String stringFavoritesQuantity = getCountFavorites().getAttribute("textContent");
         int quantity = Integer.parseInt(stringFavoritesQuantity);
         logger.info("Пользователь получает количество товаров в избранном");
         return quantity;

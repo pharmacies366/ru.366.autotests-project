@@ -47,23 +47,15 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     @Test
     public void transferProductForAuthorizedUser() {
         mainPage.clickClosePopUp();
-        headerBlock.clickToSignInButton();
-        cookiePage.reCaptchaKey();
-        authPopUpPage.authorizeWithPhoneAndPassword(
-                propertiesManager.getProperty("phonenumber9"),
-                propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
-        cartPage.checkAndClearCartQuantity();
-        pageActions.waitPageLoad();
-        headerBlock.clickFavoritesButton();
-        favoritesPage.checkProductsOnFavoritesPage();
-        favoritesPage.clickMainPageButton();
-        headerBlock.clickToPersonalAccount();
-        headerBlock.clickLogOut();
-        pageActions.reloadPage();
         mainPage.clickFavoritesIcon();
+        pageActions.waitPageLoad();
         headerBlock.clickFavoritesButton();
-        favoritesPage.checkButtonAddToCart();
+        pageActions.waitPageLoad();
+        int uuu = headerBlock.checkQuantityProductsOnFavoritesPage();
+        System.out.println(uuu);
+       // Assert.assertEquals(uuu, 1);
+   /*     favoritesPage.clickMainPageButton();
+        headerBlock.clickToPersonalAccount();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
@@ -71,7 +63,10 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("userpass"));
         pageActions.waitPageLoad();
         headerBlock.clickFavoritesButton();
-        favoritesPage.checkButtonAddToCart();
+        pageActions.waitPageLoad();
+        int u11uu = headerBlock.checkQuantityProductsOnFavoritesPage();
+        Assert.assertEquals(u11uu, 1);*/
+
 
     }
 
