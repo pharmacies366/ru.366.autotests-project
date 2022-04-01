@@ -20,7 +20,7 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет прокрутку банеров назад по стрелке и возврат к первоначальному баннеру на главной странице")
     @Test
     public void checkPrevBannerOnMainPage() {
-        mainPage.checkPrevBannerList();
+        mainPage.checkPrevBannerList();//переделать!!!
     }
 
     @DisplayName("Пользователь проверяет смену банеров по пинам на главной странице")
@@ -32,7 +32,7 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет переход по банерам на главной странице")
     @Test
     public void checkBannersClickableOnMainPage() {
-        mainPage.checkBannersClickable();//
+        mainPage.checkBannersClickable();
     }
 
 //нет банера на странице
