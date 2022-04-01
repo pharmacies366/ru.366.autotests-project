@@ -103,7 +103,7 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
         return new Object[][]{
                 {"/howToOrderNew/", "Как сделать заказ*", "Как оформить заказ на сайте?"},
                 {"/pravila_programmy/", "Клуб 36,6", "Условия выдачи карты"},
-                {"/certificates/", "Подарочные сертификаты", "Подарочные сертификаты"},
+               // {"/certificates/", "Подарочные сертификаты", "Подарочные сертификаты"},// нет на s1
         };
     }
 
