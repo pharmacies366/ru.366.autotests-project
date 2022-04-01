@@ -69,7 +69,6 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
     @Test
     public void checkOsp() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(

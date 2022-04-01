@@ -23,7 +23,6 @@ public class MainPage extends MainTestBase {
     private static final String BANNERS_BUTTONS_XPATH = "xpath;(//div[@class='yCmsContentSlot'])[1]";
     private static final String MAIN_BUTTON_XPATH = "xpath;//div[@class='breadcrumbs__item']";
     private static final String QUANTITY_BANNERS_XPATH = "xpath;//ul[contains(@role,'tablist')]";
-    private static final String CLOSE_POP_UP_NEWS_BUTTON_XPATH = "xpath;//div[@class='popmechanic-close']";
     private static final String CATALOG_BUTTON_XPATH = "xpath;//div[@class='catalog_menu js-switch-menu']";
     private static final String PRODUCT_BUTTON_XPATH = "xpath;(//img[@class=' lazyloaded'])[1]";
     private static final String BOT_CONSULTANT_BUTTON_XPATH = "xpath;//jdiv[@id='jvlabelWrap']";
@@ -96,10 +95,6 @@ public class MainPage extends MainTestBase {
         return new PageElementActions(QUANTITY_BANNERS_XPATH, driver);
     }
 
-    public PageElementActions getClosePopUpNewsButton() {
-        return new PageElementActions(CLOSE_POP_UP_NEWS_BUTTON_XPATH, driver);
-    }
-
     public PageElementActions getCatalogButton() {
         return new PageElementActions(CATALOG_BUTTON_XPATH, driver);
     }
@@ -118,12 +113,6 @@ public class MainPage extends MainTestBase {
     public void clickClosePopUp() {
         getPopUpButton().click();
         logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
-    }
-
-    @Step("Пользователь нажимает закрыть новосной попап")
-    public void ClickClosePopUpNewsButton() {
-        getClosePopUpNewsButton().click();
-        logger.info("Пользователь нажимает закрыть новосной попап");
     }
 
     @Step("Пользователь нажимает на букву 'Н' Русского алфавита")
@@ -209,7 +198,7 @@ public class MainPage extends MainTestBase {
         int quantity = Integer.parseInt(sizeAllLi);
         for (int i = 1; i <= quantity; i++) {
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, i)).click();
-            pageActions.staticWait(1000);
+            pageActions.staticWait(3000);
             getBannersLocators().click();
             getMainButton().click();
         }

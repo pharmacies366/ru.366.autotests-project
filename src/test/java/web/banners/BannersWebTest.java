@@ -35,52 +35,57 @@ public class BannersWebTest extends BaseSettingsWebTests {
         mainPage.checkBannersClickable();
     }
 
-    @DisplayName("Пользователь проверяет переход по банерау на странице OSP")
+//нет банера на странице
+/*    @DisplayName("Пользователь проверяет переход по банерау на странице OSP")
     @Test
     public void checkBannersClickableOnOspPage() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickLetterN();
         ospPage.clickBanner();
         productCardPage.clickMainButton();
-    }
+    }*/
 
-    @DisplayName("Пользователь проверяет переход по банерау на странице товара")
+
+    //нет банера на странице
+/*    @DisplayName("Пользователь проверяет переход по банерау на странице товара")
     @Test
     public void checkBannersClickableOnProductPage() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         productCardPage.clickBanner();
         productCardPage.clickMainButton();
-    }
+    }*/
 
-    @DisplayName("Пользователь проверяет переход по банерау на странице категории")
+
+    //нет банера на странице
+/*    @DisplayName("Пользователь проверяет переход по банерау на странице категории")
     @Test
     public void checkBannersClickableOnCategoryPage() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
         commonActionsOnWebPages.clickBanner();
         productCardPage.clickMainButton();
-    }
+    }*/
 
-    @DisplayName("Пользователь проверяет переход по банеру на странице поисковой выдачи")
+
+    //нет банера на странице
+/*    @DisplayName("Пользователь проверяет переход по банеру на странице поисковой выдачи")
     @Test
     public void checkBannersClickableWithSearch() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         headerBlock.setSearchInput("Лекарства");
         commonActionsOnWebPages.clickBanner();
         productCardPage.clickMainButton();
-    }
+    }*/
 
-    @DisplayName("Пользователь проверяет переход по банеру на странице корзины")
+
+    //нет банера на странице
+/*    @DisplayName("Пользователь проверяет переход по банеру на странице корзины")
     @Test
     public void checkBannersClickableOnCartPage() {
         driver.get(propertiesManager.getProperty("baseurl") + "cart");
         cartPage.clickBanner();
         productCardPage.clickMainButton();
-    }
+    }*/
 }

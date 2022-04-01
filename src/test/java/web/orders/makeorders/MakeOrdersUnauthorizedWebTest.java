@@ -63,7 +63,6 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
     public void checkOsp() {
         cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickLetterN();
         ospPage.clickProductName();
         cartPage.clickAddCartButton();
