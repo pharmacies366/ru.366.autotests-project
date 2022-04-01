@@ -17,7 +17,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     @Test
     public void increaseQuantityMaterialOnMainPage() {
         mainPage.clickClosePopUp();
-        //mainPage.ClickClosePopUpNewsButton();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         mainPage.clickIncreaseQuantity();
@@ -34,7 +34,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     @Test
     public void decreaseQuantityMaterialOnMainPage() {
         mainPage.clickClosePopUp();
-        //mainPage.ClickClosePopUpNewsButton();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         mainPage.clickIncreaseQuantity();

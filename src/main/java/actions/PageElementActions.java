@@ -34,14 +34,24 @@ public class PageElementActions extends MainTestBase {
         saveAllureScreenshot();
     }
 
+    //Клик по элементу с помощью JS
+    public void clickJs() {
+        moveToElementJs();
+        WebElement ele = waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click()", ele);
+        saveAllureScreenshot();
+    }
 
-/*    //Перемещение элемента
+/*
+    //Перемещение элемента
     public void drugAndDrop(By by) {
         Actions actions = new Actions(driver);
         WebDriverWait wait = new WebDriverWait(driver, DEFAULT_ELEMENT_WAIT_TIME_S);
         WebElement element2 = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         actions.moveToElement(waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S)).clickAndHold().moveToElement(element2).release().build().perform();
-    }*/
+    }
+*/
 
 
     //Перемещение элемента по заданным координатам
@@ -128,7 +138,6 @@ public class PageElementActions extends MainTestBase {
         saveAllureScreenshot();
     }
 
-
     //Проверяет видимость элемента на странице, возвращает статус true либо Exception
     public boolean isElementDisplayed() {
         return driver.findElement(getBySelector(element)).isDisplayed();
@@ -186,7 +195,14 @@ public class PageElementActions extends MainTestBase {
     }
 
 
-    //Перейти к элементу, когда он выходит за границы видимости текущего просмотра
+    //Ожидание, что элемент недоступен???
+    public boolean elementIsEnabled() {
+        waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).isEnabled();
+        return true;
+    }
+
+
+    //Перейти к элементу, когда он выходит за границы видимости текущего просмотра с помощью selenium
     public void moveToElement() {
         Actions actions = new Actions(driver);
         try {
@@ -196,21 +212,19 @@ public class PageElementActions extends MainTestBase {
         }
     }
 
+    //Перейти к элементу, когда он выходит за границы видимости текущего просмотра с помощью js
+    public void moveToElementJs() {
+        scrollElementIntoView(getBySelector(element));
+    }
+
     //Пользователь скроллит страницу до элемента
     public void scrollElementIntoView(By by) {
         WebElement element = driver.findElement(by);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    //Пользователь скроллит страницу вверх
-    public void scrollToObject() {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getBySelector(element));
-        logger.info("СТРАНИЦА ПРОСКРОЛЛЕНА ДО ЭЛЕМЕНТА");
-    }
-
-
     public String getText() {
-        this.moveToElement();
+       // this.moveToElement();
         String result = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getText();
         return result;
     }

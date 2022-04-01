@@ -16,7 +16,7 @@ public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на главной странице")
     @Test
     public void increaseQuantityMaterialOnMainPage() {
-      //  mobileMainPage.clickClosePopUp();
+        mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
         pageActions.waitPageLoad();
@@ -37,6 +37,7 @@ public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
+        pageActions.waitPageLoad();
         mobileMainPage.clickIncreaseQuantity();
         int firstQuantity = mobileMainPage.getQuantityMaterials();
         Assert.assertEquals(2, firstQuantity);

@@ -16,7 +16,7 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @Test
     public void increaseQuantityMaterialOnCartPage() {
         mainPage.clickClosePopUp();
-        //mainPage.ClickClosePopUpNewsButton();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         headerBlock.clickToCartButton();
         cartPage.clickIncreaseQuantity();
@@ -29,8 +29,9 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @Test
     public void decreaseQuantityMaterialOnCartPage() {
         mainPage.clickClosePopUp();
-        //mainPage.ClickClosePopUpNewsButton();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
+        pageActions.waitPageLoad();
         mainPage.clickIncreaseQuantity();
         int firstQuantity = mainPage.getQuantityMaterials();
         Assert.assertEquals(2, firstQuantity);
@@ -55,7 +56,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         cartPage.clickDeleteMaterials();
-        // pageActions.waitPageLoad();
         Assert.assertEquals(1, cartPage.checkCartQuantity());
     }
 
@@ -69,7 +69,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         cartPage.deleteAllMaterials();
-        pageActions.waitPageLoad();
         Assert.assertEquals(0, cartPage.checkCartQuantity());
     }
 
@@ -102,7 +101,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         int totalPrice = cartPage.getPriceTotal();
         Assert.assertEquals(firstPrice + secondPrice, totalPrice);
         cartPage.clickDeleteMaterials();
-        pageActions.waitPageLoad();
         Assert.assertEquals(1, cartPage.checkCartQuantity());
         int finalPrice = cartPage.getPriceTotal();
         Assert.assertEquals(firstPrice, finalPrice);
@@ -112,23 +110,22 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @Test
     public void addProductToFavoritePageOnShoppingCartPage() {
         mainPage.clickClosePopUp();
-        // mainPage.ClickClosePopUpNewsButton();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         headerBlock.clickToCartButton();
-        pageActions.waitPageLoad();
         cartPage.clickFavoritesButton();
-        int count = headerBlock.checkQuantityProductsOnFavoritesPage();
-        Assert.assertEquals(count, 1);
+        int count =  headerBlock.checkQuantityProductsOnFavoritesPage();
+        Assert.assertEquals(count,1);
     }
 
-    @DisplayName("Пользователь проверяет, что в блоке - не забудьте положить в корзину, отображаются: -Мини-карточки товаров в виде макета")
+    @DisplayName("Пользователь проверяет, что в блоке - не забудьте положить в корзину, отображаются: - Мини-карточки товаров в виде макета")
     @Test
     public void checkDoNotAddToCartBlock() {
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         String text = cartPage.checkTextDoNotAddToCart();
-        Assert.assertEquals(text, "Не забудьте положить в корзину");
+        Assert.assertEquals(text,"Не забудьте положить в корзину");
         int count = cartPage.checkDoNotAddToCartProductsList();
         Assert.assertTrue(count > 0);
     }
-
+    
 }

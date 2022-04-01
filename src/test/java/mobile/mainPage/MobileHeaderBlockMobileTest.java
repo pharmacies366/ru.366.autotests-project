@@ -1,4 +1,4 @@
-package mobile.front;
+package mobile.mainPage;
 
 import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
@@ -38,7 +38,7 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Проверки работы корзины")
     @Test
     public void testingTheCart(){
-       // mobileMainPage.clickClosePopUp();
+        mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
         pageActions .waitPageLoad();

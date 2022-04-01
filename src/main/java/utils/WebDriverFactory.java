@@ -19,7 +19,6 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static core.MainTestBase.nameOfPackage;
-import static core.MainTestBase.pageActions;
 
 
 public class WebDriverFactory {
@@ -95,23 +94,6 @@ public class WebDriverFactory {
         //DesiredCapabilities capabilities = DesiredCapabilities.chrome(); //в чем разница?
 
 
-//1 вариант
-       /* String proxy = "81.163.252.30.86";
-        chromeOptions.addArguments("--proxy-server=http://" + proxy);
-        chromeOptions.addArguments("ignore-certificate-errors");*/
-
-
-
-
-//2 вариант
-  /*      Proxy proxy = new Proxy();
-        proxy.setAutodetect(false);
-        proxy.setHttpProxy("http_proxy-url:port");
-        proxy.setSslProxy("https_proxy-url:port");
-        proxy.setNoProxy("no_proxy-var");
-        chromeOptions.setCapability("proxy", proxy);*/
-
-
         chromeOptions.addArguments("--incognito");
         chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));//оставить
         chromeOptions.addArguments("--disable-notifications");
@@ -137,8 +119,8 @@ public class WebDriverFactory {
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         WebDriverManager.chromedriver().setup();
-        //driver = new ChromeDriver(capabilities);
-        driver = new ChromeDriver(chromeOptions);//2 и 3 -й вариант
+        driver = new ChromeDriver(capabilities);
+        //driver = new ChromeDriver(chromeOptions);
         configureDriver();
         logger.info("ЗАПУЩЕН ЛОКАЛЬНЫЙ ДРАЙВЕР");
     }
@@ -149,8 +131,6 @@ public class WebDriverFactory {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(15, TimeUnit.SECONDS);
     }
 
 

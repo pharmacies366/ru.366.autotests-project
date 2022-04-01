@@ -1,4 +1,4 @@
-package web.front;
+package web.mainPage;
 
 import base.BaseSettingsWebTests;
 import com.tngtech.java.junit.dataprovider.DataProvider;
@@ -109,7 +109,7 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
     }
 
     @DisplayName("Проверка релевантности ссылок в шапке сайта")
-    @Step("В подвале сайта переходит по ссылке => {LINKTEXT}")
+    @Step("В шапке сайта переходит по ссылке => {LINKTEXT}")
     @Test
     @UseDataProvider("data")
     public void test(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {

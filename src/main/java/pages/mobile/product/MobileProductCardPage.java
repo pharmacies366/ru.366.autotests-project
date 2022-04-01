@@ -23,6 +23,7 @@ public class MobileProductCardPage extends MainTestBase {
     private static final String MAIN_BUTTON_XPATH = "xpath;//div[@class='breadcrumbs__item']";
     private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
     private static final String REGION_TEXT_XPATH = "xpath;//h2[contains(.,'%s')]";
+    private static final String RECIPE_INFO_XPATH = "xpath;(//div[contains(@class,'product__info__desc')])[6]";
 
     //конструктор
     public MobileProductCardPage(WebDriver driver) {
@@ -81,6 +82,10 @@ public class MobileProductCardPage extends MainTestBase {
 
     public PageElementActions getRegionTest(String xpath) {
         return new PageElementActions(xpath, driver);
+    }
+
+    public PageElementActions getRecipeInfo() {
+        return new PageElementActions(RECIPE_INFO_XPATH, driver);
     }
 
 
