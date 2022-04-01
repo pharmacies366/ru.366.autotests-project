@@ -114,8 +114,10 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     public void addProductToFavoritePageOnShoppingCartPage() {
         mainPage.clickClosePopUp();
         mainPage.clickAddToCardButton();
+        pageActions.waitPageLoad();
         headerBlock.clickToCartButton();
         cartPage.clickFavoritesButton();
+        headerBlock.clickFavoritesButton();
         int count =  headerBlock.checkQuantityProductsOnFavoritesPage();
         Assert.assertEquals(count,1);
     }

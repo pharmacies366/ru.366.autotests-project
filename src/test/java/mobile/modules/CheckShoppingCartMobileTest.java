@@ -127,6 +127,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileHeaderBlock.clickToCartButton();
         mobileCartPage.clickFavoritesButton();
+        pageActions.waitPageLoad();
         int count =  mobileHeaderBlock.checkQuantityProductsOnFavoritesPage();
         Assert.assertEquals(count,1);
     }

@@ -32,7 +32,7 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет переход по банерам на главной странице")
     @Test
     public void checkBannersClickableOnMainPage() {
-        mainPage.checkBannersClickable();
+        mainPage.checkBannersClickable();//
     }
 
 //нет банера на странице

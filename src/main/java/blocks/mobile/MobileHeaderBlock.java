@@ -18,6 +18,8 @@ public class MobileHeaderBlock extends MainTestBase {
     private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;//span[contains(@class,'header_favorites_mobile__icon')]";
     private static final String GET_SELECTED_REGION_XPATH = "xpath;(//span[contains(@class,'b-login-link i-fw-b')])[3]";
+    private static final String GET_COUNT_FAVORITES_XPATH = "xpath;//span[contains(@class,'header_favorites_mobile__count js-favorites-count')]";
+
 
     //конструктор
     public MobileHeaderBlock(WebDriver driver) {
@@ -64,6 +66,11 @@ public class MobileHeaderBlock extends MainTestBase {
     public PageElementActions getSelectedRegion() {
         return new PageElementActions(GET_SELECTED_REGION_XPATH, driver);
     }
+
+    public PageElementActions getCountFavorites() {
+        return new PageElementActions(GET_COUNT_FAVORITES_XPATH, driver);
+    }
+
 
 
     //Методы
@@ -134,7 +141,7 @@ public class MobileHeaderBlock extends MainTestBase {
 
     @Step("Пользователь получает количество товаров в избранном")
     public int checkQuantityProductsOnFavoritesPage() {
-        String stringFavoritesQuantity = getCartCount().getText();
+        String stringFavoritesQuantity = getCountFavorites().getText();
         int quantity = Integer.parseInt(stringFavoritesQuantity);
         logger.info("Пользователь получает количество товаров в избранном");
         return quantity;

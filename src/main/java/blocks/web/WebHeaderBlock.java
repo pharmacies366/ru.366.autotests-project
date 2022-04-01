@@ -28,7 +28,7 @@ public class WebHeaderBlock extends MainTestBase {
     private static final String CHANGE_PASSWORD_BUTTON_XPATH = "xpath;(//a[@href='/my-account/update-password'])[1]";
    // private static final String FAVORITES_BUTTON_XPATH = "xpath;//div[@class='js-link-seo i-cr-pointer b-seo-link b-icn--favorites c-header__link--secondary js-header__favorites']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;(//div[contains(@class,'js-header__favorites')])[1]";
-    private static final String GET_COUNT_FAVORITES_XPATH = "xpath;//span[contains(@class,'header_favorites_mobile__count js-favorites-count')]";
+    private static final String GET_COUNT_FAVORITES_XPATH = "xpath;//div[@class='c-prod-item-list c-prod-item-list-favorites']";
     private static final String GET_SELECTED_REGION_XPATH = "xpath;(//span[@class='b-login-link i-fw-b'])[1]";
 
     //конструктор
@@ -241,7 +241,7 @@ public class WebHeaderBlock extends MainTestBase {
 
     @Step("Пользователь получает количество товаров в избранном")
     public int checkQuantityProductsOnFavoritesPage() {
-        String stringFavoritesQuantity = getCountFavorites().getAttribute("textContent");
+        String stringFavoritesQuantity = getCountFavorites().getAttribute("childElementCount");
         int quantity = Integer.parseInt(stringFavoritesQuantity);
         logger.info("Пользователь получает количество товаров в избранном");
         return quantity;
