@@ -99,10 +99,10 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
     public static Object[][] checkingCheckboxes() {
         return new Object[][]{
                 {1, 1},//Форма выпуска
-                {2, 107},//Бренд
-                {3, 230},//Теги
-                {4, 246},//Для кого
-                {5, 260},//Производители
+                {2, 94},//Бренд
+                {3, 206},//Теги
+                {4, 222},//Для кого
+                {5, 259},//Производители
         };
     }
 
@@ -174,7 +174,6 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.clickSortingNameOption();
         commonActionsOnWebPages.checkSortingOption("по названию");
     }
-
 
 
 }
