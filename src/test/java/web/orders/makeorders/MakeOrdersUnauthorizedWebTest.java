@@ -89,7 +89,9 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.waitPageLoad();
         cartPage.clickAddCartButton();
+        pageActions.waitPageLoad();
         headerBlock.clickToCartButton();
+        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
         checkOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
