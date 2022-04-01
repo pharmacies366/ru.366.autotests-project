@@ -65,7 +65,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
        // thankForTheOrderPage.checkSuccessMessage();
     }
 
-    @DisplayName("Авторизованный пользователь покупает товар со страниц ОСП")
+/*    @DisplayName("Авторизованный пользователь покупает товар со страниц ОСП") //акиуализировать телефон
     @Test
     public void checkOsp() {
         mainPage.clickClosePopUp();
@@ -89,7 +89,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
        // checkOutPage.clickMakeOrder();
        // thankForTheOrderPage.checkSuccessMessage();
-    }
+    }*/
 
     @DisplayName("Авторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
     @Test
