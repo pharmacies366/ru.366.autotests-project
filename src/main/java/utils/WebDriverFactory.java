@@ -113,8 +113,8 @@ public class WebDriverFactory {
         if (nameOfPackage.contains("mobile")) {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
-           // mobileEmulation.put("deviceName", "iPhone X");
-            mobileEmulation.put("deviceName", "Nexus 7");
+            mobileEmulation.put("deviceName", "iPhone X");
+            //mobileEmulation.put("deviceName", "Nexus 7");
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         }
 

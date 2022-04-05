@@ -29,11 +29,11 @@ public class BannersWebTest extends BaseSettingsWebTests {
         mainPage.checkNextBannerButtons();
     }
 
-    @DisplayName("Пользователь проверяет переход по банерам на главной странице")
+/*    @DisplayName("Пользователь проверяет переход по банерам на главной странице")
     @Test
     public void checkBannersClickableOnMainPage() {
         mainPage.checkBannersClickable();
-    }
+    }*/
 
 //нет банера на странице
 /*    @DisplayName("Пользователь проверяет переход по банерау на странице OSP")
