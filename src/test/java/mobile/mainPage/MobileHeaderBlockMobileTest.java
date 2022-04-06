@@ -29,7 +29,7 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка корекного перехода в избранное")
     @Test
-    public void checkClickaFavorites(){
+    public void checkClickableFavorites(){
         mobileHeaderBlock.clickFavorites();
         pageActions.contentIsDisplayed("Избранное");
         logger.info("Переход на страницу Избранное выполнен корректно");
