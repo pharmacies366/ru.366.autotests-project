@@ -49,7 +49,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         Assert.assertTrue(price <= ToPriceRange);
     }
 
-    @DisplayName("Пользователь выбирет чекбокс Доставка и проверяет корректное изменение списка товаров")
+/*    @DisplayName("Пользователь выбирет чекбокс Доставка и проверяет корректное изменение списка товаров")
     @Test
     public void checkProductsOnlyDelivery() {
         mainPage.clickClosePopUp();
@@ -84,7 +84,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.checkSelectedProductsWithDeliveryMethod();
         commonActionsOnWebPages.clickResetCheckboxes();
         commonActionsOnWebPages.checkSelectedProductsWithAllMethods();
-    }
+    }*/
 
     @DisplayName("Пользователь проверяет коррекность работы пагинации страниц")
     @Test

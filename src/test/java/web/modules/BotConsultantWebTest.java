@@ -1,4 +1,5 @@
-package web.modules;/*
+/*
+package web.modules;
 package web.modules;
 
 import base.BaseSettingsWebTests;
@@ -10,7 +11,7 @@ import org.junit.Test;
 @Feature(value = "Web")
 @Story(value = "Консультант бот на сайте 36.6")
 @DisplayName("Консультант бот")
-public class BotConsultantWebTest extends BaseSettingsWebTests {
+public class BotConsultantWebTest extends base.BaseSettingsWebTests {
 
     @DisplayName("Пользователь выбирает пункт: Не могу оформить заказ, заполняет свои данные и получает ответ от бота")
     @Test

@@ -52,7 +52,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         Assert.assertTrue(price <= ToPriceRange);
     }
 
-    @DisplayName("Пользователь выбирет чекбокс Доставка и проверяет корректное изменение списка товаров")
+/*    @DisplayName("Пользователь выбирет чекбокс Доставка и проверяет корректное изменение списка товаров")
     @Test
     public void checkProductsOnlyDelivery() {
         mobileMainPage.clickClosePopUp();
@@ -92,7 +92,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickResetCheckboxes();
         commonActionsOnMobilePages.checkSelectedProductsWithAllMethods();
-    }
+    }*/
 
     @DisplayName("Пользователь проверяет коррекность работы пагинации страниц")
     @Test

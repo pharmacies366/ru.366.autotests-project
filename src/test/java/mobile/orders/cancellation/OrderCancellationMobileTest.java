@@ -1,4 +1,4 @@
-package mobile.orders.cancellation;/*
+/*
 package mobile.orders.cancellation;
 
 import base.BaseSettingsMobileTests;

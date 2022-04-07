@@ -1,4 +1,4 @@
-package mobile.modules;/*
+/*
 package mobile.modules;
 
 import base.BaseSettingsMobileTests;

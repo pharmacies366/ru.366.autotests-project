@@ -76,6 +76,7 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("usermail"));
         checkOutPage.clickSelectApteka();
         productCardPage.setInputSearchAddress("метро Автозаводская");//Перенести в чекаут
+        pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
       //  checkOutPage.clickMakeOrder();
