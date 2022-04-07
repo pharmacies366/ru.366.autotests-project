@@ -59,6 +59,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         mobileCartPage.clickDeleteMaterials();
+        pageActions.waitPageLoad();
         Assert.assertEquals(1, mobileCartPage.checkCartQuantity());
     }
 
