@@ -171,6 +171,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
+        pageActions.waitPageLoad();
         commonActionsOnWebPages.clickSortingButton();
         commonActionsOnWebPages.clickSortingNameOption();
         commonActionsOnWebPages.checkSortingOption("по названию");
