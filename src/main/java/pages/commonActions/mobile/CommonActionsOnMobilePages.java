@@ -326,8 +326,10 @@ public class CommonActionsOnMobilePages extends MainTestBase {
         String stringCount = getOptionCount().getAttribute("childElementCount");
         int count = Integer.parseInt(stringCount);
         int randomNumber = (new Random()).ints(1, count).iterator().nextInt();
+        System.out.println(randomNumber);
         logger.info("Пользователь рандомом выбирает опцию из чекбоксов чекбокс: форма выпуска, бредн, теги, для кого, производители");
         getCheckboxOption(String.format(BASE_INPUT_CHECKBOX_OPTION_XPATH, randomNumber + index)).moveToElementJs();
+        System.out.println(index);
         String optionName = getCheckboxOption(String.format(BASE_INPUT_CHECKBOX_OPTION_XPATH, randomNumber + index)).getText();
         getCheckboxOption(String.format(BASE_INPUT_CHECKBOX_OPTION_XPATH, randomNumber + index)).clickJs();
         logger.info("Пользователь нажимает на выбранную опцию");

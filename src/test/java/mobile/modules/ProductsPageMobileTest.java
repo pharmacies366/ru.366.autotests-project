@@ -108,10 +108,10 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     public static Object[][] checkingCheckboxes() {
         return new Object[][]{
                 {1, 1},//Форма выпуска
-                {2, 107},//Бренд
-                {3, 230},//Теги
-                {4, 246},//Для кого
-                {5, 260},//Производители
+                {2, 101},//Бренд
+                {3, 216},//Теги
+                {4, 232},//Для кого
+                {5, 267},//Производители
         };
     }
 
