@@ -37,14 +37,10 @@ public class MobilePersonalDataPage extends MainTestBase {
     private static final String SELECT_YEAR_XPATH = "xpath;(//form[@id='updateProfileResForm']//div[@class='b-select-wr'])[3]//option[contains(@value,'%s')]";
 
 
-
-
     //конструктор
     public MobilePersonalDataPage(WebDriver driver) {
         this.driver = driver;
     }
-
-
 
 
     //геттеры элементов с получением доступа к действиям с элементами
@@ -88,6 +84,7 @@ public class MobilePersonalDataPage extends MainTestBase {
     public PageElementActions getErrorEmailMessage() {
         return new PageElementActions(ERROR_EMAIL_MESSAGE_XPATH, driver);
     }
+
     public PageElementActions getErrorNameMessage() {
         return new PageElementActions(ERROR_NAME_MESSAGE_XPATH, driver);
     }

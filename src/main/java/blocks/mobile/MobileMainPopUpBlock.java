@@ -19,7 +19,6 @@ public class MobileMainPopUpBlock extends MainTestBase {
     private static final String CITIES_BUTTON_XPATH = "xpath;(//span[contains(@class,'b-login-link i-fw-b')])[3]";
 
 
-
     //конструктор
     public MobileMainPopUpBlock(WebDriver driver) {
         this.driver = driver;
@@ -65,7 +64,7 @@ public class MobileMainPopUpBlock extends MainTestBase {
 
     //Методы
     @Step("Пользователь нажимает на иконку авторизации")
-    public void clickToLoginIcon(){
+    public void clickToLoginIcon() {
         getLoginIcon().click();
         logger.info("Пользователь нажимает на иконку авторизации");
     }
@@ -85,8 +84,8 @@ public class MobileMainPopUpBlock extends MainTestBase {
 
     @Step("Пользователь нажимает на иконку личного кабинета")
     public void clickToPersonalAccount() {
-             getPersonalAccount().click();
-         logger.info("Пользователь нажимает на иконку личного кабинета");
+        getPersonalAccount().click();
+        logger.info("Пользователь нажимает на иконку личного кабинета");
     }
 
 
@@ -122,7 +121,7 @@ public class MobileMainPopUpBlock extends MainTestBase {
     }
 
     @Step("Пользователь нажимает на кнопку для выбора города")
-    public void clickCitiesButton(){
+    public void clickCitiesButton() {
         getCitiesButton().click();
         logger.info("Пользователь нажимает на кнопку для выбора города");
     }

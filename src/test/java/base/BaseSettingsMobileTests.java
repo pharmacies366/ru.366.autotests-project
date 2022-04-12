@@ -57,7 +57,6 @@ public class BaseSettingsMobileTests extends MainTestBase {
     protected MobileBotConsultantPopUpPage mobileBotConsultantPopUpPage;
 
 
-
     @Before
     public void PagesInitialization() {
         commonActionsOnMobilePages = new CommonActionsOnMobilePages(driver);

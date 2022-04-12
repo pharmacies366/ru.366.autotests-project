@@ -36,7 +36,7 @@ public class MobileBasementBlock extends MainTestBase {
         return new PageElementActions(SERVICE_BUTTON_XPATH, driver);
     }
 
-        public PageElementActions getAboutCompanyButton() {
+    public PageElementActions getAboutCompanyButton() {
         return new PageElementActions(ABOUT_COMPANY_BUTTON_XPATH, driver);
     }
 

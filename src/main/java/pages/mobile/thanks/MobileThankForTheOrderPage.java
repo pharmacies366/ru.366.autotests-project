@@ -13,7 +13,6 @@ public class MobileThankForTheOrderPage extends MainTestBase {
     private static final String THANKS_ORDER_SELF_XPATH = "xpath;//h1[contains(.,'Спасибо за ваш заказ!')]";
 
 
-
     //конструктор
     public MobileThankForTheOrderPage(WebDriver driver) {
         this.driver = driver;
@@ -30,17 +29,16 @@ public class MobileThankForTheOrderPage extends MainTestBase {
     }
 
 
-
     //Методы
 
     @Step("Пользователь после отлаты тестовой картой получает ошибку об оплате")
-    public void checkPaymentError(){
+    public void checkPaymentError() {
         getErrorPayment().elementIsVisibility();
         logger.info("Пользователь получает ошибку об оплате");
     }
 
     @Step("Пользователь проверяет отображение сообщения 'Спасибо за ваш заказ!'")
-    public void checkSuccessMessage(){
+    public void checkSuccessMessage() {
         getThanksOrderSelf().elementIsVisibility();
         logger.info("Пользователь проверяет отображение сообщения 'Спасибо за ваш заказ!'");
     }

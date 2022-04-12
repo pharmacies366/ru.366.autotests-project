@@ -18,10 +18,21 @@ import org.junit.runner.RunWith;
 @RunWith(DataProviderRunner.class)
 public class ProductsPageMobileTest extends BaseSettingsMobileTests {
 
+    @DataProvider
+    public static Object[][] checkingCheckboxes() {
+        return new Object[][]{
+                {1, 1},//Форма выпуска
+                {2, 94},//Бренд
+                {3, 206},//Теги
+                {4, 222},//Для кого
+                {5, 259},//Производители
+        };
+    }
+
     @DisplayName("Пользователь проверяет работу слайдера для изменения цены")
     @Test
     public void checkChangePricesRangeWithSlider() {
-        mobileMainPage.clickClosePopUp();
+        //mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
@@ -39,7 +50,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет изменения диапазона цены вручную")
     @Test
     public void checkChangePricesRangeWithHands() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
@@ -102,17 +113,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickNextPage();
         commonActionsOnMobilePages.clickPrevPage();
-    }
-
-    @DataProvider
-    public static Object[][] checkingCheckboxes() {
-        return new Object[][]{
-                {1, 1},//Форма выпуска
-                {2, 94},//Бренд
-                {3, 206},//Теги
-                {4, 222},//Для кого
-                {5, 259},//Производители
-        };
     }
 
     @DisplayName("Пользователь проверяет соотвествие между выдачей товаров и выбранной формы выпуска,брендом,тегами,для кого,производителями")
@@ -179,7 +179,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет сортировку выдачи товаров по названию")
     @Test
     public void checkSortingName() {
-        mobileMainPage.clickClosePopUp();
+        //mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickSortingButton();

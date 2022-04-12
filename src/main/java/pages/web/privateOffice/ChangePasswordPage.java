@@ -18,7 +18,6 @@ public class ChangePasswordPage extends MainTestBase {
     private static final String Message_About_Change_Password = "Ваш пароль успешно изменен. Желаем здоровья!";
 
 
-
     //конструктор
     public ChangePasswordPage(WebDriver driver) {
         this.driver = driver;

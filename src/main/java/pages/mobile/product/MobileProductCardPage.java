@@ -89,7 +89,6 @@ public class MobileProductCardPage extends MainTestBase {
     }
 
 
-
     //Методы
     @Step("Пользователь нажимает на кнопку 'в корзину'")
     public void clickAddCartButton() {

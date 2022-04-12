@@ -35,6 +35,7 @@ public class MobileHeaderBlock extends MainTestBase {
     public PageElementActions getSiteLogo() {
         return new PageElementActions(SITE_LOGO_XPATH, driver);
     }
+
     public PageElementActions getCartCount() {
         return new PageElementActions(CARD_COUNT_XPATH, driver);
     }
@@ -55,6 +56,13 @@ public class MobileHeaderBlock extends MainTestBase {
         return new PageElementActions(SEARCH_INPUT_XPATH, driver);
     }
 
+    @Step("Пользователь вводит артикул товара в поисковую строку - {vendorCode}")
+    public void setSearchInput(String vendorCode) {
+        getSearchInput1().click();
+        getSearchInput().sendKeysAndEnter(vendorCode);
+        logger.info("Пользователь вводит артикул не партнерсского товара в поисковую строку");
+    }
+
     public PageElementActions getCartButton() {
         return new PageElementActions(CARD_BUTTON_XPATH, driver);
     }
@@ -71,32 +79,23 @@ public class MobileHeaderBlock extends MainTestBase {
         return new PageElementActions(GET_COUNT_FAVORITES_XPATH, driver);
     }
 
-
-
     //Методы
     @Step("Пользователь нажимает на иконку выпадающего списка")
-    public void clickBurgerButton(){
+    public void clickBurgerButton() {
         getBurgerButton().click();
         logger.info("Пользователь нажимает на иконку выпадающего списка");
     }
 
     @Step("Пользователь на логотип сайта и поподает на главную страницу сайта")
-    public void clickSiteLogo(){
+    public void clickSiteLogo() {
         getSiteLogo().click();
         logger.info("Пользователь на логотип сайта и поподает на главную страницу сайта");
     }
 
     @Step("Пользователь нажимает на иконку 'Избранное'")
-    public void clickFavorites(){
+    public void clickFavorites() {
         getFavoritesButton().click();
         logger.info("Пользователь нажимает на иконку 'Избранное'");
-    }
-
-    @Step("Пользователь вводит артикул товара в поисковую строку - {vendorCode}")
-    public void setSearchInput(String vendorCode) {
-        getSearchInput1().click();
-        getSearchInput().sendKeysAndEnter(vendorCode);
-        logger.info("Пользователь вводит артикул не партнерсского товара в поисковую строку");
     }
 
     @Step("Проверка состояния корзины: Если корзина не пустая, удаляем все содержимое")

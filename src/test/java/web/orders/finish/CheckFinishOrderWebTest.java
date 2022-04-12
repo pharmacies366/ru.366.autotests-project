@@ -30,9 +30,9 @@ public class CheckFinishOrderWebTest extends BaseSettingsWebTests {
         checkOutPage.checkVisibilityMap();
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
-       // checkOutPage.clickMakeOrder();
-       // thankForTheOrderPage.checkSuccessMessage();
-      //  thankForTheOrderPage.checkOrderNumberWithAddress();
+        // checkOutPage.clickMakeOrder();
+        // thankForTheOrderPage.checkSuccessMessage();
+        //  thankForTheOrderPage.checkOrderNumberWithAddress();
 
     }
 }

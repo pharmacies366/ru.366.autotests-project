@@ -25,10 +25,9 @@ public class MobileCheckOutPage extends MainTestBase {
     private static final String SELECT_APTEKA_XPATH = "xpath;//span[contains(.,'Выбрать аптеку')]";
     private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
     private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//label[@class='js-storefinder-sort js-product-stores__head-item js-storefinder-recommend']";
-    private static final String SELECT_XPATH= "xpath;(//span[contains(@class,'desc js-confirm-store-on-list')])[1]";
+    private static final String SELECT_XPATH = "xpath;(//span[contains(@class,'desc js-confirm-store-on-list')])[1]";
     private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
     private static final String PICKAP_RADIO_BUTTON_XPATH = "xpath;(//span[@class='checkout_delivery_info__mark'])[1]";
-
 
 
     //конструктор
@@ -86,7 +85,6 @@ public class MobileCheckOutPage extends MainTestBase {
     }
 
 
-
     //Методы
 
     @Step("Пользователь заполняет контактные данные")
@@ -107,7 +105,7 @@ public class MobileCheckOutPage extends MainTestBase {
     }
 
     @Step("Пользователь нажимает на кнопку 'Сделать заказ'")
-    public void clickMakeOrder(){
+    public void clickMakeOrder() {
         getMakeOrderButton().click();
         logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
     }
@@ -119,7 +117,7 @@ public class MobileCheckOutPage extends MainTestBase {
     }
 
     @Step("Пользователь нажимает на кнопку 'Забронировать'")
-    public void clickBookingButton(){
+    public void clickBookingButton() {
         getBookingButton().click();
         logger.info("Пользователь нажимает на кнопку 'Забронировать'");
     }
@@ -134,8 +132,7 @@ public class MobileCheckOutPage extends MainTestBase {
     public void choosePickupMethod() {
         if (getSelectApteka().isElementVisible()) {
             getSelectApteka().click();
-        }
-        else {
+        } else {
             getPickupRadioButton().click();
             getSelectApteka().click();
         }
@@ -151,8 +148,7 @@ public class MobileCheckOutPage extends MainTestBase {
     public void chooseDeliveryMethod() {
         if (getSelectApteka().isElementVisible()) {
             getChooseDeliveryMethod().click();
-        }
-        else {
+        } else {
             getChooseDeliveryMethod().click();
         }
         logger.info("Проверка выбранного способа получения 'Доставка'");
@@ -172,7 +168,7 @@ public class MobileCheckOutPage extends MainTestBase {
     }
 
     @Step("Пользователь нажимает на кнопку 'Выбрать'")
-    public void ckickSelect(){
+    public void ckickSelect() {
         getSelect().click();
         logger.info("Пользователь нажимает на кнопку 'Выбрать'");
     }
@@ -182,7 +178,6 @@ public class MobileCheckOutPage extends MainTestBase {
         getAptekaMap().elementIsVisibility();
         logger.info("Пользователь проверяет отображении карты на странице");
     }
-
 
 
 }

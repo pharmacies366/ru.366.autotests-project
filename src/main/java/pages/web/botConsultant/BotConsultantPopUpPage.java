@@ -24,7 +24,6 @@ public class BotConsultantPopUpPage extends MainTestBase {
     private static final String ANIMATION_BOT_XPATH = "xpath;(//jdiv[@class='globalClass_bc43']//child::jdiv)[1]";
 
 
-
     //конструктор
     public BotConsultantPopUpPage(WebDriver driver) {
         this.driver = driver;
@@ -65,7 +64,6 @@ public class BotConsultantPopUpPage extends MainTestBase {
     }
 
 
-
     //Методы
     @Step("Пользователь закрывает консультант бота")
     public void clickCloseBot() {
@@ -98,7 +96,7 @@ public class BotConsultantPopUpPage extends MainTestBase {
     }
 
     @Step("Пользователь заполняет контактные данные")
-    public void contactDetails(String name, String phoneNumber, String email ) {
+    public void contactDetails(String name, String phoneNumber, String email) {
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Name)).sendKeys(name);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
@@ -113,14 +111,14 @@ public class BotConsultantPopUpPage extends MainTestBase {
 
     @Step("Пользователь проверяет сообщение с текстом 'Спасибо'")
     public void checkThanksMessage() {
-       String message = getThanksMessage().getText();
+        String message = getThanksMessage().getText();
         Assert.assertEquals(message, "\uD83C\uDF89 Спасибо!");
         logger.info("Пользователь проверяет сообщение с текстом 'Спасибо'");
     }
 
     @Step("Пользователь проверяет, что консультант бот закрылся")
     public void checkCloseBot() {
-      String statusBot = getStatusAnimationBot().getAttribute("style");
+        String statusBot = getStatusAnimationBot().getAttribute("style");
         MatcherAssert.assertThat(statusBot, CoreMatchers.containsString("Label_CLOSE"));
         logger.info("Пользователь проверяет, что консультант бот закрылся");
     }

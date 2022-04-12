@@ -83,6 +83,7 @@ public class PersonalDataPage extends MainTestBase {
     public PageElementActions getErrorEmailMessage() {
         return new PageElementActions(ERROR_EMAIL_MESSAGE_XPATH, driver);
     }
+
     public PageElementActions getErrorNameMessage() {
         return new PageElementActions(ERROR_NAME_MESSAGE_XPATH, driver);
     }

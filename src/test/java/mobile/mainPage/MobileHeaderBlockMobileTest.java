@@ -14,14 +14,14 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка кликабельности логотипа")
     @Test
-    public void checkClickableLogo(){
+    public void checkClickableLogo() {
         mobileHeaderBlock.clickSiteLogo();
         logger.info("Логотип кликабелен");
     }
 
     @DisplayName("Проверка работы поиска")
     @Test
-    public void testingTheSearch(){
+    public void testingTheSearch() {
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-p1-public.model-t.cc.commerce.ondemand.com/search/?text=44226");
         logger.info("Поиск работает корректно");
@@ -29,7 +29,7 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка корекного перехода в избранное")
     @Test
-    public void checkClickaFavorites(){
+    public void checkClickaFavorites() {
         mobileHeaderBlock.clickFavorites();
         pageActions.contentIsDisplayed("Избранное");
         logger.info("Переход на страницу Избранное выполнен корректно");
@@ -37,11 +37,11 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверки работы корзины")
     @Test
-    public void testingTheCart(){
+    public void testingTheCart() {
         mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
-        pageActions .waitPageLoad();
+        pageActions.waitPageLoad();
         int quantity = mobileHeaderBlock.checkCartQuantity();
         Assert.assertEquals(1, quantity);
         mobileHeaderBlock.clickToCartButton();
@@ -49,7 +49,6 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
         pageActions.contentIsDisplayed("В корзине 1 товар");
         logger.info("Проверки прошли успешно");
     }
-
 
 
 }

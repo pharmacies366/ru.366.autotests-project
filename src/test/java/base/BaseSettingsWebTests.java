@@ -51,7 +51,6 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected BotConsultantPopUpPage botConsultantPopUpPage;
 
 
-
     @Before
     public void PagesInitialization() {
         commonActionsOnWebPages = new CommonActionsOnWebPages(driver);

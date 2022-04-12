@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 public class MobileMedicationsCategorysPopUpPage extends MainTestBase {
 
 
-
     //элементы
     private static final String ALLERGY_BUTTON_XPATH = "xpath;(//a[@href='/c/allergija/'])[2]";
 

@@ -43,8 +43,6 @@ public class MobileMyOrdersPage extends MainTestBase {
     }
 
 
-
-
     //Методы
 
     @Step("номера заказа")

@@ -62,7 +62,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         productCardPage.clickBuyOneClick();
         cookiePage.reCaptchaKey();
         // checkOutPage.clickBookingButton();
-       // thankForTheOrderPage.checkSuccessMessage();
+        // thankForTheOrderPage.checkSuccessMessage();
     }
 
 /*    @DisplayName("Авторизованный пользователь покупает товар со страниц ОСП") //акиуализировать телефон
@@ -91,7 +91,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
        // thankForTheOrderPage.checkSuccessMessage();
     }*/
 
-    @DisplayName("Авторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
+    @DisplayName("Авторизованный пользователь покупает товар со способом получения - 'Самовывоз'")
     @Test
     public void pickup() {
         mainPage.clickClosePopUp();
@@ -135,7 +135,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         checkOutPage.clickSelectApteka();
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
-      //  checkOutPage.clickMakeOrder();
-       // thankForTheOrderPage.checkSuccessMessage();
+        //  checkOutPage.clickMakeOrder();
+        // thankForTheOrderPage.checkSuccessMessage();
     }
 }

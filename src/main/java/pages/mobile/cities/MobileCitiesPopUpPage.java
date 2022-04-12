@@ -15,7 +15,6 @@ public class MobileCitiesPopUpPage extends MainTestBase {
     private static final String SPB_BUTTON_XPATH = "xpath;(//a[@href='/_s/city?urlcode=spb'])[4]";
 
 
-
     //конструктор
     public MobileCitiesPopUpPage(WebDriver driver) {
         this.driver = driver;
@@ -42,7 +41,6 @@ public class MobileCitiesPopUpPage extends MainTestBase {
     public PageElementActions getMskButton() {
         return new PageElementActions(MSK_BUTTON_XPATH, driver);
     }
-
 
 
     //Методы

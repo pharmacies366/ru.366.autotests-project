@@ -131,8 +131,8 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         mobileHeaderBlock.clickToCartButton();
         mobileCartPage.clickFavoritesButton();
         pageActions.waitPageLoad();
-        int count =  mobileHeaderBlock.checkQuantityProductsOnFavoritesPage();
-        Assert.assertEquals(count,1);
+        int count = mobileHeaderBlock.checkQuantityProductsOnFavoritesPage();
+        Assert.assertEquals(count, 1);
     }
 
     @DisplayName("Пользователь проверяет, что в блоке - не забудьте положить в корзину, отображаются: -Мини-карточки товаров в виде макета")
@@ -140,7 +140,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     public void checkDoNotAddToCartBlock() {
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         String text = mobileCartPage.checkTextDoNotAddToCart();
-        Assert.assertEquals(text,"Не забудьте положить в корзину");
+        Assert.assertEquals(text, "Не забудьте положить в корзину");
         int count = mobileCartPage.checkDoNotAddToCartProductsList();
         Assert.assertTrue(count > 0);
     }

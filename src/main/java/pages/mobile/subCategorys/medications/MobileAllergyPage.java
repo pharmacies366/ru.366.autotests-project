@@ -29,7 +29,6 @@ public class MobileAllergyPage extends MainTestBase {
     }
 
 
-
     //Методы
     @Step("Пользователь проверяет заголовок страницы -  Лекарства от аллергии")
     public void checkAllergyPage() {

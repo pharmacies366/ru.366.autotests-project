@@ -5,7 +5,7 @@ import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
-public class CheckOutPage extends MainTestBase{
+public class CheckOutPage extends MainTestBase {
 
 
     //элементы
@@ -24,7 +24,7 @@ public class CheckOutPage extends MainTestBase{
     private static final String BOOKING_BUTTON_XPATH = "xpath;//input[@value='Забронировать']";
     private static final String SELECT_APTEKA_XPATH = "xpath;//span[contains(.,'Выбрать аптеку')]";
     private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//span[contains(.,'Списком')]";
-    private static final String AVAILABILITY_XPATH= "xpath;(//span[contains(.,'Узнать о наличии')])[1]";
+    private static final String AVAILABILITY_XPATH = "xpath;(//span[contains(.,'Узнать о наличии')])[1]";
     private static final String CHOOSE_THIS_PHARMACY_XPATH = "xpath;(//span[contains(.,'Выбрать эту аптеку')])[1]";
     private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;(//button[contains(.,'Оформить заказ')])[1]";
     private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
@@ -96,7 +96,6 @@ public class CheckOutPage extends MainTestBase{
     }
 
 
-
     //Методы
     @Step("Заполнение данных адреса доставки")
     public void addressDelivery(String address, String entrance, String level, String flat) {
@@ -107,7 +106,7 @@ public class CheckOutPage extends MainTestBase{
     }
 
     @Step("Пользователь заполняет контактные данные")
-    public void contactDetails(String fio, String phoneNumber, String email ) {
+    public void contactDetails(String fio, String phoneNumber, String email) {
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Fio)).sendKeys(fio);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
@@ -133,7 +132,7 @@ public class CheckOutPage extends MainTestBase{
     }
 
     @Step("Пользователь нажимает на кнопку 'Забронировать'")
-    public void clickBookingButton(){
+    public void clickBookingButton() {
         getBookingButton().click();
         logger.info("Пользователь нажимает на кнопку 'Забронировать'");
     }
@@ -142,8 +141,7 @@ public class CheckOutPage extends MainTestBase{
     public void choosePickupMethod() {
         if (getSelectApteka().isElementVisible()) {
             getSelectApteka().click();
-        }
-        else {
+        } else {
             getPickupRadioButton().click();
             getSelectApteka().click();
         }
@@ -154,8 +152,7 @@ public class CheckOutPage extends MainTestBase{
     public void chooseDeliveryMethod() {
         if (getSelectApteka().isElementVisible()) {
             getChooseDeliveryMethod().click();
-        }
-        else {
+        } else {
             getChooseDeliveryMethod().click();
         }
         logger.info("Проверка выбранного способа получения 'Доставка'");
@@ -174,14 +171,14 @@ public class CheckOutPage extends MainTestBase{
     }
 
     @Step("Пользователь нажимает на кнопки 'Узнать о наличии' и 'Выбрать эту аптеку'")
-    public void getAvailabilityAndChooseThisPharmacy(){
+    public void getAvailabilityAndChooseThisPharmacy() {
         getAvailability().click();
         getChooseThisPharmacy().click();
         logger.info("Пользователь нажимает на кнопки 'Узнать о наличии' и 'Выбрать эту аптеку'");
     }
 
     @Step("Пользователь нажимает на кнопку 'Сделать заказ'")
-    public void clickMakeOrder(){
+    public void clickMakeOrder() {
         getMakeOrderButton().click();
         logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
     }

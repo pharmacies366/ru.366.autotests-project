@@ -141,9 +141,9 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
-        personalDataPage.changeBirthday("12","Апрель","1994");
+        personalDataPage.changeBirthday("12", "Апрель", "1994");
         personalDataPage.ckickSaveButton();
-        personalDataPage.changeBirthday("1","Февраль","1993");//Возврашаем в исходную дату
+        personalDataPage.changeBirthday("1", "Февраль", "1993");//Возврашаем в исходную дату
         personalDataPage.ckickSaveButton();
     }
 

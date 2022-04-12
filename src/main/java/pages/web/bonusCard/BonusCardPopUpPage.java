@@ -15,7 +15,6 @@ public class BonusCardPopUpPage extends MainTestBase {
     private static final String CLOSE_POP_UP_BUTTON_XPATH = "xpath;//span[@class='b-icn--close']";
 
 
-
     //конструктор
     public BonusCardPopUpPage(WebDriver driver) {
         this.driver = driver;

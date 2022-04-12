@@ -47,6 +47,7 @@ public class MobileChangePasswordPage extends MainTestBase {
         getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA_XPATH, CheckNewPassword)).sendKeys(checkNewPassword);
         logger.info("Пользователь вводит старый и новый пароли");
     }
+
     @Step("Пользователь нажимает кнопку изменить")
     public void clickChangeButton() {
         getChangeButton().click();

@@ -22,14 +22,15 @@ public class MobileCookiePage extends MainTestBase {
         logger.info("ПРОИЗОШЛА АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ЧЕРЕЗ COOKIE");
 
 
-    // S1
+        // S1
         driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "cadf2ba7f4b29a7548f2ad7aedb05f52453ab8ef"));
         driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDc1NjUyMjI2OjUxZWI2ZWMwNTA4NzhlNDc4ODVlZTI1YjExZmQ0OWY1"));
         driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-569ff799ff-lk62h"));
 
 
-}
-    public void reCaptchaKey(){
+    }
+
+    public void reCaptchaKey() {
         driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));//кука для обхода каптчи
     }
 

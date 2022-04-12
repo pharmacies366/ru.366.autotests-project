@@ -14,7 +14,6 @@ public class MyOrdersPage extends MainTestBase {
     private static final String STATUS_ORDER_XPATH = "xpath;//div[@class='b-order-status']";
 
 
-
     //конструктор
     public MyOrdersPage(WebDriver driver) {
         this.driver = driver;
@@ -37,7 +36,6 @@ public class MyOrdersPage extends MainTestBase {
     public PageElementActions getStatusOrder() {
         return new PageElementActions(STATUS_ORDER_XPATH, driver);
     }
-
 
 
     //Методы
@@ -76,7 +74,7 @@ public class MyOrdersPage extends MainTestBase {
         getCancelOrder().click();
         pageActions.staticWait(2000);
         getApproveCancelOrder().click();
-        pageActions.assertEqualsTwoObject("Отменен",getOrderStatus());
+        pageActions.assertEqualsTwoObject("Отменен", getOrderStatus());
         logger.info("Пользователь отменяет созданный заказ");
     }
 }

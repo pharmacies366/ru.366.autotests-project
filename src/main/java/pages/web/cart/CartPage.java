@@ -86,7 +86,6 @@ public class CartPage extends MainTestBase {
     }
 
 
-
     //Методы
     @Step("Проверка состояния корзины: Если корзина не пустая, удаляем все содержимое")
     public void checkAndClearCartQuantity() {

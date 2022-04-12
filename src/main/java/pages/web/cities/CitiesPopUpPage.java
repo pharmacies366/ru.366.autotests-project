@@ -12,7 +12,6 @@ public class CitiesPopUpPage extends MainTestBase {
     private static final String SPB_UP_BUTTON_XPATH = "xpath;(//a[contains(.,'Санкт-Петербург и ЛО')])[3]";
 
 
-
     //конструктор
     public CitiesPopUpPage(WebDriver driver) {
         this.driver = driver;
@@ -29,13 +28,13 @@ public class CitiesPopUpPage extends MainTestBase {
     }
 
 
-
     //Методы
     @Step("Пользователь нажимает на город Санкт-Петербург")
     public void selectSpbCity() {
         getSpbButton().click();
         logger.info("Пользователь нажимает на город Санкт-Петербург");
     }
+
     @Step("Пользователь нажимает на город Москва")
     public void selectMskCity() {
         getMskButton().click();

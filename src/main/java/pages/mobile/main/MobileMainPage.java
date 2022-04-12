@@ -100,49 +100,49 @@ public class MobileMainPage extends MainTestBase {
 
     //Методы
     @Step("Пользователь закрывает попап куки: 'Спасибо, понятно")
-    public void clickClosePopUp(){
+    public void clickClosePopUp() {
         getPopUpButton().click();
         logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
     }
 
     @Step("Пользователь закрывает попап мобильного приложения: 'Приложение 36.6'")
-    public void clickCloseMobileAppPopUp(){
+    public void clickCloseMobileAppPopUp() {
         getMobileAppPopUpButton().click();
         logger.info("Пользователь закрывает попап мобильного приложения: 'Приложение 36.6'");
     }
 
     @Step("Проверка отображения логотипа сайта на главной странице")
-    public void checkElementIsCorrect(){
+    public void checkElementIsCorrect() {
         getSiteLogo().elementIsVisibility();
         logger.info("Лого отображается");
     }
 
     @Step("Пользователь нажимает на иконку 36.6 и переходит на главную страницу")
-    public void clickSiteLogo(){
+    public void clickSiteLogo() {
         getSiteLogo().click();
         logger.info("Пользователь нажимает на иконку 36.6 и переходит на главную страницу");
     }
 
     @Step("Пользователь нажимает на букву 'Н' Русского алфавита")
-    public void clickLetterN(){
+    public void clickLetterN() {
         getLetterN().click();
         logger.info("Пользователь нажимает на букву 'Н' Русского алфавита");
     }
 
     @Step("Пользователь нажимает на кнопку 'В корзину'")
-    public void AddToCartClick(){
+    public void AddToCartClick() {
         getClickAddCartButton().click();
         logger.info("Пользователь нажимает на кнопку 'В корзину'");
     }
 
     @Step("Пользователь нажимает '+' увеличивая количество шт. товара")
-    public void clickIncreaseQuantity(){
+    public void clickIncreaseQuantity() {
         getIncreaseQuantity().click();
         logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
     }
 
     @Step("Пользователь нажимает '-' уменьшая количество шт. товара")
-    public void clickDecreaseQuantity(){
+    public void clickDecreaseQuantity() {
         getDecreaseQuantity().click();
         logger.info("Пользователь нажимает '-' уменьшая количество шт. товара");
     }
@@ -192,7 +192,6 @@ public class MobileMainPage extends MainTestBase {
         getCheckStartBanner().isElementDisplayed();
         logger.info("Пользователь кликает по стрелке вперед, переключает банеры и проверяет, что возвращается к первому");
     }*/
-
 
 
     @Step("Пользователь переключает банеры по пинам")

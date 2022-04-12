@@ -26,7 +26,7 @@ public class WebHeaderBlock extends MainTestBase {
     private static final String PHONE_NUMBER_XPATH = "xpath;(//a[@class='b-icn--phone i-fw-b'])[1]";
     private static final String PERSONAL_DATA_XPATH = "xpath;(//a[@href='/my-account/profile'])[1]";
     private static final String CHANGE_PASSWORD_BUTTON_XPATH = "xpath;(//a[@href='/my-account/update-password'])[1]";
-   // private static final String FAVORITES_BUTTON_XPATH = "xpath;//div[@class='js-link-seo i-cr-pointer b-seo-link b-icn--favorites c-header__link--secondary js-header__favorites']";
+    // private static final String FAVORITES_BUTTON_XPATH = "xpath;//div[@class='js-link-seo i-cr-pointer b-seo-link b-icn--favorites c-header__link--secondary js-header__favorites']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;(//div[contains(@class,'js-header__favorites')])[1]";
     private static final String GET_COUNT_FAVORITES_XPATH = "xpath;//div[@class='c-prod-item-list c-prod-item-list-favorites']";
     private static final String GET_SELECTED_REGION_XPATH = "xpath;(//span[@class='b-login-link i-fw-b'])[1]";
@@ -86,6 +86,12 @@ public class WebHeaderBlock extends MainTestBase {
         return new PageElementActions(SEARCH_INPUT_XPATH, driver);
     }
 
+    @Step("Пользователь вводит артикул товара в поисковую строку - {vendorCode}")
+    public void setSearchInput(String vendorCode) {
+        getSearchInput().sendKeysAndEnter(vendorCode);
+        logger.info("Пользователь вводит артикул товара в поисковую строку");
+    }
+
     public PageElementActions getCartButton() {
         return new PageElementActions(CARD_BUTTON_XPATH, driver);
     }
@@ -118,12 +124,12 @@ public class WebHeaderBlock extends MainTestBase {
         return new PageElementActions(GET_SELECTED_REGION_XPATH, driver);
     }
 
+
+    //Методы
+
     public PageElementActions getCountFavorites() {
         return new PageElementActions(GET_COUNT_FAVORITES_XPATH, driver);
     }
-
-
-    //Методы
 
     @Step("Пользователь нажимает на иконку авторизации")
     public void clickToSignInButton() {
@@ -181,46 +187,40 @@ public class WebHeaderBlock extends MainTestBase {
     }
 
     @Step("Проверка отображения логотипа сайта на главной странице")
-    public void checkElementIsCorrect(){
+    public void checkElementIsCorrect() {
         getSiteLogo().elementIsVisibility();
         logger.info("Лого отображается");
     }
 
     @Step("Пользователь нажимает на иконку 36.6 и переходит на главную страницу")
-    public void clickSiteLogo(){
+    public void clickSiteLogo() {
         getSiteLogo().click();
         logger.info("Пользователь нажимает на иконку 36.6 и переходит на главную страницу");
     }
 
     @Step("Пользователь нажимает на кнопку Каталог")
-    public void clickCatalogButton(){
+    public void clickCatalogButton() {
         getCatalogButton().click();
         logger.info("Пользователь нажимает на кнопку Каталог");
     }
 
     @Step("Пользователь нажимает на кнопку для выбора города")
-    public void clickCitiesButton(){
+    public void clickCitiesButton() {
         getCitiesButton().click();
         logger.info("Пользователь нажимает на кнопку для выбора города");
     }
 
     @Step("Пользователь нажимает на кнопку аптеки и переходит на страницу с картой аптек")
-    public void clickPharmaciesButton(){
+    public void clickPharmaciesButton() {
         getPharmaciesButton().click();
         logger.info("Пользователь нажимает на кнопку для выбора города");
     }
 
     @Step("Проверка видимости попапа с выбором городов")
-    public String checkCitiesPopUp(){
-      String text = getSelectCitiesText().getText();
+    public String checkCitiesPopUp() {
+        String text = getSelectCitiesText().getText();
         logger.info("Проверка видимости попапа с выбором городов");
         return text;
-    }
-
-    @Step("Пользователь вводит артикул товара в поисковую строку - {vendorCode}")
-    public void setSearchInput(String vendorCode) {
-        getSearchInput().sendKeysAndEnter(vendorCode);
-        logger.info("Пользователь вводит артикул товара в поисковую строку");
     }
 
     @Step("Проверка видимости и названия ссылки => {LINKTEXT}")

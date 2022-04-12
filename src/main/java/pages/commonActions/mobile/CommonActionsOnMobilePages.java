@@ -15,7 +15,7 @@ public class CommonActionsOnMobilePages extends MainTestBase {
     private static final String FILTERS_BUTTON_XPATH = "xpath;//span[@class='sorting__toggle__inactive']";
     private static final String PRODUCT_BUTTON_XPATH = "xpath;//a[@data-gtm-position='%s']";
     private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
-    private static final String SLIDER_FROM_XPATH = "xpath;//span[@class='irs-slider from']";
+    private static final String SLIDER_FROM_XPATH = "xpath;//span[contains(@class,'irs-slider from last')]";
     private static final String SLIDER_TO_XPATH = "xpath;//span[@class='irs-slider to']";
     private static final String PRICE_RANGE_FROM_XPATH = "xpath;//input[@class='b-range__input js-range-from']";
     private static final String PRICE_RANGE_TO_XPATH = "xpath;//input[@class='b-range__input js-range-to']";
@@ -37,7 +37,7 @@ public class CommonActionsOnMobilePages extends MainTestBase {
     private static final String BASE_INPUT_CHECKBOX_OPTION_XPATH = "xpath;(//span[@class='b-custom-input'])[%s]";
     private static final String ON_RECIPE_XPATH = "xpath;//span[@class='b-trim-str'][contains(.,'Отпуск по рецепту')]";
     private static final String WITHOUT_RECIPE_XPATH = "xpath;//span[contains(.,'Отпуск без рецепта')]";
-    private static final String SORTING_BUTTON_XPATH = "xpath;//span[contains(@class,'ui-selectmenu-text')]";
+    private static final String SORTING_BUTTON_XPATH = "xpath;//span[@class='ui-selectmenu-text']";
     private static final String SORTING_NAME_XPATH = "xpath;//span[@class='ui-selectmenu-text']";
     private static final String BASE_INPUT_SORTING_OPTIONS_XPATH = "xpath;//div[contains(@id,'ui-id-%s')]";
     private static final String PRICE_REDUCTION = "5";

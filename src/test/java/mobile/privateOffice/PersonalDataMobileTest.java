@@ -158,9 +158,9 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests {
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();
-        mobilePersonalDataPage.changeBirthday("12","Апрель","1994");
+        mobilePersonalDataPage.changeBirthday("12", "Апрель", "1994");
         mobilePersonalDataPage.ckickSaveButton();
-        mobilePersonalDataPage.changeBirthday("1","Февраль","1993");//Возврашаем в исходную дату
+        mobilePersonalDataPage.changeBirthday("1", "Февраль", "1993");//Возврашаем в исходную дату
         mobilePersonalDataPage.ckickSaveButton();
     }
 

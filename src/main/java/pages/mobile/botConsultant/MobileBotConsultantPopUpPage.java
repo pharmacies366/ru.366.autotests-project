@@ -23,7 +23,6 @@ public class MobileBotConsultantPopUpPage extends MainTestBase {
     private static final String CONSULTANT_BOT_BUTTON_XPATH = "xpath;//jdiv[@class='button_e5c6']";
 
 
-
     //конструктор
     public MobileBotConsultantPopUpPage(WebDriver driver) {
         this.driver = driver;
@@ -68,7 +67,6 @@ public class MobileBotConsultantPopUpPage extends MainTestBase {
     }
 
 
-
     //Методы
     @Step("Пользователь закрывает консультант бота")
     public void clickCloseBot() {
@@ -101,7 +99,7 @@ public class MobileBotConsultantPopUpPage extends MainTestBase {
     }
 
     @Step("Пользователь заполняет контактные данные")
-    public void contactDetails(String name, String phoneNumber, String email ) {
+    public void contactDetails(String name, String phoneNumber, String email) {
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Name)).sendKeys(name);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
@@ -116,7 +114,7 @@ public class MobileBotConsultantPopUpPage extends MainTestBase {
 
     @Step("Пользователь проверяет сообщение с текстом 'Спасибо'")
     public void checkThanksMessage() {
-       String message = getThanksMessage().getText();
+        String message = getThanksMessage().getText();
         Assert.assertEquals(message, "\uD83C\uDF89 Спасибо!");
         logger.info("Пользователь проверяет сообщение с текстом 'Спасибо'");
     }

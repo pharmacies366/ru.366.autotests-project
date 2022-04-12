@@ -18,6 +18,17 @@ import org.junit.runner.RunWith;
 @RunWith(DataProviderRunner.class)
 public class ProductsPageWebTest extends BaseSettingsWebTests {
 
+    @DataProvider
+    public static Object[][] checkingCheckboxes() {
+        return new Object[][]{
+                {1, 1},//Форма выпуска
+                {2, 94},//Бренд
+                {3, 206},//Теги
+                {4, 222},//Для кого
+                {5, 259},//Производители
+        };
+    }
+
     @DisplayName("Пользователь проверяет работу слайдера для изменения цены")
     @Test
     public void checkChangePricesRangeWithSlider() {
@@ -93,17 +104,6 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         catalogPage.clickMedicationsButtons();
         commonActionsOnWebPages.clickNextPage();
         commonActionsOnWebPages.clickPrevPage();
-    }
-
-    @DataProvider
-    public static Object[][] checkingCheckboxes() {
-        return new Object[][]{
-                {1, 1},//Форма выпуска
-                {2, 94},//Бренд
-                {3, 206},//Теги
-                {4, 222},//Для кого
-                {5, 259},//Производители
-        };
     }
 
     @DisplayName("Пользователь проверяет соотвествие между выдачей товаров и выбранной формы выпуска,брендом,тегами,для кого,производителями")

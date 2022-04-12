@@ -16,7 +16,6 @@ public class MobileSberPage extends MainTestBase {
     private static final String SUBMIT_BUTTON_XPATH = "xpath;//span[contains(.,'Оплатить')]";
 
 
-
     //конструктор
     public MobileSberPage(WebDriver driver) {
         this.driver = driver;

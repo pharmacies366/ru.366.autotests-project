@@ -25,7 +25,6 @@ public class MobileCartPage extends MainTestBase {
     private static final String DO_NOT_ADD_TO_CART_PRODUCTS_LIST_XPATH = "xpath;//div[@class='owl-wrapper c-gallery__content-wrapper active']";
 
 
-
     //конструктор
     public MobileCartPage(WebDriver driver) {
         this.driver = driver;
@@ -139,6 +138,7 @@ public class MobileCartPage extends MainTestBase {
         getProductCard().click();
         logger.info("Пользователь нажимает на товар");
     }
+
     @Step("Сохранение количества товаров")
     public int getQuantityMaterials() {
         int quantity = getProductQuantity().formatElementToValue();
@@ -147,13 +147,13 @@ public class MobileCartPage extends MainTestBase {
     }
 
     @Step("Пользователь нажимает '+' увеличивая количество шт. товара")
-    public void clickIncreaseQuantity(){
+    public void clickIncreaseQuantity() {
         getIncreaseQuantity().click();
         logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
     }
 
     @Step("Пользователь нажимает на иконку удаления товара")
-    public void clickDeleteMaterials(){
+    public void clickDeleteMaterials() {
         getMakeOrder().moveToElement();
         getDeleteMaterials().click();
         logger.info("Пользователь нажимает на иконку удаления товар");

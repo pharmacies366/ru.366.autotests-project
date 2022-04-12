@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 public class ThankForTheOrderPage extends MainTestBase {
 
 
-
     //элементы
     private static final String THANKS_ORDER_SELF_XPATH = "xpath;//h1[contains(.,'Спасибо за ваш заказ!')]";
     private static final String SAVING_ORDER_NUMBER_XPATH = "xpath;//div[@class='order-number-code']";
@@ -35,11 +34,10 @@ public class ThankForTheOrderPage extends MainTestBase {
     }
 
 
-
     //Методы
 
     @Step("Пользователь проверяет отображение сообщения 'Спасибо за ваш заказ!'")
-    public void checkSuccessMessage(){
+    public void checkSuccessMessage() {
         getThanksOrderSelf().elementIsVisibility();
         logger.info("Пользователь проверяет отображение сообщения 'Спасибо за ваш заказ!'");
     }

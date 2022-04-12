@@ -18,30 +18,39 @@ import org.junit.runner.RunWith;
 @RunWith(DataProviderRunner.class)
 public class HeaderBlockWebTest extends BaseSettingsWebTests {
 
+    @DataProvider
+    public static Object[][] data() {
+        return new Object[][]{
+                {"/howToOrderNew/", "Как сделать заказ*", "Как оформить заказ на сайте?"},
+                {"/pravila_programmy/", "Клуб 36,6", "Условия выдачи карты"},
+                // {"/certificates/", "Подарочные сертификаты", "Подарочные сертификаты"},// нет на s1
+        };
+    }
+
     @DisplayName("Проверка отображения логотипа")//возможно нужно убрать данную проверку,
     // так как по супи в проверки кликабельности уже входит под капотом проверка на видимость
     @Test
-    public void checkVisibilityLogo(){
+    public void checkVisibilityLogo() {
         headerBlock.getSiteLogo().elementIsVisibility();
     }
 
     @DisplayName("Проверка кликабельности логотипа")
     @Test
-    public void checkClickableLogo(){
+    public void checkClickableLogo() {
         headerBlock.getSiteLogo().elementIsClickable();
         logger.info("Логотип кликабелен");
     }
 
     @DisplayName("Проверка кликабельности кнопки 'Каталог'")
     @Test
-    public void checkClickableCatalogButton(){
+    public void checkClickableCatalogButton() {
         headerBlock.clickCatalogButton();
         logger.info("Каталог кликабелен");
     }
 
     @DisplayName("Проверка работы поиска")
     @Test
-    public void testingTheSearch(){
+    public void testingTheSearch() {
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-p1-public.model-t.cc.commerce.ondemand.com/search/?text=44226");
         logger.info("Поиск работает корректно");
@@ -49,7 +58,7 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Проверки работы корзины")
     @Test
-    public void testingTheCart(){
+    public void testingTheCart() {
         mainPage.clickClosePopUp();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
@@ -62,7 +71,7 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Проверка кликабельности и корректности перехода по кнопке для выбора городов")
     @Test
-    public void checkButtonSelectCities(){
+    public void checkButtonSelectCities() {
         headerBlock.clickCitiesButton();
         Assert.assertEquals("Выбор города", headerBlock.checkCitiesPopUp());
         logger.info("Проверка прошла успешно");
@@ -70,7 +79,7 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Проверка кликабельности и корректности перехода по кнопке 'аптеки'")
     @Test
-    public void checkButtonPharmacies(){
+    public void checkButtonPharmacies() {
         headerBlock.clickPharmaciesButton();
         pageActions.contentIsDisplayed("Работает сейчас");
         logger.info("Проверка прошла успешно");
@@ -78,33 +87,23 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Проверка кликабельности кнопки 'Войти'")
     @Test
-    public void checkClickableSignIn(){
+    public void checkClickableSignIn() {
         headerBlock.clickToSignInButton();
         logger.info("Кнопка 'Войти' кликабельна");
     }
 
     @DisplayName("Проверка кликабельности кнопки 'Зарегистрироваться'")
     @Test
-    public void checkClickableSignUp(){
+    public void checkClickableSignUp() {
         headerBlock.clickToSignUpButton();
         logger.info("Кнопка 'Зарегистрироваться' кликабельна");
     }
 
     @DisplayName("Проверка кликабельности номера телефона")
     @Test
-    public void checkClickablePhoneNumber(){
+    public void checkClickablePhoneNumber() {
         headerBlock.getPhoneNumber().elementIsClickable();
         logger.info("Номер телефона кликабелен");
-    }
-
-
-    @DataProvider
-    public static Object[][] data() {
-        return new Object[][]{
-                {"/howToOrderNew/", "Как сделать заказ*", "Как оформить заказ на сайте?"},
-                {"/pravila_programmy/", "Клуб 36,6", "Условия выдачи карты"},
-               // {"/certificates/", "Подарочные сертификаты", "Подарочные сертификаты"},// нет на s1
-        };
     }
 
     @DisplayName("Проверка релевантности ссылок в шапке сайта")

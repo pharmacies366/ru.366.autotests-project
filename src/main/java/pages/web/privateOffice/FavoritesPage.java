@@ -22,7 +22,6 @@ public class FavoritesPage extends MainTestBase {
     private static final String QUANTITY_MATERIALS_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
 
 
-
     //конструктор
     public FavoritesPage(WebDriver driver) {
         this.driver = driver;
@@ -65,7 +64,6 @@ public class FavoritesPage extends MainTestBase {
     public PageElementActions getMaterialsQuantity() {
         return new PageElementActions(QUANTITY_MATERIALS_XPATH, driver);
     }
-
 
 
     //Методы
@@ -124,11 +122,11 @@ public class FavoritesPage extends MainTestBase {
     @Step("Пользователь удаляет все товары со страницы избранное")
     public void deleteProductsOnFavoritesPage() {
         int par = getList().getSize();
-            for (int i = 0; i < par; i++) {
-                getBaseInputDeleteProduct(String.format(BASE_INPUT_DELETE_PRODUCT_XPATH, 1)).click();
-            }
-        logger.info("Пользователь удаляет все товары со страницы избранное");
+        for (int i = 0; i < par; i++) {
+            getBaseInputDeleteProduct(String.format(BASE_INPUT_DELETE_PRODUCT_XPATH, 1)).click();
         }
+        logger.info("Пользователь удаляет все товары со страницы избранное");
+    }
 
 
     @Step("Пользователь проверяет, есть ли на странице избранное товары")

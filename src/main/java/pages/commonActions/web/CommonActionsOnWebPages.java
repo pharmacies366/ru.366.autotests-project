@@ -14,7 +14,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
     //элементы
     private static final String PRODUCT_BUTTON_XPATH = "xpath;//a[@data-gtm-position='%s']";
     private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
-    private static final String SLIDER_FROM_XPATH = "xpath;//span[@class='irs-slider from']";
+    private static final String SLIDER_FROM_XPATH = "xpath;//span[contains(@class,'irs-slider from last')]";
     private static final String SLIDER_TO_XPATH = "xpath;//span[@class='irs-slider to']";
     private static final String PRICE_RANGE_FROM_XPATH = "xpath;//input[@class='b-range__input js-range-from']";
     private static final String PRICE_RANGE_TO_XPATH = "xpath;//input[@class='b-range__input js-range-to']";
@@ -36,10 +36,10 @@ public class CommonActionsOnWebPages extends MainTestBase {
     private static final String BASE_INPUT_CHECKBOX_OPTION_XPATH = "xpath;(//span[@class='b-custom-input'])[%s]";
     private static final String ON_RECIPE_XPATH = "xpath;//span[@class='b-trim-str'][contains(.,'Отпуск по рецепту')]";
     private static final String WITHOUT_RECIPE_XPATH = "xpath;//span[contains(.,'Отпуск без рецепта')]";
-    private static final String SORTING_BUTTON_XPATH = "xpath;//span[contains(@class,'ui-selectmenu-text')]";
+    private static final String SORTING_BUTTON_XPATH = "xpath;//form[@id='sortForm2']";
     private static final String SORTING_NAME_XPATH = "xpath;//span[@class='ui-selectmenu-text']";
     private static final String BASE_LIST_TITLE_PRODUCTS_XPATH = "xpath;(//a[@data-gtm-source='products list'])[%s]";
-    private static final String BASE_INPUT_SORTING_OPTIONS_XPATH = "xpath;//div[contains(@id,'ui-id-%s')]";
+    private static final String BASE_INPUT_SORTING_OPTIONS_XPATH = "xpath;//div[@id='ui-id-%s']";
     private static final String PRICE_REDUCTION = "5";
     private static final String PRICE_INCREASE = "4";
     private static final String SORTING_NAME = "3";
@@ -260,7 +260,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
         int par = getProductList().getSize();
         for (int i = 1; i <= par; i++) {
             int price = getBaseInputCheckProductPrice(String.format(BASE_INPUT_CHECK_PRODUCT_PRICE_XPATH, i)).formatElementToValue();
-        Assert.assertTrue(price <= price + i);
+            Assert.assertTrue(price <= price + i);
         }
         logger.info("Пользователь проверяет сортировку товаров по увеличению цены");
     }

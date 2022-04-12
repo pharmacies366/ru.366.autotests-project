@@ -23,8 +23,6 @@ public class MobilePersonalAccountPage extends MainTestBase {
     }
 
 
-
-
     //геттеры элементов с получением доступа к действиям с элементами
 
     public PageElementActions getBaseInputBasementLinks(String xpath) {

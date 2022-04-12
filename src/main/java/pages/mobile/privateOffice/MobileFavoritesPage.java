@@ -18,9 +18,6 @@ public class MobileFavoritesPage extends MainTestBase {
     private static final String DECREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_minus')])[1]";
 
 
-
-
-
     //конструктор
     public MobileFavoritesPage(WebDriver driver) {
         this.driver = driver;
@@ -59,7 +56,6 @@ public class MobileFavoritesPage extends MainTestBase {
     public PageElementActions getDecreaseQuantity() {
         return new PageElementActions(DECREASE_QUANTITY_XPATH, driver);
     }
-
 
 
     //Методы

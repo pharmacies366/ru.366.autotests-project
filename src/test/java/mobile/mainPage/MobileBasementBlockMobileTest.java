@@ -25,7 +25,32 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
                 {"/apteki/map/", "Где получить заказ", "Работает сейчас"},
                 {"/faq/", "Вопрос-ответ", "Вопрос-ответ"},
                 {"/feedback/", "Задать вопрос", "Обратная связь"},
-               // {"/delivery/", "Доставка", "Курьерская доставка заказов"}, //нет на s1
+                // {"/delivery/", "Доставка", "Курьерская доставка заказов"}, //нет на s1
+        };
+    }
+
+    @DataProvider
+    public static Object[][] Service() {
+        return new Object[][]{
+                //Сервис
+                {"/polzovatelskoe-soglashenie/", "Пользовательское соглашение", "Пользовательское соглашение"},
+                {"/politika-konfidencialnosti/", "Политика конфиденциальности", "Политика конфиденциальности"},
+                {"/mnn/", "Действующие вещества", "Действующие вещества"},
+                {"/promotions/", "Акции", "Акции"},
+                {"/articles/", "Статьи", "Статьи"},
+        };
+    }
+
+    @DataProvider
+    public static Object[][] aboutCompany() {
+        return new Object[][]{
+                //О Компании
+                {"/aboutus/", "О нас", "О нас"},
+                {"/contacts/", "Контактные данные", "Контактные данные"},
+                {"/manufacturers/", "Производители", "Производители"},
+                {"/advertisingplacement/", "Размещение рекламы", "Размещение рекламы"},
+                {"/license/", "Лицензии", "Лицензии"},
+                {"/vakansii/", "Вакансии", "Фармацевт/Провизор"},
         };
     }
 
@@ -34,7 +59,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
     @Test
     @UseDataProvider("help")
     public void helpTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        mobileMainPage.clickClosePopUp();
+        // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileBasementBlock.clickHelpButton();
         mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
@@ -42,19 +67,6 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
         mobileBasementBlock.selectBasementButtons(LOCATOR);
         pageActions.contentIsDisplayed(PAGEMESSAGE);
         logger.info("Ссылка кликабельна и ведёт на нужную страницу");
-    }
-
-
-    @DataProvider
-    public static Object[][] Service() {
-        return new Object[][]{
-                    //Сервис
-                    {"/polzovatelskoe-soglashenie/", "Пользовательское соглашение", "Пользовательское соглашение"},
-                    {"/politika-konfidencialnosti/", "Политика конфиденциальности", "Политика конфиденциальности"},
-                    {"/mnn/", "Действующие вещества", "Действующие вещества"},
-                    {"/promotions/", "Акции", "Акции"},
-                    {"/articles/", "Статьи", "Статьи"},
-        };
     }
 
     @DisplayName("Проверка релевантности ссылок в подвале сайта")
@@ -71,20 +83,6 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
         mobileBasementBlock.selectBasementButtons(LOCATOR);
         pageActions.contentIsDisplayed(PAGEMESSAGE);
         logger.info("Ссылка кликабельна и ведёт на нужную страницу");
-    }
-
-
-    @DataProvider
-    public static Object[][] aboutCompany() {
-        return new Object[][]{
-                    //О Компании
-                    {"/aboutus/", "О нас", "О нас"},
-                    {"/contacts/", "Контактные данные", "Контактные данные"},
-                    {"/manufacturers/", "Производители", "Производители"},
-                    {"/advertisingplacement/", "Размещение рекламы", "Размещение рекламы"},
-                    {"/license/", "Лицензии", "Лицензии"},
-                    {"/vakansii/", "Вакансии", "Фармацевт/Провизор"},
-        };
     }
 
     @DisplayName("Проверка релевантности ссылок в подвале сайта")
@@ -104,7 +102,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка кликабельности и отображения номера телефона")
     @Test
-    public void checkClickablePhoneNumber(){
+    public void checkClickablePhoneNumber() {
         mobileBasementBlock.getPhoneNumber().elementIsClickable();
         logger.info("Номер телефона отображается и кликабелен");
     }

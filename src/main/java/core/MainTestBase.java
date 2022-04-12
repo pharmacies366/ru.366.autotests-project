@@ -19,45 +19,11 @@ import utils.WebDriverFactory;
 
 public class MainTestBase {
 
+    public static PageActions pageActions;
+    public static String nameOfPackage;
     public WebDriver driver;
     protected PropertiesManager propertiesManager = new PropertiesManager();
-    public static PageActions pageActions;
-    private WebDriverFactory driverFactory;
-    public static String nameOfPackage;
     protected Logger logger = LogManager.getLogger(MainTestBase.class);
-
-
-    @Step("Пользователь переходит в карточку товара")
-    protected void openUrl(String url) {
-        driver.get(url);
-        saveAllureScreenshot();
-    }
-
-    @Before
-    @Step("Открывается Главная страница сайта")
-    public void beforeClass_StartBrowser() {
-        driverFactory = new WebDriverFactory();
-        driver = driverFactory.getDriver();
-        pageActions = new PageActions(driver);
-        driver.get(propertiesManager.getProperty("baseurl"));
-        logger.info("Открывается главная страница сайта 36.6");
-
-    }
-
-    @After
-    public void finish() {
-        driver.quit();
-    }
-
-
-
-    /*
-     * Повторный запуск тестов при падении
-     */
-
-    @Rule
-    public RetryRule rule = new RetryRule(4);
-
     /**
      * Управление действиями, при различных исходах теста
      */
@@ -86,13 +52,46 @@ public class MainTestBase {
         }
 
     };
+    private WebDriverFactory driverFactory;
+
+    @Step("Пользователь переходит в карточку товара")
+    protected void openUrl(String url) {
+        driver.get(url);
+        saveAllureScreenshot();
+    }
+
+    @Before
+    @Step("Открывается Главная страница сайта")
+    public void beforeClass_StartBrowser() {
+        driverFactory = new WebDriverFactory();
+        driver = driverFactory.getDriver();
+        pageActions = new PageActions(driver);
+        driver.get(propertiesManager.getProperty("baseurl"));
+        logger.info("Открывается главная страница сайта 36.6");
+
+    }
+
+
+
+    /*
+     * Повторный запуск тестов при падении
+     */
+
+  /*  @Rule
+    public RetryRule rule = new RetryRule(2);
+*/
+
+    @After
+    public void finish() {
+        driver.quit();
+    }
 
     /**
      * @return - скриншот
      */
     @Attachment(value = "Скриншот", type = "image/png")
-    public byte [] saveAllureScreenshot(){
-        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+    public byte[] saveAllureScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
     /**

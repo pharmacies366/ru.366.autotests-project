@@ -4,6 +4,7 @@ import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,14 +21,15 @@ public class CookiePage extends MainTestBase {
     public void cookieAuthorization() {
         logger.info("ПРОИЗОШЛА АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ЧЕРЕЗ COOKIE");
 
-    // S1
+        // S1
         driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "fd327da881f1f239f5c6bcfe2253ac95f6f92cb8"));
         driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDc1NTE1Mzg3OjRhNWUxZjIzOGNiYWMwNDA3N2ZkODBhMDU1YmI2NTEz"));
         driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-569ff799ff-lbxgk"));
 
 
-}
-    public void reCaptchaKey(){
+    }
+
+    public void reCaptchaKey() {
         driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));//кука для обхода каптчи
     }
 
@@ -45,8 +47,6 @@ public class CookiePage extends MainTestBase {
     }
 
 */
-
-
 
 
     @Step("Получение всех кук и вывод их в консоль")

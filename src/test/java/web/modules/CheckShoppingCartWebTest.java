@@ -118,8 +118,8 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         headerBlock.clickToCartButton();
         cartPage.clickFavoritesButton();
         headerBlock.clickFavoritesButton();
-        int count =  headerBlock.checkQuantityProductsOnFavoritesPage();
-        Assert.assertEquals(count,1);
+        int count = headerBlock.checkQuantityProductsOnFavoritesPage();
+        Assert.assertEquals(count, 1);
     }
 
     @DisplayName("Пользователь проверяет, что в блоке - не забудьте положить в корзину, отображаются: - Мини-карточки товаров в виде макета")
@@ -127,9 +127,9 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     public void checkDoNotAddToCartBlock() {
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         String text = cartPage.checkTextDoNotAddToCart();
-        Assert.assertEquals(text,"Не забудьте положить в корзину");
+        Assert.assertEquals(text, "Не забудьте положить в корзину");
         int count = cartPage.checkDoNotAddToCartProductsList();
         Assert.assertTrue(count > 0);
     }
-    
+
 }
