@@ -108,7 +108,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @Test
     public void addProductToFavoritePageOnShoppingCartPage() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         headerBlock.clickToCartButton();
         cartPage.clickFavoritesButton();
