@@ -16,7 +16,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @Test
     public void increaseQuantityMaterialOnCartPage() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         headerBlock.clickToCartButton();
         cartPage.clickIncreaseQuantity();
@@ -29,7 +28,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @Test
     public void decreaseQuantityMaterialOnCartPage() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         mainPage.clickIncreaseQuantity();

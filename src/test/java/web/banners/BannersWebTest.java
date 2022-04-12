@@ -39,7 +39,6 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @Test
     public void checkBannersClickableOnOspPage() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickLetterN();
         ospPage.clickBanner();
         productCardPage.clickMainButton();
@@ -49,7 +48,6 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @Test
     public void checkBannersClickableOnProductPage() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         productCardPage.clickBanner();
         productCardPage.clickMainButton();
@@ -59,7 +57,6 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @Test
     public void checkBannersClickableOnCategoryPage() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
         commonActionsOnWebPages.clickBanner();
@@ -70,7 +67,6 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @Test
     public void checkBannersClickableWithSearch() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         headerBlock.setSearchInput("Лекарства");
         commonActionsOnWebPages.clickBanner();
         productCardPage.clickMainButton();

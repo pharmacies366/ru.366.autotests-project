@@ -51,7 +51,6 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
     @Test
     public void testingTheCart(){
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         int quantity = headerBlock.checkCartQuantity();
