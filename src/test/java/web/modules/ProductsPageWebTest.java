@@ -1,8 +1,6 @@
 package web.modules;
 
 import base.BaseSettingsWebTests;
-import com.google.common.util.concurrent.AtomicDouble;
-import com.sun.xml.internal.bind.v2.TODO;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
