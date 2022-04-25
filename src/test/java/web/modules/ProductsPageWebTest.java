@@ -1,6 +1,8 @@
 package web.modules;
 
 import base.BaseSettingsWebTests;
+import com.google.common.util.concurrent.AtomicDouble;
+import com.sun.xml.internal.bind.v2.TODO;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
@@ -139,6 +141,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         Assert.assertEquals(recipeInfo, "Без рецепта");
     }
 
+ /*   //Проверить после изменений
     @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
     @Test
     public void checkSortingPriceReduction() {
@@ -151,7 +154,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.checkSortingPriceReduction();
     }
 
-
+    //Проверить после изменений
     @DisplayName("Пользователь проверяет сортировку выдачи товаров по увеличению цены")
     @Test
     public void checkSortingPriceIncrease() {
@@ -164,6 +167,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.checkSortingPriceIncrease();
     }
 
+    //Проверить после изменений
     @DisplayName("Пользователь проверяет сортировку выдачи товаров по названию")
     @Test
     public void checkSortingName() {
@@ -173,7 +177,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.clickSortingButton();
         commonActionsOnWebPages.clickSortingNameOption();
         commonActionsOnWebPages.checkSortingOption("по названию");
-    }
+    }*/
 
 
 }
