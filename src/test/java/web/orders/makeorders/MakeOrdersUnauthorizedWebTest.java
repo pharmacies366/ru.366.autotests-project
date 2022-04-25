@@ -50,7 +50,7 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         productCardPage.buyOneClick();
         productCardPage.checkVisibilityMap();
-        productCardPage.setInputSearchAddress("Москва");
+        productCardPage.setInputSearchAddress("Метро Фили");
         pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
         checkOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
@@ -100,6 +100,7 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
         checkOutPage.clickSelectApteka();
         checkOutPage.checkVisibilityMap();
         checkOutPage.setInputSearchAddres("метро Фили");
+        pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
         //  checkOutPage.clickMakeOrder();

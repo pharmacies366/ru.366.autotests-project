@@ -24,7 +24,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
                 {"/my-account/profile", "Личные данные", "Личные данные"},
                 {"/my-account/update-password", "Изменить пароль", "Изменить пароль"},
                 {"/favorites", "Избранное", "Избранное"},
-                {"/my-account/invite-friend", "Приведи друга", "Приведи друга"},
+               // {"/my-account/invite-friend", "Приведи друга", "Приведи друга"},
                 {"/logout/", "Выйти", "Как сделать заказ"}
         };
     }
@@ -34,7 +34,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
     @Step("В личном кабинете переходит по ссылке => {LINKTEXT}")
     @Test
     @UseDataProvider("checkDisplaedOptions")
-    public void checkDisplaedOptions(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
+    public void checkDisplayedOptions(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
         mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
@@ -54,7 +54,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Пользователь заполняет фамилию и отчество и сохраняет данные")
     @Test
-    public void checkPersonalDeta() {
+    public void checkPersonalData() {
         mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
@@ -75,7 +75,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Пользователь очищает поля фамилии и отчества и сохраняет данные")
     @Test
-    public void clearPersonalDeta() {
+    public void clearPersonalData() {
         mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
@@ -109,7 +109,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Пользователь изменяет и сохраняет имя")
     @Test
-    public void chanchName() {
+    public void changeName() {
         mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();

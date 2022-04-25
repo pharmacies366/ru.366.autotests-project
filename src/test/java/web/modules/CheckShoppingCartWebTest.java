@@ -17,6 +17,7 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     public void increaseQuantityMaterialOnCartPage() {
         mainPage.clickClosePopUp();
         mainPage.clickAddToCardButton();
+        pageActions.waitPageLoad();
         headerBlock.clickToCartButton();
         cartPage.clickIncreaseQuantity();
         int quantity = cartPage.getQuantityMaterials();

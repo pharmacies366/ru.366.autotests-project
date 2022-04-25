@@ -119,7 +119,7 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет, что товар который был добавлен в избранное," +
             " на странице корзины так же отмечен что он находится в избранном")
     @Test
-    public void checkActivFavoritesButtonOnCartPage() {
+    public void checkActiveFavoritesButtonOnCartPage() {
         mainPage.clickClosePopUp();
         mainPage.clickFavoritesIcon();
         headerBlock.clickFavoritesButton();

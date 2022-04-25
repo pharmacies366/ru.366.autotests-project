@@ -23,10 +23,14 @@ public class CheckFinishOrderWebTest extends BaseSettingsWebTests {
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.clickAddCartButton();
+        pageActions.waitPageLoad();
         headerBlock.clickToCartButton();
+        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         checkOutPage.clickSelectApteka();
         checkOutPage.setInputSearchAddres("метро Фили");
+        pageActions.waitPageLoad();
         checkOutPage.checkVisibilityMap();
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
