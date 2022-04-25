@@ -44,7 +44,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Аавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -71,7 +71,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Авторизованный пользователь покупает товар со страниц ОСП")
     @Test
     public void checkOsp() {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -103,7 +103,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Авторизованный пользователь покупает товар со способом получения - 'Самовывоз'")
     @Test
     public void pickup() {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
@@ -131,7 +131,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Авторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
     @Test
     public void split() {
-        mobileMainPage.clickClosePopUp();
+        //mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();

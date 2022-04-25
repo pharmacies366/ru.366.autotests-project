@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 @Story("Проверка главной страницы сайта 36.6")
 @DisplayName("Проверка подвала сайта")
 @RunWith(DataProviderRunner.class)
-public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
+public class BasementBlockMobileTest extends BaseSettingsMobileTests {
 
     @DataProvider
     public static Object[][] help() {
@@ -74,7 +74,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
     @Test
     @UseDataProvider("Service")
     public void serviceTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.waitPageLoad();
         mobileBasementBlock.clickServiceButton();
@@ -90,7 +90,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
     @Test
     @UseDataProvider("aboutCompany")
     public void aboutCompanyTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileBasementBlock.clickAboutCompanButton();
         mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);

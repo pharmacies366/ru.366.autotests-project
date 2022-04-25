@@ -10,7 +10,7 @@ import org.junit.Test;
 @Feature(value = "Мобильная версия")
 @Story("Проверка шапки сайта 36.6")
 @DisplayName("Проверка шапки сайта")
-public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
+public class HeaderBlockMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка кликабельности логотипа")
     @Test
@@ -29,7 +29,7 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка корекного перехода в избранное")
     @Test
-    public void checkClickaFavorites() {
+    public void checkClickFavorites() {
         mobileHeaderBlock.clickFavorites();
         pageActions.contentIsDisplayed("Избранное");
         logger.info("Переход на страницу Избранное выполнен корректно");
@@ -38,7 +38,7 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Проверки работы корзины")
     @Test
     public void testingTheCart() {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
         pageActions.waitPageLoad();
