@@ -77,9 +77,9 @@ public class MainTestBase {
      * Повторный запуск тестов при падении
      */
 
-  /*  @Rule
-    public RetryRule rule = new RetryRule(2);
-*/
+    @Rule
+    public RetryRule rule = new RetryRule(3);
+
 
     @After
     public void finish() {
