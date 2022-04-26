@@ -16,7 +16,7 @@ public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на главной странице")
     @Test
     public void increaseQuantityMaterialOnMainPage() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
         pageActions.waitPageLoad();
@@ -34,7 +34,7 @@ public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь уменьшает количество шт. товара в корзине на главной странице")
     @Test
     public void decreaseQuantityMaterialOnMainPage() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
         pageActions.waitPageLoad();
@@ -55,7 +55,7 @@ public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь увеличивает количество шт. товара в карточке товара")
     @Test
     public void increaseQuantityMaterialOnProductCartPage() {
-        mobileMainPage.clickClosePopUp();
+      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         mobileProductCardPage.clickAddCartButton();

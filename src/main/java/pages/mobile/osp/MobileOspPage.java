@@ -13,7 +13,7 @@ public class MobileOspPage extends MainTestBase {
     //элементы
     private static final String SHOW_ALL_BUTTON_XPATH = "xpath;//span[contains(.,'Показать все')]";
     private static final String PRODUCT_NAME_XPATH = "xpath;//a[@href='/g/nurofen']";
-    private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
+    private static final String BANNER_XPATH = "xpath;//img[@class='b-bnr--responsive__img ']";
 
 
 

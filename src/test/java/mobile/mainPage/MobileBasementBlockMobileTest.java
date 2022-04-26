@@ -34,7 +34,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
     @Test
     @UseDataProvider("help")
     public void helpTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileBasementBlock.clickHelpButton();
         mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
@@ -62,7 +62,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
     @Test
     @UseDataProvider("Service")
     public void serviceTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.waitPageLoad();
         mobileBasementBlock.clickServiceButton();
@@ -92,7 +92,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
     @Test
     @UseDataProvider("aboutCompany")
     public void aboutCompanyTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        mobileMainPage.clickClosePopUp();
+       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileBasementBlock.clickAboutCompanButton();
         mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
