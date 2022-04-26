@@ -5,7 +5,6 @@ import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
@@ -49,7 +48,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         Assert.assertTrue(price <= ToPriceRange);
     }
 
-/*    @DisplayName("Пользователь выбирет чекбокс Доставка и проверяет корректное изменение списка товаров")
+    @DisplayName("Пользователь выбирет чекбокс Доставка и проверяет корректное изменение списка товаров")
     @Test
     public void checkProductsOnlyDelivery() {
         mainPage.clickClosePopUp();
@@ -84,7 +83,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.checkSelectedProductsWithDeliveryMethod();
         commonActionsOnWebPages.clickResetCheckboxes();
         commonActionsOnWebPages.checkSelectedProductsWithAllMethods();
-    }*/
+    }
 
     @DisplayName("Пользователь проверяет коррекность работы пагинации страниц")
     @Test
@@ -140,7 +139,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         Assert.assertEquals(recipeInfo, "Без рецепта");
     }
 
-    @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
+/*    @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
     @Test
     public void checkSortingPriceReduction() {
         mainPage.clickClosePopUp();
@@ -175,7 +174,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.clickSortingButton();
         commonActionsOnWebPages.clickSortingNameOption();
         commonActionsOnWebPages.checkSortingOption("по названию");
-    }
+    }*/
 
 
 
