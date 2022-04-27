@@ -39,6 +39,8 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @Test
     public void checkBannersClickableOnOspPage() {
         mainPage.clickClosePopUp();
+        pageActions.reloadPage();
+        pageActions.waitPageLoad();
         mainPage.clickLetterN();
         ospPage.clickBanner();
         productCardPage.clickMainButton();
