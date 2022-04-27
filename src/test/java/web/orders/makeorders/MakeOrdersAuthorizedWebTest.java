@@ -134,7 +134,9 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         cartPage.clickAddCartButton();
         pageActions.waitPageLoad();
         headerBlock.clickToCartButton();
+        pageActions.waitPageLoad();
         cartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         checkOutPage.clickSelectApteka();
         pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
