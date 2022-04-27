@@ -22,11 +22,22 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
     public static Object[][] checkingCheckboxes() {
         return new Object[][]{
                 {1, 1},//Форма выпуска
-                {2, 94},//Бренд
-                {3, 206},//Теги
-                {4, 222},//Для кого
-                {5, 259},//Производители
+                {2, 99},//Бренд
+                {3, 214},//Теги
+                {4, 230},//Для кого
+                {5, 245},//Производители
         };
+    }
+
+    @DisplayName("Пользователь проверяет соотвествие между выдачей товаров и выбранной формы выпуска,брендом,тегами,для кого,производителями")
+    @Test
+    @UseDataProvider("checkingCheckboxes")
+    public void test(int INDEX_SHOW_ALL, int INDEX_OPTION) {
+        mainPage.clickClosePopUp();
+        headerBlock.clickCatalogButton();
+        catalogPage.clickMedicationsButtons();
+        commonActionsOnWebPages.clickShowAll(INDEX_SHOW_ALL);
+        commonActionsOnWebPages.clickAndCheckCheckboxes(INDEX_OPTION);
     }
 
     @DisplayName("Пользователь проверяет работу слайдера для изменения цены")
@@ -104,17 +115,6 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         catalogPage.clickMedicationsButtons();
         commonActionsOnWebPages.clickNextPage();
         commonActionsOnWebPages.clickPrevPage();
-    }
-
-    @DisplayName("Пользователь проверяет соотвествие между выдачей товаров и выбранной формы выпуска,брендом,тегами,для кого,производителями")
-    @Test
-    @UseDataProvider("checkingCheckboxes")
-    public void test(int INDEX_SHOW_ALL, int INDEX_OPTION) {
-        mainPage.clickClosePopUp();
-        headerBlock.clickCatalogButton();
-        catalogPage.clickMedicationsButtons();
-        commonActionsOnWebPages.clickShowAll(INDEX_SHOW_ALL);
-        commonActionsOnWebPages.clickAndCheckCheckboxes(INDEX_OPTION);
     }
 
     @DisplayName("Пользователь проверяет корректную выдачу товаров по рецепту")
