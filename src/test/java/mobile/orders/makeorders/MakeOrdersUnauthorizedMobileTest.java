@@ -49,6 +49,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileProductCardPage.checkVisibilityMap();
         mobileProductCardPage.setInputSearchAddres("метро Фили");
+        pageActions.waitPageLoad();
         mobileProductCardPage.buyOneClick();
         pageActions.waitPageLoad();
         mobileProductCardPage.clickChangeAptekaList();
@@ -72,14 +73,19 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileOspPage.clickShowAll();
         mobileOspPage.clickProductName();
         mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         mobileCheckOutPage.setInputSearchAddres("метро Автозаводская");//возможно нужно кликнуть в пустое место
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.ckickSelect();
         //  mobileCheckOutPage.clickMakeOrder();
@@ -122,11 +128,15 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickSiteLogo();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
         mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.ckickSelect();
         pageActions.waitPageLoad();

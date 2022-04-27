@@ -54,6 +54,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     public void increaseQuantityMaterialOnProductCartPage() {
         mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
+        pageActions.waitPageLoad();
         productCardPage.clickAddCartButton();
         pageActions.waitPageLoad();
         productCardPage.clickIncreaseQuantity();
