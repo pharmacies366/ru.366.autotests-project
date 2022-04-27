@@ -111,7 +111,7 @@
                 <version>${maven-surefire.version}</version>
                 <configuration>
 
-                    <forkCount>5</forkCount>
+                    <forkCount>2</forkCount>
                     <reuseForks>false</reuseForks>
 
                     <rerunFailingTestsCount>3</rerunFailingTestsCount>
