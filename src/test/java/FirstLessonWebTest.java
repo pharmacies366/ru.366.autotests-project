@@ -5,15 +5,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import pages.web.Main366Page;
+import pages.web.main.MainPage;
 
 public class FirstLessonWebTest {
 
-    private Main366Page mainPage;
+    private MainPage mainPage;
 
     @BeforeEach
     void setUp() {
-        mainPage = Selenide.open("https://366.ru/", Main366Page.class);
+        mainPage = Selenide.open("https://366.ru/", MainPage.class);
     }
 
     @AfterEach
