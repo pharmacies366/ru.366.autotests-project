@@ -1,6 +1,5 @@
 package api;
 
-import core.PropertiesReader;
 import core.TestBase;
 
 import static api.Constants.Key.TT_KEY;

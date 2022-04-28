@@ -1,128 +1,94 @@
 package pages.web.botConsultant;
 
-import actions.PageElementActions;
-import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.MatcherAssert;
-import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.htmlelements.element.Button;
+import static com.codeborne.selenide.Selenide.$x;
 
-public class BotConsultantPopUpPage extends MainTestBase {
+public class BotConsultantPopUpPage {
 
     //элементы
-    private static final String BASE_INPUT_CONTACT_DETAILS_XPATH = "xpath;//input[@type='%s']";
-    private static final String Name = "name";
-    private static final String PhoneNumber = "tel";
-    private static final String Email = "email";
-    private static final String CLOSE_BOT_BUTTON_XPATH = "xpath;//jdiv[@class='closeIcon_fc52']";
-    private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[1]";
-    private static final String NEED_A_DRUG_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[2]";
-    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[3]";
-    private static final String ENTER_MESSAGE_INPUT_XPATH = "xpath;//jdiv[text()='Отправить']";
-    private static final String THANKS_MESSAGE_XPATH = "xpath;//jdiv[@class='submitSuccess_f0ba __show_ee7c']";
-    private static final String ANIMATION_BOT_XPATH = "xpath;(//jdiv[@class='globalClass_bc43']//child::jdiv)[1]";
-
-
-
-    //конструктор
-    public BotConsultantPopUpPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    //геттеры элементов с получением доступа к действиям с элементами
-
-    public PageElementActions getCloseBotButton() {
-        return new PageElementActions(CLOSE_BOT_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getCanNotOrderButton() {
-        return new PageElementActions(CAN_NOT_ORDER_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getNeedADrugButton() {
-        return new PageElementActions(NEED_A_DRUG_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getNeedDeliveryButton() {
-        return new PageElementActions(NEED_DELIVERY_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getEnterMessageInput() {
-        return new PageElementActions(ENTER_MESSAGE_INPUT_XPATH, driver);
-    }
-
-    public PageElementActions getBaseInputContactDetails(String xpath) {
-        return new PageElementActions(xpath, driver);
-    }
-
-    public PageElementActions getThanksMessage() {
-        return new PageElementActions(THANKS_MESSAGE_XPATH, driver);
-    }
-
-    public PageElementActions getStatusAnimationBot() {
-        return new PageElementActions(ANIMATION_BOT_XPATH, driver);
-    }
+    private final Button BASE_INPUT_CONTACT_DETAILS = new Button($x( "xpath;//input[@type='%s']"));
+    public final String NAME = "name";
+    public final String PHONE_NUMBER = "tel";
+    public final String EMAIL = "email";
+    private final Button CLOSE_BOT_BUTTON = new Button($x("//jdiv[@class='closeIcon_fc52']"));
+    private final Button CAN_NOT_ORDER_BUTTON = new Button($x( "(//jdiv[@class='button_acaf'])[1]"));
+    private final Button NEED_A_DRUG_BUTTON = new Button($x( "(//jdiv[@class='button_acaf'])[2]"));
+    private final Button NEED_DELIVERY_BUTTON = new Button($x( "(//jdiv[@class='button_acaf'])[3]"));
+    private final Button ENTER_MESSAGE_INPUT = new Button($x( "//jdiv[text()='Отправить']"));
+    private final Button THANKS_MESSAGE = new Button($x( "//jdiv[@class='submitSuccess_f0ba __show_ee7c']"));
+    private final Button ANIMATION_BOT = new Button($x( "(//jdiv[@class='globalClass_bc43']//child::jdiv)[1]"));
 
 
 
     //Методы
     @Step("Пользователь закрывает консультант бота")
-    public void clickCloseBot() {
-        getCloseBotButton().click();
-        logger.info("Пользователь закрывает консультант бота");
+    public BotConsultantPopUpPage clickCloseBot() {
+        CLOSE_BOT_BUTTON.click();
+        //logger.info("Пользователь закрывает консультант бота");
+        return this;
     }
 
     @Step("Пользователь выбирает пункт: Не могу оформить заказ")
-    public void clickCantNotOrder() {
-        getCanNotOrderButton().click();
-        logger.info("Пользователь выбирает пункт: Не могу оформить заказ");
+    public BotConsultantPopUpPage clickCantNotOrder() {
+        CAN_NOT_ORDER_BUTTON.click();
+        //logger.info("Пользователь выбирает пункт: Не могу оформить заказ");
+        return this;
     }
 
     @Step("Пользователь выбирает пункт: Нужен препарат")
-    public void clickNeedADrug() {
-        getNeedADrugButton().click();
-        logger.info("Пользователь выбирает пункт: Нужен препарат");
+    public BotConsultantPopUpPage clickNeedADrug() {
+        NEED_A_DRUG_BUTTON.click();
+       // logger.info("Пользователь выбирает пункт: Нужен препарат");
+        return this;
     }
 
     @Step("Пользователь выбирает пункт: Нужна доставка")
-    public void clickNeedDelivery() {
-        getNeedDeliveryButton().click();
-        logger.info("Пользователь выбирает пункт: Нужна доставка");
+    public BotConsultantPopUpPage clickNeedDelivery() {
+        NEED_DELIVERY_BUTTON.click();
+      //  logger.info("Пользователь выбирает пункт: Нужна доставка");
+        return this;
     }
 
     @Step("Пользователь вводит сообщение")
-    public void enterMessage() {
-        getEnterMessageInput().click();
-        logger.info("Пользователь вводит сообщение");
+    public BotConsultantPopUpPage enterMessage() {
+        ENTER_MESSAGE_INPUT.click();
+       // logger.info("Пользователь вводит сообщение");
+        return this;
     }
 
-    @Step("Пользователь заполняет контактные данные")
-    public void contactDetails(String name, String phoneNumber, String email ) {
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Name)).sendKeys(name);
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
-        logger.info("Пользователь заполнил контактные данные");
-    }
+/*    @Step("Пользователь заполняет контактные данные")
+    public BotConsultantPopUpPage contactDetails(String name, String phoneNumber, String email ) {
+        BASE_INPUT_CONTACT_DETAILS(String.format(BASE_INPUT_CONTACT_DETAILS, NAME)).sendKeys(name);
+        BASE_INPUT_CONTACT_DETAILS(String.format(BASE_INPUT_CONTACT_DETAILS, PHONE_NUMBER)).sendKeys(phoneNumber);
+        BASE_INPUT_CONTACT_DETAILS(String.format(BASE_INPUT_CONTACT_DETAILS, EMAIL)).sendKeys(email);
+      //  logger.info("Пользователь заполнил контактные данные");
+        return this;
+    }*/
 
     @Step("Пользователь нажимает кнопку отправить")
-    public void clicksendMessage() {
-        getEnterMessageInput().click();
-        logger.info("Пользователь нажимает кнопку отправить");
+    public BotConsultantPopUpPage clicksendMessage() {
+        ENTER_MESSAGE_INPUT.click();
+      //  logger.info("Пользователь нажимает кнопку отправить");
+        return this;
     }
 
     @Step("Пользователь проверяет сообщение с текстом 'Спасибо'")
-    public void checkThanksMessage() {
-       String message = getThanksMessage().getText();
-        Assert.assertEquals(message, "\uD83C\uDF89 Спасибо!");
-        logger.info("Пользователь проверяет сообщение с текстом 'Спасибо'");
+    public BotConsultantPopUpPage checkThanksMessage() {
+       String message = THANKS_MESSAGE.getText();
+       // Assert.assertEquals(message, "\uD83C\uDF89 Спасибо!");
+       // logger.info("Пользователь проверяет сообщение с текстом 'Спасибо'");
+        return this;
     }
 
     @Step("Пользователь проверяет, что консультант бот закрылся")
-    public void checkCloseBot() {
-      String statusBot = getStatusAnimationBot().getAttribute("style");
+    public BotConsultantPopUpPage checkCloseBot() {
+      String statusBot = ANIMATION_BOT.getAttribute("style");
         MatcherAssert.assertThat(statusBot, CoreMatchers.containsString("Label_CLOSE"));
-        logger.info("Пользователь проверяет, что консультант бот закрылся");
+       // logger.info("Пользователь проверяет, что консультант бот закрылся");
+        return this;
     }
 
 }
