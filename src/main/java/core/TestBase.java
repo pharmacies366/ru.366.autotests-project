@@ -5,9 +5,7 @@ import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
-import org.testng.annotations.BeforeMethod;
-import pages.CalendarPage;
-import pages.LoginPage;
+import org.junit.jupiter.api.BeforeEach;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -17,14 +15,10 @@ import java.io.IOException;
 
 public class TestBase {
 
-    public static LoginPage loginpage;
-    public static CalendarPage calendarPage;
 
-    @BeforeMethod
+    @BeforeEach
     public void initBrowser() throws IOException {
         Configuration.startMaximized = true;
-        loginpage = new LoginPage();
-        calendarPage = new CalendarPage();
         WebDriverRunner.clearBrowserCache();
     }
 
