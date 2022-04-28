@@ -17,11 +17,6 @@ public class FirstLessonWebTest extends BaseTest {
         mainPage = Selenide.open("https://366.ru/", MainPage.class);
     }
 
-    @AfterEach
-    void close() {
-        Selenide.closeWebDriver();
-    }
-
 
     @Test
     @DisplayName("Какая то проверка")
