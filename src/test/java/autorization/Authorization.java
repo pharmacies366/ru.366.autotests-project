@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+import core.PropertiesReader;
 import core.TestBase;
 import io.qameta.allure.Step;
 import okhttp3.*;
@@ -25,7 +26,7 @@ public class Authorization extends TestBase {
 
     @Step("Авторизация на сайте и переход на страницу календаря: " + CALENDAR_URL)
     public void logInToQualityLabTT() {
-        open(PropertiesReader.baseUrl);
+      //  open(PropertiesReader.baseUrl);
         loginpage.enterName()
                 .enterPassword()
                 .clickSubmitButton();

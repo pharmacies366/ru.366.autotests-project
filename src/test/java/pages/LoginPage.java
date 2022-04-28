@@ -1,5 +1,6 @@
 package pages;
 
+import core.PropertiesReader;
 import core.TestBase;
 import io.qameta.allure.Step;
 import ru.yandex.qatools.htmlelements.element.Button;
