@@ -1,44 +1,28 @@
 package pages.web.cities;
 
-import actions.PageElementActions;
-import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.htmlelements.element.Button;
 
-public class CitiesPopUpPage extends MainTestBase {
+import static com.codeborne.selenide.Selenide.$x;
+
+public class CitiesPopUpPage {
 
     //элементы
-    private static final String MSK_BUTTON_XPATH = "xpath;(//a[contains(.,'Москва и МО')])[3]";
-    private static final String SPB_UP_BUTTON_XPATH = "xpath;(//a[contains(.,'Санкт-Петербург и ЛО')])[3]";
-
-
-
-    //конструктор
-    public CitiesPopUpPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    //геттеры элементов с получением доступа к действиям с элементами
-
-    public PageElementActions getSpbButton() {
-        return new PageElementActions(SPB_UP_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getMskButton() {
-        return new PageElementActions(MSK_BUTTON_XPATH, driver);
-    }
-
+    private final Button MSK_BUTTON = new Button($x( "(//a[contains(.,'Москва и МО')])[3]"));
+    private final Button SPB_UP_BUTTON = new Button($x( "(//a[contains(.,'Санкт-Петербург и ЛО')])[3]"));
 
 
     //Методы
     @Step("Пользователь нажимает на город Санкт-Петербург")
-    public void selectSpbCity() {
-        getSpbButton().click();
-        logger.info("Пользователь нажимает на город Санкт-Петербург");
+    public CitiesPopUpPage selectSpbCity() {
+        SPB_UP_BUTTON.click();
+       // logger.info("Пользователь нажимает на город Санкт-Петербург");
+        return this;
     }
     @Step("Пользователь нажимает на город Москва")
-    public void selectMskCity() {
-        getMskButton().click();
-        logger.info("Пользователь нажимает на город Москва");
+    public CitiesPopUpPage selectMskCity() {
+        MSK_BUTTON.click();
+        //logger.info("Пользователь нажимает на город Москва");
+        return this;
     }
 }

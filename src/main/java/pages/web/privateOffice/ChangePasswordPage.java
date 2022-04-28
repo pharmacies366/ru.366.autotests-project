@@ -1,66 +1,46 @@
 package pages.web.privateOffice;
 
-import actions.PageElementActions;
-import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.htmlelements.element.Button;
 
-public class ChangePasswordPage extends MainTestBase {
+import static com.codeborne.selenide.Selenide.$x;
+
+public class ChangePasswordPage {
 
     //элементы
-    private static final String BASE_INPUT_PASSWORD_DATA_XPATH = "xpath;//input[@id='%s']";
-    private static final String OldPassword = "currentPassword";
-    private static final String NewPassword = "newPassword";
-    private static final String CheckNewPassword = "checkNewPassword";
-    private static final String CHANGE_BUTTON_XPATH = "xpath;//button[@class='b-btn']";
-    private static final String MESSAGE_ABOUT_CHANGE_PASSWORD_XPATH = "xpath;//div[@class='alert b-global-messages b-global-messages--success']";
-    private static final String Message_About_Change_Password = "Ваш пароль успешно изменен. Желаем здоровья!";
-
-
-
-    //конструктор
-    public ChangePasswordPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-
-    //геттеры элементов с получением доступа к действиям с элементами
-
-    public PageElementActions getBaseInputePrsonalDetails(String xpath) {
-        return new PageElementActions(xpath, driver);
-    }
-
-    public PageElementActions getChangeButton() {
-        return new PageElementActions(CHANGE_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getMassageAboutPassword() {
-        return new PageElementActions(MESSAGE_ABOUT_CHANGE_PASSWORD_XPATH, driver);
-    }
+    private final Button BASE_INPUT_PASSWORD_DATA = new Button($x( "//input[@id='%s']"));
+    private final String OLD_PASSWORD = "currentPassword";
+    private final String NEW_PASSWORD = "newPassword";
+    private final String CHECK_NEW_PASSWORD = "checkNewPassword";
+    private final Button CHANGE_BUTTON = new Button($x( "//button[@class='b-btn']"));
+    private final Button LOCATOR_FOR_MESSAGE_ABOUT_CHANGE_PASSWORD = new Button($x( "//div[@class='alert b-global-messages b-global-messages--success']"));
+    private final String MESSAGE_ABOUT_CHANGE_PASSWORD = "Ваш пароль успешно изменен. Желаем здоровья!";
 
 
     //Методы
 
-    @Step("Пользователь вводит старый и новый пароли")
-    public void clickChangePassword(String oldPassword, String newPassword, String checkNewPassword) {
-        getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA_XPATH, OldPassword)).sendKeys(oldPassword);
-        getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA_XPATH, NewPassword)).sendKeys(newPassword);
-        getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA_XPATH, CheckNewPassword)).sendKeys(checkNewPassword);
-        logger.info("Пользователь вводит старый и новый пароли");
-    }
+/*    @Step("Пользователь вводит старый и новый пароли")
+    public ChangePasswordPage clickChangePassword(String oldPassword, String newPassword, String checkNewPassword) {
+        getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA, OLD_PASSWORD)).sendKeys(oldPassword);
+        getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA, NEW_PASSWORD)).sendKeys(newPassword);
+        getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA, CHECK_NEW_PASSWORD)).sendKeys(checkNewPassword);
+        //logger.info("Пользователь вводит старый и новый пароли");
+        return this;
+    }*/
 
     @Step("Пользователь нажимает кнопку изменить")
-    public void clickChangeButton() {
-        getChangeButton().click();
-        logger.info("Пользователь нажимает кнопку изменить");
+    public ChangePasswordPage clickChangeButton() {
+        CHANGE_BUTTON.click();
+      //  logger.info("Пользователь нажимает кнопку изменить");
+        return this;
     }
 
     @Step("Пользователь получает сообщение об успешной смене пароля")
-    public void getMessageAboutChangePassword() {
-        String message = getMassageAboutPassword().getText();
-        Assert.assertEquals(Message_About_Change_Password, message);
-        logger.info("Пользователь получает сообщение об успешной смене пароля");
+    public ChangePasswordPage getMessageAboutChangePassword() {
+        String message = LOCATOR_FOR_MESSAGE_ABOUT_CHANGE_PASSWORD.getText();
+       // Assert.assertEquals(MESSAGE_ABOUT_CHANGE_PASSWORD, message);
+       // logger.info("Пользователь получает сообщение об успешной смене пароля");
+        return this;
     }
 
 }

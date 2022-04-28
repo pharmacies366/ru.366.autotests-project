@@ -1,82 +1,60 @@
 package pages.web.orders;
 
-import actions.PageElementActions;
-import core.MainTestBase;
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.htmlelements.element.Button;
 
-public class MyOrdersPage extends MainTestBase {
+import static com.codeborne.selenide.Selenide.$x;
+
+public class MyOrdersPage {
 
     //элементы
-    private static final String ORDER_XPATH = "xpath;(//a[@class='c-order-item__link'])[1]";
-    private static final String CANCEL_ORDER_XPATH = "xpath;//div[@class='b-btn hidden-xs b-btn--third js-cancel-order']";
-    private static final String APPROVE_CANCEL_ORDER_XPATH = "xpath;//a[contains(@class,'approve')]";
-    private static final String STATUS_ORDER_XPATH = "xpath;//div[@class='b-order-status']";
-
-
-
-    //конструктор
-    public MyOrdersPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-
-    //геттеры элементов с получением доступа к действиям с элементами
-    public PageElementActions getOrder() {
-        return new PageElementActions(ORDER_XPATH, driver);
-    }
-
-    public PageElementActions getCancelOrder() {
-        return new PageElementActions(CANCEL_ORDER_XPATH, driver);
-    }
-
-    public PageElementActions getApproveCancelOrder() {
-        return new PageElementActions(APPROVE_CANCEL_ORDER_XPATH, driver);
-    }
-
-    public PageElementActions getStatusOrder() {
-        return new PageElementActions(STATUS_ORDER_XPATH, driver);
-    }
+    private final Button ORDER = new Button($x( "(//a[@class='c-order-item__link'])[1]"));
+    private final Button CANCEL_ORDER = new Button($x( "//div[@class='b-btn hidden-xs b-btn--third js-cancel-order']"));
+    private final Button APPROVE_CANCEL_ORDER = new Button($x( "//a[contains(@class,'approve')]"));
+    private final Button STATUS_ORDER = new Button($x( "//div[@class='b-order-status']"));
 
 
 
     //Методы
 
     @Step("номера заказа")
-    public String getOrderNumber() {
-        String orderNumber = getOrder().getText().replaceAll("[^1-12]", "").trim();
-        logger.info("номера заказа");
-        return orderNumber;
+    public MyOrdersPage getOrderNumber() {
+        String orderNumber = ORDER.getText().replaceAll("[^1-12]", "").trim();
+       // logger.info("номера заказа");
+        return this;
     }
 
     @Step("Пользователь открывает созданный заказ")
-    public void clickOrderNumber() {
-        getOrder().click();
-        logger.info("Пользователь открывает созданный заказ");
+    public MyOrdersPage clickOrderNumber() {
+        ORDER.click();
+      //  logger.info("Пользователь открывает созданный заказ");
+        return this;
     }
 
     @Step("Пользователь нажимает кнопки отменить и подвердить отмену заказа")
-    public void clickCancelNumber() {
-        getCancelOrder().click();
-        getApproveCancelOrder().click();
-        logger.info("Пользователь нажимает кнопки отменить и подвердить отмену заказа");
+    public MyOrdersPage clickCancelNumber() {
+        CANCEL_ORDER.click();
+        APPROVE_CANCEL_ORDER.click();
+       // logger.info("Пользователь нажимает кнопки отменить и подвердить отмену заказа");
+        return this;
     }
 
     @Step("Пользователь проверяет статус заказа")
-    public String getOrderStatus() {
-        String orderStatus = getStatusOrder().getText();
-        logger.info("Пользователь проверяет статус заказа");
-        return orderStatus;
+    public MyOrdersPage getOrderStatus() {
+        String orderStatus = STATUS_ORDER.getText();
+       // logger.info("Пользователь проверяет статус заказа");
+        return this;
     }
 
     @Step("Пользователь отменяет созданный заказ")
-    public void cancelOrder() {
-        openUrl(propertiesManager.getProperty("baseurl") + "my-account/orders/");
+    public MyOrdersPage cancelOrder() {
+        Selenide.open("https://366.ru/my-account/orders/");
         clickOrderNumber();
-        getCancelOrder().click();
-        pageActions.staticWait(2000);
-        getApproveCancelOrder().click();
-        pageActions.assertEqualsTwoObject("Отменен",getOrderStatus());
-        logger.info("Пользователь отменяет созданный заказ");
+        CANCEL_ORDER.click();
+        APPROVE_CANCEL_ORDER.click();
+       // pageActions.assertEqualsTwoObject("Отменен",getOrderStatus());
+       // logger.info("Пользователь отменяет созданный заказ");
+        return this;
     }
 }

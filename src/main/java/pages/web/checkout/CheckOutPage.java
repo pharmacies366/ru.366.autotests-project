@@ -1,200 +1,148 @@
 package pages.web.checkout;
-
-import actions.PageElementActions;
-import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.htmlelements.element.Button;
 
-public class CheckOutPage extends MainTestBase{
+import static com.codeborne.selenide.Selenide.$x;
+
+public class CheckOutPage {
 
 
     //элементы
-    private static final String BASE_INPUT_CONTACT_DETAILS_XPATH = "xpath;//input[@id='%s']";
-    private static final String Fio = "fio";
-    private static final String PhoneNumber = "phone";
-    private static final String Email = "email";
-    private static final String BASE_INPUT_DELIVERY_XPATH = "xpath;//input[@id='address%s']";
-    private static final String Address = "";
-    private static final String Entrance = "-entrance";
-    private static final String Level = "-level";
-    private static final String Flat = "-flat";
-    private static final String CHOOSE_DELIVERY_METHOD_XPATH = "xpath;(//span[contains(@class,'checkout_delivery_info__mark')])[2]";
-    private static final String FINAL_BUY_BUTTON_XPATH = "xpath;//button[contains(.,'Оформить заказ')]";
-    private static final String INPUT_PHONE_NUMBER_XPATH = "xpath;//input[@name='phone']";
-    private static final String BOOKING_BUTTON_XPATH = "xpath;//input[@value='Забронировать']";
-    private static final String SELECT_APTEKA_XPATH = "xpath;//span[contains(.,'Выбрать аптеку')]";
-    private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//span[contains(.,'Списком')]";
-    private static final String AVAILABILITY_XPATH= "xpath;(//span[contains(.,'Узнать о наличии')])[1]";
-    private static final String CHOOSE_THIS_PHARMACY_XPATH = "xpath;(//span[contains(.,'Выбрать эту аптеку')])[1]";
-    private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;(//button[contains(.,'Оформить заказ')])[1]";
-    private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
-    private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
-    private static final String PICKAP_RADIO_BUTTON_XPATH = "xpath;(//span[@class='checkout_delivery_info__mark'])[1]";
-
-
-    //конструктор
-    public CheckOutPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    //геттеры элементов с получением доступа к действиям с элементами
-    public PageElementActions getChooseDeliveryMethod() {
-        return new PageElementActions(CHOOSE_DELIVERY_METHOD_XPATH, driver);
-    }
-
-    public PageElementActions getBaseInputDelivery(String xpath) {
-        return new PageElementActions(xpath, driver);
-    }
-
-    public PageElementActions getBaseInputContactDetails(String xpath) {
-        return new PageElementActions(xpath, driver);
-    }
-
-
-    public PageElementActions getFinalBuyButton() {
-        return new PageElementActions(FINAL_BUY_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getInputPhoneNumber() {
-        return new PageElementActions(INPUT_PHONE_NUMBER_XPATH, driver);
-    }
-
-    public PageElementActions getBookingButton() {
-        return new PageElementActions(BOOKING_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getChangeAptekaList() {
-        return new PageElementActions(CHANGE_APTEKA_LIST_XPATH, driver);
-    }
-
-    public PageElementActions getSelectApteka() {
-        return new PageElementActions(SELECT_APTEKA_XPATH, driver);
-    }
-
-    public PageElementActions getAvailability() {
-        return new PageElementActions(AVAILABILITY_XPATH, driver);
-    }
-
-    public PageElementActions getChooseThisPharmacy() {
-        return new PageElementActions(CHOOSE_THIS_PHARMACY_XPATH, driver);
-    }
-
-    public PageElementActions getMakeOrderButton() {
-        return new PageElementActions(MAKE_ORDER_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getPharmacyAddressInput() {
-        return new PageElementActions(PHARMACY_ADDRESS_INPUT_XPATH, driver);
-    }
-
-    public PageElementActions getAptekaMap() {
-        return new PageElementActions(APTEKA_MAP_XPATH, driver);
-    }
-
-    public PageElementActions getPickupRadioButton() {
-        return new PageElementActions(PICKAP_RADIO_BUTTON_XPATH, driver);
-    }
+    private final Button BASE_INPUT_CONTACT_DETAILS = new Button($x( "xpath;//input[@id='%s']"));
+    private final String FIO = "fio";
+    private final String PHONE_NUMBER = "phone";
+    private final String EMAIL = "email";
+    private final Button BASE_INPUT_DELIVERY = new Button($x( "xpath;//input[@id='address%s']"));
+    private final String ADDRESS = "";
+    private final String ENTRANCE = "-entrance";
+    private final String LEVEL = "-level";
+    private final String FLAT = "-flat";
+    private final Button CHOOSE_DELIVERY_METHOD = new Button($x( "(//span[contains(@class,'checkout_delivery_info__mark')])[2]"));
+    private final Button FINAL_BUY_BUTTON = new Button($x( "//button[contains(.,'Оформить заказ')]"));
+    private final Button INPUT_PHONE_NUMBER = new Button($x( "//input[@name='phone']"));
+    private final Button BOOKING_BUTTON = new Button($x( "//input[@value='Забронировать']"));
+    private final Button SELECT_APTEKA = new Button($x( "//span[contains(.,'Выбрать аптеку')]"));
+    private final Button CHANGE_APTEKA_LIST = new Button($x( "//span[contains(.,'Списком')]"));
+    private final Button AVAILABILITY = new Button($x( "(//span[contains(.,'Узнать о наличии')])[1]"));
+    private final Button CHOOSE_THIS_PHARMACY = new Button($x( "(//span[contains(.,'Выбрать эту аптеку')])[1]"));
+    private final Button MAKE_ORDER_BUTTON = new Button($x( "(//button[contains(.,'Оформить заказ')])[1]"));
+    private final Button PHARMACY_ADDRESS_INPUT = new Button($x( "//input[@name='q']"));
+    private final Button APTEKA_MAP = new Button($x( "//*[@id='store-finder-map']"));
+    private final Button PICKUP_RADIO_BUTTON = new Button($x( "(//span[@class='checkout_delivery_info__mark'])[1]"));
 
 
 
     //Методы
-    @Step("Заполнение данных адреса доставки")
-    public void addressDelivery(String address, String entrance, String level, String flat) {
-        getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Address)).sendKeys(address);
-        getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Entrance)).sendKeys(entrance);
-        getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Level)).sendKeys(level);
-        getBaseInputDelivery(String.format(BASE_INPUT_DELIVERY_XPATH, Flat)).sendKeys(flat);
+/*    @Step("Заполнение данных адреса доставки")
+    public CheckOutPage addressDelivery(String address, String entrance, String level, String flat) {
+        BASE_INPUT_DELIVERY(String.format(BASE_INPUT_DELIVERY, ADDRESS)).sendKeys(address);
+        BASE_INPUT_DELIVERY(String.format(BASE_INPUT_DELIVERY, ENTRANCE)).sendKeys(entrance);
+        BASE_INPUT_DELIVERY(String.format(BASE_INPUT_DELIVERY, LEVEL)).sendKeys(level);
+        BASE_INPUT_DELIVERY(String.format(BASE_INPUT_DELIVERY, FLAT)).sendKeys(flat);
+        return this;
     }
 
     @Step("Пользователь заполняет контактные данные")
-    public void contactDetails(String fio, String phoneNumber, String email ) {
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Fio)).sendKeys(fio);
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
-        getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
-        logger.info("Пользователь заполнил контактные данные");
-    }
+    public CheckOutPage contactDetails(String fio, String phoneNumber, String email ) {
+        BASE_INPUT_CONTACT_DETAILS(String.format(BASE_INPUT_CONTACT_DETAILS, FIO)).sendKeys(fio);
+        BASE_INPUT_CONTACT_DETAILS(String.format(BASE_INPUT_CONTACT_DETAILS, PHONE_NUMBER)).sendKeys(phoneNumber);
+        BASE_INPUT_CONTACT_DETAILS(String.format(BASE_INPUT_CONTACT_DETAILS, EMAIL)).sendKeys(email);
+        return this;
+       // logger.info("Пользователь заполнил контактные данные");
+    }*/
 
-    @Step("Пользователь выбирает способ получения - Доставка")
-    public void clickDeliveryMethod() {
+/*    @Step("Пользователь выбирает способ получения - Доставка")
+    public CheckOutPage clickDeliveryMethod() {
         chooseDeliveryMethod();
-        logger.info("Пользователь выбирает способ получения - Доставка");
-    }
+      //  logger.info("Пользователь выбирает способ получения - Доставка");
+        return this;
+    }*/
 
     @Step("Пользователь нажимает на кнопку купить")
-    public void clickToFinalButton() {
-        getFinalBuyButton().click();
-        logger.info("ПОЛЬЗОВАТЕЛЬ ПЕРЕШЕЛ НА СТРАНИЦУ СБЕРА");
+    public CheckOutPage clickToFinalButton() {
+        FINAL_BUY_BUTTON.click();
+      //  logger.info("ПОЛЬЗОВАТЕЛЬ ПЕРЕШЕЛ НА СТРАНИЦУ СБЕРА");
+        return this;
     }
 
     @Step("Пользователь вводит номер телефона при покупке в 1-клик")
-    public void setInputOneClickPhoneNumber(String number) {
-        getInputPhoneNumber().sendKeys(number);
-        logger.info("Пользователь вводит номер телефона при покупке в 1-клик");
+    public CheckOutPage setInputOneClickPhoneNumber(String number) {
+        INPUT_PHONE_NUMBER.sendKeys(number);
+      //  logger.info("Пользователь вводит номер телефона при покупке в 1-клик");
+        return this;
     }
 
     @Step("Пользователь нажимает на кнопку 'Забронировать'")
-    public void clickBookingButton(){
-        getBookingButton().click();
-        logger.info("Пользователь нажимает на кнопку 'Забронировать'");
+    public CheckOutPage clickBookingButton(){
+        BOOKING_BUTTON.click();
+      //  logger.info("Пользователь нажимает на кнопку 'Забронировать'");
+        return this;
     }
 
-    @Step("Проверка выбранного способа получения 'Самовывоз'")
-    public void choosePickupMethod() {
-        if (getSelectApteka().isElementVisible()) {
-            getSelectApteka().click();
+/*    @Step("Проверка выбранного способа получения 'Самовывоз'")
+    public CheckOutPage choosePickupMethod() {
+        if (SELECT_APTEKA.isElementVisible()) {
+            SELECT_APTEKA.click();
         }
         else {
-            getPickupRadioButton().click();
-            getSelectApteka().click();
+            PICKUP_RADIO_BUTTON.click();
+            SELECT_APTEKA.click();
         }
-        logger.info("Проверка выбранного способа получения 'Самовывоз'");
-    }
+      //  logger.info("Проверка выбранного способа получения 'Самовывоз'");
+        return this;
+    }*/
 
-    @Step("Проверка выбранного способа получения 'Доставка'")
-    public void chooseDeliveryMethod() {
-        if (getSelectApteka().isElementVisible()) {
-            getChooseDeliveryMethod().click();
+/*    @Step("Проверка выбранного способа получения 'Доставка'")
+    public CheckOutPage chooseDeliveryMethod() {
+        if (SELECT_APTEKA.isElementVisible()) {
+            CHOOSE_DELIVERY_METHOD.click();
         }
         else {
-            getChooseDeliveryMethod().click();
+            CHOOSE_DELIVERY_METHOD.click();
         }
-        logger.info("Проверка выбранного способа получения 'Доставка'");
-    }
+        //logger.info("Проверка выбранного способа получения 'Доставка'");
+        return this;
+    }*/
 
-    @Step("Пользователь нажимает кнопку 'Выбрать Аптеку'")
-    public void clickSelectApteka() {
+/*    @Step("Пользователь нажимает кнопку 'Выбрать Аптеку'")
+    public CheckOutPage clickSelectApteka() {
         choosePickupMethod();
-        logger.info("Пользователь нажимает кнопку 'Выбрать Аптеку'");
-    }
+       // logger.info("Пользователь нажимает кнопку 'Выбрать Аптеку'");
+    }*/
 
     @Step("Пользователь нажимает на список доступных Аптек")
-    public void clickChangeAptekaList() {
-        getChangeAptekaList().click();
-        logger.info("Пользователь нажимает на список доступных Аптек");
+    public CheckOutPage clickChangeAptekaList() {
+        CHANGE_APTEKA_LIST.click();
+       // logger.info("Пользователь нажимает на список доступных Аптек");
+        return this;
     }
 
     @Step("Пользователь нажимает на кнопки 'Узнать о наличии' и 'Выбрать эту аптеку'")
-    public void getAvailabilityAndChooseThisPharmacy(){
-        getAvailability().click();
-        getChooseThisPharmacy().click();
-        logger.info("Пользователь нажимает на кнопки 'Узнать о наличии' и 'Выбрать эту аптеку'");
+    public CheckOutPage getAvailabilityAndChooseThisPharmacy(){
+        AVAILABILITY.click();
+        CHOOSE_THIS_PHARMACY.click();
+       // logger.info("Пользователь нажимает на кнопки 'Узнать о наличии' и 'Выбрать эту аптеку'");
+        return this;
     }
 
     @Step("Пользователь нажимает на кнопку 'Сделать заказ'")
-    public void clickMakeOrder(){
-        getMakeOrderButton().click();
-        logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
+    public CheckOutPage clickMakeOrder(){
+        MAKE_ORDER_BUTTON.click();
+        //logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
+        return this;
     }
 
-    @Step("Пользователь вводит адрес - {addres}")
-    public void setInputSearchAddres(String addres) {
-        getPharmacyAddressInput().sendKeysAndEnter(addres);
-    }
+  /*  @Step("Пользователь вводит адрес - {address}")
+    public CheckOutPage setInputSearchAddres(String address) {
+        PHARMACY_ADDRESS_INPUT.sendKeysAndEnter(address);
+        return this;
+    }*/
 
-    @Step("Пользователь проверяет отображении карты на странице")
-    public void checkVisibilityMap() {
-        getAptekaMap().elementIsVisibility();
-        logger.info("Пользователь проверяет отображении карты на странице");
-    }
+/*    @Step("Пользователь проверяет отображении карты на странице")
+    public CheckOutPage checkVisibilityMap() {
+        APTEKA_MAP.elementIsVisibility();
+        //logger.info("Пользователь проверяет отображении карты на странице");
+        return this;
+    }*/
 
 }
