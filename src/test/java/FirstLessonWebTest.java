@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Selenide;
+import core.BaseTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -7,12 +8,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import pages.web.main.MainPage;
 
-public class FirstLessonWebTest {
+public class FirstLessonWebTest extends BaseTest {
 
     private MainPage mainPage;
 
     @BeforeEach
-    void setUp() {
+    void setUpd() {
         mainPage = Selenide.open("https://366.ru/", MainPage.class);
     }
 

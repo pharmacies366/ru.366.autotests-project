@@ -1,8 +1,6 @@
 package pages.web.botConsultant;
 
 import io.qameta.allure.Step;
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
 import ru.yandex.qatools.htmlelements.element.Button;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -83,12 +81,12 @@ public class BotConsultantPopUpPage {
         return this;
     }
 
-    @Step("Пользователь проверяет, что консультант бот закрылся")
+/*    @Step("Пользователь проверяет, что консультант бот закрылся")
     public BotConsultantPopUpPage checkCloseBot() {
       String statusBot = ANIMATION_BOT.getAttribute("style");
         MatcherAssert.assertThat(statusBot, CoreMatchers.containsString("Label_CLOSE"));
        // logger.info("Пользователь проверяет, что консультант бот закрылся");
         return this;
-    }
+    }*/
 
 }
