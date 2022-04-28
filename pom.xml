@@ -117,10 +117,17 @@
             <version>1.9.5</version>
             <scope>runtime</scope>
         </dependency>
-
-
-
     </dependencies>
 
+    <build>
+        <plugins>
+            <!-- появляется в maven allure report и allure serve-->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
