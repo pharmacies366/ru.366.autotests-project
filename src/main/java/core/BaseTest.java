@@ -16,7 +16,7 @@ public class BaseTest {
         Configuration.driverManagerEnabled = true;
         Configuration.startMaximized = true;
         WebDriverRunner.clearBrowserCache();
-        Configuration.headless = true;
+        Configuration.headless = false;// для того, чтобы видить или не видеть отображение в браузере
     }
 
     @BeforeEach
