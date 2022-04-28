@@ -1,6 +1,7 @@
 package pages.web.product;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.Keys;
 import ru.yandex.qatools.htmlelements.element.Button;
 
 import static com.codeborne.selenide.Selenide.$x;
@@ -53,13 +54,14 @@ public class ProductCardPage {
         PHARMACY_MAP.elementIsVisibility();
        // logger.info("Пользователь проверяет отображении карты на странице");
         return this;
-    }
+    }*/
 
     @Step("Пользователь вводит адрес - {address}")
     public ProductCardPage setInputSearchAddress(String address) {
-        PHARMACY_ADDRESS_INPUT.sendKeysAndEnter(address);
+        PHARMACY_ADDRESS_INPUT.sendKeys(address);
+        PHARMACY_ADDRESS_INPUT.sendKeys(Keys.ENTER);
         return this;
-    }*/
+    }
 
     @Step("Пользователь нажимает на {number} - ую кнопку 'Купить в 1 клик' напротив выбранной аптеки")
     public ProductCardPage clickBuyOneClick() {

@@ -4,6 +4,10 @@ import io.qameta.allure.Step;
 import ru.yandex.qatools.htmlelements.element.Button;
 import static com.codeborne.selenide.Selenide.$x;
 
+/**
+ * Главная страница сайта https://366.ru/
+ */
+
 public class MainPage {
 
     private final Button POP_UP_BUTTON = new Button($x( "//button[contains(.,'Спасибо, понятно')]"));
