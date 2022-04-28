@@ -1,6 +1,5 @@
 package core;
 
-import autorization.Authorization;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.WebDriverRunner;
@@ -20,16 +19,12 @@ public class TestBase {
 
     public static LoginPage loginpage;
     public static CalendarPage calendarPage;
-    public Authorization authorization;
-    public static PropertiesReader propertiesReader;
 
     @BeforeMethod
     public void initBrowser() throws IOException {
         Configuration.startMaximized = true;
         loginpage = new LoginPage();
         calendarPage = new CalendarPage();
-        propertiesReader = new PropertiesReader();
-        this.authorization = new Authorization();
         WebDriverRunner.clearBrowserCache();
     }
 
