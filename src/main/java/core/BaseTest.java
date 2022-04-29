@@ -15,7 +15,7 @@ public class BaseTest {
        //WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
-        Configuration.startMaximized = true;
+        //Configuration.startMaximized = true;
         WebDriverRunner.clearBrowserCache();
         Configuration.headless = false;// для того, чтобы видить или не видеть отображение в браузере
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());

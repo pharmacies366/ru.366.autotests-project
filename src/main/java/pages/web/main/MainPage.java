@@ -1,9 +1,11 @@
 package pages.web.main;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import ru.yandex.qatools.htmlelements.element.Button;
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.files.DownloadActions.click;
 
 /**
  * Главная страница сайта https://366.ru/
@@ -11,25 +13,25 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage extends MainTestBase {
 
-    private final Button POP_UP_BUTTON = new Button($x( "//button[contains(.,'Спасибо, понятно')]"));
-    private final Button LETTER_N = new Button($x( "//a[@href='/littera-Н/']"));
-    private final Button ADD_TO_CART_BUTTON = new Button($x( "(//span[contains(.,'В корзину')])[1]"));
-    private final Button QUANTITY_MATERIALS = new Button($x( "(//div[contains(@class,'product_counter__qty')])[1]"));
-    private final Button INCREASE_QUANTITY = new Button($x( "(//div[contains(@class,'btn btn_count_plus')])[1]"));
-    private final Button DECREASE_QUANTITY = new Button($x( "(//div[contains(@class,'btn btn_count_minus')])[1]"));
-    private final Button FAVORITES_ICON = new Button($x( "(//button[contains(@class,'button b-star')])[1]"));
-    private final Button BANNER_LIST = new Button($x( "(//button[@type='button'])"));
-    private final Button CHECK_START_BANNER = new Button($x( "//li[@class='slick-active' and @aria-controls='navigation00']"));
-    private final Button PREV_BANNER = new Button($x( "//button[@class='slick-prev slick-arrow']"));
-    private final Button NEXT_BANNER = new Button($x( "//button[@class='slick-next slick-arrow']"));
-    private final Button BANNER_PIN_BUTTONS = new Button($x( "//button[@type='button'][contains(.,'%s')]"));
-    private final Button BANNERS_BUTTONS = new Button($x( "xpath;(//div[@class='yCmsContentSlot'])[1]"));
-    private final Button MAIN_BUTTON = new Button($x( "//div[@class='breadcrumbs__item']"));
-    private final Button QUANTITY_BANNERS = new Button($x( "//ul[contains(@role,'tablist')]"));
-    private final Button CLOSE_POP_UP_NEWS_BUTTON = new Button($x( "//div[@class='popmechanic-close']"));
-    private final Button CATALOG_BUTTON = new Button($x( "//div[@class='catalog_menu js-switch-menu']"));
-    private final Button PRODUCT_BUTTON = new Button($x( "(//img[@class=' lazyloaded'])[1]"));
-    private final Button BOT_CONSULTANT_BUTTON = new Button($x( "//jdiv[@id='jvlabelWrap']"));
+    private final SelenideElement POP_UP_BUTTON = $x( "//button[contains(.,'Спасибо, понятно')]");
+    private final SelenideElement LETTER_N = $x( "//a[@href='/littera-Н/']");
+    private final SelenideElement ADD_TO_CART_BUTTON = $x( "(//span[contains(.,'В корзину')])[1]");
+    private final SelenideElement QUANTITY_MATERIALS = $x( "(//div[contains(@class,'product_counter__qty')])[1]");
+    private final SelenideElement INCREASE_QUANTITY = $x( "(//div[contains(@class,'btn btn_count_plus')])[1]");
+    private final SelenideElement DECREASE_QUANTITY = $x( "(//div[contains(@class,'btn btn_count_minus')])[1]");
+    private final SelenideElement FAVORITES_ICON = $x( "(//button[contains(@class,'button b-star')])[1]");
+    private final SelenideElement BANNER_LIST = $x( "(//button[@type='button'])");
+    private final SelenideElement CHECK_START_BANNER = $x( "//li[@class='slick-active' and @aria-controls='navigation00']");
+    private final SelenideElement PREV_BANNER = $x( "//button[@class='slick-prev slick-arrow']");
+    private final SelenideElement NEXT_BANNER = $x( "//button[@class='slick-next slick-arrow']");
+    private final SelenideElement BANNER_PIN_BUTTONS = $x( "//button[@type='button'][contains(.,'%s')]");
+    private final SelenideElement BANNERS_BUTTONS = $x( "xpath;(//div[@class='yCmsContentSlot'])[1]");
+    private final SelenideElement MAIN_BUTTON = $x( "//div[@class='breadcrumbs__item']");
+    private final SelenideElement QUANTITY_BANNERS = $x( "//ul[contains(@role,'tablist')]");
+    private final SelenideElement CLOSE_POP_UP_NEWS_BUTTON = $x( "//div[@class='popmechanic-close']");
+    private final SelenideElement CATALOG_BUTTON = $x( "//div[@class='catalog_menu js-switch-menu']");
+    private final SelenideElement PRODUCT_BUTTON = $x( "(//img[@class=' lazyloaded'])[1]");
+    private final SelenideElement BOT_CONSULTANT_BUTTON = $x( "//jdiv[@id='jvlabelWrap']");
 
 
 
@@ -59,7 +61,8 @@ public class MainPage extends MainTestBase {
 
     @Step("Пользователь нажимает на кнопку 'В корзину'")
     public MainPage clickAddToCardButton() {
-        ADD_TO_CART_BUTTON.click();
+       // ADD_TO_CART_BUTTON.click();
+         ADD_TO_CART_BUTTON.getWrappedElement().click();
         logger.info("Пользователь нажимает на кнопку 'В корзину'");
         return this;
     }
