@@ -108,6 +108,7 @@ public class WebDriverFactory {
         chromeOptions.addArguments("--ignore-certificate-errors");
         chromeOptions.addArguments("--disabled-notifications");
         chromeOptions.addArguments("--disabled-popup-blocking");
+        //chromeOptions.addArguments("--headless");
 
 
         if (nameOfPackage.contains("mobile")) {
