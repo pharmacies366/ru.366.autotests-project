@@ -5,10 +5,13 @@ import com.codeborne.selenide.Selenide;
 import core.BaseTest;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import org.apache.logging.log4j.core.util.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.web.main.MainPage;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Feature(value = "Web")
 @Story("Проверка шапки сайта 36.6")
@@ -25,12 +28,13 @@ public class HeaderBlockWebTest extends BaseTest {
         mainPage = Selenide.page(MainPage.class);
     }
 
-/*    @DisplayName("Проверка отображения логотипа")
+    @DisplayName("Проверка отображения логотипа")
     @Test
     public void checkVisibilityLogo(){
-        webHeaderBlock.getSiteLogo().elementIsVisibility();
+        webHeaderBlock.checkElementIsCorrect();
     }
 
+    /*
     @DisplayName("Проверка кликабельности логотипа")
     @Test
     public void checkClickableLogo(){
@@ -53,11 +57,13 @@ public class HeaderBlockWebTest extends BaseTest {
 
     @DisplayName("Проверки работы корзины")
     @Test
-    public void testingTheCart(){
+    public void testingTheCart() throws InterruptedException {
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickAddToCardButton();
-        //int quantity = webHeaderBlock.checkCartQuantity();
-       // Assert.assertEquals(1, quantity);
+        //Thread.sleep(2000);
+        int quantity = webHeaderBlock.checkCartQuantity();
+        assertEquals(1, quantity);
         webHeaderBlock.clickToCartButton();
     }
 

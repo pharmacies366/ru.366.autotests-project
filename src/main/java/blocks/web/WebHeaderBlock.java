@@ -1,11 +1,15 @@
 package blocks.web;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
+import pages.web.cart.CartPage;
 import ru.yandex.qatools.htmlelements.element.Button;
 
 import static com.codeborne.selenide.Selenide.$x;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WebHeaderBlock extends MainTestBase {
 
@@ -85,25 +89,23 @@ public class WebHeaderBlock extends MainTestBase {
     }
 
     @Step("Проверка количества товаров в корзине")
-    public WebHeaderBlock checkCartQuantity() {
+    public int checkCartQuantity() {
         String stringCartQuantity = CARD_COUNT.getText();
-        int quantity = Integer.parseInt(stringCartQuantity);
-        return this;
+        return Integer.parseInt(stringCartQuantity);
     }
 
     @Step("Пользователь нажимает на иконку корзины")
-    public WebHeaderBlock clickToCartButton() {
+    public CartPage clickToCartButton() {
         CARD_BUTTON.click();
         logger.info("Пользователь нажимает на иконку корзины");
-        return this;
+        return new CartPage();
     }
 
-/*    @Step("Проверка отображения логотипа сайта на главной странице")
-    public WebHeaderBlock checkElementIsCorrect(){
-        SITE_LOGO.elementIsVisibility();
+    @Step("Проверка отображения логотипа сайта на главной странице")
+    public void checkElementIsCorrect(){
+        ((SelenideElement) SITE_LOGO.getWrappedElement()).shouldBe(Condition.visible);
         logger.info("Лого отображается");
-        return this;
-    }*/
+    }
 
     @Step("Пользователь нажимает на иконку 36.6 и переходит на главную страницу")
     public WebHeaderBlock clickSiteLogo(){
@@ -180,7 +182,7 @@ public class WebHeaderBlock extends MainTestBase {
     @Step("Пользователь проверяет выбранный регион")
     public WebHeaderBlock checkSelectedRegion(String regionName) {
         String region = GET_SELECTED_REGION.getText();
-       // Assert.assertEquals(region, regionName);
+        assertEquals(region, regionName);
         logger.info("Пользователь проверяет выбранный регион");
         return this;
     }

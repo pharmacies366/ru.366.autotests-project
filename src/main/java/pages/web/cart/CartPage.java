@@ -1,12 +1,13 @@
 package pages.web.cart;
 
 import com.codeborne.selenide.Selenide;
+import core.MainTestBase;
 import io.qameta.allure.Step;
 import ru.yandex.qatools.htmlelements.element.Button;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class CartPage {
+public class CartPage extends MainTestBase {
 
     //элементы
     private final Button CARD_COUNT = new Button($x(  "//div[contains(@class,'count js-mini-cart-count')]"));
@@ -31,10 +32,10 @@ public class CartPage {
         String stringCartQuantity = CARD_COUNT.getText();
         int quantity = Integer.parseInt(stringCartQuantity);
         if (quantity != 0) {
-          //  logger.info("В КОРЗИНЕ ЕСТЬ ТОВАРЫ");
+            logger.info("В КОРЗИНЕ ЕСТЬ ТОВАРЫ");
             Selenide.open("https://366.ru/cart/");
             deleteAllMaterials();
-         //   logger.info("ТОВАРЫ В КОРЗИНЕ УДАЛЕНЫ");
+            logger.info("ТОВАРЫ В КОРЗИНЕ УДАЛЕНЫ");
            // saveAllureScreenshot();
         }
         return this;
@@ -51,7 +52,7 @@ public class CartPage {
     public CartPage deleteAllMaterials() {
         CLEAR_ALL_FROM_CARD.click();
         CONFIRM_CLEAN_ALL.click();
-       // logger.info("Удаение всех товаров из корзины");
+        logger.info("Удаение всех товаров из корзины");
         return this;
     }
 
@@ -59,56 +60,56 @@ public class CartPage {
 /*    @Step("Сохранение итоговой суммы в корзине")
     public CartPage getPriceTotal() {
         int price = TOTAL_PRICE.formatElementToValue();
-       // logger.info("Запоминаем цену товара");
+        logger.info("Запоминаем цену товара");
         return this;;
     }*/
 
     @Step("Пользователь нажимает на кнопку 'В корзину'")
     public CartPage clickAddCartButton() {
         ADD_CART_BUTTON.click();
-       // logger.info("Пользователь нажимает на кнопку 'В корзину'");
+        logger.info("Пользователь нажимает на кнопку 'В корзину'");
         return this;
     }
 
     @Step("Пользователь нажимае на кнопку 'Оформить заказ'")
     public CartPage clickToMakeOrder() {
         MAKE_ORDER.click();
-       // logger.info("Пользователь нажимае на кнопку 'Оформить заказ'");
+        logger.info("Пользователь нажимае на кнопку 'Оформить заказ'");
         return this;
     }
 
     @Step("Пользователь нажимает на товар")
     public CartPage clickProductCard() {
         PRODUCT_CARD.click();
-        //logger.info("Пользователь нажимает на товар");
+        logger.info("Пользователь нажимает на товар");
         return this;
     }
 
     @Step("Пользователь нажимает '+' увеличивая количество шт. товара")
     public CartPage clickIncreaseQuantity() {
         INCREASE_QUANTITY.click();
-       // logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
+        logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
         return this;
     }
 
 /*    @Step("Сохранение количества товаров")
     public CartPage getQuantityMaterials() {
         int quantity = QUANTITY_PRODUCT.formatElementToValue();
-       // logger.info("Запоминаем количество товара");
+        logger.info("Запоминаем количество товара");
         return this;;
     }*/
 
     @Step("Пользователь нажимает на иконку удаления товара")
     public CartPage clickDeleteMaterials() {
         DELETE_PRODUCT.click();
-       // logger.info("Пользователь нажимает на иконку удаления товар");
+        logger.info("Пользователь нажимает на иконку удаления товар");
         return this;
     }
 
     @Step("Пользователь нажимает на звёздочку и добавляет товар в избранное")
     public CartPage clickFavoritesButton() {
         FAVORITES_BUTTON.click();
-       // logger.info("Пользователь нажимает на звёздочку и добавляет товар в избранное");
+        logger.info("Пользователь нажимает на звёздочку и добавляет товар в избранное");
         return this;
     }
 
@@ -129,20 +130,20 @@ public class CartPage {
     @Step("Пользователь проверяет и переходит по банеру")
     public CartPage clickBanner() {
         BANNER.click();
-       // logger.info("Пользователь проверяет и переходит по банеру");
+        logger.info("Пользователь проверяет и переходит по банеру");
         return this;
     }
 
     @Step("Пользователь проверяет отображение текстового блока: Не забудьте положить в корзину")
     public CartPage checkTextDoNotAddToCart() {
-      //  logger.info("Пользователь проверяет отображение текстового блока: Не забудьте положить в корзину");
+        logger.info("Пользователь проверяет отображение текстового блока: Не забудьте положить в корзину");
         DO_NOT_ADD_TO_CART_PRODUCTS_LIST.getText();
         return this;
     }
 
     @Step("Пользователь получает количество товаров в блоке: Не забудьте положить в корзину")
     public CartPage checkDoNotAddToCartProductsList() {
-        //logger.info("Пользователь получает количество товаров в блоке: Не забудьте положить в корзину");
+        logger.info("Пользователь получает количество товаров в блоке: Не забудьте положить в корзину");
         DO_NOT_ADD_TO_CART_PRODUCTS_LIST.getSize();
         return this;
     }

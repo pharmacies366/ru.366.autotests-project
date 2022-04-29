@@ -1,5 +1,6 @@
 package pages.web.main;
 
+import core.MainTestBase;
 import io.qameta.allure.Step;
 import ru.yandex.qatools.htmlelements.element.Button;
 import static com.codeborne.selenide.Selenide.$x;
@@ -8,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
  * Главная страница сайта https://366.ru/
  */
 
-public class MainPage {
+public class MainPage extends MainTestBase {
 
     private final Button POP_UP_BUTTON = new Button($x( "//button[contains(.,'Спасибо, понятно')]"));
     private final Button LETTER_N = new Button($x( "//a[@href='/littera-Н/']"));
@@ -38,29 +39,29 @@ public class MainPage {
     @Step("Пользователь закрывает попап куки: 'Спасибо, понятно")
     public MainPage clickClosePopUp() {
         POP_UP_BUTTON.click();
+        logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
         return this;
-      //  logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
     }
 
     @Step("Пользователь нажимает закрыть новосной попап")
     public MainPage ClickClosePopUpNewsButton() {
         CLOSE_POP_UP_NEWS_BUTTON.click();
+        logger.info("Пользователь нажимает закрыть новосной попап");
         return this;
-       // logger.info("Пользователь нажимает закрыть новосной попап");
     }
 
     @Step("Пользователь нажимает на букву 'Н' Русского алфавита")
     public MainPage clickLetterN() {
         LETTER_N.click();
+        logger.info("Пользователь нажимает на букву 'Н' Русского алфавита");
         return this;
-      //  logger.info("Пользователь нажимает на букву 'Н' Русского алфавита");
     }
 
     @Step("Пользователь нажимает на кнопку 'В корзину'")
     public MainPage clickAddToCardButton() {
         ADD_TO_CART_BUTTON.click();
+        logger.info("Пользователь нажимает на кнопку 'В корзину'");
         return this;
-       // logger.info("Пользователь нажимает на кнопку 'В корзину'");
     }
 
 /*    @Step("Сохранение количества товаров")
@@ -73,22 +74,22 @@ public class MainPage {
     @Step("Пользователь нажимает '+' увеличивая количество шт. товара")
     public MainPage clickIncreaseQuantity() {
         INCREASE_QUANTITY.click();
+        logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
         return this;
-       // logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
     }
 
     @Step("Пользователь нажимает '-' уменьшая количество шт. товара")
     public MainPage clickDecreaseQuantity() {
         DECREASE_QUANTITY.click();
+        logger.info("Пользователь нажимает '-' уменьшая количество шт. товара");
         return this;
-      //  logger.info("Пользователь нажимает '-' уменьшая количество шт. товара");
     }
 
     @Step("Пользователь добавляет товар в избранное")
     public MainPage clickFavoritesIcon() {
         FAVORITES_ICON.click();
+        logger.info("Пользователь добавляет товар в избранное");
         return this;
-      //  logger.info("Пользователь добавляет товар в избранное");
     }
 
 
@@ -122,51 +123,53 @@ public class MainPage {
 
     @Step("Пользователь переключает банеры по пинам")
     public MainPage checkNextBannerButtons() {
-        String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
+        String sizeAllLi = QUANTITY_BANNERS.getAttribute("childElementCount");
         int quantity = Integer.parseInt(sizeAllLi);
         for (int i = 1; i <= quantity; i++) {
-            getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, i)).click();
-            pageActions.staticWait(500);
+            getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS, i)).click();
         }
-      //  logger.info("Пользователь переключает банеры по пинам");
+        logger.info("Пользователь переключает банеры по пинам");
+        return this;
     }
 */
+
 
 
 /*
     @Step("Пользователь переключает банеры по пинам и возвращается на главную страницу")
     public MainPage checkBannersClickable() {
-        String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
+        String sizeAllLi = QUANTITY_BANNERS.getAttribute("childElementCount");
         int quantity = Integer.parseInt(sizeAllLi);
         for (int i = 1; i <= quantity; i++) {
-            getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, i)).click();
-            pageActions.staticWait(1000);
-            getBannersLocators().click();
-            getMainButton().click();
+            getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS, i)).click();
+            BANNERS_BUTTONS.click();
+            MAIN_BUTTON.click();
         }
-       // logger.info("Пользователь переключает банеры по пинам и возвращается на главную страницу");
+        logger.info("Пользователь переключает банеры по пинам и возвращается на главную страницу");
+        return this;
     }
 */
+
 
 
     @Step("Пользователь нажимает на кнопку каталог")
     public MainPage clickCatalogButton() {
         CATALOG_BUTTON.click();
+        logger.info("Пользователь нажимает на кнопку каталог");
         return this;
-       // logger.info("Пользователь нажимает на кнопку каталог");
     }
 
     @Step("Пользователь нажимает на первый товар в списке на главной странице")
     public MainPage clickFirstProductOnMainPage() {
         PRODUCT_BUTTON.click();
+        logger.info("Пользователь нажимает на первый товар в списке на главной странице");
         return this;
-      //  logger.info("Пользователь нажимает на первый товар в списке на главной странице");
     }
 
     @Step("Пользователь нажимает на иконку консультант бота")
     public MainPage clickBotConsultantButton() {
         BOT_CONSULTANT_BUTTON.click();
+        logger.info("Пользователь нажимает на иконку консультант бота");
         return this;
-      //  logger.info("Пользователь нажимает на иконку консультант бота");
     }
 }

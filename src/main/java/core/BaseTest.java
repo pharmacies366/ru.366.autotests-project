@@ -6,14 +6,13 @@ import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 
 public class BaseTest {
 
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
+       //WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
         Configuration.startMaximized = true;
@@ -27,10 +26,10 @@ public class BaseTest {
         setUp();
     }
 
-    @AfterEach
+/*    @AfterEach
     public void tearDown() {
         Selenide.closeWebDriver();
-    }
+    }*/
 
 }
 
