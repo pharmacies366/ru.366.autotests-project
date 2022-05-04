@@ -61,8 +61,9 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
     @DisplayName("Неавторизованный пользователь покупает товар со страниц ОСП")
     @Test
     public void checkOsp() {
-        cookiePage.reCaptchaKey();
         mainPage.clickClosePopUp();
+        pageActions.reloadPage();
+        pageActions.waitPageLoad();
         mainPage.clickLetterN();
         ospPage.clickProductName();
         cartPage.clickAddCartButton();
