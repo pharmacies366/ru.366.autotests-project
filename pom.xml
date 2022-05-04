@@ -103,7 +103,7 @@
                 <version>2.20</version>
                 <configuration>
                     <!--параллелизация-->
-                    <forkCount>3</forkCount>
+                    <forkCount>4</forkCount>
                     <reuseForks>false</reuseForks>
 
                     <testFailureIgnore>false</testFailureIgnore>
