@@ -51,7 +51,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
                     //Сервис
                     {"/polzovatelskoe-soglashenie/", "Пользовательское соглашение", "Пользовательское соглашение"},
                     {"/politika-konfidencialnosti/", "Политика конфиденциальности", "Политика конфиденциальности"},
-                    {"/mnn/", "Действующие вещества", "Все вещества"},
+                    {"/mnn/", "Действующие вещества", "Действующие вещества"},
                     {"/promotions/", "Акции", "Акции"},
                     {"/articles/", "Статьи", "Статьи"},
         };
