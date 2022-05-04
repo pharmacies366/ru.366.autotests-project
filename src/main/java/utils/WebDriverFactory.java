@@ -91,7 +91,7 @@ public class WebDriverFactory {
         logger.info("setup local driver");
         ChromeOptions chromeOptions = new ChromeOptions();
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        // DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        //DesiredCapabilities capabilities = DesiredCapabilities.chrome(); //в чем разница?
 
 
         chromeOptions.addArguments("--incognito");
@@ -109,8 +109,6 @@ public class WebDriverFactory {
         chromeOptions.addArguments("--disabled-notifications");
         chromeOptions.addArguments("--disabled-popup-blocking");
 
-       // chromeOptions.addArguments("--headless");
-
 
         if (nameOfPackage.contains("mobile")) {
             WebDriverManager.chromedriver().setup();
@@ -121,7 +119,8 @@ public class WebDriverFactory {
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(chromeOptions);
+        driver = new ChromeDriver(capabilities);
+        //driver = new ChromeDriver(chromeOptions);
         configureDriver();
         logger.info("ЗАПУЩЕН ЛОКАЛЬНЫЙ ДРАЙВЕР");
     }
@@ -131,7 +130,6 @@ public class WebDriverFactory {
     private void configureDriver() {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
