@@ -24,8 +24,8 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
                 {"/my-account/profile", "Личные данные", "Личные данные"},
                 {"/my-account/update-password", "Изменить пароль", "Изменить пароль"},
                 {"/favorites", "Избранное", "Избранное"},
-                {"/my-account/invite-friend", "Приведи друга", "Приведи друга"},
-                {"/logout/", "Выйти", "Как сделать заказ"}
+                //{"/my-account/invite-friend", "Приведи друга", "Приведи друга"},
+                 {"/logout/", "Выйти", "Как сделать заказ"}
         };
     }
 
