@@ -9,7 +9,7 @@ import org.junit.Test;
 @Feature(value = "Мобильная версия")
 @Story(value = "Личный кабинет на сайте 36.6")
 @DisplayName("Личный кабинет")
-public class ChangePasswordMobileTest extends BaseSettingsMobileTests {
+public class ChangePasswordMobileTest extends BaseSettingsMobileTests{
 
     @DisplayName("Пользователь изменяет пароль")
     @Test

@@ -79,9 +79,3 @@ public class BaseSettingsWebTests extends MainTestBase {
     }
 
 }
-
-
-
-
-
-

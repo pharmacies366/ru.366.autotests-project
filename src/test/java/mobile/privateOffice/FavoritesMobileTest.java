@@ -7,7 +7,7 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 
-@Feature(value = "Web")
+@Feature(value = "Мобильная версия")
 @Story(value = "Личный кабинет на сайте 36.6")
 @DisplayName("Личный кабинет")
 public class FavoritesMobileTest extends BaseSettingsMobileTests {
