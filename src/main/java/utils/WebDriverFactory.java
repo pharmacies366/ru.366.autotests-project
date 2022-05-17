@@ -47,6 +47,8 @@ public class WebDriverFactory {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         chromeOptions.addArguments("--incognito");
         chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--disable-extensions");
+        chromeOptions.addArguments("--dns-prefetch-disable");
         Map<String, Object> prefs = new HashMap<String, Object>();
         Map<String, Object> profile = new HashMap<String, Object>();
         prefs.put("googlegeolocationaccess.enabled", true);
@@ -108,6 +110,8 @@ public class WebDriverFactory {
         chromeOptions.addArguments("--ignore-certificate-errors");
         chromeOptions.addArguments("--disabled-notifications");
         chromeOptions.addArguments("--disabled-popup-blocking");
+        chromeOptions.addArguments("--disable-extensions");
+        chromeOptions.addArguments("--dns-prefetch-disable");
 
 
         if (nameOfPackage.contains("mobile")) {

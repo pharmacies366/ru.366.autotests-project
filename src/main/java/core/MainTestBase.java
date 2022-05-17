@@ -56,8 +56,10 @@ public class MainTestBase {
      */
 
 
+/*
     @Rule
-    public RetryRule rule = new RetryRule(3);
+    public RetryRule rule = new RetryRule(2);
+*/
 
 
 
