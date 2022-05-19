@@ -139,7 +139,7 @@ public class PersonalDataPage extends MainTestBase {
     }
 
     @Step("Пользователь нажимает кнопку сохранить")
-    public void ckickSaveButton() {
+    public void clickSaveButton() {
         getSaveButton().click();
         logger.info("Пользователь нажимает кнопку сохранить");
     }

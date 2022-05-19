@@ -131,10 +131,10 @@ public class WebHeaderBlock extends MainTestBase {
         logger.info("Пользователь нажимает на иконку авторизации");
     }
 
-    @Step("Пользователь нажимает на иконку авторизации")
+    @Step("Пользователь нажимает на кнопку Выход")
     public void clickLogOut() {
         getLogOutButton().click();
-        logger.info("Пользователь нажимает на иконку авторизации");
+        logger.info("Пользователь нажимает на кнопку Выход");
     }
 
     @Step("Пользователь нажимает на кнопку регистрации")
@@ -207,7 +207,7 @@ public class WebHeaderBlock extends MainTestBase {
     @Step("Пользователь нажимает на кнопку аптеки и переходит на страницу с картой аптек")
     public void clickPharmaciesButton(){
         getPharmaciesButton().click();
-        logger.info("Пользователь нажимает на кнопку для выбора города");
+        logger.info("Пользователь нажимает на кнопку аптеки и переходит на страницу с картой аптек");
     }
 
     @Step("Проверка видимости попапа с выбором городов")

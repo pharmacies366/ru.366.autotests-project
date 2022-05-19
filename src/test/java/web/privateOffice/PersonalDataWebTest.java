@@ -33,8 +33,8 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
             " и релевантный переход")
     @Step("В личном кабинете переходит по ссылке => {LINKTEXT}")
     @Test
-    @UseDataProvider("checkDisplaedOptions")
-    public void checkDisplaedOptions(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
+    @UseDataProvider("checkDisplayedOptions")
+    public void checkDisplayedOptions(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
         mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
@@ -54,7 +54,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Пользователь заполняет фамилию и отчество и сохраняет данные")
     @Test
-    public void checkPersonalDeta() {
+    public void checkPersonalData() {
         mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
@@ -65,17 +65,17 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clearLastNameAndPatronymic();
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.personalDetails(
                 propertiesManager.getProperty("lastname"),
                 propertiesManager.getProperty("patronymic"));
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.checkSavePersonalData();
     }
 
     @DisplayName("Пользователь очищает поля фамилии и отчества и сохраняет данные")
     @Test
-    public void clearPersonalDeta() {
+    public void clearPersonalData() {
         mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
@@ -86,7 +86,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clearLastNameAndPatronymic();
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.checkClearPersonalData();
     }
 
@@ -103,13 +103,13 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clearName();
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.gettingErrorWithName();
     }
 
     @DisplayName("Пользователь изменяет и сохраняет имя")
     @Test
-    public void chanchName() {
+    public void changeName() {
         mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
@@ -121,11 +121,11 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         headerBlock.clickPersonalData();
         personalDataPage.clearName();
         personalDataPage.sendName("Alex");
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.checkNewName("Alex");
         personalDataPage.clearName();
         personalDataPage.sendName("Ivan");
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.checkNewName("Ivan");
     }
 
@@ -142,9 +142,9 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.changeBirthday("12","Апрель","1994");
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.changeBirthday("1","Февраль","1993");//Возврашаем в исходную дату
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
     }
 
     @DisplayName("Пользователь изменяет пол")
@@ -160,10 +160,10 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.changeGender("FEMALE");
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.getFemaleButton().checkAttribute("value", "FEMALE");
         personalDataPage.changeGender("MALE");
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.getMaleButton().checkAttribute("value", "MALE");
     }
 
@@ -180,7 +180,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clearEmail();
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.gettingErrorWithEmail();
     }
 
@@ -212,10 +212,10 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clickReceiveNews();
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.checkSelectedCheckboxReceiveNews();
         personalDataPage.clickReceiveNews();
-        personalDataPage.ckickSaveButton();
+        personalDataPage.clickSaveButton();
         personalDataPage.checkNotSelectedCheckboxReceiveNews();
     }
 

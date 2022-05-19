@@ -36,10 +36,9 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     @Test
     public void checkMainHyperlink() {
         mainPage.clickClosePopUp();
-        cartPage.checkAndClearCartQuantity();
         headerBlock.clickFavoritesButton();
-        favoritesPage.checkProductsOnFavoritesPage();
         favoritesPage.clickMainPageButton();
+        pageActions.checkUrl("https://366.ru/");
     }
 
     @DisplayName("Товар, добавленный в избранное будучи не авторизованным," +
