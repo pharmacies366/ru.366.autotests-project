@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
 public class PersonalDataWebTest extends BaseSettingsWebTests {
 
     @DataProvider
-    public static Object[][] checkDisplaedOptions() {
+    public static Object[][] checkDisplayedOptions() {
         return new Object[][]{
                 {"/my-account/orders", "Мои заказы", "Мои заказы"},
                 {"/my-account/profile", "Личные данные", "Личные данные"},
