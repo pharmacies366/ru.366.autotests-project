@@ -104,7 +104,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         commonActionsOnMobilePages.clickPrevPage();
     }
 
-    @DataProvider
+  /*  @DataProvider
     public static Object[][] checkingCheckboxes() {
         return new Object[][]{
                 {1, 1},//Форма выпуска
@@ -125,7 +125,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickShowAll(INDEX_SHOW_ALL);
         commonActionsOnMobilePages.clickAndCheckCheckboxes(INDEX_OPTION);
-    }
+    }*/
 
     @DisplayName("Пользователь проверяет корректную выдачу товаров по рецепту")
     @Test
