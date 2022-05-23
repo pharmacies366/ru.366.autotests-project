@@ -1,6 +1,5 @@
 /*
 package web.modules;
-package web.modules;
 
 import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
@@ -56,4 +55,5 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
 
     }
 }
+
 */
