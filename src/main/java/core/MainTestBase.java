@@ -56,13 +56,11 @@ public class MainTestBase {
      */
 
 
-/*
     @Rule
-    public RetryRule rule = new RetryRule(2);
+    public RetryRule rule = new RetryRule(3);
 
 
 
-*/
 
     /**
      * Управление действиями, при различных исходах теста
