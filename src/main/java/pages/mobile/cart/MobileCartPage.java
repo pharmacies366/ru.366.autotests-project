@@ -130,7 +130,7 @@ public class MobileCartPage extends MainTestBase {
 
     @Step("Пользователь нажимает на кнопку 'Оформить заказ'")
     public void clickToMakeOrder() {
-        getMakeOrder().click();
+        getMakeOrder().clickJs();
         logger.info("Пользователь нажимает на кнопку 'Оформить заказ'");
     }
 
