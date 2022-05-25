@@ -1,7 +1,5 @@
-/*
 package web.modules;
 
-import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit4.DisplayName;
@@ -16,6 +14,7 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
     @Test
     public void checkItemCanNotCheckout() {
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickCantNotOrder();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
@@ -27,6 +26,7 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
     @Test
     public void checkItemINeedADrug() {
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedADrug();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
@@ -38,6 +38,7 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
     @Test
     public void checkItemINeedDelivery() {
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedDelivery();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
@@ -49,11 +50,10 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
     @Test
     public void checkCloseBot() {
         mainPage.clickClosePopUp();
+        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickCloseBot();
-        botConsultantPopUpPage.checkCloseBot();
+        mainPage.getBotConsultantButton().isElementDisplayed();
 
     }
 }
-
-*/

@@ -3,6 +3,8 @@ package pages.mobile.botConsultant;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
@@ -13,14 +15,13 @@ public class MobileBotConsultantPopUpPage extends MainTestBase {
     private static final String Name = "name";
     private static final String PhoneNumber = "tel";
     private static final String Email = "email";
-    private static final String CLOSE_BOT_BUTTON_XPATH = "xpath;//jdiv[@class='closeBox_f08e']";
-    private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[1]";
-    private static final String NEED_A_DRUG_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[2]";
-    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[3]";
+    private static final String CLOSE_BOT_BUTTON_XPATH = "xpath;//jdiv[contains(@class,'close')]";
+    private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[1]";
+    private static final String NEED_A_DRUG_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[2]";
+    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[3]";
     private static final String ENTER_MESSAGE_INPUT_XPATH = "xpath;//jdiv[text()='Отправить']";
-    private static final String THANKS_MESSAGE_XPATH = "xpath;//jdiv[@class='submitSuccess_ee4a __show_c0f4']";
-    private static final String ANIMATION_BOT_XPATH = "xpath;(//jdiv[@class='globalClass_bc43']//child::jdiv)[1]";
-    private static final String CONSULTANT_BOT_BUTTON_XPATH = "xpath;//jdiv[@class='button_e5c6']";
+    private static final String THANKS_MESSAGE_XPATH = "xpath;//jdiv[@alt='\uD83C\uDF89']/..";
+    private static final String ANIMATION_BOT_XPATH = "xpath;//jdiv[@id='jcont']";
 
 
 
@@ -61,10 +62,6 @@ public class MobileBotConsultantPopUpPage extends MainTestBase {
 
     public PageElementActions getStatusAnimationBot() {
         return new PageElementActions(ANIMATION_BOT_XPATH, driver);
-    }
-
-    public PageElementActions getConsultantBot() {
-        return new PageElementActions(CONSULTANT_BOT_BUTTON_XPATH, driver);
     }
 
 
@@ -116,14 +113,15 @@ public class MobileBotConsultantPopUpPage extends MainTestBase {
 
     @Step("Пользователь проверяет сообщение с текстом 'Спасибо'")
     public void checkThanksMessage() {
-       String message = getThanksMessage().getText();
+        String message = getThanksMessage().getText();
         Assert.assertEquals(message, "\uD83C\uDF89 Спасибо!");
         logger.info("Пользователь проверяет сообщение с текстом 'Спасибо'");
     }
 
     @Step("Пользователь проверяет, что консультант бот закрылся")
     public void checkCloseBot() {
-        getConsultantBot().isElementDisplayed();
+        String statusBot = getStatusAnimationBot().getAttribute("style");
+        MatcherAssert.assertThat(statusBot, CoreMatchers.containsString("Label_CLOSE"));
         logger.info("Пользователь проверяет, что консультант бот закрылся");
     }
 
