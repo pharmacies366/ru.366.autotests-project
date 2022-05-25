@@ -24,6 +24,7 @@ public class BotConsultantPopUpPage extends MainTestBase {
     private static final String ANIMATION_BOT_XPATH = "xpath;//jdiv[@id='jcont']";
 
 
+
     //конструктор
     public BotConsultantPopUpPage(WebDriver driver) {
         this.driver = driver;
@@ -64,6 +65,7 @@ public class BotConsultantPopUpPage extends MainTestBase {
     }
 
 
+
     //Методы
     @Step("Пользователь закрывает консультант бота")
     public void clickCloseBot() {
@@ -96,7 +98,7 @@ public class BotConsultantPopUpPage extends MainTestBase {
     }
 
     @Step("Пользователь заполняет контактные данные")
-    public void contactDetails(String name, String phoneNumber, String email) {
+    public void contactDetails(String name, String phoneNumber, String email ) {
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Name)).sendKeys(name);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
