@@ -15,13 +15,13 @@ public class BotConsultantPopUpPage extends MainTestBase {
     private static final String Name = "name";
     private static final String PhoneNumber = "tel";
     private static final String Email = "email";
-    private static final String CLOSE_BOT_BUTTON_XPATH = "xpath;//jdiv[@class='closeIcon_fc52']";
-    private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[1]";
-    private static final String NEED_A_DRUG_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[2]";
-    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[@class='button_acaf'])[3]";
+    private static final String CLOSE_BOT_BUTTON_XPATH = "xpath;//jdiv[@id='jivo_close_button']";
+    private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[1]";
+    private static final String NEED_A_DRUG_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[2]";
+    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[3]";
     private static final String ENTER_MESSAGE_INPUT_XPATH = "xpath;//jdiv[text()='Отправить']";
-    private static final String THANKS_MESSAGE_XPATH = "xpath;//jdiv[@class='submitSuccess_f0ba __show_ee7c']";
-    private static final String ANIMATION_BOT_XPATH = "xpath;(//jdiv[@class='globalClass_bc43']//child::jdiv)[1]";
+    private static final String THANKS_MESSAGE_XPATH = "xpath;//jdiv[@alt='\uD83C\uDF89']/..";
+    private static final String ANIMATION_BOT_XPATH = "xpath;//jdiv[@id='jcont']";
 
 
     //конструктор

@@ -24,7 +24,7 @@ public class MobileMainPage extends MainTestBase {
     private static final String BANNERS_BUTTONS_XPATH = "xpath;(//div[@class='yCmsContentSlot'])[1]";
     private static final String PRODUCT_BUTTON_XPATH = "xpath;(//img[@class=' lazyloaded'])[1]";
     private static final String ADD_TO_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
-    private static final String BOT_CONSULTANT_BUTTON_XPATH = "xpath;//jdiv[@class='wrap_b080 _orientationRight_fa84 __jivoMobileButton']";
+    private static final String BOT_CONSULTANT_BUTTON_XPATH = "xpath;//jdiv[contains(@class,'iconWrap')]";
 
 
     //конструктор

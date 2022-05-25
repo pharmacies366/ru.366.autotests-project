@@ -1,4 +1,4 @@
-package web.modules;/*
+/*
 package web.modules;
 
 import base.BaseSettingsWebTests;
@@ -10,13 +10,12 @@ import org.junit.Test;
 @Feature(value = "Web")
 @Story(value = "Консультант бот на сайте 36.6")
 @DisplayName("Консультант бот")
-public class BotConsultantWebTest extends BaseSettingsWebTests {
+public class BotConsultantWebTest extends base.BaseSettingsWebTests {
 
     @DisplayName("Пользователь выбирает пункт: Не могу оформить заказ, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemCanNotCheckout() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickCantNotOrder();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
@@ -28,7 +27,6 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
     @Test
     public void checkItemINeedADrug() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedADrug();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
@@ -40,7 +38,6 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
     @Test
     public void checkItemINeedDelivery() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedDelivery();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
@@ -52,11 +49,11 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
     @Test
     public void checkCloseBot() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickCloseBot();
         botConsultantPopUpPage.checkCloseBot();
 
     }
 }
+
 */
