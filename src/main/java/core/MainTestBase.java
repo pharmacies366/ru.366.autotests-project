@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Rule;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInfo;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
@@ -34,8 +35,9 @@ public class MainTestBase {
 
     @BeforeEach
     @Step("Открывается Главная страница сайта")
-    public void beforeClass_StartBrowser() {
+    public void beforeClass_StartBrowser(TestInfo testInfo) {
         driverFactory = new WebDriverFactory();
+        starting(testInfo);
         driver = driverFactory.getDriver();
         pageActions = new PageActions(driver);
         driver.get(propertiesManager.getProperty("baseurl"));
@@ -76,13 +78,13 @@ public class MainTestBase {
             driver.quit();
         }
 
-        @Override
-        protected void starting(Description description) {
-            nameOfPackage = description.getTestClass().getPackage().getName();
-            logger.info("Тест старт " + description.getMethodName());
-        }
 
     };
+
+    private void starting(TestInfo testInfo) {
+        nameOfPackage = testInfo.getTestClass().get().getPackage().getName();
+        logger.info("Тест старт " + testInfo.getDisplayName());
+    }
 
     /**
      * @return - скриншот
