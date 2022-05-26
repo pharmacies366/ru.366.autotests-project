@@ -112,17 +112,12 @@
                 <version>${maven-surefire.version}</version>
                 <configuration>
 
-           <!--         <forkCount>2</forkCount>
-                    <reuseForks>false</reuseForks>
-
-                    <rerunFailingTestsCount>3</rerunFailingTestsCount>-->
-
+                    <!--         <forkCount>2</forkCount>
+                             <reuseForks>false</reuseForks>
+                             <rerunFailingTestsCount>3</rerunFailingTestsCount>-->
 
                     <!--true - Статус билда не зависит от прохождения тестов-->
                     <testFailureIgnore>true</testFailureIgnore>
-                 <!--   <includes>
-                        <include>**/*WebTest*.java</include>
-                    </includes>-->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>

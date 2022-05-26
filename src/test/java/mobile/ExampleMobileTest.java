@@ -18,7 +18,7 @@ public class ExampleMobileTest extends BaseSettingsWebTests {
     @Tag("IntegrationTest")
     public void test() {
         driver.get("https://lingualeo.com/ru");
-        pageActions.staticWait(5000);
+        pageActions.staticWait(1000);
     }
 }
 
