@@ -34,6 +34,43 @@ public class PageElementActions extends MainTestBase {
         saveAllureScreenshot();
     }
 
+    //Клик по элементу с помощью JS
+    public void clickJs() {
+        moveToElementJs();
+        WebElement ele = waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click()", ele);
+        saveAllureScreenshot();
+    }
+
+
+    //
+    public int getSize() {
+        return driver.findElements(getBySelector(element)).size();
+    }
+
+    //Получение значение атрибута элемента
+    public String getAttribute(String attributeName) {
+        String attribute = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getAttribute(attributeName);
+        return attribute;
+    }
+
+    //Проверяет видимость элемента на странице, возвращает статус true либо Exception
+    public boolean isElementDisplayed() {
+        return driver.findElement(getBySelector(element)).isDisplayed();
+    }
+
+    //Проверяет видимость элемента на странице по индексу
+    public void isElementDisplayedWithIndex(int index) {
+        driver.findElements(getBySelector(element)).get(index).isDisplayed();
+    }
+
+    //Перемещение элемента по заданным координатам
+    public void drugAndDropToOffSet(int x, int y) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S)).clickAndHold().moveByOffset(x, y).release().build().perform();
+    }
+
 
     //Клик по индексу элемента
     public void clickIndex(int number) {
@@ -50,6 +87,13 @@ public class PageElementActions extends MainTestBase {
         String text = driver.findElement(getBySelector(element)).getText().replaceAll("[^0-9]", "").trim();
         return Integer.parseInt(text);
     }
+
+    //Получение значение атрибута элемента и сравнивает с ожидаемым результатом
+    public void checkAttribute(String attributeName, String expectedText) {
+        String result = getAttribute(attributeName);
+        Assert.assertEquals(expectedText, result);
+    }
+
 
     //Перейти к элементу и ввести текст
     public void sendKeys(String keysToSend) {
@@ -128,6 +172,11 @@ public class PageElementActions extends MainTestBase {
         } catch (org.openqa.selenium.interactions.MoveTargetOutOfBoundsException ex) {
             scrollElementIntoView(getBySelector(element));
         }
+    }
+
+    //Перейти к элементу, когда он выходит за границы видимости текущего просмотра с помощью js
+    public void moveToElementJs() {
+        scrollElementIntoView(getBySelector(element));
     }
 
     //Пользователь скроллит страницу до элемента

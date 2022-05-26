@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Проверка суммы 2-х товаров в корзине")
 public class VariableSampleTest extends BaseSettingsWebTests {
 
- /*   @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
+    @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     @Tag("IntegrationTest")
     @Tag("smoke")
@@ -29,7 +29,7 @@ public class VariableSampleTest extends BaseSettingsWebTests {
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         int totalPrice = cartPage.getPriceTotal();
         Assertions.assertEquals(firstPrice + secondPrice, totalPrice);
-    }*/
+    }
 }
 
 

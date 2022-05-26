@@ -9,6 +9,7 @@ import pages.web.*;
 
 public class BaseSettingsWebTests extends MainTestBase {
 
+    protected CommonActionsOnWebPages commonActionsOnWebPages;
     protected MainPage mainPage;
     protected PageElementActions pageElementActions;
     protected CookiePage cookiePage;
@@ -22,11 +23,14 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected MyOrdersPage myOrdersPage;
     protected HeaderBlock headerBlock;
     protected BasementBlock basementBlock;
+    protected CatalogPage catalogPage;
+
 
 
 
     @BeforeEach
     public void PagesInitialization() {
+        commonActionsOnWebPages = new CommonActionsOnWebPages(driver);
         mainPage = new MainPage(driver);
         pageElementActions = new PageElementActions(driver);
         cookiePage = new CookiePage(driver);
@@ -40,6 +44,7 @@ public class BaseSettingsWebTests extends MainTestBase {
         myOrdersPage = new MyOrdersPage(driver);
         headerBlock = new HeaderBlock(driver);
         basementBlock = new BasementBlock(driver);
+        catalogPage = new CatalogPage(driver);
 
     }
 

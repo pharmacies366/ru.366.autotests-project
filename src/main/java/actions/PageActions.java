@@ -39,6 +39,11 @@ public class PageActions extends MainTestBase {
             driver.switchTo().window(windowHandle);
     }
 
+    //Возвращение на предыдущую страницу
+    public void returnBackPage() {
+        driver.navigate().back();
+    }
+
     //Переключиться на iFrame по индексу
     public void switchToiFrame(int index) {
         driver.switchTo().frame(index);
