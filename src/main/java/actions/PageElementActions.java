@@ -4,6 +4,7 @@ import core.MainTestBase;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -38,7 +39,7 @@ public class PageElementActions extends MainTestBase {
     public void clickJs() {
         moveToElementJs();
         WebElement ele = waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click()", ele);
         saveAllureScreenshot();
     }
@@ -163,6 +164,14 @@ public class PageElementActions extends MainTestBase {
         return driver.findElements(getBySelector(element)).size();
     }
 
+    //Получение цвета элемента
+    public String getColor() {
+        String colorValue = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getCssValue("color");
+        String hex = Color.fromString(colorValue).asHex();
+        //System.out.println(hex);
+        return hex;
+    }
+
     //Проверяет видимость текста {string} на странице
     public void contentIsDisplayed(String text) {
         driver.findElement(By.xpath("//*[text()='" + text + "']")).isDisplayed();
@@ -224,7 +233,7 @@ public class PageElementActions extends MainTestBase {
     }
 
     public String getText() {
-       // this.moveToElement();
+        // this.moveToElement();
         String result = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getText();
         return result;
     }
