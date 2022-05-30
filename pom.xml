@@ -24,7 +24,7 @@
         <webdrivermanager.version>4.2.0</webdrivermanager.version>
         <aspectj.version>1.9.6</aspectj.version>
 
-        <maven-surefire.version>2.22.2</maven-surefire.version>
+        <maven-surefire.version>3.0.0-M1</maven-surefire.version>
     </properties>
 
     <profiles>
