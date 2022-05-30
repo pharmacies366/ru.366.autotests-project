@@ -4,6 +4,7 @@ import core.MainTestBase;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -161,6 +162,14 @@ public class PageElementActions extends MainTestBase {
     //
     public int getSize() {
         return driver.findElements(getBySelector(element)).size();
+    }
+
+    //Получение цвета элемента
+    public String getColor() {
+        String colorValue = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getCssValue("color");
+        String hex = Color.fromString(colorValue).asHex();
+        //System.out.println(hex);
+        return hex;
     }
 
     //Проверяет видимость текста {string} на странице
