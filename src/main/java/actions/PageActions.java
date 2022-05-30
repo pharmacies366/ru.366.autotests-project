@@ -2,6 +2,7 @@ package actions;
 
 import core.MainTestBase;
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -52,8 +53,8 @@ public class PageActions extends MainTestBase {
 
     //Проверка url
     public void checkUrl(String url) {
-        driver.getCurrentUrl();
-        Assert.assertTrue(url.equals(url));
+        String actualUrl = driver.getCurrentUrl();
+        Assertions.assertEquals(url, actualUrl);
     }
 
     //Получить Title

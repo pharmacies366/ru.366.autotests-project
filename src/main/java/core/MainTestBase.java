@@ -3,15 +3,11 @@ package core;
 import actions.PageActions;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
-import listener.RetryRule;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Rule;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -21,10 +17,9 @@ import utils.WebDriverFactory;
 
 public class MainTestBase {
 
-    public WebDriver driver;
+    protected WebDriver driver;
     protected PropertiesManager propertiesManager = new PropertiesManager();
-    public static PageActions pageActions;
-    private WebDriverFactory driverFactory;
+    protected PageActions pageActions;
     public static String nameOfPackage;
     protected Logger logger = LogManager.getLogger(MainTestBase.class);
 
@@ -38,7 +33,7 @@ public class MainTestBase {
     @BeforeEach
     @Step("Открывается Главная страница сайта")
     public void beforeClass_StartBrowser(TestInfo testInfo) {
-        driverFactory = new WebDriverFactory();
+        WebDriverFactory driverFactory = new WebDriverFactory();
         starting(testInfo);
         driver = driverFactory.getDriver();
         pageActions = new PageActions(driver);
