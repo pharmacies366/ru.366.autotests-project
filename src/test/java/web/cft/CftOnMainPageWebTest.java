@@ -1,7 +1,6 @@
 package web.cft;
 
 import base.BaseSettingsWebTests;
-import io.github.artsok.RepeatedIfExceptionsTest;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;

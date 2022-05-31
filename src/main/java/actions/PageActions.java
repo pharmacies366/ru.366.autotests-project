@@ -1,7 +1,6 @@
 package actions;
 
 import core.MainTestBase;
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -64,7 +63,7 @@ public class PageActions extends MainTestBase {
 
     //Сравнить два текста
     public void assertEqualsTwoObject(String actual, String expected) {
-        Assert.assertEquals(actual, expected);
+        Assertions.assertEquals(actual, expected);
     }
 
     //Проверка видимости текста на странице

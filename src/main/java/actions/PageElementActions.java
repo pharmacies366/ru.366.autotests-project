@@ -1,7 +1,7 @@
 package actions;
 
 import core.MainTestBase;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
@@ -92,7 +92,7 @@ public class PageElementActions extends MainTestBase {
     //Получение значение атрибута элемента и сравнивает с ожидаемым результатом
     public void checkAttribute(String attributeName, String expectedText) {
         String result = getAttribute(attributeName);
-        Assert.assertEquals(expectedText, result);
+        Assertions.assertEquals(expectedText, result);
     }
 
 
@@ -138,7 +138,7 @@ public class PageElementActions extends MainTestBase {
 
     public void elementDisplayed(By elementBy) {
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
-        Assert.assertTrue(driver.findElement(elementBy).isDisplayed());
+        Assertions.assertTrue(driver.findElement(elementBy).isDisplayed());
         saveAllureScreenshot();
     }
 
