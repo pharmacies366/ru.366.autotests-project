@@ -11,7 +11,7 @@ import org.junit.Test;
 @DisplayName("Изменение региональности")
 public class CheckRegionalMobileTest extends BaseSettingsMobileTests {
 
-
+/*
     @DisplayName("Пользователь устанавливает город Санкт-Петербург")
     @Test
     public void checkChangeRegionOnMainPage() {
@@ -52,5 +52,5 @@ public class CheckRegionalMobileTest extends BaseSettingsMobileTests {
         mobileCitiesPopUpPage.selectSpbCity();
         mobileMainPage.clickFirstProductOnMainPage();
         mobileProductCardPage.checkSelectedRegion("Санкт-Петербург");
-    }
+    }*/
 }
