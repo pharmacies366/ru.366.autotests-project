@@ -169,7 +169,6 @@ public class CommonActionsOnWebPages extends MainTestBase {
     //Методы
     @Step("Пользователь проверяет и переходит по банеру")
     public void clickBanner() {
-        pageActions.staticWait(1000);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
     }

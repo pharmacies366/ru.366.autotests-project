@@ -156,7 +156,6 @@ public class ProductCardPage extends MainTestBase {
 
     @Step("Пользователь проверяет переход по банеру")
     public void clickBanner() {
-        pageActions.staticWait(1000);
         getBanner().click();
         logger.info("Пользователь проверяет переход по банеру");
     }
