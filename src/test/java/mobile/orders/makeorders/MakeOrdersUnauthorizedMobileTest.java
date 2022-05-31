@@ -71,6 +71,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileOspPage.clickShowAll();
         mobileOspPage.clickProductName();
         mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
         mobileCheckOutPage.contactDetails(
@@ -121,15 +122,18 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         mobileMainPage.clickSiteLogo();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
         mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.ckickSelect();
         pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(

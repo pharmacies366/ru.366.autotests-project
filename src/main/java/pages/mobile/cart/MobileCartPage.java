@@ -118,7 +118,7 @@ public class MobileCartPage extends MainTestBase {
 
     @Step("Пользователь добавляет товар в корзину")
     public void сlickAddCartButton() {
-        getClickAddCartButton().click();
+        getClickAddCartButton().clickJs();
         logger.info("Пользователь добавляет товар в корзину");
     }
 

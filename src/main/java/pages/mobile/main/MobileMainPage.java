@@ -131,7 +131,7 @@ public class MobileMainPage extends MainTestBase {
 
     @Step("Пользователь нажимает на кнопку 'В корзину'")
     public void AddToCartClick(){
-        getClickAddCartButton().click();
+        getClickAddCartButton().clickJs();
         logger.info("Пользователь нажимает на кнопку 'В корзину'");
     }
 

@@ -69,13 +69,13 @@ public class MobileHeaderBlock extends MainTestBase {
     //Методы
     @Step("Пользователь нажимает на иконку выпадающего списка")
     public void clickBurgerButton(){
-        getBurgerButton().click();
+        getBurgerButton().clickJs();
         logger.info("Пользователь нажимает на иконку выпадающего списка");
     }
 
     @Step("Пользователь на логотип сайта и поподает на главную страницу сайта")
     public void clickSiteLogo(){
-        getSiteLogo().click();
+        getSiteLogo().clickJs();
         logger.info("Пользователь на логотип сайта и поподает на главную страницу сайта");
     }
 
