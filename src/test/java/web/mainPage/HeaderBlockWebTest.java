@@ -22,9 +22,21 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
     public static Object[][] data() {
         return new Object[][]{
                 {"/howToOrderNew/", "Как сделать заказ*", "Как оформить заказ на сайте?"},
-                {"/pravila_programmy/", "Клуб 36,6", "Условия выдачи карты"},
+                {"/pravila_programmy/", "Клуб 36,6", "Как стать участником Клуба?"},
                 // {"/certificates/", "Подарочные сертификаты", "Подарочные сертификаты"},// нет на s1
         };
+    }
+
+    @DisplayName("Проверка релевантности ссылок в шапке сайта")
+    @Step("В шапке сайта переходит по ссылке => {LINKTEXT}")
+    @Test
+    @UseDataProvider("data")
+    public void test(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
+        headerBlock.checkLinksValidation(LOCATOR, LINKTEXT);
+        logger.info("Ссылка видна на странице и написана корректно");
+        headerBlock.selectHeaderButtons(LOCATOR);
+        pageActions.contentIsDisplayed(PAGEMESSAGE);
+        logger.info("Ссылка кликабельна и ведёт на нужную страницу");
     }
 
     @DisplayName("Проверка отображения логотипа")//возможно нужно убрать данную проверку,
@@ -104,18 +116,6 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
     public void checkClickablePhoneNumber() {
         headerBlock.getPhoneNumber().elementIsClickable();
         logger.info("Номер телефона кликабелен");
-    }
-
-    @DisplayName("Проверка релевантности ссылок в шапке сайта")
-    @Step("В шапке сайта переходит по ссылке => {LINKTEXT}")
-    @Test
-    @UseDataProvider("data")
-    public void test(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        headerBlock.checkLinksValidation(LOCATOR, LINKTEXT);
-        logger.info("Ссылка видна на странице и написана корректно");
-        headerBlock.selectHeaderButtons(LOCATOR);
-        pageActions.contentIsDisplayed(PAGEMESSAGE);
-        logger.info("Ссылка кликабельна и ведёт на нужную страницу");
     }
 
 }

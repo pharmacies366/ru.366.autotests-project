@@ -41,7 +41,7 @@ public class MobileChangePasswordPage extends MainTestBase {
     //Методы
 
     @Step("Пользователь вводит старый и новый пароли")
-    public void clickChangePassword(String oldPassword, String newPassword, String checkNewPassword) {
+    public void changePassword(String oldPassword, String newPassword, String checkNewPassword) {
         getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA_XPATH, OldPassword)).sendKeys(oldPassword);
         getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA_XPATH, NewPassword)).sendKeys(newPassword);
         getBaseInputePrsonalDetails(String.format(BASE_INPUT_PASSWORD_DATA_XPATH, CheckNewPassword)).sendKeys(checkNewPassword);
