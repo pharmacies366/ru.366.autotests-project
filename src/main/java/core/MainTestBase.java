@@ -14,7 +14,6 @@ import org.openqa.selenium.WebDriver;
 import utils.PropertiesManager;
 import utils.WebDriverFactory;
 
-
 public class MainTestBase {
 
     protected WebDriver driver;
