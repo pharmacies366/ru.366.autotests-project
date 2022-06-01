@@ -3,7 +3,6 @@ package pages.commonActions.mobile;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.apache.logging.log4j.core.util.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 

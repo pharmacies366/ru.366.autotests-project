@@ -3,6 +3,8 @@ package blocks.mobile;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
+import org.apache.logging.log4j.core.util.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class MobileHeaderBlock extends MainTestBase {
@@ -16,7 +18,7 @@ public class MobileHeaderBlock extends MainTestBase {
     private static final String SEARCH_INPUT_XPATH = "xpath;//input[@id='js-site-search-input']";
     private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;//span[contains(@class,'header_favorites_mobile__icon')]";
-
+    private static final String GET_SELECTED_REGION_XPATH = "xpath;(//span[contains(@class,'b-login-link i-fw-b')])[3]";
 
     //конструктор
     public MobileHeaderBlock(WebDriver driver) {
@@ -60,18 +62,21 @@ public class MobileHeaderBlock extends MainTestBase {
         return new PageElementActions(FAVORITES_BUTTON_XPATH, driver);
     }
 
+    public PageElementActions getSelectedRegion() {
+        return new PageElementActions(GET_SELECTED_REGION_XPATH, driver);
+    }
 
 
     //Методы
     @Step("Пользователь нажимает на иконку выпадающего списка")
     public void clickBurgerButton(){
-        getBurgerButton().click();
+        getBurgerButton().clickJs();
         logger.info("Пользователь нажимает на иконку выпадающего списка");
     }
 
     @Step("Пользователь на логотип сайта и поподает на главную страницу сайта")
     public void clickSiteLogo(){
-        getSiteLogo().click();
+        getSiteLogo().clickJs();
         logger.info("Пользователь на логотип сайта и поподает на главную страницу сайта");
     }
 
@@ -84,7 +89,7 @@ public class MobileHeaderBlock extends MainTestBase {
     @Step("Пользователь вводит артикул товара в поисковую строку - {vendorCode}")
     public void setSearchInput(String vendorCode) {
         getSearchInput1().click();
-        getSearchInput().sendKeys(vendorCode);
+        getSearchInput().sendKeysAndEnter(vendorCode);
         logger.info("Пользователь вводит артикул не партнерсского товара в поисковую строку");
     }
 
@@ -113,6 +118,27 @@ public class MobileHeaderBlock extends MainTestBase {
     public void clickToCartButton() {
         getCartButton().click();
         logger.info("Пользователь нажимает на иконку корзины");
+    }
+
+    @Step("Пользователь нажимает кнопку избранное")
+    public void clickFavoritesButton() {
+        getFavoritesButton().click();
+        logger.info("Пользователь нажимает кнопку избранное");
+    }
+
+    @Step("Пользователь проверяет выбранный регион")
+    public void checkSelectedRegion(String regionName) {
+        String region = getSelectedRegion().getText();
+        Assertions.assertEquals(region, regionName);
+        logger.info("Пользователь проверяет выбранный регион");
+    }
+
+    @Step("Пользователь получает количество товаров в избранном")
+    public int checkQuantityProductsOnFavoritesPage() {
+        String stringFavoritesQuantity = getCartCount().getText();
+        int quantity = Integer.parseInt(stringFavoritesQuantity);
+        logger.info("Пользователь получает количество товаров в избранном");
+        return quantity;
     }
 
 

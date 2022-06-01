@@ -3,17 +3,15 @@ package blocks.mobile;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class MobileBasementBlock extends MainTestBase {
     //элементы
     private static final String BASE_INPUT_XPATH = "xpath;(//a[@href='%s'])";
-    private static final String HELP_BUTTON_XPATH = "xpath;(//div[@class='c-footer__title'])[1]";
-    private static final String SERVICE_BUTTON_XPATH = "xpath;(//div[@class='c-footer__title'])[2]";
-    private static final String ABOUT_COMPANY_BUTTON_XPATH = "xpath;(//div[@class='c-footer__title'])[3]";
-    private static final String PHONE_NUMBER_XPATH = "xpath;(//a[contains(.,'+7 495 797-63-36')])[3]";
+    private static final String HELP_BUTTON_XPATH = "xpath;(//label[@class='c-block-view-ch__label']//child::div)[1]";
+    private static final String SERVICE_BUTTON_XPATH = "xpath;(//label[@class='c-block-view-ch__label']//child::div)[2]";
+    private static final String ABOUT_COMPANY_BUTTON_XPATH = "xpath;(//label[@class='c-block-view-ch__label']//child::div)[3]";
+    private static final String PHONE_NUMBER_XPATH = "xpath;(//a[@class='b-icn--phone i-fw-b'])[3]";
 
     //конструктор
     public MobileBasementBlock(WebDriver driver) {
@@ -21,6 +19,11 @@ public class MobileBasementBlock extends MainTestBase {
     }
 
     //геттеры элементов с получением доступа к действиям с элементами
+
+    public PageElementActions getBaseInputBasementLocators(String xpath) {
+        return new PageElementActions(xpath, driver);
+    }
+
     public PageElementActions getBaseInputBasementLinks(String xpath) {
         return new PageElementActions(xpath, driver);
     }
@@ -35,10 +38,6 @@ public class MobileBasementBlock extends MainTestBase {
 
         public PageElementActions getAboutCompanyButton() {
         return new PageElementActions(ABOUT_COMPANY_BUTTON_XPATH, driver);
-    }
-
-    public PageElementActions getBaseInput(String format) {
-        return new PageElementActions(BASE_INPUT_XPATH, driver);
     }
 
     public PageElementActions getPhoneNumber() {
@@ -63,18 +62,15 @@ public class MobileBasementBlock extends MainTestBase {
         getAboutCompanyButton().click();
     }
 
+    @Step("Кликает по локатору {LOCATOR}")
+    public void selectBasementButtons(String LOCATOR) {
+        getBaseInputBasementLocators(String.format(BASE_INPUT_XPATH, LOCATOR)).click();
+    }
+
     @Step("Проверка видимости и названия ссылки => {LINKTEXT}")
     public void checkLinksValidation(String LOCATOR, String LINKTEXT) {
         getBaseInputBasementLinks(String.format(BASE_INPUT_XPATH, LOCATOR)).contentIsDisplayed(LINKTEXT);
     }
 
-    @Step("Кликает по локатору {LOCATOR}")
-    public void selectBasementButtons(String LOCATOR) {
-        this.basementButton(LOCATOR).click();
-    }
-
-    private WebElement basementButton(String LOCATOR) {
-        return driver.findElement(By.xpath("(//a[@href='/" + LOCATOR + "/'])"));
-    }
 
 }
