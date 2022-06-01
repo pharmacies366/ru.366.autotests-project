@@ -20,7 +20,7 @@
 
         <selenium-java.version>3.141.59</selenium-java.version>
         <junit-jupiter.version>5.8.2</junit-jupiter.version>
-        <allure-junit5.version>2.17.3</allure-junit5.version>
+        <allure-junit5.version>2.13.0</allure-junit5.version> <!--В более поздней версии Allure отчёт открывается пустой-->
         <webdrivermanager.version>5.1.1</webdrivermanager.version>
         <aspectj.version>1.9.6</aspectj.version>
 
