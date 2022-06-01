@@ -4,10 +4,23 @@ import actions.PageElementActions;
 import blocks.web.HeaderBlock;
 import core.MainTestBase;
 import org.junit.jupiter.api.BeforeEach;
-import pages.web.*;
+import pages.commonActions.web.CommonActionsOnWebPages;
+import pages.web.authorization.AuthPopUpPage;
+import pages.web.bonusCard.BonusCardPopUpPage;
+import pages.web.botConsultant.BotConsultantPopUpPage;
+import pages.web.cart.CartPage;
+import pages.web.catalog.CatalogPage;
+import pages.web.checkout.CheckOutPage;
+import pages.web.cookie.CookiePage;
+import pages.web.main.MainPage;
+import pages.web.orders.MyOrdersPage;
+import pages.web.osp.OspPage;
 import pages.web.privateOffice.ChangePasswordPage;
 import pages.web.privateOffice.FavoritesPage;
 import pages.web.privateOffice.PersonalDataPage;
+import pages.web.product.ProductCardPage;
+import pages.web.sber.SberPage;
+import pages.web.thanks.ThankForTheOrderPage;
 
 public class BaseSettingsWebTests extends MainTestBase {
 
@@ -30,16 +43,13 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected ChangePasswordPage changePasswordPage;
     protected FavoritesPage favoritesPage;
     protected CatalogPage catalogPage;
+    protected BotConsultantPopUpPage botConsultantPopUpPage;
 
-/*    protected WebBasementBlock basementBlock;
     protected BonusCardPopUpPage bonusCardPopUpPage;
+/*    protected WebBasementBlock basementBlock;
+
     protected MedicationsCategoryPage medicationsCategoryPage;
-    protected CitiesPopUpPage citiesPopUpPage;
-    protected BotConsultantPopUpPage botConsultantPopUpPage;*/
-
-
-
-
+    protected CitiesPopUpPage citiesPopUpPage;*/
 
 
     @BeforeEach
@@ -59,14 +69,14 @@ public class BaseSettingsWebTests extends MainTestBase {
         headerBlock = new HeaderBlock(driver);
         changePasswordPage = new ChangePasswordPage(driver);
         favoritesPage = new FavoritesPage(driver);
-   /*   basementBlock = new WebBasementBlock(driver);
+        botConsultantPopUpPage = new BotConsultantPopUpPage(driver);
         personalDataPage = new PersonalDataPage(driver);
         bonusCardPopUpPage = new BonusCardPopUpPage(driver);
         catalogPage = new CatalogPage(driver);
-        medicationsCategoryPage = new MedicationsCategoryPage(driver);
+     /*   medicationsCategoryPage = new MedicationsCategoryPage(driver);
         citiesPopUpPage = new CitiesPopUpPage(driver);
-        botConsultantPopUpPage = new BotConsultantPopUpPage(driver);
-*/
+        basementBlock = new WebBasementBlock(driver);*/
+
     }
 
 }

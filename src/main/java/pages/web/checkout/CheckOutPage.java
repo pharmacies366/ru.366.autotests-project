@@ -1,4 +1,4 @@
-package pages.web;
+package pages.web.checkout;
 
 import actions.PageElementActions;
 import core.MainTestBase;

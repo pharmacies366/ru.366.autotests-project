@@ -1,4 +1,4 @@
-package pages.web;
+package pages.commonActions.web;
 
 import actions.PageElementActions;
 import core.MainTestBase;
@@ -169,6 +169,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
     //Методы
     @Step("Пользователь проверяет и переходит по банеру")
     public void clickBanner() {
+        pageActions.staticWait(1000);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
     }
@@ -259,7 +260,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
         int par = getProductList().getSize();
         for (int i = 1; i <= par; i++) {
             int price = getBaseInputCheckProductPrice(String.format(BASE_INPUT_CHECK_PRODUCT_PRICE_XPATH, i)).formatElementToValue();
-            Assertions.assertTrue(price <= price + i);
+        Assertions.assertTrue(price <= price + i);
         }
         logger.info("Пользователь проверяет сортировку товаров по увеличению цены");
     }

@@ -1,4 +1,4 @@
-package pages.web;
+package pages.web.main;
 
 import actions.PageElementActions;
 import core.MainTestBase;

@@ -1,4 +1,4 @@
-package pages.web;
+package pages.web.authorization;
 
 import actions.PageElementActions;
 import core.MainTestBase;
@@ -81,6 +81,7 @@ public class AuthPopUpPage extends MainTestBase {
 
     @Step("Пользователь вводит номер телефона, пароль и нажимает войти")
     public void authorizeWithPhoneAndPassword(String phone, String password) {
+        getPhoneNumberInput().clean();
         getPhoneNumberInput().sendKeys(phone);
         getGoPassword().click();
         getPassword().clean();
