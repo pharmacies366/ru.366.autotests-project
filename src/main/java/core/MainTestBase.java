@@ -37,6 +37,7 @@ public class MainTestBase {
         driver = driverFactory.getDriver();
         pageActions = new PageActions(driver);
         driver.get(propertiesManager.getProperty("baseurl"));
+        pageActions.waitPageLoad();
         logger.info("Открывается главная страница сайта 36.6");
         //driver.manage().deleteAllCookies();
 
