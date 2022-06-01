@@ -42,6 +42,7 @@ public class MainTestBase {
         driver.get(propertiesManager.getProperty("baseurl"));
         logger.info("Открывается главная страница сайта 36.6");
 
+
     }
 
     @After

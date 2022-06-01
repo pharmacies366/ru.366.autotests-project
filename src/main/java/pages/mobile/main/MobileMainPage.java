@@ -11,6 +11,7 @@ public class MobileMainPage extends MainTestBase {
     //элементы
     private static final String SITE_LOGO_XPATH = "xpath;//img[contains(@alt,'9477014323230.png')]";
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
+    private static final String CLOSE_POP_UP_NEWS_BUTTON_XPATH = "xpath;//div[@class='popmechanic-close']";
     private static final String MOBILE_APP_POP_UP_BUTTON_XPATH = "xpath;//div[@class='b-apps-flyer--close js-apps-flyer--close']";
     private static final String LETTER_N_XPATH = "xpath;//div[@class='c-alphabet-widget']//a[@href='/littera-Н/']";
     private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
@@ -25,6 +26,11 @@ public class MobileMainPage extends MainTestBase {
     private static final String PRODUCT_BUTTON_XPATH = "xpath;(//img[@class=' lazyloaded'])[1]";
     private static final String ADD_TO_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
     private static final String BOT_CONSULTANT_BUTTON_XPATH = "xpath;//jdiv[contains(@class,'iconWrap')]";
+    private static final String BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH = "xpath;(//div[@class='card-balance--inner js-show-bonus'])[1]";
+    private static final String COLOR_TEXT_PRODUCT_GALLERY_BUTTON_XPATH = "xpath;(//span[@class='card-balance--inner-text-quantity'])[1]";
+    private static final String CASH_BACK_INFO_POP_UP_XPATH = "xpath;//div[@class='popup__title'][contains(.,'Cash back за покупку')]";
+    private static final String LINK_MORE_ABOUT_BONUSES_XPATH = "xpath;//a[@href='/pravila_programmy/'][contains(.,'Подробнее о бонусах')]";
+    private static final String BUTTON_BONUSES_XPATH = "xpath;(//div[@class='card-balance--inner-icon'])[1]";
 
 
     //конструктор
@@ -39,6 +45,10 @@ public class MobileMainPage extends MainTestBase {
 
     public PageElementActions getPopUpButton() {
         return new PageElementActions(POP_UP_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getClosePopUpNewsButton() {
+        return new PageElementActions(CLOSE_POP_UP_NEWS_BUTTON_XPATH, driver);
     }
 
     public PageElementActions getLetterN() {
@@ -97,12 +107,38 @@ public class MobileMainPage extends MainTestBase {
         return new PageElementActions(BOT_CONSULTANT_BUTTON_XPATH, driver);
     }
 
+    public PageElementActions getBackgroundColorProductGalleryButton() {
+        return new PageElementActions(BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getTextColorProductGalleryButton() {
+        return new PageElementActions(COLOR_TEXT_PRODUCT_GALLERY_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getCashBackInfoPopUp() {
+        return new PageElementActions(CASH_BACK_INFO_POP_UP_XPATH, driver);
+    }
+
+    public PageElementActions getMoreAboutBonuses() {
+        return new PageElementActions(LINK_MORE_ABOUT_BONUSES_XPATH, driver);
+    }
+
+    public PageElementActions getButtonBonuses() {
+        return new PageElementActions(BUTTON_BONUSES_XPATH, driver);
+    }
+
 
     //Методы
     @Step("Пользователь закрывает попап куки: 'Спасибо, понятно")
     public void clickClosePopUp(){
         getPopUpButton().click();
         logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
+    }
+
+    @Step("Пользователь нажимает закрыть новосной попап")
+    public void ClickClosePopUpNewsButton() {
+        getClosePopUpNewsButton().click();
+        logger.info("Пользователь нажимает закрыть новосной попап");
     }
 
     @Step("Пользователь закрывает попап мобильного приложения: 'Приложение 36.6'")
@@ -226,5 +262,37 @@ public class MobileMainPage extends MainTestBase {
         logger.info("Пользователь нажимает на иконку консультант бота");
     }
 
+    @Step("Получение цвета кнопки")
+    public String getColorBackgroundProductGalleryButton() {
+        String colorButton = getBackgroundColorProductGalleryButton().getColor();
+        logger.info("Получение цвета кнопки");
+        return colorButton;
+    }
+
+    @Step("Получение цвета текста кнопки с расчётом бонусов")
+    public String getColorTextProductGalleryButton() {
+        String colorButton = getTextColorProductGalleryButton().getColor();
+        logger.info("Получение цвета текста кнопки с расчётом бонусов");
+        return colorButton;
+    }
+
+    @Step("Получение текста загаловка с попапом информации про -  Cash back за покупку")
+    public String getTextAboutCashBack() {
+        String text = getCashBackInfoPopUp().getText();
+        logger.info("Получение текста загаловка с попапом информации про -  Cash back за покупку");
+        return text;
+    }
+
+    @Step("Пользователь нажимает на шильдик с бонусными баллами")
+    public void clickOnButtonBonuses() {
+        getButtonBonuses().clickJs();
+        logger.info("Пользователь нажимает на шильдик с бонусными баллами");
+    }
+
+    @Step("Пользователь переходит по ссылке: Подробнее о бонусах")
+    public void clickOnLinkMoreAboutBonuses() {
+        getMoreAboutBonuses().click();
+        logger.info("ользователь переходит по ссылке: Подробнее о бонусах");
+    }
 
 }
