@@ -6,12 +6,14 @@ import io.qameta.allure.Story;
 import org.apache.logging.log4j.core.util.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
 @Feature(value = "Web")
 @Story(value = "Личный кабинет на сайте 36.6")
 @DisplayName("Личный кабинет")
+@Tag("Regression")
 public class FavoritesWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Пользователь добавляет товар в избранное")

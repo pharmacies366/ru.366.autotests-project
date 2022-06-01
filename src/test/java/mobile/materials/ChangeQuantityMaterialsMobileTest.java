@@ -5,12 +5,14 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
 @Feature(value = "Мобильная версия")
 @Story(value = "Изменение количества товара в корине на сайте 36.6")
 @DisplayName("Изменение количества товара в корзине")
+@Tag("Regression")
 public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на главной странице")

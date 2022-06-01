@@ -6,6 +6,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
@@ -16,6 +17,7 @@ import org.junit.jupiter.api.Test;
 @Feature(value = "Мобильная версия")
 @Story("ЦФТ на сайте 36.6")
 @DisplayName("Проверка работы ЦФТ на главной странице сайта 36.6")
+@Tag("Regression")
 public class CftOnMainPageMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка заднего фона кнопки с расчётом бонусов")

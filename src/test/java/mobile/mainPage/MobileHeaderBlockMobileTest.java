@@ -5,12 +5,14 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
 @Feature(value = "Мобильная версия")
 @Story("Проверка шапки сайта 36.6")
 @DisplayName("Проверка шапки сайта")
+@Tag("Regression")
 public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка кликабельности логотипа")

@@ -5,11 +5,13 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 @Feature(value = "Web")
 @Story(value = "Изменения корзины на сайте 36.6")
 @DisplayName("Изменения корзины")
+@Tag("Regression")
 public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Пользователь увеличивает количество шт. товара на странице корзины")

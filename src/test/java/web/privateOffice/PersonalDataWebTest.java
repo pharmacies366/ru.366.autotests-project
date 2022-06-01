@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 @Story(value = "Личный кабинет на сайте 36.6")
 @DisplayName("Личный кабинет")
 @RunWith(DataProviderRunner.class)
+@Tag("Regression")
 public class PersonalDataWebTest extends BaseSettingsWebTests {
 
     @DataProvider

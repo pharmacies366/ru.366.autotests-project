@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 @Feature(value = "Мобильная версия")
 @Story(value = "Отмена заказа на сайте 36.6")
 @DisplayName("Отмена созданного заказа")
+@Tag("Regression")
 public class OrderCancellationMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Пользователь отменяет созданный заказ")

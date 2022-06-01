@@ -6,12 +6,14 @@ import io.qameta.allure.Story;
 import org.apache.logging.log4j.core.util.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
 @Feature(value = "Мобильная версия")
 @Story(value = "Изменения корзины на сайте 36.6")
 @DisplayName("Изменения корзины")
+@Tag("Regression")
 public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Пользователь увеличивает количество шт. товара на странице корзины")

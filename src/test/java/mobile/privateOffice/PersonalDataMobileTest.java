@@ -5,6 +5,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
@@ -12,6 +13,7 @@ import org.junit.jupiter.api.Test;
 @Story(value = "Личный кабинет на сайте 36.6")
 @DisplayName("Личный кабинет")
 //@RunWith(DataProviderRunner.class)
+@Tag("Regression")
 public class PersonalDataMobileTest extends BaseSettingsMobileTests{
 
 /*    @DataProvider

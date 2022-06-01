@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 @Feature(value = "Web")
 @Story("Проверка суммы 2-х товаров в корзине на сайте 36.6")
 @DisplayName("Проверка суммы 2-х товаров в корзине")
+@Tag("Regression")
 public class VariableSampleTest extends BaseSettingsWebTests {
 
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")

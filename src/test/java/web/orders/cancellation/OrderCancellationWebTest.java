@@ -4,11 +4,13 @@ import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 
 
 @Feature(value = "Web")
 @Story(value = "Отмена заказа на сайте 36.6")
 @DisplayName("Отмена созданного заказа")
+@Tag("Regression")
 public class OrderCancellationWebTest extends BaseSettingsWebTests {
 
 /*    @DisplayName("Пользователь отменяет созданный заказ")

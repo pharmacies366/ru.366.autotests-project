@@ -4,11 +4,13 @@ import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 
 
 @Feature(value = "Мобильная версия")
 @Story(value = "Изменение региональности на сайте 36.6")
 @DisplayName("Изменение региональности")
+@Tag("Regression")
 public class CheckRegionalMobileTest extends BaseSettingsMobileTests {
 
     //нужна актуализация или узнать у Арсения на счет Библиотеки
