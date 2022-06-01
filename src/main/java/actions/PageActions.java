@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 
 public class PageActions extends MainTestBase {
 
@@ -85,6 +87,7 @@ public class PageActions extends MainTestBase {
     public void waitPageLoad() {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
+       // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); пример для записи на новой версии selenium
         WebDriverWait wait = new WebDriverWait(driver, 20);
         WebDriverWait jqWait = new WebDriverWait(driver, 25);
 
