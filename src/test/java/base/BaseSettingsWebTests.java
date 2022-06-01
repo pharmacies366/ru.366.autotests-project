@@ -11,6 +11,7 @@ import pages.web.botConsultant.BotConsultantPopUpPage;
 import pages.web.cart.CartPage;
 import pages.web.catalog.CatalogPage;
 import pages.web.checkout.CheckOutPage;
+import pages.web.cities.CitiesPopUpPage;
 import pages.web.cookie.CookiePage;
 import pages.web.main.MainPage;
 import pages.web.orders.MyOrdersPage;
@@ -48,8 +49,8 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected BonusCardPopUpPage bonusCardPopUpPage;
 /*    protected WebBasementBlock basementBlock;
 
-    protected MedicationsCategoryPage medicationsCategoryPage;
-    protected CitiesPopUpPage citiesPopUpPage;*/
+    protected MedicationsCategoryPage medicationsCategoryPage;*/
+    protected CitiesPopUpPage citiesPopUpPage;
 
 
     @BeforeEach
@@ -73,8 +74,8 @@ public class BaseSettingsWebTests extends MainTestBase {
         personalDataPage = new PersonalDataPage(driver);
         bonusCardPopUpPage = new BonusCardPopUpPage(driver);
         catalogPage = new CatalogPage(driver);
-     /*   medicationsCategoryPage = new MedicationsCategoryPage(driver);
         citiesPopUpPage = new CitiesPopUpPage(driver);
+     /*   medicationsCategoryPage = new MedicationsCategoryPage(driver);
         basementBlock = new WebBasementBlock(driver);*/
 
     }
