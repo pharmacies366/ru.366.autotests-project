@@ -83,6 +83,7 @@ public class AuthPopUpPage extends MainTestBase {
     public void authorizeWithPhoneAndPassword(String phone, String password) {
         getPhoneNumberInput().sendKeys(phone);
         getGoPassword().click();
+        getPassword().clean();
         getPassword().sendKeys(password);
         clickToLoginButton();
     }

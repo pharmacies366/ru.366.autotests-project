@@ -3,6 +3,7 @@ package blocks.web;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class HeaderBlock extends MainTestBase {
@@ -10,6 +11,7 @@ public class HeaderBlock extends MainTestBase {
     //элементы
     private static final String SIGN_IN_BUTTON_XPATH = "xpath;(//a[contains(.,'Войти')])[1]";
     private static final String SIGN_UP_BUTTON_XPATH = "xpath;(//a[@class='b-login-link js-register-ext__button'])[1]";
+    private static final String LOGOUT_BUTTON_XPATH = "xpath;(//a[@href='/logout/'])[1]";
     private static final String MY_ORDERS_XPATH = "xpath;(//a[@href='/my-account/orders'])[1]";
     private static final String PERSONAL_ACCOUNT_XPATH = "xpath;(//span[@class='js-check-user-status'])[1]";
     private static final String BASE_INPUT_XPATH = "xpath;(//a[@href='%s'])";
@@ -22,6 +24,12 @@ public class HeaderBlock extends MainTestBase {
     private static final String SELECT_CITIES_XPATH = "xpath;(//div[contains(@class,'title i-float-l')])[2]";
     private static final String PHARMACIES_BUTTON_XPATH = "xpath;(//a[@href='/apteki/map'])[1]";
     private static final String PHONE_NUMBER_XPATH = "xpath;(//a[@class='b-icn--phone i-fw-b'])[1]";
+    private static final String PERSONAL_DATA_XPATH = "xpath;(//a[@href='/my-account/profile'])[1]";
+    private static final String CHANGE_PASSWORD_BUTTON_XPATH = "xpath;(//a[@href='/my-account/update-password'])[1]";
+    // private static final String FAVORITES_BUTTON_XPATH = "xpath;//div[@class='js-link-seo i-cr-pointer b-seo-link b-icn--favorites c-header__link--secondary js-header__favorites']";
+    private static final String FAVORITES_BUTTON_XPATH = "xpath;(//div[contains(@class,'js-header__favorites')])[1]";
+    private static final String GET_COUNT_FAVORITES_XPATH = "xpath;//div[@class='c-prod-item-list c-prod-item-list-favorites']";
+    private static final String GET_SELECTED_REGION_XPATH = "xpath;(//span[@class='b-login-link i-fw-b'])[1]";
 
     //конструктор
     public HeaderBlock(WebDriver driver) {
@@ -38,8 +46,20 @@ public class HeaderBlock extends MainTestBase {
         return new PageElementActions(SIGN_UP_BUTTON_XPATH, driver);
     }
 
+    public PageElementActions getLogOutButton() {
+        return new PageElementActions(LOGOUT_BUTTON_XPATH, driver);
+    }
+
     public PageElementActions getMyOrders() {
         return new PageElementActions(MY_ORDERS_XPATH, driver);
+    }
+
+    public PageElementActions getPersonalData() {
+        return new PageElementActions(PERSONAL_DATA_XPATH, driver);
+    }
+
+    public PageElementActions getChangePassword() {
+        return new PageElementActions(CHANGE_PASSWORD_BUTTON_XPATH, driver);
     }
 
     public PageElementActions getPersonalAccount() {
@@ -90,6 +110,18 @@ public class HeaderBlock extends MainTestBase {
         return new PageElementActions(xpath, driver);
     }
 
+    public PageElementActions getFavoritesButton() {
+        return new PageElementActions(FAVORITES_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getSelectedRegion() {
+        return new PageElementActions(GET_SELECTED_REGION_XPATH, driver);
+    }
+
+    public PageElementActions getCountFavorites() {
+        return new PageElementActions(GET_COUNT_FAVORITES_XPATH, driver);
+    }
+
 
     //Методы
 
@@ -97,6 +129,12 @@ public class HeaderBlock extends MainTestBase {
     public void clickToSignInButton() {
         getSignInButton().click();
         logger.info("Пользователь нажимает на иконку авторизации");
+    }
+
+    @Step("Пользователь нажимает на кнопку Выход")
+    public void clickLogOut() {
+        getLogOutButton().click();
+        logger.info("Пользователь нажимает на кнопку Выход");
     }
 
     @Step("Пользователь нажимает на кнопку регистрации")
@@ -115,6 +153,18 @@ public class HeaderBlock extends MainTestBase {
     public void clickMyOrders() {
         getMyOrders().click();
         logger.info("Пользователь нажимает на иконку авторизации");
+    }
+
+    @Step("Пользователь нажимает на кнопку Личные данные")
+    public void clickPersonalData() {
+        getPersonalData().click();
+        logger.info("Пользователь нажимает на кнопку Личные данные");
+    }
+
+    @Step("Пользователь нажимает на кнопку Изменить пароль")
+    public void clickChangePassword() {
+        getChangePassword().click();
+        logger.info("Пользователь нажимает на кнопку Изменить пароль");
     }
 
     @Step("Проверка количества товаров в корзине")
@@ -157,12 +207,12 @@ public class HeaderBlock extends MainTestBase {
     @Step("Пользователь нажимает на кнопку аптеки и переходит на страницу с картой аптек")
     public void clickPharmaciesButton(){
         getPharmaciesButton().click();
-        logger.info("Пользователь нажимает на кнопку для выбора города");
+        logger.info("Пользователь нажимает на кнопку аптеки и переходит на страницу с картой аптек");
     }
 
     @Step("Проверка видимости попапа с выбором городов")
     public String checkCitiesPopUp(){
-      String text = getSelectCitiesText().getText();
+        String text = getSelectCitiesText().getText();
         logger.info("Проверка видимости попапа с выбором городов");
         return text;
     }
@@ -183,4 +233,26 @@ public class HeaderBlock extends MainTestBase {
         getBaseInputHeaderLocators(String.format(BASE_INPUT_XPATH, LOCATOR)).click();
     }
 
+    @Step("Пользователь нажимает кнопку избранное")
+    public void clickFavoritesButton() {
+        getFavoritesButton().click();
+        logger.info("Пользователь нажимает кнопку избранное");
+    }
+
+    @Step("Пользователь получает количество товаров в избранном")
+    public int checkQuantityProductsOnFavoritesPage() {
+        String stringFavoritesQuantity = getCountFavorites().getAttribute("childElementCount");
+        int quantity = Integer.parseInt(stringFavoritesQuantity);
+        logger.info("Пользователь получает количество товаров в избранном");
+        return quantity;
+    }
+
+    @Step("Пользователь проверяет выбранный регион")
+    public void checkSelectedRegion(String regionName) {
+        String region = getSelectedRegion().getText();
+        Assertions.assertEquals(region, regionName);
+        logger.info("Пользователь проверяет выбранный регион");
+    }
+
 }
+

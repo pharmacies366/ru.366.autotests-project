@@ -1,11 +1,13 @@
 package base;
 
 import actions.PageElementActions;
-import blocks.web.BasementBlock;
 import blocks.web.HeaderBlock;
 import core.MainTestBase;
 import org.junit.jupiter.api.BeforeEach;
 import pages.web.*;
+import pages.web.privateOffice.ChangePasswordPage;
+import pages.web.privateOffice.FavoritesPage;
+import pages.web.privateOffice.PersonalDataPage;
 
 public class BaseSettingsWebTests extends MainTestBase {
 
@@ -21,9 +23,21 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected ThankForTheOrderPage thankForTheOrderPage;
     protected OspPage ospPage;
     protected MyOrdersPage myOrdersPage;
+
+    protected PersonalDataPage personalDataPage;
+
     protected HeaderBlock headerBlock;
-    protected BasementBlock basementBlock;
+    protected ChangePasswordPage changePasswordPage;
+    protected FavoritesPage favoritesPage;
     protected CatalogPage catalogPage;
+
+/*    protected WebBasementBlock basementBlock;
+    protected BonusCardPopUpPage bonusCardPopUpPage;
+    protected MedicationsCategoryPage medicationsCategoryPage;
+    protected CitiesPopUpPage citiesPopUpPage;
+    protected BotConsultantPopUpPage botConsultantPopUpPage;*/
+
+
 
 
 
@@ -43,9 +57,16 @@ public class BaseSettingsWebTests extends MainTestBase {
         ospPage = new OspPage(driver);
         myOrdersPage = new MyOrdersPage(driver);
         headerBlock = new HeaderBlock(driver);
-        basementBlock = new BasementBlock(driver);
+        changePasswordPage = new ChangePasswordPage(driver);
+        favoritesPage = new FavoritesPage(driver);
+   /*   basementBlock = new WebBasementBlock(driver);
+        personalDataPage = new PersonalDataPage(driver);
+        bonusCardPopUpPage = new BonusCardPopUpPage(driver);
         catalogPage = new CatalogPage(driver);
-
+        medicationsCategoryPage = new MedicationsCategoryPage(driver);
+        citiesPopUpPage = new CitiesPopUpPage(driver);
+        botConsultantPopUpPage = new BotConsultantPopUpPage(driver);
+*/
     }
 
 }

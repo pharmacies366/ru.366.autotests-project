@@ -35,6 +35,15 @@ public class PageElementActions extends MainTestBase {
         saveAllureScreenshot();
     }
 
+
+    public boolean isElementVisible() {
+        boolean isVisible = false;
+        try {
+            isVisible = driver.findElement(getBySelector(element)).isDisplayed();
+        } catch (NoSuchElementException ignored) {
+        }
+        return isVisible;
+    }
     //Клик по элементу с помощью JS
     public void clickJs() {
         moveToElementJs();

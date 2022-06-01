@@ -102,7 +102,7 @@ public class WebDriverFactory {
     @Step("Конфигурация драйвера")
     private void configureDriver() {
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
 
