@@ -57,7 +57,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
+            <groupId>org.seleniumhq.selenium</groupId> <!--Если обновить до последний версии открывается в 2 раза больше браузеров-->
             <artifactId>selenium-java</artifactId>
             <version>${selenium-java.version}</version>
         </dependency>
