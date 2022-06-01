@@ -12,7 +12,7 @@ public class CartPage extends MainTestBase {
     private static final String CLEAR_ALL_FROM_CARD_XPATH = "xpath;//a[contains(.,'Очистить все')]";
     private static final String CONFIRM_CLEAN_ALL_XPATH = "xpath;//input[@value='Да, подтверждаю']";
     private static final String TOTAL_PRICE_XPATH = "xpath;//div[@class='cart-summary_value js-revenue']";
-    private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
+    private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'Купить')])[1]";
     private static final String MAKE_ORDER_XPATH = "xpath;//a[@href='/cart/checkout']";
     private static final String PRODUCT_CARD_XPATH = "xpath;//a[@data-gtm-source='search list']";
     private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_plus')])[1]";
@@ -122,10 +122,10 @@ public class CartPage extends MainTestBase {
         return price;
     }
 
-    @Step("Пользователь нажимает на кнопку 'В корзину'")
+    @Step("Пользователь нажимает на кнопку 'Купить'")
     public void clickAddCartButton() {
         getClickAddCartButton().click();
-        logger.info("Пользователь нажимает на кнопку 'В корзину'");
+        logger.info("Пользователь нажимает на кнопку 'Купить'");
     }
 
     @Step("Пользователь нажимае на кнопку 'Оформить заказ'")
