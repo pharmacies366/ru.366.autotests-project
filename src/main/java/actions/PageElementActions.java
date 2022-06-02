@@ -122,7 +122,7 @@ public class PageElementActions extends MainTestBase {
 
     //Перейти к элементу, ввести текст и нажать Enter
     public void sendKeysAndEnter(String keysToSend) {
-        this.moveToElement();
+        this.moveToElementJs();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend, Keys.ENTER);
         saveAllureScreenshot();
     }
