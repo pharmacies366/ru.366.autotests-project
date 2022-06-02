@@ -26,7 +26,7 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
     @Test
     public void testingTheSearch(){
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
-        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-p1-public.model-t.cc.commerce.ondemand.com/search/?text=44226");
+        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/search/?text=35523");
         logger.info("Поиск работает корректно");
     }
 
