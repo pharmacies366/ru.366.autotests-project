@@ -23,7 +23,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
     private static final String BASE_INPUT_CHECK_PRODUCT_DELIVERY_METHOD_XPATH = "xpath;(//span[@class='b-prod-label b-prod-label_delivery'])[%s]";
     private static final String CHECKBOX_DELIVERY_XPATH = "xpath;//span[@class='b-trim-str'][contains(.,'Доставка')]";
     private static final String GET_SELECTED_CHECKBOX_XPATH = "xpath;//div[@class='filters_selected'][contains(.,'%s')]";
-    private static final String CLOSE_CHECKBOX_DELIVERY_XPATH = "xpath;(//a[@class='b-icn--close c-facets__close-button'])[2]";
+    private static final String CLOSE_CHECKBOX_DELIVERY_XPATH = "xpath;(//a[contains(@class,'close-button')])[1]";
     private static final String PRODUCTS_WITHOUT_DELIVERY_METHOD_XPATH = "xpath;//span[@class='b-prod-label b-prod-label_delivery' and not(@type='b-prod-label b-prod-label_delivery')]";
     private static final String RESET_CHECKBOXES_XPATH = "xpath;//form[@class='filters_reset']//child::button";
     private static final String SHOW_ALL_XPATH = "xpath;(//a[contains(@class,'i-fw-b js-show-all-facets')])[%s]";
