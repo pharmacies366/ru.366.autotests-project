@@ -40,7 +40,6 @@ public class CftOnMainPageWebTest extends BaseSettingsWebTests {
     @Test
     public void checkInfoProductGalleryBonus() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.getTextColorProductGalleryButton().moveToElement();
         String actualText = mainPage.getTextAboutCashBack();
         Assertions.assertEquals("Cash back за покупку", actualText);
@@ -51,7 +50,6 @@ public class CftOnMainPageWebTest extends BaseSettingsWebTests {
     @Test
     public void checkLinkInfoProductGalleryBonus() {
         mainPage.clickClosePopUp();
-        mainPage.ClickClosePopUpNewsButton();
         mainPage.getTextColorProductGalleryButton().moveToElement();
         mainPage.clickOnLinkMoreAboutBonuses();
         pageActions.checkUrl("https://366.ru/pravila_programmy/");
