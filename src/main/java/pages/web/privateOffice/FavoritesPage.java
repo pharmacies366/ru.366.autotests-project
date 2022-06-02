@@ -14,7 +14,7 @@ public class FavoritesPage extends MainTestBase {
     //private static final String REMOVE_PRODUCT_BUTTON_XPATH = "xpath;//div[@class='b-btn-remove js-favorites__remove-button']";
     private static final String REMOVE_PRODUCT_BUTTON_XPATH = "xpath;//div[@class='b-btn-remove js-favorites__remove-button']";
     private static final String BASE_INPUT_DELETE_PRODUCT_XPATH = "xpath;(//div[@class='b-btn-remove js-favorites__remove-button'])['%s']";
-    private static final String GO_TO_MAIN_PAGE_BUTTON_XPATH = "xpath;//a[contains(@class,'b-btn')]";
+    private static final String GO_TO_MAIN_PAGE_BUTTON_XPATH = "xpath;//a[@class='b-btn']";
     private static final String COUNT_XPATH = "xpath;//h3[contains(@class,'b-text-subtitle i-mg0')]";
     private static final String LIST_XPATH = "xpath;//div[@class='c-prod-item c-prod-item--grid c-prod-item--grid-favorites']";
     private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_plus')])[1]";
