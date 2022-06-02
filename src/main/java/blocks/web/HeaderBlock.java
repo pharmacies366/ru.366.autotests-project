@@ -15,7 +15,7 @@ public class HeaderBlock extends MainTestBase {
     private static final String MY_ORDERS_XPATH = "xpath;(//a[@href='/my-account/orders'])[1]";
     private static final String PERSONAL_ACCOUNT_XPATH = "xpath;(//span[@class='js-check-user-status'])[1]";
     private static final String BASE_INPUT_XPATH = "xpath;(//a[@href='%s'])";
-    private static final String SITE_LOGO_XPATH = "xpath;//img[contains(@alt,'9477014323230.png')]";
+    private static final String SITE_LOGO_XPATH = "xpath;//img[@alt='9477014323230.png']";
     private static final String CATALOG_BUTTON_XPATH = "xpath;//span[@class='catalog_menu__title']";
     private static final String SEARCH_INPUT_XPATH = "xpath;//input[@id='js-site-search-input']";
     private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
