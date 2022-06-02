@@ -10,7 +10,7 @@ public class FavoritesPage extends MainTestBase {
 
 
     //элементы
-    private static final String ADD_TO_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
+    private static final String ADD_TO_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'Купить')])[1]";
     //private static final String REMOVE_PRODUCT_BUTTON_XPATH = "xpath;//div[@class='b-btn-remove js-favorites__remove-button']";
     private static final String REMOVE_PRODUCT_BUTTON_XPATH = "xpath;//div[@class='b-btn-remove js-favorites__remove-button']";
     private static final String BASE_INPUT_DELETE_PRODUCT_XPATH = "xpath;(//div[@class='b-btn-remove js-favorites__remove-button'])['%s']";
