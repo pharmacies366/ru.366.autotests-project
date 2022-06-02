@@ -75,7 +75,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
-                propertiesManager.getProperty("phonenumber3"),
+                propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("userpass"));
         pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();

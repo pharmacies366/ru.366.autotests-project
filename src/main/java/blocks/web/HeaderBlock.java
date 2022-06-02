@@ -188,7 +188,7 @@ public class HeaderBlock extends MainTestBase {
 
     @Step("Пользователь нажимает на иконку 36.6 и переходит на главную страницу")
     public void clickSiteLogo(){
-        getSiteLogo().click();
+        getSiteLogo().clickJs();
         logger.info("Пользователь нажимает на иконку 36.6 и переходит на главную страницу");
     }
 
