@@ -173,13 +173,13 @@ public class MobileMainPage extends MainTestBase {
 
     @Step("Пользователь нажимает '+' увеличивая количество шт. товара")
     public void clickIncreaseQuantity(){
-        getIncreaseQuantity().click();
+        getIncreaseQuantity().clickJs();
         logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
     }
 
     @Step("Пользователь нажимает '-' уменьшая количество шт. товара")
     public void clickDecreaseQuantity(){
-        getDecreaseQuantity().click();
+        getDecreaseQuantity().clickJs();
         logger.info("Пользователь нажимает '-' уменьшая количество шт. товара");
     }
 
