@@ -235,9 +235,8 @@ public class MobileMainPage extends MainTestBase {
     public void checkNextBannerButtons() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
         int quantity = Integer.parseInt(sizeAllLi);
-        for (int i = 1; i <= quantity; i++) {
+        for (int i = 0; i <= quantity; i++) {
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, i)).click();
-            pageActions.staticWait(500);
         }
         logger.info("Пользователь переключает банеры по пинам");
     }
@@ -249,7 +248,6 @@ public class MobileMainPage extends MainTestBase {
         System.out.println(quantity);
         for (int i = 1; i <= quantity; i++) {
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, i)).click();
-            pageActions.staticWait(1000);
             getBannersLocators().click();
             clickSiteLogo();
         }
