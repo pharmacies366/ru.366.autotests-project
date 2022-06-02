@@ -211,8 +211,7 @@ public class PageElementActions extends MainTestBase {
     //Получение цвета элемента
     public String getColor() {
         String colorValue = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getCssValue("color");
-        String hex = Color.fromString(colorValue).asHex();
-        //System.out.println(hex);
+         String hex = Color.fromString(colorValue).asHex();
         return hex;
     }
 

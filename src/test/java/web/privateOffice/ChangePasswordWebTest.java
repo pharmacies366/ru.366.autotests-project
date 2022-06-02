@@ -29,13 +29,14 @@ public class ChangePasswordWebTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("olduserpass"),
                 propertiesManager.getProperty("newuserpass"),
                 propertiesManager.getProperty("newuserpass"));
+       // changePasswordPage.CheckChangedPassword();
         changePasswordPage.clickChangeButton();
-        changePasswordPage.getMessageAboutChangePassword();
         changePasswordPage.clickChangePassword(
                 propertiesManager.getProperty("newuserpass"),
                 propertiesManager.getProperty("olduserpass"),
                 propertiesManager.getProperty("olduserpass"));
+       // changePasswordPage.CheckChangedPassword();
         changePasswordPage.clickChangeButton();
-        changePasswordPage.getMessageAboutChangePassword();
+
     }
 }

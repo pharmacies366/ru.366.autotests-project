@@ -3,7 +3,6 @@ package pages.web.privateOffice;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class ChangePasswordPage extends MainTestBase {
@@ -14,9 +13,7 @@ public class ChangePasswordPage extends MainTestBase {
     private static final String NewPassword = "newPassword";
     private static final String CheckNewPassword = "checkNewPassword";
     private static final String CHANGE_BUTTON_XPATH = "xpath;//button[@class='b-btn']";
-    private static final String MESSAGE_ABOUT_CHANGE_PASSWORD_XPATH = "xpath;//div[@class='alert b-global-messages b-global-messages--success']";
-    private static final String Message_About_Change_Password = "Ваш пароль успешно изменен. Желаем здоровья!";
-
+    private static final String MESSAGE_ABOUT_CHANGE_PASSWORD_XPATH = "xpath;(//div[@class='b-btn--eye js-pass-eye__button'])[3]";
 
 
     //конструктор
@@ -55,12 +52,12 @@ public class ChangePasswordPage extends MainTestBase {
         getChangeButton().click();
         logger.info("Пользователь нажимает кнопку изменить");
     }
-
-    @Step("Пользователь получает сообщение об успешной смене пароля")
-    public void getMessageAboutChangePassword() {
-        String message = getMassageAboutPassword().getText();
-        Assertions.assertEquals(Message_About_Change_Password, message);
-        logger.info("Пользователь получает сообщение об успешной смене пароля");
-    }
+/*
+    @Step("Пользователь проверяет зелёную галочку")
+    public void CheckChangedPassword() {
+        String color = getMassageAboutPassword().getColor();
+        System.out.println(color);
+        logger.info("Пользователь проверяет зелёную галочку");
+    }*/
 
 }
