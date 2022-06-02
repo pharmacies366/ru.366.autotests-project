@@ -205,12 +205,12 @@ public class MobilePersonalDataPage extends MainTestBase {
 
     @Step("Пользователь установливает новую дату рождения")
     public void changeBirthday(String Birthday, String MonthOfBirth, String YearOfBirth) {
-        getDay().click();
-        getBaseSelectDay(String.format(SELECT_DAY_XPATH, Birthday)).click();
-        getMonth().click();
-        getBaseSelectMonth(String.format(SELECT_MONTH_XPATH, MonthOfBirth)).click();
-        getYear().click();
-        getBaseSelectYear(String.format(SELECT_YEAR_XPATH, YearOfBirth)).click();
+        getDay().clickJs();
+        getBaseSelectDay(String.format(SELECT_DAY_XPATH, Birthday)).clickJs();
+        getMonth().clickJs();
+        getBaseSelectMonth(String.format(SELECT_MONTH_XPATH, MonthOfBirth)).clickJs();
+        getYear().clickJs();
+        getBaseSelectYear(String.format(SELECT_YEAR_XPATH, YearOfBirth)).clickJs();
         logger.info("Пользователь установливает новую дату рождения");
     }
 
