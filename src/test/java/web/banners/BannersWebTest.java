@@ -19,11 +19,11 @@ public class BannersWebTest extends BaseSettingsWebTests {
         mainPage.checkNextBannerList();
     }
 
-    @DisplayName("Пользователь проверяет прокрутку банеров назад по стрелке и возврат к первоначальному баннеру на главной странице")
+/*    @DisplayName("Пользователь проверяет прокрутку банеров назад по стрелке и возврат к первоначальному баннеру на главной странице")
     @Test
     public void checkPrevBannerOnMainPage() {
         mainPage.checkPrevBannerList();
-    }
+    }*/
 
     @DisplayName("Пользователь проверяет смену банеров по пинам на главной странице")
     @Test
@@ -37,7 +37,7 @@ public class BannersWebTest extends BaseSettingsWebTests {
         mainPage.checkBannersClickable();
     }
 
-    @DisplayName("Пользователь проверяет переход по банерау на странице OSP")
+/*    @DisplayName("Пользователь проверяет переход по банерау на странице OSP") нет баннера на s1
     @Test
     public void checkBannersClickableOnOspPage() {
         // mainPage.clickClosePopUp();
@@ -46,18 +46,19 @@ public class BannersWebTest extends BaseSettingsWebTests {
         mainPage.clickLetterN();
         ospPage.clickBanner();
         productCardPage.clickMainButton();
-    }
+    }*/
 
-    @DisplayName("Пользователь проверяет переход по банерау на странице товара")
+/*    @DisplayName("Пользователь проверяет переход по банерау на странице товара")  нет баннера на s1
     @Test
     public void checkBannersClickableOnProductPage() {
         //  mainPage.clickClosePopUp();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         productCardPage.clickBanner();
         productCardPage.clickMainButton();
-    }
+    }*/
 
-    @DisplayName("Пользователь проверяет переход по банерау на странице категории")
+/*
+    @DisplayName("Пользователь проверяет переход по банерау на странице категории") нет баннера на s1
     @Test
     public void checkBannersClickableOnCategoryPage() {
         // mainPage.clickClosePopUp();
@@ -66,21 +67,22 @@ public class BannersWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.clickBanner();
         productCardPage.clickMainButton();
     }
-
-    @DisplayName("Пользователь проверяет переход по банеру на странице поисковой выдачи")
+*/
+/*
+    @DisplayName("Пользователь проверяет переход по банеру на странице поисковой выдачи")  нет баннера на s1
     @Test
     public void checkBannersClickableWithSearch() {
         // mainPage.clickClosePopUp();
         headerBlock.setSearchInput("Лекарства");
         commonActionsOnWebPages.clickBanner();
         productCardPage.clickMainButton();
-    }
+    }*/
 
-    @DisplayName("Пользователь проверяет переход по банеру на странице корзины")
+/*    @DisplayName("Пользователь проверяет переход по банеру на странице корзины")  нет баннера на s1
     @Test
     public void checkBannersClickableOnCartPage() {
         driver.get(propertiesManager.getProperty("baseurl") + "cart");
         cartPage.clickBanner();
         productCardPage.clickMainButton();
-    }
+    }*/
 }
