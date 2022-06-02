@@ -97,7 +97,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.clickSelectApteka();
         mobileCheckOutPage.setInputSearchAddres("Москва");
         mobileCheckOutPage.clickChangeAptekaList();
-        mobileCheckOutPage.ckickSelect();
+        mobileCheckOutPage.clickSelect();
       //  mobileCheckOutPage.clickMakeOrder();
       //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
@@ -124,7 +124,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickChangeAptekaList();
-        mobileCheckOutPage.ckickSelect();
+        mobileCheckOutPage.clickSelect();
         //pageActions.waitPageLoad();
        // mobileCheckOutPage.clickMakeOrder();
       //  mobileThankForTheOrderPage.checkSuccessMessage();
@@ -155,7 +155,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickChangeAptekaList();
-        mobileCheckOutPage.ckickSelect();
+        mobileCheckOutPage.clickSelect();
       //  mobileCheckOutPage.clickMakeOrder();
       //  mobileThankForTheOrderPage.checkSuccessMessage();
     }

@@ -166,13 +166,12 @@ public class MobileCheckOutPage extends MainTestBase {
 
     @Step("Пользователь нажимает на список доступных Аптек")
     public void clickChangeAptekaList() {
-        pageActions.staticWait(500);
         getChangeAptekaList().click();
         logger.info("Пользователь нажимает на список доступных Аптек");
     }
 
     @Step("Пользователь нажимает на кнопку 'Выбрать'")
-    public void ckickSelect(){
+    public void clickSelect(){
         getSelect().click();
         logger.info("Пользователь нажимает на кнопку 'Выбрать'");
     }
