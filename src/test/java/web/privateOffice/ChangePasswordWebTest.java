@@ -20,7 +20,7 @@ public class ChangePasswordWebTest extends BaseSettingsWebTests {
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
-                propertiesManager.getProperty("phonenumber8"),
+                propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
         pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
