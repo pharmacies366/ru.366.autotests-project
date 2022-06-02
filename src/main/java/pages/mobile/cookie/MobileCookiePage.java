@@ -22,17 +22,30 @@ public class MobileCookiePage extends MainTestBase {
         logger.info("ПРОИЗОШЛА АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ЧЕРЕЗ COOKIE");
 
 
-        // P1
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "ef9e825869b9e6e0cb5ffbbce9fd0d0c47cbdec2"));
-        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2ODQxMzYwMDU3OjQ0ZTJkYWE3Mjg5OTIxOTZlMmNhM2RhOWViNDY5MDEx"));
-        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-5f97bcbc9d-959b9"));
+        // S1
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "cadf2ba7f4b29a7548f2ad7aedb05f52453ab8ef"));
+        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDc1NjUyMjI2OjUxZWI2ZWMwNTA4NzhlNDc4ODVlZTI1YjExZmQ0OWY1"));
+        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-569ff799ff-lk62h"));
+
+
+    }
+
+    public void reCaptchaKey() {
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));//кука для обхода каптчи
+    }
+
+
+
+    /*    // D1
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "040b78b58009efd8a6659b9fd2c09010d52c85a0"));
+        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDcwODY1OTU1OjY3MWYwNjNiYmYzMmU3M2JhZTM1NDk1MmVkODZjMDA2"));
+        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-5885446974-zv94f"));
 
 
     }
     public void reCaptchaKey(){
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));//кука для обхода каптчи
-    }
-
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "040b78b58009efd8a6659b9fd2c09010d52c85a0"));
+    }*/
 
     @Step("Получение всех кук и вывод их в консоль")
     public void printAllCookie() {
