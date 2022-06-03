@@ -19,6 +19,7 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickCantNotOrder();
+        pageActions.waitPageLoad();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
         botConsultantPopUpPage.clicksendMessage();
         botConsultantPopUpPage.checkThanksMessage();
@@ -30,6 +31,7 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedADrug();
+        pageActions.waitPageLoad();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
         botConsultantPopUpPage.clicksendMessage();
         botConsultantPopUpPage.checkThanksMessage();
@@ -41,6 +43,7 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
         mainPage.clickClosePopUp();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedDelivery();
+        pageActions.waitPageLoad();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
         botConsultantPopUpPage.clicksendMessage();
         botConsultantPopUpPage.checkThanksMessage();
@@ -51,6 +54,7 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
     public void checkCloseBot() {
         mainPage.clickClosePopUp();
         mainPage.clickBotConsultantButton();
+        pageActions.waitPageLoad();
         botConsultantPopUpPage.clickCloseBot();
         mainPage.getBotConsultantButton().isElementDisplayed();
 
