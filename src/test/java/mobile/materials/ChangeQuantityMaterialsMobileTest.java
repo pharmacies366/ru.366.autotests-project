@@ -41,6 +41,7 @@ public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.AddToCartClick();
         pageActions.waitPageLoad();
         mobileMainPage.clickIncreaseQuantity();
+        pageActions.waitPageLoad();
         int firstQuantity = mobileMainPage.getQuantityMaterials();
         Assertions.assertEquals(2, firstQuantity);
         logger.info("Количество товара равно 2-м");
