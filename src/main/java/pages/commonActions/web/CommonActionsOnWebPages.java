@@ -199,6 +199,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
     public void changePricesRangeWithHands(String fromPrice, String toPrice) {
         getPriceRangeFrom().clean();
         getPriceRangeFrom().sendKeys(fromPrice);
+        getPriceRangeTo().click();
         getPriceRangeTo().clean();
         getPriceRangeTo().sendKeysAndEnter(toPrice);
         logger.info("Пользователь прописывает нижный и верхний диапозон цены");

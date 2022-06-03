@@ -37,14 +37,14 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет изменения диапазона цены вручную")
     @Test
     public void checkChangePricesRangeWithHands() {
-       // mobileMainPage.clickClosePopUp();
+        //mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.changePricesRangeWithHands("100", "500");
         commonActionsOnMobilePages.clickFiltersButton();
-        int ToPriceRange = commonActionsOnMobilePages.getToPriceRange();
         int FromPriceRange = commonActionsOnMobilePages.getFromPriceRange();
+        int ToPriceRange = commonActionsOnMobilePages.getToPriceRange();
         int price = commonActionsOnMobilePages.checkProductsPrices();
         Assertions.assertTrue(price >= FromPriceRange);
         Assertions.assertTrue(price <= ToPriceRange);
