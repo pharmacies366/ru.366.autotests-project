@@ -57,6 +57,7 @@ public class PageElementActions extends MainTestBase {
 
     //
     public int getSize() {
+        moveToElement();
         return driver.findElements(getBySelector(element)).size();
     }
 
