@@ -44,11 +44,12 @@ public class PageElementActions extends MainTestBase {
         }
         return isVisible;
     }
+
     //Клик по элементу с помощью JS
     public void clickJs() {
         moveToElementJs();
         WebElement ele = waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click()", ele);
         saveAllureScreenshot();
     }
@@ -140,6 +141,33 @@ public class PageElementActions extends MainTestBase {
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
     }
 
+    //Ожидание изчезновения элемента на странице
+    public void waitingForElementNullOnThePage() {
+        elementIsNotVisible(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
+    }
+
+    //Ожидание изчезновения элемента на странице
+    public void elementIsNotVisible(By by, int _secondsToWait) {
+        WebDriverWait wait = new WebDriverWait(driver, _secondsToWait);
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        boolean isNotVisible = true;
+        try {
+            isNotVisible = wait.until(ExpectedConditions.invisibilityOf(element));
+
+        } catch (NoSuchElementException ignored) {
+        }
+    }
+
+    public boolean isElemendddtVisible() {
+        boolean isVisible = false;
+        try {
+            isVisible = driver.findElement(getBySelector(element)).isDisplayed();
+        } catch (NoSuchElementException ignored) {
+        }
+        return isVisible;
+    }
+
+
     //Ожидание загрузки видимости элемента
     public WebElement waitUntilVisibilityOfElementLocated(By by, int _secondsToWait) {
         WebDriverWait wait = new WebDriverWait(driver, _secondsToWait);
@@ -213,7 +241,7 @@ public class PageElementActions extends MainTestBase {
     //Получение цвета элемента
     public String getColor() {
         String colorValue = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getCssValue("color");
-         String hex = Color.fromString(colorValue).asHex();
+        String hex = Color.fromString(colorValue).asHex();
         return hex;
     }
 

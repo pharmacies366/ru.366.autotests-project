@@ -25,6 +25,7 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         int startPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int finishPriceRange = commonActionsOnWebPages.getToPriceRange();
         commonActionsOnWebPages.changePricesRangeWithSlider();
+        commonActionsOnWebPages.getPriceRangeFrom().waitingForElementNullOnThePage();
         int newStartPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int newFinishPriceRange = commonActionsOnWebPages.getToPriceRange();
         Assertions.assertTrue(startPriceRange < newStartPriceRange);
