@@ -1,5 +1,6 @@
 package web.modules;
 
+import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -11,12 +12,11 @@ import org.junit.jupiter.api.Test;
 @Story(value = "Консультант бот на сайте 36.6")
 @DisplayName("Консультант бот")
 @Tag("Regression")
-public class BotConsultantWebTest extends base.BaseSettingsWebTests {
+public class BotConsultantWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Пользователь выбирает пункт: Не могу оформить заказ, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemCanNotCheckout() {
-        mainPage.clickClosePopUp();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickCantNotOrder();
         pageActions.waitPageLoad();
@@ -28,7 +28,6 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
     @DisplayName("Пользователь выбирает пункт: Мне нужен препарат, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemINeedADrug() {
-        mainPage.clickClosePopUp();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedADrug();
         pageActions.waitPageLoad();
@@ -40,7 +39,6 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
     @DisplayName("Пользователь выбирает пункт: Нужна доставка, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemINeedDelivery() {
-        mainPage.clickClosePopUp();
         mainPage.clickBotConsultantButton();
         botConsultantPopUpPage.clickNeedDelivery();
         pageActions.waitPageLoad();
@@ -52,7 +50,6 @@ public class BotConsultantWebTest extends base.BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет закрытие консультант бота")
     @Test
     public void checkCloseBot() {
-        mainPage.clickClosePopUp();
         mainPage.clickBotConsultantButton();
         pageActions.waitPageLoad();
         botConsultantPopUpPage.clickCloseBot();
