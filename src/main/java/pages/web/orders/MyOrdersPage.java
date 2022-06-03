@@ -74,7 +74,6 @@ public class MyOrdersPage extends MainTestBase {
         openUrl(propertiesManager.getProperty("baseurl") + "my-account/orders/");
         clickOrderNumber();
         getCancelOrder().click();
-        pageActions.staticWait(2000);
         getApproveCancelOrder().click();
         pageActions.assertEqualsTwoObject("Отменен",getOrderStatus());
         logger.info("Пользователь отменяет созданный заказ");

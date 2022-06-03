@@ -222,7 +222,6 @@ public class MobileMainPage extends MainTestBase {
         int quantity = Integer.parseInt(sizeAllLi);
         for (int i = 1; i <= quantity; i++) {
             getBannersLocators().drugAndDrop(By.xpath(""));
-            pageActions.staticWait(500);
             getBannerList().isElementDisplayedWithIndex(i);
         }
         getCheckStartBanner().isElementDisplayed();

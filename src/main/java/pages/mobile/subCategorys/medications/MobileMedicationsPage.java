@@ -27,7 +27,6 @@ public class MobileMedicationsPage extends MainTestBase {
     //Методы
     @Step("Пользователь проверяет и переходит по банеру")
     public void clickBanner() {
-        pageActions.staticWait(1500);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
     }
