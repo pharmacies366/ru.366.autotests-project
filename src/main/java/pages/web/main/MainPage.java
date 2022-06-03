@@ -131,7 +131,7 @@ public class MainPage extends MainTestBase {
     //Методы
     @Step("Пользователь закрывает попап куки: 'Спасибо, понятно")
     public void clickClosePopUp() {
-        getPopUpButton().click();
+        getPopUpButton().clickJs();
         logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
     }
 

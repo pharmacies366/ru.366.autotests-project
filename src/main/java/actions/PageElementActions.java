@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageElementActions extends MainTestBase {
 
-    protected static final int DEFAULT_ELEMENT_WAIT_TIME_S = 10;
+    protected static final int DEFAULT_ELEMENT_WAIT_TIME_S = 15;
     private String element;
 
     //конструктор
