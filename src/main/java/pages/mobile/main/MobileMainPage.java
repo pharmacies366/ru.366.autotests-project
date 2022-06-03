@@ -24,7 +24,7 @@ public class MobileMainPage extends MainTestBase {
     private static final String BANNER_PIN_BUTTONS_XPATH = "xpath;//button[@type='button'][contains(.,'%s')]";
     private static final String BANNERS_BUTTONS_XPATH = "xpath;(//div[@class='yCmsContentSlot'])[1]";
     private static final String PRODUCT_BUTTON_XPATH = "xpath;(//img[@class=' lazyloaded'])[1]";
-    private static final String ADD_TO_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'В корзину')])[1]";
+    private static final String ADD_TO_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'Купить')])[1]";
     private static final String BOT_CONSULTANT_BUTTON_XPATH = "xpath;//jdiv[contains(@class,'iconWrap')]";
     private static final String BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH = "xpath;(//div[@class='card-balance--inner js-show-bonus'])[1]";
     private static final String COLOR_TEXT_PRODUCT_GALLERY_BUTTON_XPATH = "xpath;(//span[@class='card-balance--inner-text-quantity'])[1]";

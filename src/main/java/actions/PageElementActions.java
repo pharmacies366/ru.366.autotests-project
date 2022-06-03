@@ -30,7 +30,7 @@ public class PageElementActions extends MainTestBase {
 
     //Клик по элементу
     public void click() {
-        this.moveToElement();
+        this.moveToElementJs();
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).click();
         saveAllureScreenshot();
     }
@@ -107,14 +107,14 @@ public class PageElementActions extends MainTestBase {
 
     //Перейти к элементу и ввести текст
     public void sendKeys(String keysToSend) {
-        this.moveToElement();
+        this.moveToElementJs();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend);
         saveAllureScreenshot();
     }
 
     //Перейти к элементу, кликнуть и ввести текст
     public void clickAndSendKeys(String keysToSend) {
-        this.moveToElement();
+        this.moveToElementJs();
         waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).click();
         waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).sendKeys(keysToSend);
         saveAllureScreenshot();
