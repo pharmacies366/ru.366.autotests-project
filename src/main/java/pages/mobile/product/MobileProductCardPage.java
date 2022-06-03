@@ -15,7 +15,7 @@ public class MobileProductCardPage extends MainTestBase {
     private static final String ONE_CKICK_XPATH = "xpath;(//div[@class='btn btn_secondary js-order-quick-navigate'])[1]";
     private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
     private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
-    private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//label[@class='js-storefinder-sort js-product-stores__head-item js-storefinder-recommend']";
+    private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//span[contains(.,'Списком')]";
     private static final String ONE_CKICK_APTEKA_BUTTONS_XPATH = "xpath;(//button[@class='b-btn b-btn--third js-order-quick__button'])[1]";
     private static final String INCREASE_QUANTITY_XPATH = "xpath;(//span[contains(@class,'plus js-qty-selector-plus-gz')])[2]";
     private static final String QUANTITY_PRODUCT_XPATH = "xpath;(//a[@class='product_counter_short__desc'])[2]";
@@ -123,7 +123,6 @@ public class MobileProductCardPage extends MainTestBase {
 
     @Step("Пользователь нажимает на список доступных Аптек")
     public void clickChangeAptekaList() {
-        pageActions.staticWait(500);
         getChangeAptekaList().click();
         logger.info("Пользователь нажимает на список доступных Аптек");
     }
@@ -167,7 +166,6 @@ public class MobileProductCardPage extends MainTestBase {
 
     @Step("Пользователь проверяет и переходит по банеру")
     public void clickBanner() {
-        pageActions.staticWait(1000);
         getBanner().click();
         logger.info("Пользователь проверяет и переходит по банеру");
     }
