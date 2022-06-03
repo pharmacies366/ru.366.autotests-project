@@ -137,7 +137,7 @@ public class MainPage extends MainTestBase {
 
     @Step("Пользователь нажимает на букву 'Н' Русского алфавита")
     public void clickLetterN() {
-        getLetterN().click();
+        getLetterN().clickJs();
         logger.info("Пользователь нажимает на букву 'Н' Русского алфавита");
     }
 

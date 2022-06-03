@@ -35,7 +35,7 @@ public class OspPage extends MainTestBase {
 
     @Step("Пользователь нажимает на товар 'Нурофен'")
     public void clickProductName() {
-        getProductName().click();
+        getProductName().clickJs();
         logger.info("Пользователь нажимает на товар 'Нурофен'");
     }
 
