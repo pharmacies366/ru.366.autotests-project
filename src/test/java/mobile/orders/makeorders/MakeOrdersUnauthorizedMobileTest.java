@@ -44,7 +44,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @Test
     public void oneClick() {
         mobileCookiePage.reCaptchaKey();
-       // mobileMainPage.clickClosePopUp();
+        // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         pageActions.waitPageLoad();
@@ -58,15 +58,15 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
-       // mobileCheckOutPage.clickBookingButton();
-       // mobileThankForTheOrderPage.checkSuccessMessage();
+        // mobileCheckOutPage.clickBookingButton();
+        // mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Неавторизованный пользователь покупает товар со страниц ОСП")
     @Test
     public void checkOsp() {
         mobileCookiePage.reCaptchaKey();
-       // mobileMainPage.clickClosePopUp();
+        // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         pageActions.reloadPage();
         pageActions.waitPageLoad();
@@ -86,15 +86,15 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.setInputSearchAddres("метро Автозаводская");//возможно нужно кликнуть в пустое место
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.clickSelect();
-      //  mobileCheckOutPage.clickMakeOrder();
-      //  mobileThankForTheOrderPage.checkSuccessMessage();
+        //  mobileCheckOutPage.clickMakeOrder();
+        //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Неавторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
     @Test
     public void pickup() {
         mobileCookiePage.reCaptchaKey();
-      //  mobileMainPage.clickClosePopUp();
+        //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.reloadPage();
@@ -114,15 +114,15 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
-     //   mobileCheckOutPage.clickMakeOrder();
-      //  mobileThankForTheOrderPage.checkSuccessMessage();
+        //   mobileCheckOutPage.clickMakeOrder();
+        //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Неавторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
     @Test
     public void split() {
         mobileCookiePage.reCaptchaKey();
-       // mobileMainPage.clickClosePopUp();
+        // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         mobileCartPage.сlickAddCartButton();
@@ -144,7 +144,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
-     //   mobileCheckOutPage.clickMakeOrder();
-      //  mobileThankForTheOrderPage.checkSuccessMessage();
+        //   mobileCheckOutPage.clickMakeOrder();
+        //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
 }
