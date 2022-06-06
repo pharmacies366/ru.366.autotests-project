@@ -17,36 +17,24 @@ public class CookiePage extends MainTestBase {
     }
 
 
+
     @Step("Пользователь авторизовывается через Cookie")
     public void cookieAuthorization() {
         logger.info("ПРОИЗОШЛА АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ЧЕРЕЗ COOKIE");
 
-        // S1
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "fd327da881f1f239f5c6bcfe2253ac95f6f92cb8"));
-        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDc1NTE1Mzg3OjRhNWUxZjIzOGNiYWMwNDA3N2ZkODBhMDU1YmI2NTEz"));
-        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-569ff799ff-lbxgk"));
 
-
-    }
-
-    public void reCaptchaKey() {
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));//кука для обхода каптчи
-    }
-
-
-/*
-        // D1
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "16ea6cf91e935cba1204795f042c197272e8972e"));
-        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2NDcwNzE4NTIxOmI3MjE4YzQ5ZjdmMmU3ZDc3MmNmNzg0M2FmODQzNDFk"));
-        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-5885446974-zv94f"));
+        // P1
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "ef9e825869b9e6e0cb5ffbbce9fd0d0c47cbdec2"));
+        driver.manage().addCookie(new Cookie("avestorefrontRememberMe", "OTMxMzYwMDk0MToxNjQ2ODQxMzYwMDU3OjQ0ZTJkYWE3Mjg5OTIxOTZlMmNhM2RhOWViNDY5MDEx"));
+        driver.manage().addCookie(new Cookie("ROUTE", ".accstorefront-5f97bcbc9d-959b9"));
 
 
     }
     public void reCaptchaKey(){
-        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "16ea6cf91e935cba1204795f042c197272e8972e"));//кука для обхода каптчи
+        driver.manage().addCookie(new Cookie("acceleratorSecureGUID", "23b3b99c12da43c02b8967f11d0f9dff2516fcbe"));//кука для обхода каптчи
     }
 
-*/
+
 
 
     @Step("Получение всех кук и вывод их в консоль")
