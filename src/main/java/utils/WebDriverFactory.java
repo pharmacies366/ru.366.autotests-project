@@ -107,8 +107,9 @@ public class WebDriverFactory {
         chromeOptions.addArguments("--dns-prefetch-disable");
         chromeOptions.addArguments("--ignore-certificate-errors");
         chromeOptions.addArguments("--disabled-popup-blocking");
-        // chromeOptions.addArguments("--headless");
+        //chromeOptions.addArguments("--headless");
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+      //  chromeOptions.setPageLoadStrategy(PageLoadStrategy.eager);
         Map<String, Object> prefs = new HashMap<String, Object>();
         Map<String, Object> profile = new HashMap<String, Object>();
         prefs.put("googlegeolocationaccess.enabled", true);

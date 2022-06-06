@@ -211,6 +211,7 @@ public class PageElementActions extends MainTestBase {
         try {
             actions.moveToElement(waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S)).perform();
         } catch (org.openqa.selenium.interactions.MoveTargetOutOfBoundsException ex) {
+
             scrollElementIntoView(getBySelector(element));
         }
     }
