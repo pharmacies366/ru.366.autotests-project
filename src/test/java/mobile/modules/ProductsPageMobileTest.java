@@ -19,8 +19,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет работу слайдера для изменения цены")
     @Test
     public void checkChangePricesRangeWithSlider() {
-       // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         int startPriceRange = commonActionsOnMobilePages.getFromPriceRange();
@@ -37,8 +35,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет изменения диапазона цены вручную")
     @Test
     public void checkChangePricesRangeWithHands() {
-        //mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.changePricesRangeWithHands("100", "500");
@@ -53,8 +49,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь выбирет чекбокс Доставка и проверяет корректное изменение списка товаров")
     @Test
     public void checkProductsOnlyDelivery() {
-       // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickCheckboxDelivery();
@@ -65,8 +59,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь снимает галочку с чекбокса Доставка и проверяет корректное изменение списка товаров")
     @Test
     public void checkCancelCheckboxDelivery() {
-       // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickCheckboxDelivery();
@@ -80,8 +72,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь сбрасывает все выбранные чекбоксы и проверяет корректное изменение списка товаров")
     @Test
     public void checkCancelAllCheckboxes() {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickCheckboxDelivery();
@@ -95,8 +85,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет коррекность работы пагинации страниц")
     @Test
     public void checkPagination() {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickNextPage();
         commonActionsOnMobilePages.clickPrevPage();
@@ -117,8 +105,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @Test
     @UseDataProvider("checkingCheckboxes")
     public void test(int INDEX_SHOW_ALL, int INDEX_OPTION) {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickShowAll(INDEX_SHOW_ALL);
@@ -128,8 +114,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет корректную выдачу товаров по рецепту")
     @Test
     public void checkCheckboxWithRecipe() {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.checkCheckboxWithRecipe();
@@ -140,8 +124,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет корректную выдачу товаров без рецепта")
     @Test
     public void checkCheckboxWithoutRecipe() {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.checkCheckboxWithoutRecipe();
@@ -152,8 +134,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
 /*    @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
     @Test
     public void checkSortingPriceReduction() {
-       // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickSortingButton();
         commonActionsOnMobilePages.clickPriceReductionOption();
@@ -165,8 +145,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет сортировку выдачи товаров по увеличению цены")
     @Test
     public void checkSortingPriceIncrease() {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickSortingButton();
         commonActionsOnMobilePages.clickPriceIncreaseOption();
@@ -177,8 +155,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет сортировку выдачи товаров по названию")
     @Test
     public void checkSortingName() {
-       // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickSortingButton();
         commonActionsOnMobilePages.clickSortingNameOption();

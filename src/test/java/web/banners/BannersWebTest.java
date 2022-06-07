@@ -40,7 +40,6 @@ public class BannersWebTest extends BaseSettingsWebTests {
 /*    @DisplayName("Пользователь проверяет переход по банерау на странице OSP") нет баннера на s1
     @Test
     public void checkBannersClickableOnOspPage() {
-        // mainPage.clickClosePopUp();
         pageActions.reloadPage();
         pageActions.waitPageLoad();
         mainPage.clickLetterN();
@@ -51,7 +50,6 @@ public class BannersWebTest extends BaseSettingsWebTests {
 /*    @DisplayName("Пользователь проверяет переход по банерау на странице товара")  нет баннера на s1
     @Test
     public void checkBannersClickableOnProductPage() {
-        //  mainPage.clickClosePopUp();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         productCardPage.clickBanner();
         productCardPage.clickMainButton();
@@ -61,7 +59,6 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет переход по банерау на странице категории") нет баннера на s1
     @Test
     public void checkBannersClickableOnCategoryPage() {
-        // mainPage.clickClosePopUp();
         mainPage.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
         commonActionsOnWebPages.clickBanner();
@@ -72,7 +69,6 @@ public class BannersWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет переход по банеру на странице поисковой выдачи")  нет баннера на s1
     @Test
     public void checkBannersClickableWithSearch() {
-        // mainPage.clickClosePopUp();
         headerBlock.setSearchInput("Лекарства");
         commonActionsOnWebPages.clickBanner();
         productCardPage.clickMainButton();

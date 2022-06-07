@@ -20,7 +20,6 @@ public class VariableSampleTest extends BaseSettingsWebTests {
     @Tag("smoke")
     @Tag("smoke")
     public void test() {
-        mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         productCardPage.clickAddCartButton();
         int firstPrice = productCardPage.getProductPrice();

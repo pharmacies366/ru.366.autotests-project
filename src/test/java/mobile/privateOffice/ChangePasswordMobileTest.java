@@ -17,8 +17,6 @@ public class ChangePasswordMobileTest extends BaseSettingsMobileTests{
     @DisplayName("Пользователь изменяет пароль")
     @Test
     public void changePassword() {
-       // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();

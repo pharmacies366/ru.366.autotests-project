@@ -16,7 +16,6 @@ public class ChangePasswordWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь изменяет пароль")
     @Test
     public void changePassword() {
-        mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(

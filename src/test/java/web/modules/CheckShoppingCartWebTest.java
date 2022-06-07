@@ -17,7 +17,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь увеличивает количество шт. товара на странице корзины")
     @Test
     public void increaseQuantityMaterialOnCartPage() {
-        mainPage.clickClosePopUp();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         headerBlock.clickToCartButton();
@@ -32,7 +31,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь уменьшает количество шт. товара на странице корзины")
     @Test
     public void decreaseQuantityMaterialOnCartPage() {
-        mainPage.clickClosePopUp();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         headerBlock.clickToCartButton();
@@ -55,7 +53,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь удаляет 1 из 2-х товаров в корзине")
     @Test
     public void deleteMaterialsFromCart() {
-        mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
@@ -69,7 +66,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь удаляет все товары в корзине")
     @Test
     public void deleteAllMaterialsFromCart() {
-        mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
@@ -83,7 +79,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void checkTotalAmountProducts() {
-        mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         productCardPage.clickAddCartButton();
         int firstPrice = productCardPage.getProductPrice();
@@ -98,7 +93,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет нотификацию после удаления товара")
     @Test
     public void checkNotificationCart() {
-        mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         productCardPage.clickAddCartButton();
         int firstPrice = productCardPage.getProductPrice();
@@ -118,7 +112,6 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет, что добавленный товар в корзину, возможно добавить в избранное со странице корзины")
     @Test
     public void addProductToFavoritePageOnShoppingCartPage() {
-        mainPage.clickClosePopUp();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         headerBlock.clickToCartButton();

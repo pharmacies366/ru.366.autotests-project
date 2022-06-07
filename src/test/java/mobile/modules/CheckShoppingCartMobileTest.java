@@ -19,8 +19,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь увеличивает количество шт. товара на странице корзины")
     @Test
     public void increaseQuantityMaterialOnCartPage() {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
         pageActions.waitPageLoad();
         mobileMainPage.clickToCartButton();
@@ -34,8 +32,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь уменьшает количество шт. товара на странице корзины")
     @Test
     public void decreaseQuantityMaterialOnCartPage() {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
         pageActions.waitPageLoad();
         mobileMainPage.clickIncreaseQuantity();
@@ -55,8 +51,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь удаляет 1 из 2-х товаров в корзине")
     @Test
     public void deleteMaterialsFromCart() {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         mobileProductCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
@@ -71,8 +65,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь удаляет все товары в корзине")
     @Test
     public void deleteAllMaterialsFromCart() {
-      //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         mobileProductCardPage.clickAddCartButton();
         pageActions.waitPageLoad();
@@ -87,8 +79,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void checkTotalAmountProducts() {
-       // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         mobileProductCardPage.clickAddCartButton();
         pageActions.waitPageLoad();
@@ -105,8 +95,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет нотификацию после удаления товара")
     @Test
     public void checkNotificationCart() {
-     //   mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         mobileProductCardPage.clickAddCartButton();
         pageActions.waitPageLoad();
@@ -128,8 +116,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет, что добавленный товар в корзину, возможно добавить в избранное со странице корзины")
     @Test
     public void addProductToFavoritePageOnShoppingCartPage() {
-        //  mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         mobileHeaderBlock.clickToCartButton();

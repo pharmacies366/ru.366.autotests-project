@@ -60,13 +60,15 @@ public class BaseSettingsMobileTests extends MainTestBase {
 
     @BeforeEach
     public void PagesInitialization() {
+        mobileMainPage = new MobileMainPage(driver);
+        actionsBeforeTests();
+
         commonActionsOnMobilePages = new CommonActionsOnMobilePages(driver);
         pageElementActions = new PageElementActions(driver);
         mobileCheckOutPage = new MobileCheckOutPage(driver);
         mobileCartPage = new MobileCartPage(driver);
         mobileAuthPopUpPage = new MobileAuthPopUpPage(driver);
         mobileProductCardPage = new MobileProductCardPage(driver);
-        mobileMainPage = new MobileMainPage(driver);
         mobileOspPage = new MobileOspPage(driver);
         mobileSberPage = new MobileSberPage(driver);
         mobileThankForTheOrderPage = new MobileThankForTheOrderPage(driver);
@@ -87,4 +89,9 @@ public class BaseSettingsMobileTests extends MainTestBase {
         mobileBotConsultantPopUpPage = new MobileBotConsultantPopUpPage(driver);
     }
 
+    //данный метод выполняется перед каждым тестом
+    private void actionsBeforeTests() {
+        // mobileMainPage.clickClosePopUp(); - на данный момент баг и временный комент
+        mobileMainPage.clickCloseMobileAppPopUp();
+    }
 }

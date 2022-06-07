@@ -18,7 +18,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь добавляет товар в избранное")
     @Test
     public void addProductToFavorites() {
-      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickFavoritesIcon();
         mobileHeaderBlock.clickFavoritesButton();
         mobileFavoritesPage.checkButtonAddToCart();
@@ -28,7 +27,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь удаляет товар из избранного")
     @Test
     public void deleteProductFromFavorites() {
-       // mobileMainPage.clickClosePopUp();
         mobileMainPage.clickFavoritesIcon();
         mobileHeaderBlock.clickFavoritesButton();
         mobileFavoritesPage.checkButtonAddToCart();
@@ -40,8 +38,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь на странице Избранное переходит по гиперссылке на главную страницу сайта")
     @Test
     public void checkMainHyperlink() {
-      // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
@@ -60,8 +56,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
             "добавился в список избранного у авторизованного пользователя")
     @Test
     public void transferProductForAuthorizedUser() {
-       // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
@@ -97,7 +91,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на странице избранное")
     @Test
     public void increaseQuantityMaterialOnFavoritesPage() {
-      //  mobileMainPage.clickClosePopUp();
         mobileMainPage.clickFavoritesIcon();
         mobileHeaderBlock.clickFavoritesButton();
         mobileFavoritesPage.checkButtonAddToCart();
@@ -117,7 +110,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь уменьшает количество шт. товара в корзине на странице избранное")
     @Test
     public void decreaseQuantityMaterialOnFavoritesPage() {
-        mobileMainPage.clickClosePopUp();
         mobileMainPage.clickFavoritesIcon();
         mobileHeaderBlock.clickFavoritesButton();
         mobileFavoritesPage.checkButtonAddToCart();
@@ -139,8 +131,7 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет, что товар который был добавлен в избранное," +
             " на странице корзины так же отмечен что он находится в избранном")
     @Test
-    public void checkActivFavoritesButtonOnCartPage() {
-       // mobileMainPage.clickClosePopUp();
+    public void checkActiveFavoritesButtonOnCartPage() {
         mobileMainPage.clickFavoritesIcon();
         mobileHeaderBlock.clickFavoritesButton();
         mobileFavoritesPage.checkButtonAddToCart();

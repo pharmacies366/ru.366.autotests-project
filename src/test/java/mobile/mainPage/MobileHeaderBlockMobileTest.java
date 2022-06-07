@@ -41,8 +41,6 @@ public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Проверки работы корзины")
     @Test
     public void testingTheCart(){
-       // mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileMainPage.AddToCartClick();
         pageActions .waitPageLoad();
         int quantity = mobileHeaderBlock.checkCartQuantity();

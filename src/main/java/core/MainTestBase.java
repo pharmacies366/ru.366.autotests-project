@@ -57,7 +57,6 @@ public class MainTestBase {
     private void openStartPage() {
         try {
             driver.get(propertiesManager.getProperty("baseurl"));
-            // pageActions.checkUrl(propertiesManager.getProperty("baseurl"));
         } catch (org.openqa.selenium.TimeoutException ex) {
             driver.navigate().refresh();
         }
