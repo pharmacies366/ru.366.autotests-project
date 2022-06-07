@@ -18,7 +18,6 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на главной странице")
     @Test
     public void increaseQuantityMaterialOnMainPage() {
-        mainPage.clickClosePopUp();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         mainPage.clickIncreaseQuantity();
@@ -34,7 +33,6 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь уменьшает количество шт. товара в корзине на главной странице")
     @Test
     public void decreaseQuantityMaterialOnMainPage() {
-        mainPage.clickClosePopUp();
         mainPage.clickAddToCardButton();
         pageActions.waitPageLoad();
         mainPage.clickIncreaseQuantity();
@@ -54,7 +52,6 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь увеличивает количество шт. товара в карточке товара")
     @Test
     public void increaseQuantityMaterialOnProductCartPage() {
-        mainPage.clickClosePopUp();
         openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
         productCardPage.clickAddCartButton();
         pageActions.waitPageLoad();

@@ -19,7 +19,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь добавляет товар в избранное")
     @Test
     public void addProductToFavorites() {
-        mainPage.clickClosePopUp();
         mainPage.clickFavoritesIcon();
         headerBlock.clickFavoritesButton();
         favoritesPage.checkButtonAddToCart();
@@ -28,7 +27,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь удаляет товар из избранного")
     @Test
     public void deleteProductFromFavorites() {
-        mainPage.clickClosePopUp();
         mainPage.clickFavoritesIcon();
         headerBlock.clickFavoritesButton();
         favoritesPage.checkButtonAddToCart();
@@ -39,7 +37,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь на странице Избранное переходит по гиперссылке на главную страницу сайта")
     @Test
     public void checkMainHyperlink() {
-        mainPage.clickClosePopUp();
         headerBlock.clickFavoritesButton();
         favoritesPage.clickMainPageButton();
         pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/");
@@ -49,7 +46,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
             "добавился в список избранного у авторизованного пользователя")
     @Test
     public void transferProductForAuthorizedUser() {
-        mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
@@ -81,7 +77,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на странице избранное")
     @Test
     public void increaseQuantityMaterialOnFavoritesPage() {
-        mainPage.clickClosePopUp();
         mainPage.clickFavoritesIcon();
         headerBlock.clickFavoritesButton();
         favoritesPage.checkButtonAddToCart();
@@ -100,7 +95,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь уменьшает количество шт. товара в корзине на странице избранное")
     @Test
     public void decreaseQuantityMaterialOnFavoritesPage() {
-        mainPage.clickClosePopUp();
         mainPage.clickFavoritesIcon();
         headerBlock.clickFavoritesButton();
         favoritesPage.checkButtonAddToCart();
@@ -123,7 +117,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
             " на странице корзины так же отмечен что он находится в избранном")
     @Test
     public void checkActiveFavoritesButtonOnCartPage() {
-        mainPage.clickClosePopUp();
         mainPage.clickFavoritesIcon();
         headerBlock.clickFavoritesButton();
         favoritesPage.checkButtonAddToCart();

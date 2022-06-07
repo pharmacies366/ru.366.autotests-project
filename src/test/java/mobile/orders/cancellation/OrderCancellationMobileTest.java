@@ -19,8 +19,6 @@ public class OrderCancellationMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь отменяет созданный заказ")
     @Test
     public void orderCancellation() {
-        mobileMainPage.clickClosePopUp();
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();

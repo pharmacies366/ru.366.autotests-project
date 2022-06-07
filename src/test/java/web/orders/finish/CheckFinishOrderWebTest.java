@@ -16,7 +16,6 @@ public class CheckFinishOrderWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет информацию по заказу: Адрес аптеки, код заказа")
     @Test
     public void OrderCancellation() {
-        mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(

@@ -16,7 +16,6 @@ public class OrderCancellationWebTest extends BaseSettingsWebTests {
 /*    @DisplayName("Пользователь отменяет созданный заказ")
     @Test
     public void orderCancellation() {
-        mainPage.clickClosePopUp();
         headerBlock.clickToSignInButton();
         cookiePage.reCaptchaKey();
         authPopUpPage.authorizeWithPhoneAndPassword(
