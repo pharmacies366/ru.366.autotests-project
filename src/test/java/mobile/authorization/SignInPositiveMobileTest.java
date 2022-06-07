@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 @Story("Авторизация пользователя на сайте 36.6")
 @DisplayName("Авторизация пользователя")
 @Tag("Regression")
+@Tag("Smoke")
 public class SignInPositiveMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Авторизация пользователя на сайте по номеру телефона и паролю")

@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 @Story("Оформление заказа на сайте 36.6")
 @DisplayName("Оформление заказа для авторизованного пользователя")
 @Tag("Regression")
+@Tag("Smoke")
 public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
 
     //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
