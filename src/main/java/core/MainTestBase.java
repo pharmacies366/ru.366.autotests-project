@@ -26,8 +26,13 @@ public class MainTestBase {
 
     @Step("Пользователь переходит в карточку товара")
     protected void openUrl(String url) {
-        driver.get(url);
-        saveAllureScreenshot();
+        try {
+            driver.get(url);
+            saveAllureScreenshot();
+        } catch (org.openqa.selenium.TimeoutException ex) {
+            driver.navigate().refresh();
+            saveAllureScreenshot();
+        }
     }
 
     @BeforeEach
