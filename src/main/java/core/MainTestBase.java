@@ -62,8 +62,10 @@ public class MainTestBase {
     private void openStartPage() {
         try {
             driver.get(propertiesManager.getProperty("baseurl"));
+            saveAllureScreenshot();
         } catch (org.openqa.selenium.TimeoutException ex) {
             driver.navigate().refresh();
+            saveAllureScreenshot();
         }
     }
 
