@@ -44,6 +44,12 @@ public class CommonActionsOnMobilePages extends MainTestBase {
     private static final String PRICE_INCREASE = "4";
     private static final String SORTING_NAME = "3";
 
+    private static final String BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH = "xpath;(//div[@class='card-balance--inner js-show-bonus'])[1]";
+    private static final String PRODUCT_GALLERY_BONUSES_BUTTON_XPATH = "xpath;(//span[@class='card-balance--inner-text-quantity'])[1]";
+    private static final String CASH_BACK_INFO_POP_UP_XPATH = "xpath;//div[@class='popup__title'][contains(.,'Cash back за покупку')]";
+    private static final String LINK_MORE_ABOUT_BONUSES_XPATH = "xpath;//a[@href='/pravila_programmy/'][contains(.,'Подробнее о бонусах')]";
+    private static final String BUTTON_BONUSES_XPATH = "xpath;(//div[@class='card-balance--inner-icon'])[1]";
+
 
     //конструктор
     public CommonActionsOnMobilePages(WebDriver driver) {
@@ -164,6 +170,27 @@ public class CommonActionsOnMobilePages extends MainTestBase {
     public PageElementActions getSortingOptions(String xpath) {
         return new PageElementActions(xpath, driver);
     }
+
+    public PageElementActions getBackgroundColorProductGalleryButton() {
+        return new PageElementActions(BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getProductGalleryBonusesButton() {
+        return new PageElementActions(PRODUCT_GALLERY_BONUSES_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getCashBackInfoPopUp() {
+        return new PageElementActions(CASH_BACK_INFO_POP_UP_XPATH, driver);
+    }
+
+    public PageElementActions getMoreAboutBonuses() {
+        return new PageElementActions(LINK_MORE_ABOUT_BONUSES_XPATH, driver);
+    }
+
+    public PageElementActions getButtonBonuses() {
+        return new PageElementActions(BUTTON_BONUSES_XPATH, driver);
+    }
+
 
 
     //Методы
@@ -403,6 +430,39 @@ public class CommonActionsOnMobilePages extends MainTestBase {
         }
         logger.info("Пользователь листает назад страницы и проверяет релевантный переход");
 
+    }
+
+    @Step("Получение цвета кнопки")
+    public String getColorBackgroundProductGalleryButton() {
+        String colorButton = getBackgroundColorProductGalleryButton().getColor();
+        logger.info("Получение цвета кнопки");
+        return colorButton;
+    }
+
+    @Step("Получение цвета текста кнопки с расчётом бонусов")
+    public String getColorTextProductGalleryButton() {
+        String colorButton = getProductGalleryBonusesButton().getColor();
+        logger.info("Получение цвета текста кнопки с расчётом бонусов");
+        return colorButton;
+    }
+
+    @Step("Получение текста загаловка с попапом информации про -  Cash back за покупку")
+    public String getTextAboutCashBack() {
+        String text = getCashBackInfoPopUp().getText();
+        logger.info("Получение текста загаловка с попапом информации про -  Cash back за покупку");
+        return text;
+    }
+
+    @Step("Пользователь нажимает на шильдик с бонусными баллами")
+    public void clickOnButtonBonuses() {
+        getButtonBonuses().clickJs();
+        logger.info("Пользователь нажимает на шильдик с бонусными баллами");
+    }
+
+    @Step("Пользователь переходит по ссылке: Подробнее о бонусах")
+    public void clickOnLinkMoreAboutBonuses() {
+        getMoreAboutBonuses().click();
+        logger.info("ользователь переходит по ссылке: Подробнее о бонусах");
     }
 
 
