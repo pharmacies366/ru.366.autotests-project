@@ -44,7 +44,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
     private static final String PRICE_INCREASE = "4";
     private static final String SORTING_NAME = "3";
     private static final String BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH = "xpath;(//div[@class='card-balance--inner js-show-bonus'])[1]";
-    private static final String COLOR_TEXT_PRODUCT_GALLERY_BUTTON_XPATH = "xpath;(//span[@class='card-balance--inner-text-quantity'])[1]";
+    private static final String PRODUCT_GALLERY_BONUSES_BUTTON_XPATH = "xpath;//span[@class='card-balance--inner-text-quantity']";
     private static final String CASH_BACK_INFO_POP_UP_XPATH = "xpath;//div[@class='hint__title']";
     private static final String LINK_MORE_ABOUT_BONUSES_XPATH = "xpath;//a[@href='/pravila_programmy/'][contains(.,'Подробнее о бонусах')]";
 
@@ -174,8 +174,8 @@ public class CommonActionsOnWebPages extends MainTestBase {
         return new PageElementActions(BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH, driver);
     }
 
-    public PageElementActions getTextColorProductGalleryButton() {
-        return new PageElementActions(COLOR_TEXT_PRODUCT_GALLERY_BUTTON_XPATH, driver);
+    public PageElementActions getProductGalleryBonusesButton() {
+        return new PageElementActions(PRODUCT_GALLERY_BONUSES_BUTTON_XPATH, driver);
     }
 
     public PageElementActions getCashBackInfoPopUp() {
@@ -436,7 +436,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
 
     @Step("Получение цвета текста кнопки с расчётом бонусов")
     public String getColorTextProductGalleryButton() {
-        String colorButton = getTextColorProductGalleryButton().getColor();
+        String colorButton = getProductGalleryBonusesButton().getColor();
         logger.info("Получение цвета текста кнопки с расчётом бонусов");
         return colorButton;
     }
