@@ -38,7 +38,7 @@ public class CftOnMainPageMobileTest extends BaseSettingsMobileTests {
     }
 
     @DisplayName("Проверка всплывающего окна с информацией по бонусам - Cash back за покупку")
-    @Description("При наведении мышкой появляется всплывающее окно с информацией по бонусам")
+    @Description("При нажатии на шильдик с бонусами, появляется всплывающее окно с информацией по бонусам")
     @Test
     public void checkInfoProductGalleryBonus() {
         mobileMainPage.getTextColorProductGalleryButton().click();
