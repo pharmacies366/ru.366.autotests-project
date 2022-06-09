@@ -46,7 +46,7 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
     public void checkInfoProductGalleryBonus() {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
-        commonActionsOnWebPages.getTextColorProductGalleryButton().moveToElement();
+        commonActionsOnWebPages.getProductGalleryBonusesButton().moveToElement();
         String actualText = commonActionsOnWebPages.getTextAboutCashBack();
         Assertions.assertEquals("Cash back за покупку", actualText);
     }
@@ -57,16 +57,38 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
     public void checkLinkInfoProductGalleryBonus() {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
-        commonActionsOnWebPages.getTextColorProductGalleryButton().moveToElement();
+        commonActionsOnWebPages.getProductGalleryBonusesButton().moveToElement();
         commonActionsOnWebPages.clickOnLinkMoreAboutBonuses();
-        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
+        pageActions.checkUrl("https://366.ru/pravila_programmy/");
     }
 
-    @DisplayName("Проверка наличия бонусов у товара")
-    @Description("Взять цену товара, умножить на 0,03 (Текущий процент бонусов от цены), если значение больше или равно 0.5, то шильдик должен быть. Иначе шильдик должен отсутствовать")
+    @DisplayName("Проверка на отсутствие начисляемых бонусов за покупку товара")
+    @Description("Взять цену товара, умножить на 0,03 (Текущий процент бонусов от цены), если значение меньше 0.5, то шильдик должен отсутствовать")
+    @Test
+    public void checkUnVisibilityBonuses() {
+        headerBlock.clickCatalogButton();
+        catalogPage.clickMedicationsButtons();
+        commonActionsOnWebPages.changePricesRangeWithHands("10", "10");
+        int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
+        int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
+        int price = commonActionsOnWebPages.checkProductsPrices();
+        Assertions.assertEquals(price, FromPriceRange);
+        Assertions.assertEquals(price, ToPriceRange);
+        commonActionsOnWebPages.getProductGalleryBonusesButton().isElementNotVisible();
+    }
+
+    @DisplayName("Проверка на наличия начисляемых бонусов за покупку товара")
+    @Description("Взять цену товара, умножить на 0,03 (Текущий процент бонусов от цены), если значение больше или равно 0.5, то шильдик должен быть")
     @Test
     public void checkVisibilityBonuses() {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
+        commonActionsOnWebPages.changePricesRangeWithHands("15", "1000");
+        int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
+        int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
+        int price = commonActionsOnWebPages.checkProductsPrices();
+        Assertions.assertTrue(price >= FromPriceRange);
+        Assertions.assertTrue(price >= ToPriceRange);
+        commonActionsOnWebPages.getProductGalleryBonusesButton().isElementDisplayed();
     }
 }

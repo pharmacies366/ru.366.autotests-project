@@ -159,7 +159,7 @@ public class PageElementActions extends MainTestBase {
         }
     }
 
-    public boolean isElemendddtVisible() {
+    public boolean isElementNotVisible() {
         boolean isVisible = false;
         try {
             isVisible = driver.findElement(getBySelector(element)).isDisplayed();

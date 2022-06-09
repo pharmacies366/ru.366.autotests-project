@@ -39,7 +39,7 @@ public class CftOnMainPageWebTest extends BaseSettingsWebTests {
     @Description("При наведении мышкой появляется всплывающее окно с информацией по бонусам")
     @Test
     public void checkInfoProductGalleryBonus() {
-        mainPage.getTextColorProductGalleryButton().moveToElement();
+        mainPage.getProductGalleryBonusesButton().moveToElement();
         String actualText = mainPage.getTextAboutCashBack();
         Assertions.assertEquals("Cash back за покупку", actualText);
     }
@@ -48,7 +48,7 @@ public class CftOnMainPageWebTest extends BaseSettingsWebTests {
     @Description("При нажатии на ссылку происходит переход на страницу с подробным описанием бонусных карт")
     @Test
     public void checkLinkInfoProductGalleryBonus() {
-        mainPage.getTextColorProductGalleryButton().moveToElement();
+        mainPage.getProductGalleryBonusesButton().moveToElement();
         mainPage.clickOnLinkMoreAboutBonuses();
         pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
     }
