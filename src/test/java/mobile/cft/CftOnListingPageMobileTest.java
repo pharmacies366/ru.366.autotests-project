@@ -59,7 +59,7 @@ public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.getProductGalleryBonusesButton().click();
         commonActionsOnMobilePages.clickOnLinkMoreAboutBonuses();
-        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
+        pageActions.checkUrl("https://366.ru/pravila_programmy/");
     }
 
     @DisplayName("Проверка на отсутствие начисляемых бонусов за покупку товара")

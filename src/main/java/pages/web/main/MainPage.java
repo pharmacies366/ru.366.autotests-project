@@ -9,6 +9,8 @@ public class MainPage extends MainTestBase {
 
     //элементы
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
+
+    private static final String POP_UP_NEWS_BUTTON_XPATH = "xpath;//div[@class='popmechanic-close']";
     private static final String LETTER_N_XPATH = "xpath;//a[@href='/littera-Н/']";
     private static final String ADD_TO_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'Купить')])[1]";
     private static final String QUANTITY_MATERIALS_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
@@ -40,6 +42,10 @@ public class MainPage extends MainTestBase {
 
     public PageElementActions getPopUpButton() {
         return new PageElementActions(POP_UP_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getPopUpNewsButton() {
+        return new PageElementActions(POP_UP_NEWS_BUTTON_XPATH, driver);
     }
 
     public PageElementActions getLetterN() {
@@ -131,8 +137,14 @@ public class MainPage extends MainTestBase {
     //Методы
     @Step("Пользователь закрывает попап куки: 'Спасибо, понятно")
     public void clickClosePopUp() {
-        getPopUpButton().clickJs();
+        getPopUpButton().click();
         logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
+    }
+
+    @Step("Пользователь закрывает новосной попап")
+    public void clickClosePopUpNews() {
+        getPopUpNewsButton().click();
+        logger.info("Пользователь закрывает новосной попап");
     }
 
     @Step("Пользователь нажимает на букву 'Н' Русского алфавита")

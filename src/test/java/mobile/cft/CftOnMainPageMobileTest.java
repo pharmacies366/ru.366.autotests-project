@@ -52,6 +52,6 @@ public class CftOnMainPageMobileTest extends BaseSettingsMobileTests {
     public void checkLinkInfoProductGalleryBonus() {
         mobileMainPage.clickOnButtonBonuses();
         mobileMainPage.clickOnLinkMoreAboutBonuses();
-        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
+        pageActions.checkUrl("https://366.ru/pravila_programmy/");
     }
 }
