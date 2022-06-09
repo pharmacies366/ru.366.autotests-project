@@ -59,10 +59,10 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
         catalogPage.clickMedicationsButtons();
         commonActionsOnWebPages.getProductGalleryBonusesButton().moveToElement();
         commonActionsOnWebPages.clickOnLinkMoreAboutBonuses();
-        pageActions.checkUrl("https://366.ru/pravila_programmy/");
+        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
     }
 
-    @DisplayName("Проверка на отсутствие начисляемых бонусов за покупку товара")
+/*    @DisplayName("Проверка на отсутствие начисляемых бонусов за покупку товара")
     @Description("Взять цену товара, умножить на 0,03 (Текущий процент бонусов от цены), если значение меньше 0.5, то шильдик должен отсутствовать")
     @Test
     public void checkUnVisibilityBonuses() {
@@ -90,5 +90,5 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
         Assertions.assertTrue(price >= FromPriceRange);
         Assertions.assertTrue(price >= ToPriceRange);
         commonActionsOnWebPages.getProductGalleryBonusesButton().isElementDisplayed();
-    }
+    }*/
 }
