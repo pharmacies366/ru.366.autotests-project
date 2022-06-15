@@ -10,7 +10,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import utils.PropertiesManager;
 import utils.WebDriverFactory;
@@ -20,11 +19,11 @@ public class MainTestBase {
     protected WebDriver driver;
     protected PropertiesManager propertiesManager = new PropertiesManager();
     protected PageActions pageActions;
-    public static String nameOfPackage;
+    public static String nameOfPackage = null;
     protected Logger logger = LogManager.getLogger(MainTestBase.class);
 
 
-    @Step("Пользователь переходит в карточку товара")
+    @Step("Пользователь по URL")
     protected void openUrl(String url) {
         try {
             driver.get(url);

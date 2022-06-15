@@ -62,7 +62,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
     @BeforeEach
     public void PagesInitialization() {
         mobileMainPage = new MobileMainPage(driver);
-        actionsBeforeTests();
+        //actionsBeforeTests();
 
         commonActionsOnMobilePages = new CommonActionsOnMobilePages(driver);
         pageElementActions = new PageElementActions(driver);
@@ -96,8 +96,8 @@ public class BaseSettingsMobileTests extends MainTestBase {
         mobileMainPage.clickCloseMobileAppPopUp();
     }
 
-    @AfterEach
+  /*  @AfterEach
     public void pagesClose() {
         driver.close();
-    }
+    }*/
 }

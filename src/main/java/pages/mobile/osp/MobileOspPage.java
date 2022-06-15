@@ -40,7 +40,7 @@ public class MobileOspPage extends MainTestBase {
     //Методы
     @Step("Пользователь нажимает на товар 'Нурофен'")
     public void clickProductName() {
-        getProductName().click();
+        getProductName().clickJs();
         logger.info("Пользователь нажимает на товар 'Нурофен'");
     }
 

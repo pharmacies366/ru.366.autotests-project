@@ -14,7 +14,7 @@ import java.io.IOException;
 
 @Feature(value = "Web")
 @Story("ЦФТ на сайте 36.6")
-@DisplayName("Проверка работы ЦФТ на главной странице сайта 36.6")
+@DisplayName("Проверка работы ЦФТ на странице с листингом товаров сайта 36.6")
 @Tag("Regression")
 @Tag("CFT")
 public class CftOnMainPageWebTest extends BaseSettingsWebTests {
