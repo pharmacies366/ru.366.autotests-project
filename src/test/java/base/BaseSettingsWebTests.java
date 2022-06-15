@@ -57,7 +57,7 @@ public class BaseSettingsWebTests extends MainTestBase {
     @BeforeEach
     public void PagesInitialization() {
         mainPage = new MainPage(driver);
-        actionsBeforeTests();
+       // actionsBeforeTests();
 
         commonActionsOnWebPages = new CommonActionsOnWebPages(driver);
         pageElementActions = new PageElementActions(driver);
@@ -89,10 +89,10 @@ public class BaseSettingsWebTests extends MainTestBase {
         mainPage.clickClosePopUpNews();
     }
 
-    @AfterEach
+ /*   @AfterEach
     public void pagesClose() {
         driver.close();
-    }
+    }*/
 }
 
 

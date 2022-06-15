@@ -19,11 +19,11 @@ public class MainTestBase {
     protected WebDriver driver;
     protected PropertiesManager propertiesManager = new PropertiesManager();
     protected PageActions pageActions;
-    public static String nameOfPackage;
+    public static String nameOfPackage = null;
     protected Logger logger = LogManager.getLogger(MainTestBase.class);
 
 
-    @Step("Пользователь переходит в карточку товара")
+    @Step("Пользователь по URL")
     protected void openUrl(String url) {
         try {
             driver.get(url);
