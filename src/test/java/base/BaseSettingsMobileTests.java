@@ -5,6 +5,7 @@ import blocks.mobile.MobileBasementBlock;
 import blocks.mobile.MobileHeaderBlock;
 import blocks.mobile.MobileMainPopUpBlock;
 import core.MainTestBase;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import pages.commonActions.mobile.CommonActionsOnMobilePages;
 import pages.mobile.authorization.MobileAuthPopUpPage;
@@ -93,5 +94,10 @@ public class BaseSettingsMobileTests extends MainTestBase {
     private void actionsBeforeTests() {
         // mobileMainPage.clickClosePopUp(); - на данный момент баг и временный комент
         mobileMainPage.clickCloseMobileAppPopUp();
+    }
+
+    @AfterEach
+    public void pagesClose() {
+        driver.close();
     }
 }

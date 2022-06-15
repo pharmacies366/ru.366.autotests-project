@@ -3,6 +3,8 @@ package base;
 import actions.PageElementActions;
 import blocks.web.HeaderBlock;
 import core.MainTestBase;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import pages.commonActions.web.CommonActionsOnWebPages;
 import pages.web.authorization.AuthPopUpPage;
@@ -47,9 +49,9 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected BotConsultantPopUpPage botConsultantPopUpPage;
 
     protected BonusCardPopUpPage bonusCardPopUpPage;
-/*    protected WebBasementBlock basementBlock;
+    /*    protected WebBasementBlock basementBlock;
 
-    protected MedicationsCategoryPage medicationsCategoryPage;*/
+        protected MedicationsCategoryPage medicationsCategoryPage;*/
     protected CitiesPopUpPage citiesPopUpPage;
 
 
@@ -86,6 +88,10 @@ public class BaseSettingsWebTests extends MainTestBase {
         mainPage.clickClosePopUp();
     }
 
+    @AfterEach
+    public void pagesClose() {
+        driver.close();
+    }
 }
 
 
