@@ -88,7 +88,7 @@ public class PageActions extends MainTestBase {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); пример для записи на новой версии selenium
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebDriverWait wait = new WebDriverWait(driver, 25);
         WebDriverWait jqWait = new WebDriverWait(driver, 25);
 
 
