@@ -80,7 +80,7 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
       //  thankForTheOrderPage.checkSuccessMessage();
     }
 
-    @DisplayName("Неавторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
+    @DisplayName("Неавторизованный пользователь покупает товар со способом получения - 'Самовывоз'")
     @Test
     public void pickup() {
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));

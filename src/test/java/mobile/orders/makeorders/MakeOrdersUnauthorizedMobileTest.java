@@ -82,7 +82,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
-    @DisplayName("Неавторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
+    @DisplayName("Неавторизованный пользователь покупает товар со способом получения - 'Самовывоз'")
     @Test
     public void pickup() {
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));

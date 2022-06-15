@@ -19,11 +19,11 @@ public class MainTestBase {
     protected WebDriver driver;
     protected PropertiesManager propertiesManager = new PropertiesManager();
     protected PageActions pageActions;
-    public static String nameOfPackage = null;
+    public static String nameOfPackage;
     protected Logger logger = LogManager.getLogger(MainTestBase.class);
 
 
-    @Step("Пользователь по URL")
+    @Step("Пользователь переходит в карточку товара")
     protected void openUrl(String url) {
         try {
             driver.get(url);
@@ -43,7 +43,6 @@ public class MainTestBase {
         pageActions = new PageActions(driver);
         openStartPage();
         logger.info("Открывается главная страница сайта 36.6");
-        //driver.manage().deleteAllCookies();
     }
 
     @AfterEach
