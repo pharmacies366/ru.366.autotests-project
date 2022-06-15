@@ -3,7 +3,6 @@ package base;
 import actions.PageElementActions;
 import blocks.web.HeaderBlock;
 import core.MainTestBase;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import pages.commonActions.web.CommonActionsOnWebPages;
