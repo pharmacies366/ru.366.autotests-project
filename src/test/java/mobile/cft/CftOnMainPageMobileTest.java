@@ -37,8 +37,8 @@ public class CftOnMainPageMobileTest extends BaseSettingsMobileTests {
         Assertions.assertEquals("#ffffff", actualColor);
     }
 
-    @DisplayName("Проверка всплывающего окна с информацией по бонусам - Cash back за покупку")
-    @Description("При нажатии на шильдик с бонусами, появляется всплывающее окно с информацией по бонусам")
+    @DisplayName("Проверка окна с информацией по бонусам - Cash back за покупку")
+    @Description("При нажатии на шильдик с бонусами, появляется окно с информацией по бонусам")
     @Test
     public void checkInfoProductGalleryBonus() {
         mobileMainPage.getTextColorProductGalleryButton().click();

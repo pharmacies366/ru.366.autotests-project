@@ -40,8 +40,8 @@ public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
         Assertions.assertEquals("#ffffff", actualColor);
     }
 
-    @DisplayName("Проверка всплывающего окна с информацией по бонусам - Cash back за покупку")
-    @Description("При наведении мышкой появляется всплывающее окно с информацией по бонусам")
+    @DisplayName("Проверка окна с информацией по бонусам - Cash back за покупку")
+    @Description("При нажатии на шильдик с бонусами, появляется окно с информацией по бонусам")
     @Test
     public void checkInfoProductGalleryBonus() {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
@@ -62,7 +62,7 @@ public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
         pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
     }
 
-/*    @DisplayName("Проверка на отсутствие начисляемых бонусов за покупку товара")
+    @DisplayName("Проверка на отсутствие начисляемых бонусов за покупку товара")
     @Description("Взять цену товара, умножить на 0,03 (Текущий процент бонусов от цены), если значение меньше 0.5, то шильдик должен отсутствовать")
     @Test
     public void checkUnVisibilityBonuses() {
@@ -90,7 +90,7 @@ public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
         int ToPriceRange = commonActionsOnMobilePages.getToPriceRange();
         int price = commonActionsOnMobilePages.checkProductsPrices();
         Assertions.assertTrue(price >= FromPriceRange);
-        Assertions.assertTrue(price >= ToPriceRange);
+        Assertions.assertTrue(price <= ToPriceRange);
         commonActionsOnMobilePages.getProductGalleryBonusesButton().isElementNotVisible();
-    }*/
+    }
 }
