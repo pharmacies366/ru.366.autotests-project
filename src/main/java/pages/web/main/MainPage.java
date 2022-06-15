@@ -189,7 +189,7 @@ public class MainPage extends MainTestBase {
     public void checkNextBannerList() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
         int quantity = Integer.parseInt(sizeAllLi);
-        for (int i = 1; i <= quantity; i++) {
+        for (int i = 0; i <= quantity; i++) {
             getNextBannerButton().click();
             getBannerList().isElementDisplayedWithIndex(i);
         }
