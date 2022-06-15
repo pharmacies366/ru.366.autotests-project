@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 @Story(value = "Изменения корзины на сайте 36.6")
 @DisplayName("Изменения корзины")
 @Tag("Regression")
+@Tag("Mobile")
 public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Пользователь увеличивает количество шт. товара на странице корзины")

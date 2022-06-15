@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 @Story(value = "Изменение количества товара в корине на сайте 36.6")
 @DisplayName("Изменение количества товара в корзине")
 @Tag("Regression")
+@Tag("Mobile")
 public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на главной странице")

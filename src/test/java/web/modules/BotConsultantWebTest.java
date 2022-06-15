@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 @Feature(value = "Web")
 @Story(value = "Консультант бот на сайте 36.6")
 @DisplayName("Консультант бот")
+@Tag("Web")
 @Tag("Regression")
 public class BotConsultantWebTest extends BaseSettingsWebTests {
 

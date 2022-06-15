@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Test;
 @Feature(value = "Web")
 @DisplayName("ЦФТ на сайте 36.6")
 @Story("Проверка работы ЦФТ на странице с листингом товаров сайта 36.6")
+@Tag("Web")
 @Tag("Regression")
 @Tag("CFT")
 public class CftOnListingPageWebTest extends BaseSettingsWebTests {

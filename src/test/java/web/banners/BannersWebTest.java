@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 @Feature(value = "Web")
 @Story("Проверка работы банеров на сайте 36.6")
 @DisplayName("Проверка работы банеров на сайте")
+@Tag("Web")
 @Tag("Regression")
 public class BannersWebTest extends BaseSettingsWebTests {
 

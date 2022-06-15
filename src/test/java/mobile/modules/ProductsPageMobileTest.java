@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Страница товаров")
 //@RunWith(DataProviderRunner.class)
 @Tag("Regression")
+@Tag("Mobile")
 public class ProductsPageMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Пользователь проверяет работу слайдера для изменения цены")

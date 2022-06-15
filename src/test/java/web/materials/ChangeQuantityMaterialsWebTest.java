@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 @Feature(value = "Web")
 @Story(value = "Изменение количества товара в корине на сайте 36.6")
 @DisplayName("Изменение количества товара в корзине")
+@Tag("Web")
 @Tag("Regression")
 public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
 

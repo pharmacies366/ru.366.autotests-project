@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 @Story("Проверка работы банеров на сайте 36.6")
 @DisplayName("Проверка работы банеров на сайте")
 @Tag("Regression")
+@Tag("Mobile")
 public class BannersMobileTest extends BaseSettingsMobileTests {
 
 /*    @DisplayName("Пользователь проверяет прокрутку банеров вперед по стрелке и возврат к первоначальному баннеру на главной странице")

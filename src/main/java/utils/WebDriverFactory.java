@@ -18,9 +18,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import static core.MainTestBase.nameOfClass;
 import static core.MainTestBase.nameOfPackage;
-
-
 public class WebDriverFactory {
 
     private final Logger logger = LogManager.getLogger(WebDriverFactory.class);
@@ -59,7 +58,6 @@ public class WebDriverFactory {
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", false);
-
 
         if (nameOfPackage.contains("mobile")) {
             Map<String, String> mobileEmulation = new HashMap<>();
@@ -109,7 +107,7 @@ public class WebDriverFactory {
         chromeOptions.addArguments("--disabled-popup-blocking");
         //chromeOptions.addArguments("--headless");
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-      //  chromeOptions.setPageLoadStrategy(PageLoadStrategy.eager);
+        //  chromeOptions.setPageLoadStrategy(PageLoadStrategy.eager);
         Map<String, Object> prefs = new HashMap<String, Object>();
         Map<String, Object> profile = new HashMap<String, Object>();
         prefs.put("googlegeolocationaccess.enabled", true);
@@ -118,7 +116,7 @@ public class WebDriverFactory {
         prefs.put("profile.managed_default_content_settings", 1);
         chromeOptions.setExperimentalOption("prefs", prefs);
 
-
+        // System.out.println(nameOfPackage + " " + nameOfClass);
         if (nameOfPackage.contains("mobile")) {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
