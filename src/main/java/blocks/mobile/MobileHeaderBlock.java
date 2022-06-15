@@ -16,7 +16,7 @@ public class MobileHeaderBlock extends MainTestBase {
     private static final String SITE_LOGO_XPATH = "xpath;//img[contains(@alt,'9477014323230.png')]";
     private static final String SEARCH_INPUT1_XPATH = "xpath;//div[@class='header_search_mobile__toggle js-toggle-xs-search js-header-search-mobile-toggle']";
     private static final String SEARCH_INPUT_XPATH = "xpath;//input[@id='js-site-search-input']";
-    private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
+    private static final String CARD_BUTTON_XPATH = "xpath;//span[@class='mini_cart_link__icon']";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;//span[contains(@class,'header_favorites_mobile__icon')]";
     private static final String GET_SELECTED_REGION_XPATH = "xpath;(//span[contains(@class,'b-login-link i-fw-b')])[3]";
 
