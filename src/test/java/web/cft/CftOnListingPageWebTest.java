@@ -88,7 +88,7 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
         int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int price = commonActionsOnWebPages.checkProductsPrices();
         Assertions.assertTrue(price >= FromPriceRange);
-        Assertions.assertTrue(price >= ToPriceRange);
+        Assertions.assertTrue(price <= ToPriceRange);
         commonActionsOnWebPages.getProductGalleryBonusesButton().isElementDisplayed();
     }
 }

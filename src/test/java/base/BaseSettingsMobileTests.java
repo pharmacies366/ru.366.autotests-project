@@ -94,6 +94,4 @@ public class BaseSettingsMobileTests extends MainTestBase {
         // mobileMainPage.clickClosePopUp(); - на данный момент баг и временный комент
         mobileMainPage.clickCloseMobileAppPopUp();
     }
-
-
 }

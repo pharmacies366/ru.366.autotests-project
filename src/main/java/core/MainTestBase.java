@@ -49,7 +49,7 @@ public class MainTestBase {
 
     @AfterEach
     public void finish() {
-        driver.close();
+        //driver.close();
         driver.quit();
     }
 
