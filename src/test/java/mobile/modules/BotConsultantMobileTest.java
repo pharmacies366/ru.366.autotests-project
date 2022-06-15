@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 @Story(value = "Консультант бот на сайте 36.6")
 @DisplayName("Консультант бот")
 @Tag("Regression")
+@Tag("Mobile")
 public class BotConsultantMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Пользователь выбирает пункт: Не могу оформить заказ, заполняет свои данные и получает ответ от бота")

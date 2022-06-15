@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 @Story(value = "Личный кабинет на сайте 36.6")
 @DisplayName("Личный кабинет")
 @Tag("Regression")
+@Tag("Mobile")
 public class ChangePasswordMobileTest extends BaseSettingsMobileTests{
 
     @DisplayName("Пользователь изменяет пароль")

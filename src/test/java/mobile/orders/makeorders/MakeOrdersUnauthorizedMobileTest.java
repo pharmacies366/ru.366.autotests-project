@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Оформление заказа для неавторизованного пользователя")
 @Tag("Regression")
 @Tag("Smoke")
+@Tag("Mobile")
 public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
 
     //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами

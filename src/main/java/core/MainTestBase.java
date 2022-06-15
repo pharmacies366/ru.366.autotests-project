@@ -20,13 +20,24 @@ public class MainTestBase {
     protected PropertiesManager propertiesManager = new PropertiesManager();
     protected PageActions pageActions;
     public static String nameOfPackage;
+    public static String nameOfClass;
     protected Logger logger = LogManager.getLogger(MainTestBase.class);
 
 
-    @Step("Пользователь переходит в карточку товара")
+    @Step("Пользователь открывает страницу по URL")
     protected void openUrl(String url) {
         try {
             driver.get(url);
+            saveAllureScreenshot();
+        } catch (org.openqa.selenium.TimeoutException ex) {
+            driver.navigate().refresh();
+            saveAllureScreenshot();
+        }
+    }
+
+    private void openStartPage() {
+        try {
+            driver.get(propertiesManager.getProperty("baseurl"));
             saveAllureScreenshot();
         } catch (org.openqa.selenium.TimeoutException ex) {
             driver.navigate().refresh();
@@ -54,18 +65,11 @@ public class MainTestBase {
 
     private void starting(TestInfo testInfo) {
         nameOfPackage = testInfo.getTestClass().get().getPackage().getName();
+      //`  nameOfClass = testInfo.getTestClass().get().getName();
         logger.info("Тест старт " + testInfo.getDisplayName());
     }
 
-    private void openStartPage() {
-        try {
-            driver.get(propertiesManager.getProperty("baseurl"));
-            saveAllureScreenshot();
-        } catch (org.openqa.selenium.TimeoutException ex) {
-            driver.navigate().refresh();
-            saveAllureScreenshot();
-        }
-    }
+
 
 
     /**

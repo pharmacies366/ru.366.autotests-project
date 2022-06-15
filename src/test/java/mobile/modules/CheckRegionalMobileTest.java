@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Tag;
 @Story(value = "Изменение региональности на сайте 36.6")
 @DisplayName("Изменение региональности")
 @Tag("Regression")
+@Tag("Mobile")
 public class CheckRegionalMobileTest extends BaseSettingsMobileTests {
 
     //нужна актуализация или узнать у Арсения на счет Библиотеки

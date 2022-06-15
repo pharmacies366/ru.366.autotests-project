@@ -18,6 +18,7 @@ import org.junit.jupiter.api.Test;
 @Story("Проверка работы ЦФТ на странице с листингом товаров сайта 36.6")
 @Tag("Regression")
 @Tag("CFT")
+@Tag("Mobile")
 public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка заднего фона кнопки с расчётом бонусов")

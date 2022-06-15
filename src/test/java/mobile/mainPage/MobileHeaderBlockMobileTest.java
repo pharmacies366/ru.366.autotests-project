@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 @Story("Проверка шапки сайта 36.6")
 @DisplayName("Проверка шапки сайта")
 @Tag("Regression")
+@Tag("Mobile")
 public class MobileHeaderBlockMobileTest extends BaseSettingsMobileTests {
 
     @DisplayName("Проверка кликабельности логотипа")

@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 @Feature(value = "Web")
 @Story("Оформление заказа на сайте 36.6")
 @DisplayName("Оформление заказа для авторизованного пользователя")
+@Tag("Web")
 @Tag("Regression")
 @Tag("Smoke")
 public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {

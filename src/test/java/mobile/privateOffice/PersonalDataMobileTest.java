@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Личный кабинет")
 //@RunWith(DataProviderRunner.class)
 @Tag("Regression")
+@Tag("Mobile")
 public class PersonalDataMobileTest extends BaseSettingsMobileTests{
 
 /*    @DataProvider
