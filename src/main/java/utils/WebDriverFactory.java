@@ -23,7 +23,7 @@ import static core.MainTestBase.nameOfPackage;
 
 public class WebDriverFactory {
 
-    private Logger logger = LogManager.getLogger(WebDriverFactory.class);
+    private final Logger logger = LogManager.getLogger(WebDriverFactory.class);
     private RemoteWebDriver driver;
 
     @Step("Получение типа драйвера")
