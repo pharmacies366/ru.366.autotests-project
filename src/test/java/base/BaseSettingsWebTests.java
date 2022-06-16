@@ -79,13 +79,11 @@ public class BaseSettingsWebTests extends MainTestBase {
         citiesPopUpPage = new CitiesPopUpPage(driver);
      /*   medicationsCategoryPage = new MedicationsCategoryPage(driver);
         basementBlock = new WebBasementBlock(driver);*/
-
     }
 
     //данный метод выполняется перед каждым тестом
     protected void actionsBeforeTests() {
         mainPage.clickClosePopUp();
-        mainPage.clickClosePopUpNews();
     }
 
  /*   @AfterEach
@@ -93,9 +91,3 @@ public class BaseSettingsWebTests extends MainTestBase {
         driver.close();
     }*/
 }
-
-
-
-
-
-

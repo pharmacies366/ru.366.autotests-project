@@ -8,6 +8,8 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 
 public class PageElementActions extends MainTestBase {
 
@@ -149,6 +151,7 @@ public class PageElementActions extends MainTestBase {
 
     //Ожидание изчезновения элемента на странице
     public void elementIsNotVisible(By by, int _secondsToWait) {
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(_secondsToWait));
         WebDriverWait wait = new WebDriverWait(driver, _secondsToWait);
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         boolean isNotVisible = true;
@@ -171,6 +174,7 @@ public class PageElementActions extends MainTestBase {
 
     //Ожидание загрузки видимости элемента
     public WebElement waitUntilVisibilityOfElementLocated(By by, int _secondsToWait) {
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(_secondsToWait));
         WebDriverWait wait = new WebDriverWait(driver, _secondsToWait);
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         return element;
@@ -195,6 +199,7 @@ public class PageElementActions extends MainTestBase {
 
     //Ожидание кликабельности элемента
     public WebElement waitUntilElementToBeClickable(By by, int _secondsToWait) {
+        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(_secondsToWait));
         WebDriverWait wait = new WebDriverWait(driver, _secondsToWait);
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
         return element;
@@ -211,6 +216,7 @@ public class PageElementActions extends MainTestBase {
         try {
             actions.moveToElement(waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S)).perform();
         } catch (org.openqa.selenium.interactions.MoveTargetOutOfBoundsException ex) {
+
             scrollElementIntoView(getBySelector(element));
         }
     }
