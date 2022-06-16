@@ -39,7 +39,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь на странице Избранное переходит по гиперссылке на главную страницу сайта")
     @Test
     public void checkMainHyperlink() {
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
@@ -58,7 +57,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
             "добавился в список избранного у авторизованного пользователя")
     @Test
     public void transferProductForAuthorizedUser() {
-        mobileMainPage.clickCloseMobileAppPopUp();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
