@@ -118,6 +118,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.checkCheckboxWithRecipe();
+        mobileProductCardPage.getRecipeInfo().moveToElementJs();
         String recipeInfo = mobileProductCardPage.getRecipeInfo().getText();
         Assertions.assertEquals(recipeInfo, "По рецепту");
     }
@@ -128,6 +129,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.checkCheckboxWithoutRecipe();
+        mobileProductCardPage.getRecipeInfo().moveToElementJs();
         String recipeInfo = mobileProductCardPage.getRecipeInfo().getText();
         Assertions.assertEquals(recipeInfo, "Без рецепта");
     }
