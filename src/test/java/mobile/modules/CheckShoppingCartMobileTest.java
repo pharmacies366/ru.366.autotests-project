@@ -3,7 +3,6 @@ package mobile.modules;
 import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.apache.logging.log4j.core.util.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
