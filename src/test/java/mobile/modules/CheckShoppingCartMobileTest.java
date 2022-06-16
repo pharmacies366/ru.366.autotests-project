@@ -48,8 +48,8 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickToCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickDecreaseQuantity();
-        mobileCartPage.getDecreaseQuantity().moveToElementJs();
         mobileCartPage.getDecreaseQuantity().waitingForElementNullOnThePage();
+        mobileCartPage.getDecreaseQuantity().moveToElementJs();
         int secondQuantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");
