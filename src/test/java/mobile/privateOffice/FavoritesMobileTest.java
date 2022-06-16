@@ -88,7 +88,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
 
     }
 
-
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на странице избранное")
     @Test
     public void increaseQuantityMaterialOnFavoritesPage() {

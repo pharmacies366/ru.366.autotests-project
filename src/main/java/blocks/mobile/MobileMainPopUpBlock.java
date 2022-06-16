@@ -104,10 +104,10 @@ public class MobileMainPopUpBlock extends MainTestBase {
         logger.info("Пользователь нажимает на иконку авторизации");
     }
 
-    @Step("Пользователь нажимает на иконку авторизации")
+    @Step("Пользователь нажимает на выход")
     public void clickLogOut() {
         getLogOutButton().click();
-        logger.info("Пользователь нажимает на иконку авторизации");
+        logger.info("Пользователь нажимает на иконку выход");
     }
 
     @Step("Пользователь нажимает на кнопку Личные данные")
