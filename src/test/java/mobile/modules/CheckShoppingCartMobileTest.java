@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 @Tag("Mobile")
 public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
 
-    @DisplayName("Пользователь увеличивает количество шт. товара на странице корзины")
+/*    @DisplayName("Пользователь увеличивает количество шт. товара на странице корзины")
     @Test
     public void increaseQuantityMaterialOnCartPage() {
         mobileMainPage.AddToCartClick();
@@ -30,7 +30,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         int quantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(2, quantity);
         logger.info("Количество товара равно 2-м");
-    }
+    }*/
 
     @DisplayName("Пользователь уменьшает количество шт. товара на странице корзины")
     @Test
@@ -55,6 +55,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         logger.info("Количество товара равно 1-му");
     }
 
+/*
     @DisplayName("Пользователь удаляет 1 из 2-х товаров в корзине")
     @Test
     public void deleteMaterialsFromCart() {
@@ -136,5 +137,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         int count = mobileCartPage.checkDoNotAddToCartProductsList();
         Assertions.assertTrue(count > 0);
     }
+*/
 
 }
