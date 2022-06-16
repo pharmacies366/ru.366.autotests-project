@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 @Tag("Mobile")
 public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
 
-/*    @DisplayName("Пользователь увеличивает количество шт. товара на странице корзины")
+    @DisplayName("Пользователь увеличивает количество шт. товара на странице корзины")
     @Test
     public void increaseQuantityMaterialOnCartPage() {
         mobileMainPage.AddToCartClick();
@@ -30,7 +30,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         int quantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(2, quantity);
         logger.info("Количество товара равно 2-м");
-    }*/
+    }
 
     @DisplayName("Пользователь уменьшает количество шт. товара на странице корзины")
     @Test
@@ -55,7 +55,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         logger.info("Количество товара равно 1-му");
     }
 
-/*
+
     @DisplayName("Пользователь удаляет 1 из 2-х товаров в корзине")
     @Test
     public void deleteMaterialsFromCart() {
@@ -124,8 +124,8 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileHeaderBlock.clickToCartButton();
         mobileCartPage.clickFavoritesButton();
-        int count =  mobileHeaderBlock.checkQuantityProductsOnFavoritesPage();
-        Assertions.assertEquals(count,1);
+        int count = mobileHeaderBlock.checkQuantityProductsOnFavoritesPage();
+        Assertions.assertEquals(count, 1);
     }
 
     @DisplayName("Пользователь проверяет, что в блоке - не забудьте положить в корзину, отображаются: -Мини-карточки товаров в виде макета")
@@ -133,10 +133,9 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     public void checkDoNotAddToCartBlock() {
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         String text = mobileCartPage.checkTextDoNotAddToCart();
-        Assertions.assertEquals(text,"Не забудьте положить в корзину");
+        Assertions.assertEquals(text, "Не забудьте положить в корзину");
         int count = mobileCartPage.checkDoNotAddToCartProductsList();
         Assertions.assertTrue(count > 0);
     }
-*/
 
 }
