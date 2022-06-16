@@ -5,7 +5,6 @@ import blocks.mobile.MobileBasementBlock;
 import blocks.mobile.MobileHeaderBlock;
 import blocks.mobile.MobileMainPopUpBlock;
 import core.MainTestBase;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import pages.commonActions.mobile.CommonActionsOnMobilePages;
 import pages.mobile.authorization.MobileAuthPopUpPage;
