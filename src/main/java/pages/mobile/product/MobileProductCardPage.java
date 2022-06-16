@@ -23,7 +23,10 @@ public class MobileProductCardPage extends MainTestBase {
     private static final String MAIN_BUTTON_XPATH = "xpath;//div[@class='breadcrumbs__item']";
     private static final String BANNER_XPATH = "xpath;//img[@class='b-bnr--responsive__img ']";
     private static final String REGION_TEXT_XPATH = "xpath;//h2[contains(.,'%s')]";
-    private static final String RECIPE_INFO_XPATH = "xpath;(//div[contains(@class,'product__info__desc')])[6]";
+
+    private static final String WITHOUT_RECIPE_INFO_XPATH = "xpath;//div[@class='product__info__desc'][contains(.,'Без рецепта')]";
+
+    private static final String WITH_RECIPE_INFO_XPATH = "xpath;//div[@class='product__info__desc'][contains(.,'По рецепту')]";
 
     //конструктор
     public MobileProductCardPage(WebDriver driver) {
@@ -84,8 +87,10 @@ public class MobileProductCardPage extends MainTestBase {
         return new PageElementActions(xpath, driver);
     }
 
-    public PageElementActions getRecipeInfo() {
-        return new PageElementActions(RECIPE_INFO_XPATH, driver);
+    public PageElementActions getWithRecipeInfo() {
+        return new PageElementActions(WITH_RECIPE_INFO_XPATH, driver);
+    } public PageElementActions getWithOutRecipeInfo() {
+        return new PageElementActions(WITHOUT_RECIPE_INFO_XPATH, driver);
     }
 
 
