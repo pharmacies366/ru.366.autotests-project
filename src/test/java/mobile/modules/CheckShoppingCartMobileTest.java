@@ -25,6 +25,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickToCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickIncreaseQuantity();
+        mobileMainPage.getIncreaseQuantity().moveToElementJs();
         mobileMainPage.getIncreaseQuantity().waitingForElementNullOnThePage();
         int quantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(2, quantity);
