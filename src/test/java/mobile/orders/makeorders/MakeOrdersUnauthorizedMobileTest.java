@@ -43,15 +43,11 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @Test
     public void oneClick() {
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
-        pageActions.waitPageLoad();
         mobileCartPage.clickProductCard();
-        pageActions.waitPageLoad();
+        mobileProductCardPage.buyOneClick();
         mobileProductCardPage.checkVisibilityMap();
         mobileProductCardPage.setInputSearchAddres("метро Фили");
-        mobileProductCardPage.buyOneClick();
-        pageActions.waitPageLoad();
         mobileProductCardPage.clickChangeAptekaList();
-        pageActions.waitPageLoad();
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         // mobileCheckOutPage.clickBookingButton();
@@ -62,13 +58,10 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @Test
     public void checkOsp() {
         pageActions.reloadPage();
-        pageActions.waitPageLoad();
         mobileMainPage.clickLetterN();
-        pageActions.waitPageLoad();
         mobileOspPage.clickShowAll();
         mobileOspPage.clickProductName();
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
         mobileCheckOutPage.contactDetails(
@@ -89,11 +82,8 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.reloadPage();
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
-        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
-        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
@@ -113,18 +103,15 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     public void split() {
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         mobileMainPage.clickSiteLogo();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
         mobileCartPage.сlickAddCartButton();
-        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickChangeAptekaList();
-        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
         pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
