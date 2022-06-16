@@ -48,12 +48,13 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickToCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickDecreaseQuantity();
-        mobileCartPage.getDecreaseQuantity().moveToElementJs();
         mobileCartPage.getDecreaseQuantity().waitingForElementNullOnThePage();
+        mobileCartPage.getDecreaseQuantity().moveToElementJs();
         int secondQuantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");
     }
+
 
     @DisplayName("Пользователь удаляет 1 из 2-х товаров в корзине")
     @Test
@@ -123,8 +124,8 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileHeaderBlock.clickToCartButton();
         mobileCartPage.clickFavoritesButton();
-        int count =  mobileHeaderBlock.checkQuantityProductsOnFavoritesPage();
-        Assertions.assertEquals(count,1);
+        int count = mobileHeaderBlock.checkQuantityProductsOnFavoritesPage();
+        Assertions.assertEquals(count, 1);
     }
 
     @DisplayName("Пользователь проверяет, что в блоке - не забудьте положить в корзину, отображаются: -Мини-карточки товаров в виде макета")
@@ -132,7 +133,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     public void checkDoNotAddToCartBlock() {
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         String text = mobileCartPage.checkTextDoNotAddToCart();
-        Assertions.assertEquals(text,"Не забудьте положить в корзину");
+        Assertions.assertEquals(text, "Не забудьте положить в корзину");
         int count = mobileCartPage.checkDoNotAddToCartProductsList();
         Assertions.assertTrue(count > 0);
     }
