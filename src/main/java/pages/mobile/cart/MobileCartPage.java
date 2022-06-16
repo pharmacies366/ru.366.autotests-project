@@ -18,6 +18,7 @@ public class MobileCartPage extends MainTestBase {
     private static final String PRODUCT_CARD_XPATH = "xpath;//a[@data-gtm-source='search list']";
     private static final String QUANTITY_PRODUCT_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
     private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_plus')])[1]";
+    private static final String DECREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_minus')])[1]";
     private static final String DELETE_PRODUCT_XPATH = "xpath;(//form[@action='/cart/update']//child::button)[2]";
     private static final String FAVORITES_BUTTON_XPATH = "xpath;//button[@data-gtm-source='cart']";
     private static final String BANNER_XPATH = "xpath;//img[@class='b-bnr--responsive__img ']";
@@ -72,6 +73,11 @@ public class MobileCartPage extends MainTestBase {
     public PageElementActions getIncreaseQuantity() {
         return new PageElementActions(INCREASE_QUANTITY_XPATH, driver);
     }
+
+    public PageElementActions getDecreaseQuantity() {
+        return new PageElementActions(DECREASE_QUANTITY_XPATH, driver);
+    }
+
 
     public PageElementActions getDeleteMaterials() {
         return new PageElementActions(DELETE_PRODUCT_XPATH, driver);
@@ -150,6 +156,12 @@ public class MobileCartPage extends MainTestBase {
     public void clickIncreaseQuantity(){
         getIncreaseQuantity().clickJs();
         logger.info("Пользователь нажимает '+' увеличивая количество шт. товара");
+    }
+
+    @Step("Пользователь нажимает '-' уменьшая количество шт. товара")
+    public void clickDecreaseQuantity(){
+        getDecreaseQuantity().clickJs();
+        logger.info("Пользователь нажимает '-' уменьшая количество шт. товара");
     }
 
     @Step("Пользователь нажимает на иконку удаления товара")
