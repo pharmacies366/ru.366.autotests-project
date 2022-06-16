@@ -128,7 +128,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.checkCheckboxWithoutRecipe();
-       // mobileProductCardPage.getRecipeInfo().moveToElementJs();
         String recipeInfo = mobileProductCardPage.getWithOutRecipeInfo().getText();
         Assertions.assertEquals(recipeInfo, "Без рецепта");
     }

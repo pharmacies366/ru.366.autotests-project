@@ -80,13 +80,11 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void checkTotalAmountProducts() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/332603");
         mobileProductCardPage.clickAddCartButton();
-        pageActions.waitPageLoad();
         int firstPrice = mobileProductCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
         mobileProductCardPage.clickAddCartButton();
-        pageActions.waitPageLoad();
         int secondPrice = mobileProductCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         int totalPrice = mobileCartPage.getPriceTotal();
@@ -96,13 +94,11 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет нотификацию после удаления товара")
     @Test
     public void checkNotificationCart() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/332603");
         mobileProductCardPage.clickAddCartButton();
-        pageActions.waitPageLoad();
         int firstPrice = mobileProductCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
         mobileProductCardPage.clickAddCartButton();
-        pageActions.waitPageLoad();
         int secondPrice = mobileProductCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         int totalPrice = mobileCartPage.getPriceTotal();
