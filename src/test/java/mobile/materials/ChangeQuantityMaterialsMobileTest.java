@@ -55,7 +55,7 @@ public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь увеличивает количество шт. товара в карточке товара")
     @Test
     public void increaseQuantityMaterialOnProductCartPage() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/332603");
         mobileProductCardPage.clickAddCartButton();
         pageActions.waitPageLoad();
         mobileProductCardPage.clickIncreaseQuantity();
