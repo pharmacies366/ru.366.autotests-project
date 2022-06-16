@@ -116,7 +116,7 @@ public class MobileHeaderBlock extends MainTestBase {
 
     @Step("Пользователь нажимает на иконку корзины")
     public void clickToCartButton() {
-        getCartButton().click();
+        getCartButton().clickJs();
         logger.info("Пользователь нажимает на иконку корзины");
     }
 
