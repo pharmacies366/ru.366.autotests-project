@@ -35,15 +35,20 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     public void decreaseQuantityMaterialOnCartPage() {
         mobileMainPage.AddToCartClick();
         pageActions.waitPageLoad();
-        mobileMainPage.clickIncreaseQuantity();
-        int firstQuantity = mobileMainPage.getQuantityMaterials();
+        mobileMainPage.clickToCartButton();
+        mobileCartPage.clickIncreaseQuantity();
+        mobileMainPage.getIncreaseQuantity().waitingForElementNullOnThePage();
+        int firstQuantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(2, firstQuantity);
         logger.info("Количество товара равно 2-м");
         mobileMainPage.clickDecreaseQuantity();
+        pageActions.waitPageLoad();
         int secondQuantity = mobileMainPage.getQuantityMaterials();
         Assertions.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");
+        pageActions.waitPageLoad();
         mobileMainPage.clickToCartButton();
+        pageActions.waitPageLoad();
         int finalQuantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(1, finalQuantity);
         logger.info("Количество товара равно 1-му");
