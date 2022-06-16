@@ -133,11 +133,11 @@ public class MobileCheckOutPage extends MainTestBase {
     @Step("Проверка выбранного способа получения 'Самовывоз'")
     public void choosePickupMethod() {
         if (getSelectApteka().isElementVisible()) {
-            getSelectApteka().click();
+            getSelectApteka().clickJs();
         }
         else {
-            getPickupRadioButton().click();
-            getSelectApteka().click();
+            getPickupRadioButton().clickJs();
+            getSelectApteka().clickJs();
         }
         logger.info("Проверка выбранного способа получения 'Самовывоз'");
     }
