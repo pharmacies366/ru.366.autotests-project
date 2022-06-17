@@ -69,6 +69,7 @@ public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
     public void checkUnVisibilityBonuses() {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
+        pageActions.waitPageLoad();
         commonActionsOnMobilePages.getPriceText().isElementDisplayed();
         commonActionsOnMobilePages.changePricesRangeWithHands("10", "10");
         commonActionsOnMobilePages.clickFiltersButton();
@@ -86,6 +87,7 @@ public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
     public void checkVisibilityBonuses() {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
+        pageActions.waitPageLoad();
         commonActionsOnMobilePages.getPriceText().isElementDisplayed();
         commonActionsOnMobilePages.changePricesRangeWithHands("15", "1000");
         commonActionsOnMobilePages.clickFiltersButton();
