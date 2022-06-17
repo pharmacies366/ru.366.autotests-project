@@ -35,6 +35,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.clickDeliveryMethod();
         mobileCheckOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
         mobileCheckOutPage.clickMakeOrder();
+        pageActions.waitPageLoad();
         mobileSberPage.bankCardDetails(
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),

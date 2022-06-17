@@ -35,8 +35,8 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-       // mobileSberPage.clickOnSubmitButton();
-       // mobileThankForTheOrderPage.checkPaymentError();
+        // mobileSberPage.clickOnSubmitButton();
+        // mobileThankForTheOrderPage.checkPaymentError();
     }
 
     @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
@@ -48,7 +48,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileProductCardPage.checkVisibilityMap();
         mobileProductCardPage.clickChangeAptekaList();
         mobileProductCardPage.setInputSearchAddres("метро Фили");
-       // pageActions.waitPageLoad();
+        // pageActions.waitPageLoad();
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         // mobileCheckOutPage.clickBookingButton();
@@ -90,7 +90,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickSelect();
-      //  pageActions.waitPageLoad();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
@@ -115,7 +115,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         //pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
-       // pageActions.waitPageLoad();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
