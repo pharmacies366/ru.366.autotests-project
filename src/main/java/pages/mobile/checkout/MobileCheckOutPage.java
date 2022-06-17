@@ -27,7 +27,8 @@ public class MobileCheckOutPage extends MainTestBase {
     private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//label[@class='js-storefinder-sort js-product-stores__head-item js-storefinder-recommend']";
     private static final String SELECT_XPATH= "xpath;(//span[contains(@class,'desc js-confirm-store-on-list')])[1]";
     private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
-    private static final String PICKAP_RADIO_BUTTON_XPATH = "xpath;(//span[@class='checkout_delivery_info__mark'])[1]";
+    private static final String PICKUP_RADIO_BUTTON_XPATH = "xpath;(//span[@class='checkout_delivery_info__mark'])[1]";
+    private static final String SEARCH_BUTTON_XPATH = "xpath;//span[@class='b-icn--search']";
 
 
 
@@ -82,8 +83,13 @@ public class MobileCheckOutPage extends MainTestBase {
     }
 
     public PageElementActions getPickupRadioButton() {
-        return new PageElementActions(PICKAP_RADIO_BUTTON_XPATH, driver);
+        return new PageElementActions(PICKUP_RADIO_BUTTON_XPATH, driver);
     }
+
+    public PageElementActions getSearchButton() {
+        return new PageElementActions(SEARCH_BUTTON_XPATH, driver);
+    }
+
 
 
 
@@ -160,7 +166,8 @@ public class MobileCheckOutPage extends MainTestBase {
 
     @Step("Пользователь вводит адрес - {addres}")
     public void setInputSearchAddres(String addres) {
-        getPharmacyAddressInput().sendKeysAndEnter(addres);
+        getPharmacyAddressInput().sendKeys(addres);
+        getSearchButton().click();
         logger.info("Пользователь вводит адрес");
     }
 
