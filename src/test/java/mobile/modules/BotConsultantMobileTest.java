@@ -15,20 +15,18 @@ import org.junit.jupiter.api.Test;
 @Tag("Mobile")
 public class BotConsultantMobileTest extends BaseSettingsMobileTests {
 
-    @DisplayName("Пользователь выбирает пункт: Не могу оформить заказ, заполняет свои данные и получает ответ от бота")
+  /*  @DisplayName("Пользователь выбирает пункт: Не могу оформить заказ, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemCanNotCheckout() {
         pageActions.reloadPage();
         mobileMainPage.clickBotConsultantButton();
-        pageActions.staticWait(2000);
         mobileBotConsultantPopUpPage.clickCantNotOrder();
-        pageActions.staticWait(2000);
         pageActions.waitPageLoad();
         mobileBotConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
         mobileBotConsultantPopUpPage.clicksendMessage();
         mobileBotConsultantPopUpPage.checkThanksMessage();
     }
-/*
+
     @DisplayName("Пользователь выбирает пункт: Мне нужен препарат, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemINeedADrug() {
@@ -51,7 +49,7 @@ public class BotConsultantMobileTest extends BaseSettingsMobileTests {
         mobileBotConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
         mobileBotConsultantPopUpPage.clicksendMessage();
         mobileBotConsultantPopUpPage.checkThanksMessage();
-    }
+    }*/
 
     @DisplayName("Пользователь проверяет закрытие консультант бота")
     @Test
@@ -61,5 +59,5 @@ public class BotConsultantMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileBotConsultantPopUpPage.clickCloseBot();
         mobileMainPage.getBotConsultantButton().isElementDisplayed();
-    }*/
+    }
 }
