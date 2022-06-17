@@ -37,7 +37,7 @@ public class PageElementActions extends MainTestBase {
         saveAllureScreenshot();
     }
 
-    public boolean click(By by) {
+    public boolean click() {
         boolean result = false;
         int attempts = 0;
         while(attempts < 2) {
@@ -71,7 +71,7 @@ public class PageElementActions extends MainTestBase {
         saveAllureScreenshot();
     }
 
-    public boolean clickJs(By by) {
+    public boolean clickJs() {
         boolean result = false;
         int attempts = 0;
         while(attempts < 2) {
