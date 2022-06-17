@@ -16,7 +16,7 @@ public class MobileProductCardPage extends MainTestBase {
     private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
     private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
     private static final String CHANGE_APTEKA_LIST_XPATH = "xpath;//span[contains(.,'Списком')]";
-    private static final String ONE_CLICK_APTEKA_BUTTONS_XPATH = "xpath;(//div[@class='product_pharm_finder__btn'])[1]";
+    private static final String ONE_CLICK_APTEKA_BUTTONS_XPATH = "xpath;(//div[@class='product_pharm_finder__btn']//child::button)[1]";
     private static final String INCREASE_QUANTITY_XPATH = "xpath;(//span[contains(@class,'plus js-qty-selector-plus-gz')])[2]";
     private static final String QUANTITY_PRODUCT_XPATH = "xpath;(//a[@class='product_counter_short__desc'])[2]";
     private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
