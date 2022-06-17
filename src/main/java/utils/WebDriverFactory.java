@@ -82,10 +82,12 @@ public class WebDriverFactory {
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         }
 
-        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+
         String driverURL = System.getProperty("driverurl");
         capabilities.setBrowserName("chrome");
         capabilities.setVersion("91.0");
+
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         driver = new ChromeDriver(capabilities);
 
         try {
