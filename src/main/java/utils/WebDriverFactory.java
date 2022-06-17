@@ -70,7 +70,7 @@ public class WebDriverFactory {
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         String driverURL = System.getProperty("driverurl");
         capabilities.setBrowserName("chrome");
-        capabilities.setVersion("101.0");
+        capabilities.setVersion("93.0");
 
         try {
             driver = new RemoteWebDriver(
