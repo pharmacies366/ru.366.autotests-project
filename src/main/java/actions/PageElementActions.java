@@ -46,8 +46,9 @@ public class PageElementActions extends MainTestBase {
                 result = true;
                 break;
             } catch(StaleElementReferenceException e) {
+                attempts++;
             }
-            attempts++;
+
         }
         return result;
     }
@@ -80,8 +81,9 @@ public class PageElementActions extends MainTestBase {
                 result = true;
                 break;
             } catch(StaleElementReferenceException e) {
+                attempts++;
             }
-            attempts++;
+
         }
         return result;
     }
