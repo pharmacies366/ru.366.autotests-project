@@ -31,6 +31,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.clickDeliveryMethod();
         mobileCheckOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
         mobileCheckOutPage.clickMakeOrder();
+        pageActions.waitPageLoad();
         mobileSberPage.bankCardDetails(
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
@@ -48,7 +49,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileProductCardPage.checkVisibilityMap();
         mobileProductCardPage.clickChangeAptekaList();
         mobileProductCardPage.setInputSearchAddres("метро Фили");
-        // pageActions.waitPageLoad();
+        pageActions.waitPageLoad();
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         // mobileCheckOutPage.clickBookingButton();
