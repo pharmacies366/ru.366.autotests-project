@@ -126,7 +126,7 @@ public class MobileCheckOutPage extends MainTestBase {
 
     @Step("Пользователь нажимает кнопку 'Выбрать Аптеку'")
     public void clickSelectApteka() {
-        choosePickupMethod();
+        getSelectApteka().clickJs();
         logger.info("Пользователь нажимает кнопку 'Выбрать Аптеку'");
     }
 
