@@ -27,6 +27,7 @@ public class MobileProductCardPage extends MainTestBase {
     private static final String WITHOUT_RECIPE_INFO_XPATH = "xpath;//div[@class='product__info__desc'][contains(.,'Без рецепта')]";
 
     private static final String WITH_RECIPE_INFO_XPATH = "xpath;//div[@class='product__info__desc'][contains(.,'По рецепту')]";
+    private static final String SEARCH_BUTTON_XPATH = "xpath;(//span[@class='b-icn--search'])[2]";
 
     //конструктор
     public MobileProductCardPage(WebDriver driver) {
@@ -89,10 +90,15 @@ public class MobileProductCardPage extends MainTestBase {
 
     public PageElementActions getWithRecipeInfo() {
         return new PageElementActions(WITH_RECIPE_INFO_XPATH, driver);
-    } public PageElementActions getWithOutRecipeInfo() {
+    }
+
+    public PageElementActions getWithOutRecipeInfo() {
         return new PageElementActions(WITHOUT_RECIPE_INFO_XPATH, driver);
     }
 
+    public PageElementActions getSearchButton() {
+        return new PageElementActions(SEARCH_BUTTON_XPATH, driver);
+    }
 
 
     //Методы
@@ -123,7 +129,8 @@ public class MobileProductCardPage extends MainTestBase {
 
     @Step("Пользователь вводит адрес - {addres}")
     public void setInputSearchAddres(String addres) {
-        getPharmacyAddressInput().sendKeysAndEnter(addres);
+        getPharmacyAddressInput().sendKeys(addres);
+        getSearchButton().click();
     }
 
     @Step("Пользователь нажимает на список доступных Аптек")
