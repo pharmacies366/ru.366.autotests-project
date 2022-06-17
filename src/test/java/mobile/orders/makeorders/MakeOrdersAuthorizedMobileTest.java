@@ -30,6 +30,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCartPage.checkAndClearCartQuantity();
         mobileMainPage.clickSiteLogo();
         mobileCartPage.сlickAddCartButton();
+        mobileMainPage.getIncreaseQuantity().isElementDisplayed();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
         mobileCheckOutPage.clickDeliveryMethod();

@@ -22,6 +22,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @Test
     public void delivery() {
         mobileCartPage.сlickAddCartButton();
+        mobileMainPage.getIncreaseQuantity().isElementDisplayed();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
         mobileCheckOutPage.contactDetails(
