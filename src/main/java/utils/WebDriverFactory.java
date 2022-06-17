@@ -10,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -98,18 +100,7 @@ public class WebDriverFactory {
 
         chromeOptions.addArguments("--incognito");
         chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));//оставить
-        // или chromeOptions.addArguments("enable-automation");
         chromeOptions.addArguments("--disable-notifications");
-        chromeOptions.addArguments("--disable-extensions");
-        chromeOptions.addArguments("--dns-prefetch-disable");
-        chromeOptions.addArguments("--disable-gpu");
-        chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--dns-prefetch-disable");
-        chromeOptions.addArguments("--ignore-certificate-errors");
-        chromeOptions.addArguments("--disabled-popup-blocking");
-        //chromeOptions.addArguments("--headless");
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        //  chromeOptions.setPageLoadStrategy(PageLoadStrategy.eager);
         Map<String, Object> prefs = new HashMap<String, Object>();
         Map<String, Object> profile = new HashMap<String, Object>();
         prefs.put("googlegeolocationaccess.enabled", true);
@@ -117,6 +108,12 @@ public class WebDriverFactory {
         prefs.put("profile.default_content_setting_values.notifications", 1);
         prefs.put("profile.managed_default_content_settings", 1);
         chromeOptions.setExperimentalOption("prefs", prefs);
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        chromeOptions.addArguments("--ignore-certificate-errors");
+        chromeOptions.addArguments("--disabled-notifications");
+        chromeOptions.addArguments("--disabled-popup-blocking");
+        chromeOptions.addArguments("--disable-extensions");
+        chromeOptions.addArguments("--dns-prefetch-disable");
 
 
         if (nameOfPackage.contains("mobile")) {
@@ -139,8 +136,8 @@ public class WebDriverFactory {
     private void configureDriver() {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
     }
 
 
