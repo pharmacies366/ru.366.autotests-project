@@ -138,6 +138,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
+        pageActions.waitPageLoad();
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickChangeAptekaList();
