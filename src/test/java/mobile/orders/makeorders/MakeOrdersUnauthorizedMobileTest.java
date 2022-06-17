@@ -18,7 +18,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
 
     //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
 
-/*    @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
+    @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
     @Test
     public void delivery() {
         mobileCartPage.сlickAddCartButton();
@@ -35,9 +35,9 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-        mobileSberPage.clickOnSubmitButton();
-        mobileThankForTheOrderPage.checkPaymentError();
-    }*/
+       // mobileSberPage.clickOnSubmitButton();
+       // mobileThankForTheOrderPage.checkPaymentError();
+    }
 
     @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
     @Test
@@ -46,9 +46,9 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCartPage.clickProductCard();
         mobileProductCardPage.buyOneClick();
         mobileProductCardPage.checkVisibilityMap();
-        mobileProductCardPage.setInputSearchAddres("метро Фили");
         mobileProductCardPage.clickChangeAptekaList();
-        pageActions.waitPageLoad();
+        mobileProductCardPage.setInputSearchAddres("метро Фили");
+       // pageActions.waitPageLoad();
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         // mobileCheckOutPage.clickBookingButton();
@@ -70,8 +70,8 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
         mobileCheckOutPage.clickSelectApteka();
-        mobileCheckOutPage.setInputSearchAddres("метро Автозаводская");//возможно нужно кликнуть в пустое место
         mobileCheckOutPage.clickChangeAptekaList();
+        mobileCheckOutPage.setInputSearchAddres("метро Автозаводская");//возможно нужно кликнуть в пустое место
         mobileCheckOutPage.clickSelect();
         //  mobileCheckOutPage.clickMakeOrder();
         //  mobileThankForTheOrderPage.checkSuccessMessage();
@@ -87,10 +87,10 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCartPage.clickToMakeOrder();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
-        mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickChangeAptekaList();
+        mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickSelect();
-        pageActions.waitPageLoad();
+      //  pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
@@ -111,11 +111,11 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCartPage.clickToMakeOrder();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
-        mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickChangeAptekaList();
-        pageActions.waitPageLoad();
+        mobileCheckOutPage.setInputSearchAddres("метро Фили");
+        //pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
-        pageActions.waitPageLoad();
+       // pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
