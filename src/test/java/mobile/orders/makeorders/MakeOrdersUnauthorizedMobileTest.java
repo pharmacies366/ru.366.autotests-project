@@ -45,7 +45,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
-        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode3"));
+        mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         mobileCartPage.clickProductCard();
         mobileProductCardPage.buyOneClick();
         mobileProductCardPage.checkVisibilityMap();
