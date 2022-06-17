@@ -26,7 +26,6 @@ public class OrderCancellationMobileTest extends BaseSettingsMobileTests {
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber6"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileCartPage.checkAndClearCartQuantity();
         pageActions.reloadPage();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));

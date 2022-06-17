@@ -52,7 +52,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber9"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         pageActions.waitPageLoad();
         headerBlock.clickFavoritesButton();

@@ -1,4 +1,4 @@
-package web.orders.cancellation.authorization;
+package web.authorization;
 
 import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;

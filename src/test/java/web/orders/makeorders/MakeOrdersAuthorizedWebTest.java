@@ -26,7 +26,6 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber1"),
                 propertiesManager.getProperty("userpass"));
-                pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.waitPageLoad();
@@ -52,7 +51,6 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber2"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         pageActions.waitPageLoad();
@@ -76,7 +74,6 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         pageActions.waitPageLoad();
         headerBlock.clickSiteLogo();
@@ -101,7 +98,6 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber4"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.clickAddCartButton();
@@ -123,7 +119,6 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber5"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
         cartPage.clickAddCartButton();
