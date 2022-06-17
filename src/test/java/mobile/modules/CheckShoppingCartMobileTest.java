@@ -23,7 +23,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileMainPage.clickToCartButton();
         pageActions.waitPageLoad();
-        mobileMainPage.getIncreaseQuantity().moveToElement();
         mobileCartPage.clickIncreaseQuantity();
         mobileMainPage.getIncreaseQuantity().waitingForElementNullOnThePage();
         mobileMainPage.getIncreaseQuantity().moveToElement();
@@ -39,7 +38,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileMainPage.clickToCartButton();
         pageActions.waitPageLoad();
-        mobileMainPage.getIncreaseQuantity().moveToElement();
         mobileCartPage.clickIncreaseQuantity();
         mobileMainPage.getIncreaseQuantity().waitingForElementNullOnThePage();
         int firstQuantity = mobileCartPage.getQuantityMaterials();
