@@ -49,6 +49,7 @@ public class CommonActionsOnMobilePages extends MainTestBase {
     private static final String CASH_BACK_INFO_POP_UP_XPATH = "xpath;//div[@class='popup__title'][contains(.,'Cash back за покупку')]";
     private static final String LINK_MORE_ABOUT_BONUSES_XPATH = "xpath;//a[@href='/pravila_programmy/'][contains(.,'Подробнее о бонусах')]";
     private static final String BUTTON_BONUSES_XPATH = "xpath;(//div[@class='card-balance--inner-icon'])[1]";
+    private static final String PRICE_TEXT_XPATH = "xpath;//span[contains(.,'Цена')]";
 
 
     //конструктор
@@ -189,6 +190,9 @@ public class CommonActionsOnMobilePages extends MainTestBase {
 
     public PageElementActions getButtonBonuses() {
         return new PageElementActions(BUTTON_BONUSES_XPATH, driver);
+    }
+    public PageElementActions getPriceText() {
+        return new PageElementActions(PRICE_TEXT_XPATH, driver);
     }
 
 
