@@ -20,9 +20,11 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
     public void checkChangePricesRangeWithSlider() {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
+        pageActions.waitPageLoad();
         int startPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int finishPriceRange = commonActionsOnWebPages.getToPriceRange();
         commonActionsOnWebPages.changePricesRangeWithSlider();
+        pageActions.waitPageLoad();
         commonActionsOnWebPages.getPriceRangeFrom().waitingForElementNullOnThePage();
         int newStartPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int newFinishPriceRange = commonActionsOnWebPages.getToPriceRange();
@@ -35,7 +37,9 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
     public void checkChangePricesRangeWithHands() {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
+        pageActions.waitPageLoad();
         commonActionsOnWebPages.changePricesRangeWithHands("100", "500");
+        pageActions.waitPageLoad();
         int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
         int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int price = commonActionsOnWebPages.checkProductsPrices();

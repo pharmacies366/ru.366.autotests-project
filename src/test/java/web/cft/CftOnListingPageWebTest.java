@@ -72,6 +72,7 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         commonActionsOnWebPages.getPriceText().isElementDisplayed();
         commonActionsOnWebPages.changePricesRangeWithHands("10", "10");
+        pageActions.waitPageLoad();
         int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
         int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int price = commonActionsOnWebPages.checkProductsPrices();
@@ -80,7 +81,7 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.getProductGalleryBonusesButton().isElementNotVisible();
     }
 
-    @DisplayName("Проверка на наличия начисляемых бонусов за покупку товара")
+    @DisplayName("Проверка на наличие начисляемых бонусов за покупку товара")
     @Description("Взять цену товара, умножить на 0,03 (Текущий процент бонусов от цены), если значение больше или равно 0.5, то шильдик должен быть")
     @Test
     public void checkVisibilityBonuses() {
@@ -89,6 +90,7 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         commonActionsOnWebPages.getPriceText().isElementDisplayed();
         commonActionsOnWebPages.changePricesRangeWithHands("15", "1000");
+        pageActions.waitPageLoad();
         int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
         int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int price = commonActionsOnWebPages.checkProductsPrices();
