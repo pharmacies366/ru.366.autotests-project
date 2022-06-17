@@ -48,6 +48,7 @@ public class CommonActionsOnWebPages extends MainTestBase {
     private static final String CASH_BACK_INFO_POP_UP_XPATH = "xpath;//div[@class='hint__title']";
     private static final String LINK_MORE_ABOUT_BONUSES_XPATH = "xpath;//a[@href='/pravila_programmy/'][contains(.,'Подробнее о бонусах')]";
 
+    private static final String PRICE_TEXT_XPATH = "xpath;//span[contains(.,'Цена')]";
 
 
     //конструктор
@@ -184,6 +185,10 @@ public class CommonActionsOnWebPages extends MainTestBase {
 
     public PageElementActions getMoreAboutBonuses() {
         return new PageElementActions(LINK_MORE_ABOUT_BONUSES_XPATH, driver);
+    }
+
+    public PageElementActions getPriceText() {
+        return new PageElementActions(PRICE_TEXT_XPATH, driver);
     }
 
 

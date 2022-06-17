@@ -13,7 +13,7 @@ import java.time.Duration;
 
 public class PageElementActions extends MainTestBase {
 
-    protected static final int DEFAULT_ELEMENT_WAIT_TIME_S = 20;
+    protected static final int DEFAULT_ELEMENT_WAIT_TIME_S = 25;
     private String element;
 
     //конструктор
