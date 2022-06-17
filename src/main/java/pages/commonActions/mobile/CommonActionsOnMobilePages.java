@@ -12,7 +12,7 @@ public class CommonActionsOnMobilePages extends MainTestBase {
 
 
     //элементы
-    private static final String FILTERS_BUTTON_XPATH = "xpath;//span[@class='sorting__toggle__inactive']";
+    private static final String FILTERS_BUTTON_XPATH = "xpath;(//div[@class='sorting b-section c-sorting']//child::div//child::span)[1]";
     private static final String PRODUCT_BUTTON_XPATH = "xpath;//a[@data-gtm-position='%s']";
     private static final String BANNER_XPATH = "xpath;(//img[contains(@class,'img js-responsive-image  lazyloaded')])[1]";
     private static final String SLIDER_FROM_XPATH = "xpath;//span[@class='irs-slider from last']";
