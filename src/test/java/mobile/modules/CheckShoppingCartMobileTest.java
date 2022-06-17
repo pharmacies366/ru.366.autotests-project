@@ -47,6 +47,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         logger.info("Количество товара равно 2-м");
         mobileMainPage.clickToCartButton();
         pageActions.waitPageLoad();
+        mobileCartPage.getDecreaseQuantity().moveToElement();
         mobileCartPage.clickDecreaseQuantity();
         mobileCartPage.getDecreaseQuantity().waitingForElementNullOnThePage();
         mobileCartPage.getDecreaseQuantity().moveToElement();
@@ -54,7 +55,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         Assertions.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");
     }
-
 
     @DisplayName("Пользователь удаляет 1 из 2-х товаров в корзине")
     @Test
