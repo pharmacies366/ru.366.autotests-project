@@ -78,8 +78,8 @@ public class WebDriverFactory {
         if (nameOfPackage.contains("mobile")) {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
-            //mobileEmulation.put("deviceName", "iPhone X");
-            mobileEmulation.put("deviceName", "Galaxy S5");
+            mobileEmulation.put("deviceName", "iPhone X");
+           // mobileEmulation.put("deviceName", "Galaxy S5");
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         }
 
@@ -136,8 +136,8 @@ public class WebDriverFactory {
         if (nameOfPackage.contains("mobile")) {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
-            //mobileEmulation.put("deviceName", "iPhone X");
-            mobileEmulation.put("deviceName", "Galaxy S5");
+            mobileEmulation.put("deviceName", "iPhone X");
+           // mobileEmulation.put("deviceName", "Galaxy S5");
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         }
 
