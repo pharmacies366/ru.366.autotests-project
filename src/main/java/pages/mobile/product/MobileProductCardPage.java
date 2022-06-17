@@ -134,7 +134,7 @@ public class MobileProductCardPage extends MainTestBase {
 
     @Step("Пользователь нажимает на 1-ую кнопку 'Купить в 1 клик' напротив выбранной аптеки")
     public void clickBuyOneClick() {
-        getOneClickAptekaButtons().click();
+        getOneClickAptekaButtons().clickJs();
         logger.info("Пользователь нажимает на 1-ую кнопку 'Купить в 1 клик' напротив выбранной аптеки");
     }
 
