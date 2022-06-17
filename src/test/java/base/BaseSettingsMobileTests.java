@@ -91,7 +91,7 @@ public class BaseSettingsMobileTests extends MainTestBase {
 
     //данный метод выполняется перед каждым тестом
     private void actionsBeforeTests() {
-        // mobileMainPage.clickClosePopUp(); - на данный момент баг и временный комент
+         mobileMainPage.clickClosePopUp();// - на данный момент баг и временный комент
         mobileMainPage.clickCloseMobileAppPopUp();
     }
 
