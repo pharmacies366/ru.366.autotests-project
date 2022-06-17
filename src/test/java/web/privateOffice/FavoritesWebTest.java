@@ -40,7 +40,7 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     public void checkMainHyperlink() {
         headerBlock.clickFavoritesButton();
         favoritesPage.clickMainPageButton();
-        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/");
+        pageActions.checkUrl("https://366.ru/");
     }
 
     @DisplayName("Товар, добавленный в избранное будучи не авторизованным," +

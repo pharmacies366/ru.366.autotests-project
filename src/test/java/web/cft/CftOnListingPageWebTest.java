@@ -69,6 +69,8 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
     public void checkUnVisibilityBonuses() {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
+        pageActions.waitPageLoad();
+        commonActionsOnWebPages.getPriceText().isElementDisplayed();
         commonActionsOnWebPages.changePricesRangeWithHands("10", "10");
         int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
         int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
@@ -84,6 +86,8 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
     public void checkVisibilityBonuses() {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
+        pageActions.waitPageLoad();
+        commonActionsOnWebPages.getPriceText().isElementDisplayed();
         commonActionsOnWebPages.changePricesRangeWithHands("15", "1000");
         int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
         int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
