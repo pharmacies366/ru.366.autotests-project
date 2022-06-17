@@ -45,9 +45,9 @@ public class PageElementActions extends MainTestBase {
                 clickF();
                 result = true;
                 break;
-            } catch(StaleElementReferenceException e) {
-                attempts++;
+            } catch(StaleElementReferenceException ignored) {
             }
+            attempts++;
 
         }
         return result;
