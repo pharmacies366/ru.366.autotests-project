@@ -1,4 +1,3 @@
-/*
 package mobile.modules;
 
 import base.BaseSettingsMobileTests;
@@ -63,4 +62,3 @@ public class BotConsultantMobileTest extends BaseSettingsMobileTests {
 
     }
 }
-*/
