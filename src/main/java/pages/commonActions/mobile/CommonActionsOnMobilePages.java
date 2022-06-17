@@ -235,7 +235,8 @@ public class CommonActionsOnMobilePages extends MainTestBase {
     @Step("Пользователь прописывает нижный и верхний диапозон цены")
     public void changePricesRangeWithHands(String fromPrice, String toPrice) {
         getPriceRangeFrom().clean();
-        getPriceRangeFrom().sendKeys(fromPrice);
+        getPriceRangeFrom().sendKeysAndEnter(fromPrice);
+        getFiltersButton().click();
         getPriceRangeTo().clean();
         getPriceRangeTo().sendKeysAndEnter(toPrice);
         logger.info("Пользователь прописывает нижный и верхний диапозон цены");
