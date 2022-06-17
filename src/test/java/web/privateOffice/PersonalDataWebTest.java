@@ -39,7 +39,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
@@ -58,7 +57,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clearLastNameAndPatronymic();
@@ -78,7 +76,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clearLastNameAndPatronymic();
@@ -94,7 +91,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clearName();
@@ -110,7 +106,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clearName();
@@ -131,7 +126,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.changeBirthday("12","Апрель","1994");
@@ -148,7 +142,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.changeGender("FEMALE");
@@ -167,7 +160,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clearEmail();
@@ -183,7 +175,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.checkPhone();
@@ -197,7 +188,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickPersonalData();
         personalDataPage.clickReceiveNews();

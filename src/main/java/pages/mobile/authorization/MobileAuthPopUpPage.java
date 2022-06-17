@@ -76,6 +76,7 @@ public class MobileAuthPopUpPage extends MainTestBase {
         getPassword().clean();
         getPassword().sendKeys(password);
         clickToLoginButton();
+        getPhoneNumberInput().waitingForElementNullOnThePage();
         logger.info("Пользователь вводит телефон, пароль и нажимает войти");
     }
 

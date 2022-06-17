@@ -87,6 +87,7 @@ public class AuthPopUpPage extends MainTestBase {
         getPassword().clean();
         getPassword().sendKeys(password);
         clickToLoginButton();
+        getPhoneNumberInput().waitingForElementNullOnThePage();
     }
 
 

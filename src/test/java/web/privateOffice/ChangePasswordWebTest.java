@@ -22,7 +22,6 @@ public class ChangePasswordWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber8"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickChangePassword();
         changePasswordPage.clickChangePassword(

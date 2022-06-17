@@ -45,7 +45,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber9"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileCartPage.checkAndClearCartQuantity();
         mobileHeaderBlock.clickFavoritesButton();
         mobileFavoritesPage.checkProductsOnFavoritesPage();
@@ -63,7 +62,6 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber9"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileCartPage.checkAndClearCartQuantity();
         pageActions.waitPageLoad();
         mobileHeaderBlock.clickFavoritesButton();

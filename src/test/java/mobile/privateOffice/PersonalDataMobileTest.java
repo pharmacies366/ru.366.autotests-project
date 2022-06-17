@@ -61,7 +61,6 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();
@@ -83,7 +82,6 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();
@@ -101,7 +99,6 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();
@@ -119,7 +116,6 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();
@@ -142,7 +138,6 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();
@@ -161,7 +156,6 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();
@@ -182,7 +176,6 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();
@@ -200,7 +193,6 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();
@@ -216,7 +208,6 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobileAuthPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("mobilephonenumber7"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToPersonalAccount();
         mobileMainPopUpBlock.clickPersonalData();

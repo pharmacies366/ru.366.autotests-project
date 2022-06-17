@@ -22,7 +22,6 @@ public class OrderCancellationWebTest extends BaseSettingsWebTests {
         authPopUpPage.authorizeWithPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber6"),
                 propertiesManager.getProperty("userpass"));
-        pageActions.waitPageLoad();
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         cartPage.сlickAddCartButton();
