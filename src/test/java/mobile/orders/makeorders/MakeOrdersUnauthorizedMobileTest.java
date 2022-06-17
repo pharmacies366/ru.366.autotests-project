@@ -30,6 +30,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("usermail"));
         mobileCheckOutPage.clickDeliveryMethod();
         mobileCheckOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickMakeOrder();
         pageActions.waitPageLoad();
         mobileSberPage.bankCardDetails(
