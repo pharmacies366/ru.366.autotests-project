@@ -16,9 +16,13 @@ public class MobileBotConsultantPopUpPage extends MainTestBase {
     private static final String PhoneNumber = "tel";
     private static final String Email = "email";
     private static final String CLOSE_BOT_BUTTON_XPATH = "xpath;//jdiv[contains(@class,'close')]";
-    private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[1]";
+  /*  private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[1]";
     private static final String NEED_A_DRUG_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[2]";
-    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[3]";
+    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'button')])[3]";*/
+
+    private static final String CAN_NOT_ORDER_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'main_b6c4')]//child::jdiv)[1]";
+    private static final String NEED_A_DRUG_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'main_b6c4')]//child::jdiv)[2]";
+    private static final String NEED_DELIVERY_BUTTON_XPATH = "xpath;(//jdiv[contains(@class,'main_b6c4')]//child::jdiv)[3]";
     private static final String ENTER_MESSAGE_INPUT_XPATH = "xpath;//jdiv[text()='Отправить']";
     private static final String THANKS_MESSAGE_XPATH = "xpath;//jdiv[@alt='\uD83C\uDF89']/..";
     private static final String ANIMATION_BOT_XPATH = "xpath;//jdiv[@id='jcont']";
