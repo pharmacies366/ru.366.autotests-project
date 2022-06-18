@@ -55,7 +55,7 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь удаляет 1 из 2-х товаров в корзине")
     @Test
     public void deleteMaterialsFromCart() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/47497");
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
         productCardPage.clickAddCartButton();
@@ -68,7 +68,7 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь удаляет все товары в корзине")
     @Test
     public void deleteAllMaterialsFromCart() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/47497");
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
         productCardPage.clickAddCartButton();
@@ -81,7 +81,7 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void checkTotalAmountProducts() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/47497");
         productCardPage.clickAddCartButton();
         int firstPrice = productCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
@@ -95,7 +95,7 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет нотификацию после удаления товара")
     @Test
     public void checkNotificationCart() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/29992");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/47497");
         productCardPage.clickAddCartButton();
         int firstPrice = productCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
