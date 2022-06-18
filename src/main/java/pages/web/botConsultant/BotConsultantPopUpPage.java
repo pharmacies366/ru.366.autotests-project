@@ -75,7 +75,7 @@ public class BotConsultantPopUpPage extends MainTestBase {
 
     @Step("Пользователь выбирает пункт: Не могу оформить заказ")
     public void clickCantNotOrder() {
-        getCanNotOrderButton().clickJs();
+        getCanNotOrderButton().click();
         logger.info("Пользователь выбирает пункт: Не могу оформить заказ");
     }
 
