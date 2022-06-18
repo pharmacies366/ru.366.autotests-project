@@ -53,7 +53,7 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
         botConsultantPopUpPage.checkThanksMessage();
     }*/
 
-    @DisplayName("Пользователь проверяет закрытие консультант бота")
+/*    @DisplayName("Пользователь проверяет закрытие консультант бота")
     @Test
     public void checkCloseBot() {
         mainPage.clickBotConsultantButton();
@@ -61,5 +61,5 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
         botConsultantPopUpPage.clickCloseBot();
         mainPage.getBotConsultantButton().isElementDisplayed();
 
-    }
+    }*/
 }
