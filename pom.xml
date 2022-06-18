@@ -119,7 +119,7 @@
                         <env>${env}</env>
                     </systemPropertyVariables>
                     <!-- системные переменные -->
-<!--                     <rerunFailingTestsCount>2</rerunFailingTestsCount>-->
+                     <rerunFailingTestsCount>2</rerunFailingTestsCount>
                 </configuration>
                 <dependencies>
                     <dependency>
