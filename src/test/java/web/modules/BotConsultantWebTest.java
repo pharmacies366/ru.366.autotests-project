@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 @Tag("Regression")
 public class BotConsultantWebTest extends BaseSettingsWebTests {
 
-    @DisplayName("Пользователь выбирает пункт: Не могу оформить заказ, заполняет свои данные и получает ответ от бота")
+/*    @DisplayName("Пользователь выбирает пункт: Не могу оформить заказ, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemCanNotCheckout() {
         mainPage.clickBotConsultantButton();
@@ -25,7 +25,7 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
         botConsultantPopUpPage.clicksendMessage();
         botConsultantPopUpPage.checkThanksMessage();
     }
-/*
+
     @DisplayName("Пользователь выбирает пункт: Мне нужен препарат, заполняет свои данные и получает ответ от бота")
     @Test
     public void checkItemINeedADrug() {
