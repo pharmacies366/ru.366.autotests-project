@@ -12,7 +12,6 @@ public class BotConsultantPopUpPage extends MainTestBase {
 
     //элементы
     private static final String BASE_INPUT_CONTACT_DETAILS_XPATH = "xpath;//input[@type='%s']";
-    private static final String BASE_INPUT_CONTACT_DETAILS_XPATH_1231 = "xpath;//textarea[@class='inputField_b1ed']";
     private static final String Name = "name";
     private static final String PhoneNumber = "tel";
     private static final String Email = "email";
@@ -100,7 +99,6 @@ public class BotConsultantPopUpPage extends MainTestBase {
 
     @Step("Пользователь заполняет контактные данные")
     public void contactDetails(String name, String phoneNumber, String email ) {
-        getBaseInputContactDetails(BASE_INPUT_CONTACT_DETAILS_XPATH_1231).sendKeys(name);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Name)).sendKeys(name);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, PhoneNumber)).sendKeys(phoneNumber);
         getBaseInputContactDetails(String.format(BASE_INPUT_CONTACT_DETAILS_XPATH, Email)).sendKeys(email);
