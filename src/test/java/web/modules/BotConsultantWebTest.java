@@ -19,13 +19,8 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
     @Test
     public void checkItemCanNotCheckout() {
         mainPage.clickBotConsultantButton();
-        botConsultantPopUpPage.clickCantNotOrder();
-        //pageActions.waitPageLoad();
-        try {
-            Thread.sleep(15000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        //botConsultantPopUpPage.clickCantNotOrder();
+        pageActions.waitPageLoad();
         botConsultantPopUpPage.contactDetails("test","00000000000","test@gmail.com");
         botConsultantPopUpPage.clicksendMessage();
         botConsultantPopUpPage.checkThanksMessage();
