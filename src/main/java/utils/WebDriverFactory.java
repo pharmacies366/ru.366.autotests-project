@@ -79,14 +79,14 @@ public class WebDriverFactory {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
             mobileEmulation.put("deviceName", "iPhone X");
-           // mobileEmulation.put("deviceName", "Galaxy S5");
+            // mobileEmulation.put("deviceName", "Galaxy S5");
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         }
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         String driverURL = System.getProperty("driverurl");
         capabilities.setBrowserName("chrome");
-        capabilities.setVersion("91.0");
+        capabilities.setVersion("102.0");
 
         try {
             driver = new RemoteWebDriver(
@@ -137,7 +137,7 @@ public class WebDriverFactory {
             WebDriverManager.chromedriver().setup();
             Map<String, String> mobileEmulation = new HashMap<>();
             mobileEmulation.put("deviceName", "iPhone X");
-           // mobileEmulation.put("deviceName", "Galaxy S5");
+            // mobileEmulation.put("deviceName", "Galaxy S5");
             chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         }
 
