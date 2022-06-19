@@ -59,7 +59,9 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         favoritesPage.clickMainPageButton();
         headerBlock.clickToPersonalAccount();
         headerBlock.clickLogOut();
+        pageActions.waitPageLoad();
         pageActions.reloadPage();
+        pageActions.waitPageLoad();
         mainPage.clickFavoritesIcon();
         headerBlock.clickFavoritesButton();
         favoritesPage.checkButtonAddToCart();
