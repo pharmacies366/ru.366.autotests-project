@@ -116,6 +116,12 @@ public class PageElementActions extends MainTestBase {
         actions.moveToElement(waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S)).clickAndHold().moveByOffset(x, y).release().build().perform();
     }
 
+    //Получение цвета текста элемента/заголовка
+    public String getBackgroundColor() {
+        String backgroundColorValue = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getCssValue("background-color");
+        String hex = Color.fromString(backgroundColorValue).asHex();
+        return hex;
+    }
 
     //Клик по индексу элемента
     public void clickIndex(int number) {
