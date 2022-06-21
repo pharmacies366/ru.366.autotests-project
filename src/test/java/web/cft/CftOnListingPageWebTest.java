@@ -60,7 +60,7 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
         catalogPage.clickMedicationsButtons();
         commonActionsOnWebPages.getProductGalleryBonusesButton().moveToElement();
         commonActionsOnWebPages.clickOnLinkMoreAboutBonuses();
-        pageActions.checkUrl("https://366.ru/pravila_programmy/");
+        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
     }
 
     @DisplayName("Проверка на отсутствие начисляемых бонусов за покупку товара")
