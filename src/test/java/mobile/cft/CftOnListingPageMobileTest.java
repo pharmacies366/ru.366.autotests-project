@@ -89,13 +89,13 @@ public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
         commonActionsOnMobilePages.clickFiltersButton();
         pageActions.waitPageLoad();
         commonActionsOnMobilePages.getPriceText().isElementDisplayed();
-        commonActionsOnMobilePages.changePricesRangeWithHands("15", "1000");
+        commonActionsOnMobilePages.changePricesRangeWithHands("15", "100");
         commonActionsOnMobilePages.clickFiltersButton();
         int FromPriceRange = commonActionsOnMobilePages.getFromPriceRange();
         int ToPriceRange = commonActionsOnMobilePages.getToPriceRange();
         int price = commonActionsOnMobilePages.checkProductsPrices();
         Assertions.assertTrue(price >= FromPriceRange);
-        Assertions.assertTrue(price >= ToPriceRange);
+        Assertions.assertTrue(price <= ToPriceRange);
         commonActionsOnMobilePages.getProductGalleryBonusesButton().isElementNotVisible();
     }
 }

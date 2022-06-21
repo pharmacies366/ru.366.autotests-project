@@ -89,7 +89,7 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
         catalogPage.clickMedicationsButtons();
         pageActions.waitPageLoad();
         commonActionsOnWebPages.getPriceText().isElementDisplayed();
-        commonActionsOnWebPages.changePricesRangeWithHands("15", "1000");
+        commonActionsOnWebPages.changePricesRangeWithHands("15", "100");
         pageActions.waitPageLoad();
         int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
         int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
