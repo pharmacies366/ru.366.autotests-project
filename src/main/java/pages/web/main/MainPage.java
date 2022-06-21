@@ -1,11 +1,14 @@
 package pages.web.main;
 
+import actions.PageActions;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage extends MainTestBase {
+
+    PageActions pageActions = new PageActions(driver);
 
     //элементы
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
@@ -228,6 +231,7 @@ public class MainPage extends MainTestBase {
         int quantity = Integer.parseInt(sizeAllLi);
         for (int i = 1; i <= quantity; i++) {
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, i)).click();
+            pageActions.staticWait(1000);
             getBannersLocators().click();
             getMainButton().click();
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).moveToElement();
