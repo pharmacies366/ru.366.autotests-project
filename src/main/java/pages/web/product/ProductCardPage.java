@@ -36,6 +36,13 @@ public class ProductCardPage extends MainTestBase {
     private static final String LINK_MORE_ABOUT_BONUSES_XPATH = "xpath;//a[@href='/pravila_programmy/'][contains(.,'Подробнее о бонусах')]";
 
 
+    //конструктор
+    public ProductCardPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    //геттеры элементов с получением доступа к действиям с элементами
+
     public PageElementActions getBackgroundColorProductGalleryButton() {
         return new PageElementActions(BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH, driver);
     }
@@ -54,17 +61,6 @@ public class ProductCardPage extends MainTestBase {
     public PageElementActions getMoreAboutBonuses() {
         return new PageElementActions(LINK_MORE_ABOUT_BONUSES_XPATH, driver);
     }
-
-
-
-
-    //конструктор
-    public ProductCardPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-
-    //геттеры элементов с получением доступа к действиям с элементами
     public PageElementActions getPriceLabel() {
         return new PageElementActions(PRICE_LABEL_XPATH, driver);
     }
@@ -128,7 +124,7 @@ public class ProductCardPage extends MainTestBase {
     public PageElementActions getTextWordBonuses() {
         return new PageElementActions(TEXT_WORD_BONUSES_XPATH, driver);
     }
-    public PageElementActions getcolorPlusOnMainProductAboutBonuses() {
+    public PageElementActions getColorPlusOnMainProductAboutBonuses() {
         return new PageElementActions(PLUS_BUTTON_WITH_COUNT_BONUSES_XPATH, driver);
     }
 
@@ -242,13 +238,13 @@ public class ProductCardPage extends MainTestBase {
 
     @Step("Пользователь проверяет, что в тексте об информации о начисляемых бонусах присутствует значок '+'")
     public void checkPlusOnMainProductAboutBonuses() {
-        getcolorPlusOnMainProductAboutBonuses().isElementDisplayed();
+        getColorPlusOnMainProductAboutBonuses().isElementDisplayed();
         logger.info("Пользователь проверяет, что в тексте об информации о начисляемых бонусах присутствует значок '+'");
     }
 
     @Step("Пользователь проверяет, что в тексте об информации о начисляемых бонусах значок '+' синего цвета")
     public void checkPlusColorOnMainProductAboutBonuses() {
-        getcolorPlusOnMainProductAboutBonuses().getColor();
+        getColorPlusOnMainProductAboutBonuses().getColor();
         logger.info("Пользователь проверяет, что в тексте об информации о начисляемых бонусах значок '+' синего цвета");
     }
 
