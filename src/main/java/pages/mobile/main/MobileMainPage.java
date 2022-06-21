@@ -198,7 +198,7 @@ public class MobileMainPage extends MainTestBase {
 
     @Step("Пользователь добавляет товар в избранное")
     public void clickFavoritesIcon() {
-        getFavoritesIcon().clickJs();
+        getFavoritesIcon().click();
         logger.info("Пользователь добавляет товар в избранное");
     }
 
