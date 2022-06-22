@@ -134,5 +134,5 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         int count = cartPage.checkDoNotAddToCartProductsList();
         Assertions.assertTrue(count > 0);
     }
-    
+
 }
