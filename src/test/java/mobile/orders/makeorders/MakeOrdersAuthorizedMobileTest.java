@@ -42,10 +42,9 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-       // mobileSberPage.clickOnSubmitButton();
-       // mobileThankForTheOrderPage.checkPaymentError();
+        // mobileSberPage.clickOnSubmitButton();
+        // mobileThankForTheOrderPage.checkPaymentError();
     }
-
     @DisplayName("Аавторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
