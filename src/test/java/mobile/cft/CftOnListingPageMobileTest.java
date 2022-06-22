@@ -47,7 +47,7 @@ public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
     public void checkInfoProductGalleryBonus() {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
-        commonActionsOnMobilePages.getProductGalleryBonusesButton().click();
+        commonActionsOnMobilePages.getProductGalleryBonusesButton().clickJs();
         String actualText = commonActionsOnMobilePages.getTextAboutCashBack();
         Assertions.assertEquals("Cash back за покупку", actualText);
     }
@@ -58,7 +58,7 @@ public class CftOnListingPageMobileTest extends BaseSettingsMobileTests {
     public void checkLinkInfoProductGalleryBonus() {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
-        commonActionsOnMobilePages.getProductGalleryBonusesButton().click();
+        commonActionsOnMobilePages.getProductGalleryBonusesButton().clickJs();
         commonActionsOnMobilePages.clickOnLinkMoreAboutBonuses();
         pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
     }

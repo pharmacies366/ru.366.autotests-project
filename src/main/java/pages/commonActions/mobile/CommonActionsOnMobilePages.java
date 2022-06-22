@@ -45,7 +45,8 @@ public class CommonActionsOnMobilePages extends MainTestBase {
     private static final String SORTING_NAME = "3";
 
     private static final String BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH = "xpath;(//div[@class='card-balance--inner js-show-bonus'])[1]";
-    private static final String PRODUCT_GALLERY_BONUSES_BUTTON_XPATH = "xpath;(//span[@class='card-balance--inner-text-quantity'])[1]";
+    private static final String PRODUCT_GALLERY_BONUSES_BUTTON_XPATH = "xpath;(//div[@class='card-balance--inner-icon'])[2]";
+    private static final String TEXT_PRODUCT_GALLERY_BUTTON_XPATH = "xpath;(//span[@class='card-balance--inner-text-quantity'])[2]";
     private static final String CASH_BACK_INFO_POP_UP_XPATH = "xpath;//div[@class='popup__title'][contains(.,'Cash back за покупку')]";
     private static final String LINK_MORE_ABOUT_BONUSES_XPATH = "xpath;//a[@href='/pravila_programmy/'][contains(.,'Подробнее о бонусах')]";
     private static final String BUTTON_BONUSES_XPATH = "xpath;(//div[@class='card-balance--inner-icon'])[1]";
@@ -174,6 +175,10 @@ public class CommonActionsOnMobilePages extends MainTestBase {
 
     public PageElementActions getBackgroundColorProductGalleryButton() {
         return new PageElementActions(BACKGROUND_COLOR_PRODUCT_GALLERY_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getTextProductGalleryButton() {
+        return new PageElementActions(TEXT_PRODUCT_GALLERY_BUTTON_XPATH, driver);
     }
 
     public PageElementActions getProductGalleryBonusesButton() {
@@ -446,7 +451,7 @@ public class CommonActionsOnMobilePages extends MainTestBase {
 
     @Step("Получение цвета текста кнопки с расчётом бонусов")
     public String getColorTextProductGalleryButton() {
-        String colorButton = getProductGalleryBonusesButton().getColor();
+        String colorButton = getTextProductGalleryButton().getColor();
         logger.info("Получение цвета текста кнопки с расчётом бонусов");
         return colorButton;
     }
