@@ -11,7 +11,7 @@ public class MobileProductCardPage extends MainTestBase {
 
     //элементы
     private static final String ADD_TO_CARD_BUTTON_XPATH = "xpath;(//span[contains(.,'Купить')])[2]";
-    private static final String PRICE_LABLE_XPATH = "xpath;//span[contains(@class,'price ')]";
+    private static final String PRICE_LABLE_XPATH = "xpath;(//span[@class='product_price__val'])[1]";
     private static final String ONE_CKICK_XPATH = "xpath;(//div[@class='btn btn_secondary js-order-quick-navigate'])[1]";
     private static final String APTEKA_MAP_XPATH = "xpath;//*[@id='store-finder-map']";
     private static final String PHARMACY_ADDRESS_INPUT_XPATH = "xpath;//input[@name='q']";
