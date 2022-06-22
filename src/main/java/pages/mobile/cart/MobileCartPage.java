@@ -11,7 +11,8 @@ public class MobileCartPage extends MainTestBase {
     private static final String CARD_COUNT_XPATH = "xpath;//div[contains(@class,'count js-mini-cart-count')]";
     private static final String CLEAR_ALL_FROM_CARD_XPATH = "xpath;//a[contains(.,'Очистить все')]";
     private static final String CONFIRM_CLEAN_ALL_XPATH = "xpath;//input[@value='Да, подтверждаю']";
-    private static final String TOTAL_PRICE_XPATH = "xpath;//div[contains(@class,'cart-summary_value js-revenue')]";
+    private static final String TOTAL_PRICE_XPATH = "xpath;//div[@class='cart-summary_value js-revenue']";
+    private static final String SALE_PRICE_XPATH = "xpath;(//div[@class='cart-summary_info__value js-revenue'])[2]";
     private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'Купить')])[1]";
     private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
     private static final String MAKE_ORDER_XPATH = "xpath;//a[@href='/cart/checkout']";
@@ -48,6 +49,9 @@ public class MobileCartPage extends MainTestBase {
 
     public PageElementActions getTotalPrice() {
         return new PageElementActions(TOTAL_PRICE_XPATH, driver);
+    }
+    public PageElementActions getSalePrice() {
+        return new PageElementActions(SALE_PRICE_XPATH, driver);
     }
 
     public PageElementActions getClickAddCartButton() {
@@ -118,8 +122,16 @@ public class MobileCartPage extends MainTestBase {
     @Step("Сохранение итоговой суммы в корзине")
     public int getPriceTotal() {
         int price = getTotalPrice().formatElementToValue();
-        logger.info("Запоминаем цену товара");
-        return price;
+        if (!getSalePrice().isElementVisible()) {
+            logger.info("Запоминаем цену товара");
+            return price;
+        }
+        else  {
+            logger.info("Запоминаем цену товара");
+            int sale = getSalePrice().formatElementToValue();
+            return price - sale;
+        }
+
     }
 
     @Step("Пользователь добавляет товар в корзину")
