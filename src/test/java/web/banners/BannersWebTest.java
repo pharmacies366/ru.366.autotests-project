@@ -20,11 +20,11 @@ public class BannersWebTest extends BaseSettingsWebTests {
         mainPage.checkNextBannerList();
     }
 
-/*    @DisplayName("Пользователь проверяет прокрутку банеров назад по стрелке и возврат к первоначальному баннеру на главной странице")
+    @DisplayName("Пользователь проверяет прокрутку банеров назад по стрелке и возврат к первоначальному баннеру на главной странице")
     @Test
     public void checkPrevBannerOnMainPage() {
         mainPage.checkPrevBannerList();
-    }*/
+    }
 
     @DisplayName("Пользователь проверяет смену банеров по пинам на главной странице")
     @Test
