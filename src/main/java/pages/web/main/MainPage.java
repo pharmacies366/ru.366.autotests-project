@@ -213,7 +213,7 @@ public class MainPage extends MainTestBase {
     }
 
 
-    @Step("Пользователь переключает банеры по пинам и возвращается на главную страницу")
+    @Step("Пользователь переключает банеры по пинам, затем переходит по банерам, а затем возвращается на главную страницу")
     public void checkBannersClickable() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
         getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).click();
@@ -226,7 +226,7 @@ public class MainPage extends MainTestBase {
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).moveToElement();
 
         }
-        logger.info("Пользователь переключает банеры по пинам и возвращается на главную страницу");
+        logger.info("Пользователь переключает банеры по пинам, затем переходит по банерам, а затем возвращается на главную страницу");
     }
 
 
