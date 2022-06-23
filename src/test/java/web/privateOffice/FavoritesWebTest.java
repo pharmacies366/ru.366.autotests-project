@@ -39,7 +39,7 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
     public void checkMainHyperlink() {
         headerBlock.clickFavoritesButton();
         favoritesPage.clickMainPageButton();
-        pageActions.checkUrl("https://366.ru/");
+        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/");
     }
 
     @DisplayName("Товар, добавленный в избранное будучи не авторизованным," +
@@ -72,7 +72,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         headerBlock.clickFavoritesButton();
         favoritesPage.checkButtonAddToCart();
-
     }
 
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на странице избранное")
@@ -91,6 +90,7 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         Assertions.assertEquals(2, finalQuantity);
         logger.info("Количество товара равно 2-м");
     }
+
 
     @DisplayName("Пользователь уменьшает количество шт. товара в корзине на странице избранное")
     @Test
@@ -123,8 +123,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         favoritesPage.clickAddToCardButton();
         headerBlock.clickToCartButton();
         cartPage.clickFavoritesButton();
-
     }
-
 
 }
