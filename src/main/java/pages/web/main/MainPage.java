@@ -192,9 +192,11 @@ public class MainPage extends MainTestBase {
     @Step("Пользователь кликает по стрелке назад, переключает банеры и проверяет, что возвращается к первому")
     public void checkPrevBannerList() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
+        getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).click();
         int quantity = Integer.parseInt(sizeAllLi);
-        for (int i = 0; i <= quantity; i++) {
+        for (int i = quantity; i >= 1; i--) {
             getPrevBannerButton().click();
+            pageActions.staticWait(200);
             getBannerList().isElementDisplayedWithIndex(i);
         }
         getCheckStartBanner().isElementDisplayed();
