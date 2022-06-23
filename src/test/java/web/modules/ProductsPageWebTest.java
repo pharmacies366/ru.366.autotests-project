@@ -131,7 +131,8 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         Assertions.assertEquals(recipeInfo, "Без рецепта");
     }
 
-/*    @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
+/*
+    @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
     @Test
     public void checkSortingPriceReduction() {
         headerBlock.clickCatalogButton();
@@ -163,7 +164,8 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.clickSortingButton();
         commonActionsOnWebPages.clickSortingNameOption();
         commonActionsOnWebPages.checkSortingOption("по названию");
-    }*/
+    }
+*/
 
 
 
