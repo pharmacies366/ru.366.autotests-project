@@ -50,8 +50,6 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected BotConsultantPopUpPage botConsultantPopUpPage;
 
     protected BonusCardPopUpPage bonusCardPopUpPage;
-    /*
-        protected MedicationsCategoryPage medicationsCategoryPage;*/
     protected CitiesPopUpPage citiesPopUpPage;
 
 
@@ -87,16 +85,6 @@ public class BaseSettingsWebTests extends MainTestBase {
     //данный метод выполняется перед каждым тестом
     protected void actionsBeforeTests() {
         mainPage.clickClosePopUp();
+        mainPage.clickClosePopUpNews();
     }
-
- /*   @AfterEach
-    public void pagesClose() {
-        driver.close();
-    }*/
 }
-
-
-
-
-
-

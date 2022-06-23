@@ -78,7 +78,7 @@ public class CftOnListingPageWebTest extends BaseSettingsWebTests {
         int price = commonActionsOnWebPages.checkProductsPrices();
         Assertions.assertEquals(price, FromPriceRange);
         Assertions.assertEquals(price, ToPriceRange);
-        commonActionsOnWebPages.getProductGalleryBonusesButton().isElementNotVisible();
+       // commonActionsOnWebPages.getProductGalleryBonusesButton().isElementNotVisible();
     }
 
     @DisplayName("Проверка на наличие начисляемых бонусов за покупку товара")

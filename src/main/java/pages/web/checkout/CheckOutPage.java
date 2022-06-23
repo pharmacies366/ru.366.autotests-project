@@ -140,7 +140,7 @@ public class CheckOutPage extends MainTestBase{
 
     @Step("Проверка выбранного способа получения 'Самовывоз'")
     public void choosePickupMethod() {
-        if (getSelectApteka().IsElementDisplayed()) {
+        if (getSelectApteka().isElementDisplayed()) {
             getSelectApteka().click();
         }
         else {
@@ -152,7 +152,7 @@ public class CheckOutPage extends MainTestBase{
 
     @Step("Проверка выбранного способа получения 'Доставка'")
     public void chooseDeliveryMethod() {
-        if (getSelectApteka().IsElementDisplayed()) {
+        if (getSelectApteka().isElementDisplayed()) {
             getChooseDeliveryMethod().click();
         }
         else {
