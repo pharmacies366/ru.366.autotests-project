@@ -92,7 +92,7 @@ public class CftOnCardProductPageWebTest extends BaseSettingsWebTests {
         openUrl(propertiesManager.getProperty("baseurl") + "p/207185");
         productCardPage.getProductGalleryBonusesButton().moveToElement();
         productCardPage.clickOnLinkMoreAboutBonuses();
-        pageActions.checkUrl("https://366.ru/pravila_programmy/");
+        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
     }
 
 
