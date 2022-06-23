@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 @Tag("Regression")
 public class PersonalDataWebTest extends BaseSettingsWebTests {
 
-    @DataProvider
+/*    @DataProvider
     public static Object[][] checkDisplayedOptions() {
         return new Object[][]{
                 {"/my-account/orders", "Мои заказы", "Мои заказы"},
@@ -46,7 +46,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         personalDataPage.selectPersonalDataButtons(LOCATOR);
         pageActions.contentIsDisplayed(PAGEMESSAGE);
         logger.info("Ссылка кликабельна и ведёт на нужную страницу");
-    }
+    }*/
 
     @DisplayName("Пользователь заполняет фамилию и отчество и сохраняет данные")
     @Test
