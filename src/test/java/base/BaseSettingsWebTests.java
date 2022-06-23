@@ -1,6 +1,7 @@
 package base;
 
 import actions.PageElementActions;
+import blocks.web.BasementBlock;
 import blocks.web.HeaderBlock;
 import core.MainTestBase;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,6 +27,8 @@ import pages.web.thanks.ThankForTheOrderPage;
 public class BaseSettingsWebTests extends MainTestBase {
 
     protected CommonActionsOnWebPages commonActionsOnWebPages;
+    protected BasementBlock basementBlock;
+
     protected MainPage mainPage;
     protected PageElementActions pageElementActions;
     protected CookiePage cookiePage;
@@ -47,8 +50,7 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected BotConsultantPopUpPage botConsultantPopUpPage;
 
     protected BonusCardPopUpPage bonusCardPopUpPage;
-    /*    protected WebBasementBlock basementBlock;
-
+    /*
         protected MedicationsCategoryPage medicationsCategoryPage;*/
     protected CitiesPopUpPage citiesPopUpPage;
 
@@ -59,6 +61,7 @@ public class BaseSettingsWebTests extends MainTestBase {
         actionsBeforeTests();
 
         commonActionsOnWebPages = new CommonActionsOnWebPages(driver);
+        basementBlock = new BasementBlock(driver);
         pageElementActions = new PageElementActions(driver);
         cookiePage = new CookiePage(driver);
         authPopUpPage = new AuthPopUpPage(driver);
@@ -78,7 +81,7 @@ public class BaseSettingsWebTests extends MainTestBase {
         catalogPage = new CatalogPage(driver);
         citiesPopUpPage = new CitiesPopUpPage(driver);
      /*   medicationsCategoryPage = new MedicationsCategoryPage(driver);
-        basementBlock = new WebBasementBlock(driver);*/
+        */
     }
 
     //данный метод выполняется перед каждым тестом
