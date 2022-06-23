@@ -1,101 +1,24 @@
-/*
 package mobile.mainPage;
 
 import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 
 @Feature(value = "Мобильная версия")
 @Story("Проверка главной страницы сайта 36.6")
 @DisplayName("Проверка подвала сайта")
-@RunWith(DataProviderRunner.class)
+@Tag("Mobile")
 @Tag("Regression")
 public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
-
-    @DataProvider
-    public static Object[][] help() {
-        return new Object[][]{
-                //Помощь
-                */
-/*{"howToOrderNew", "Как сделать заказ", "Как оформить заказ на сайте?"},*//*
-
-                {"/apteki/map/", "Где получить заказ", "Работает сейчас"},
-                {"/faq/", "Вопрос-ответ", "Вопрос-ответ"},
-                {"/feedback/", "Задать вопрос", "Обратная связь"},
-                {"/delivery/", "Доставка", "Курьерская доставка заказов"},
-        };
-    }
-
-    @DisplayName("Проверка релевантности ссылок в подвале сайта")
-    @Step("В подвале сайта переходит по ссылке => {LINKTEXT}")
-    @Test
-    @UseDataProvider("help")
-    public void helpTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        mobileBasementBlock.clickHelpButton();
-        mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
-        logger.info("Ссылка видна на странице и написана корректно");
-        mobileBasementBlock.selectBasementButtons(LOCATOR);
-        pageActions.contentIsDisplayed(PAGEMESSAGE);
-        logger.info("Ссылка кликабельна и ведёт на нужную страницу");
-    }
-
-
-    @DataProvider
-    public static Object[][] Service() {
-        return new Object[][]{
-                    //Сервис
-                    {"/polzovatelskoe-soglashenie/", "Пользовательское соглашение", "Пользовательское соглашение"},
-                    {"/politika-konfidencialnosti/", "Политика конфиденциальности", "Политика конфиденциальности"},
-                    {"/mnn/", "Действующие вещества", "Действующие вещества"},
-                    {"/promotions/", "Акции", "Акции"},
-                    {"/articles/", "Статьи", "Статьи"},
-        };
-    }
-
-    @DisplayName("Проверка релевантности ссылок в подвале сайта")
-    @Step("В подвале сайта переходит по ссылке => {LINKTEXT}")
-    @Test
-    @UseDataProvider("Service")
-    public void serviceTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        pageActions.waitPageLoad();
-        mobileBasementBlock.clickServiceButton();
-        mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
-        logger.info("Ссылка видна на странице и написана корректно");
-        mobileBasementBlock.selectBasementButtons(LOCATOR);
-        pageActions.contentIsDisplayed(PAGEMESSAGE);
-        logger.info("Ссылка кликабельна и ведёт на нужную страницу");
-    }
-
-
-    @DataProvider
-    public static Object[][] aboutCompany() {
-        return new Object[][]{
-                    //О Компании
-                    {"/aboutus/", "О нас", "О нас"},
-                    {"/contacts/", "Контактные данные", "Контактные данные"},
-                    {"/manufacturers/", "Производители", "Производители"},
-                    {"/advertisingplacement/", "Размещение рекламы", "Размещение рекламы"},
-                    {"/license/", "Лицензии", "Лицензии"},
-                    {"/vakansii/", "Вакансии", "Фармацевт/Провизор"},
-        };
-    }
-
-    @DisplayName("Проверка релевантности ссылок в подвале сайта")
-    @Step("В подвале сайта переходит по ссылке => {LINKTEXT}")
-    @Test
-    @UseDataProvider("aboutCompany")
-    public void aboutCompanyTest(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
-        mobileBasementBlock.clickAboutCompanButton();
-        mobileBasementBlock.checkLinksValidation(LOCATOR, LINKTEXT);
-        logger.info("Ссылка видна на странице и написана корректно");
-        mobileBasementBlock.selectBasementButtons(LOCATOR);
-        pageActions.contentIsDisplayed(PAGEMESSAGE);
-        logger.info("Ссылка кликабельна и ведёт на нужную страницу");
-    }
 
     @DisplayName("Проверка кликабельности и отображения номера телефона")
     @Test
@@ -104,5 +27,77 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
         logger.info("Номер телефона отображается и кликабелен");
     }
 
+    @ParameterizedTest(name = "{index} {1}")
+    @MethodSource("helpTest")
+    public void helpTest(String LOCATOR, String LINK_TEXT, String PAGE_MESSAGE) {
+        mobileBasementBlock.clickHelpButton();
+        mobileBasementBlock.checkLinksValidation(LOCATOR, LINK_TEXT);
+        logger.info("Ссылка видна на странице и написана корректно");
+        mobileBasementBlock.selectBasementButtons(LOCATOR);
+        pageActions.contentIsDisplayed(PAGE_MESSAGE);
+        logger.info("Ссылка кликабельна и ведёт на нужную страницу");
+    }
+    private static Stream<Arguments> helpTest() {
+        return Stream.of(
+                //Помощь
+               // Arguments.of("/howToOrderNew/", "Как сделать заказ", "Как сделать заказ"),
+                Arguments.of("/apteki/map/", "Где получить заказ", "Работает сейчас"),
+                Arguments.of("/faq/", "Вопрос-ответ", "Вопрос-ответ"),
+                Arguments.of("/feedback/", "Задать вопрос", "Обратная связь"),
+                Arguments.of("/delivery/", "Доставка", "Курьерская доставка заказов"),
+                Arguments.of("/oplata/", "Оплата", "Способы оплаты"),
+                Arguments.of("/refund/", "Обмен и возврат", "Правила обмена и возврата"),
+                Arguments.of("/warranty/", "Гарантии", "Гарантии")
+        );
+    }
+
+
+    @ParameterizedTest(name = "{index} {1}")
+    @MethodSource("Service")
+    public void Service(String LOCATOR, String LINK_TEXT, String PAGE_MESSAGE) {
+        pageActions.waitPageLoad();
+        mobileBasementBlock.clickServiceButton();
+        mobileBasementBlock.checkLinksValidation(LOCATOR, LINK_TEXT);
+        logger.info("Ссылка видна на странице и написана корректно");
+        mobileBasementBlock.selectBasementButtons(LOCATOR);
+        pageActions.contentIsDisplayed(PAGE_MESSAGE);
+        logger.info("Ссылка кликабельна и ведёт на нужную страницу");
+    }
+
+        private static Stream<Arguments> Service() {
+            return Stream.of(
+                //Сервис
+                Arguments.of("/polzovatelskoe-soglashenie/", "Пользовательское соглашение", "Пользовательское соглашение"),
+                Arguments.of("/politika-konfidencialnosti/", "Политика конфиденциальности", "Политика конфиденциальности"),
+                Arguments.of("/mnn/", "Действующие вещества", "Действующие вещества"),
+                Arguments.of("/promotions/", "Акции", "Акции"),
+                Arguments.of("/articles/", "Статьи", "Статьи")
+            );
+        }
+
+
+    @ParameterizedTest(name = "{index} {1}")
+    @MethodSource("aboutCompany")
+    public void checkBasementLinks(String LOCATOR, String LINK_TEXT, String PAGE_MESSAGE) {
+        mobileBasementBlock.clickAboutCompanButton();
+        mobileBasementBlock.checkLinksValidation(LOCATOR, LINK_TEXT);
+        logger.info("Ссылка видна на странице и написана корректно");
+        mobileBasementBlock.selectBasementButtons(LOCATOR);
+        pageActions.contentIsDisplayed(PAGE_MESSAGE);
+        logger.info("Ссылка кликабельна и ведёт на нужную страницу");
+    }
+
+
+    private static Stream<Arguments> aboutCompany() {
+        return Stream.of(
+                //О Компании
+                Arguments.of("/aboutus/", "О нас", "О компании"),
+                Arguments.of("/contacts/", "Контактные данные", "Контактные данные"),
+                Arguments.of("/manufacturers/", "Производители", "Производители"),
+                Arguments.of("/advertisingplacement/", "Размещение рекламы", "Размещение рекламы"),
+                Arguments.of("/license/", "Лицензии", "Лицензии"),
+                Arguments.of("/vakansii/", "Вакансии", "Вакансии сети аптек 36,6")
+        );
+    }
+
 }
-*/
