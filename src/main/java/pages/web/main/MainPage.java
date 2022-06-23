@@ -180,13 +180,14 @@ public class MainPage extends MainTestBase {
     public void checkNextBannerList() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
         int quantity = Integer.parseInt(sizeAllLi);
-        for (int i = 0; i <= quantity; i++) {
+        for (int i = 0; i < quantity; i++) {
             getNextBannerButton().click();
             getBannerList().isElementDisplayedWithIndex(i);
         }
         getCheckStartBanner().isElementDisplayed();
         logger.info("Пользователь кликает по стрелке вперед, переключает банеры и проверяет, что возвращается к первому");
     }
+
 
     @Step("Пользователь кликает по стрелке назад, переключает банеры и проверяет, что возвращается к первому")
     public void checkPrevBannerList() {
@@ -227,6 +228,7 @@ public class MainPage extends MainTestBase {
         }
         logger.info("Пользователь переключает банеры по пинам и возвращается на главную страницу");
     }
+
 
     @Step("Пользователь нажимает на кнопку каталог")
     public void clickCatalogButton() {
