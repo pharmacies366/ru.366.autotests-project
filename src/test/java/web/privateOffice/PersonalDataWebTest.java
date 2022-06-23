@@ -1,4 +1,5 @@
 /*
+
 package web.privateOffice;
 
 import base.BaseSettingsWebTests;
@@ -6,6 +7,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 @Feature(value = "Web")
@@ -16,6 +18,7 @@ import org.junit.jupiter.api.Test;
 @Tag("Regression")
 public class PersonalDataWebTest extends BaseSettingsWebTests {
 
+*/
 /*    @DataProvider
     public static Object[][] checkDisplayedOptions() {
         return new Object[][]{
@@ -47,7 +50,8 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         personalDataPage.selectPersonalDataButtons(LOCATOR);
         pageActions.contentIsDisplayed(PAGEMESSAGE);
         logger.info("Ссылка кликабельна и ведёт на нужную страницу");
-    }*/
+    }*//*
+
 
     @DisplayName("Пользователь заполняет фамилию и отчество и сохраняет данные")
     @Test
