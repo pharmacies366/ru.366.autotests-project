@@ -86,8 +86,8 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         productCardPage.setInputSearchAddress("метро Автозаводская");
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
-       // checkOutPage.clickMakeOrder();
-       // thankForTheOrderPage.checkSuccessMessage();
+        // checkOutPage.clickMakeOrder();
+        // thankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Авторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
@@ -130,7 +130,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         checkOutPage.clickSelectApteka();
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
-      //  checkOutPage.clickMakeOrder();
-       // thankForTheOrderPage.checkSuccessMessage();
+        //  checkOutPage.clickMakeOrder();
+        // thankForTheOrderPage.checkSuccessMessage();
     }
 }

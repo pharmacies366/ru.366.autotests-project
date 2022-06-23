@@ -54,8 +54,8 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
         checkOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
-       // checkOutPage.clickBookingButton();
-       // thankForTheOrderPage.checkSuccessMessage();
+        // checkOutPage.clickBookingButton();
+        // thankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Неавторизованный пользователь покупает товар со страниц ОСП")
@@ -77,8 +77,8 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
-      //  checkOutPage.clickMakeOrder();
-      //  thankForTheOrderPage.checkSuccessMessage();
+        //  checkOutPage.clickMakeOrder();
+        //  thankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Неавторизованный пользователь покупает товар со способом получения - 'Самовывоз'")
@@ -98,8 +98,8 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
         checkOutPage.setInputSearchAddres("метро Фили");
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
-      //  checkOutPage.clickMakeOrder();
-      //  thankForTheOrderPage.checkSuccessMessage();
+        //  checkOutPage.clickMakeOrder();
+        //  thankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Неавторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
@@ -121,8 +121,8 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
         checkOutPage.clickSelectApteka();
         checkOutPage.clickChangeAptekaList();
         checkOutPage.getAvailabilityAndChooseThisPharmacy();
-      //  checkOutPage.clickMakeOrder();
-      //  thankForTheOrderPage.checkSuccessMessage();
+        //  checkOutPage.clickMakeOrder();
+        //  thankForTheOrderPage.checkSuccessMessage();
     }
 
 }
