@@ -65,7 +65,6 @@ public class WebDriverFactory {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", false);
 
-        //  chromeOptions.setPageLoadStrategy(PageLoadStrategy.eager);
         Map<String, Object> prefs = new HashMap<String, Object>();
         Map<String, Object> profile = new HashMap<String, Object>();
         prefs.put("googlegeolocationaccess.enabled", true);
@@ -153,7 +152,6 @@ public class WebDriverFactory {
     private void configureDriver() {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        //driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
     }
 
