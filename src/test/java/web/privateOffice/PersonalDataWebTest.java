@@ -117,6 +117,8 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         personalDataPage.checkNewName("Ivan");
     }
 
+
+
     @DisplayName("Пользователь изменяет дату рождения")
     @Test
     public void changeBirthday() {
@@ -133,7 +135,6 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         personalDataPage.changeBirthday("1","Февраль","1993");//Возврашаем в исходную дату
         personalDataPage.clickSaveButton();
     }
-
     @DisplayName("Пользователь изменяет пол")
     @Test
     public void changeGender() {
@@ -197,6 +198,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         personalDataPage.clickSaveButton();
         personalDataPage.checkNotSelectedCheckboxReceiveNews();
     }
+
 
 }
 
