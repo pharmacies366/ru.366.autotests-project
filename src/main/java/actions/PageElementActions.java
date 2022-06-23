@@ -1,8 +1,6 @@
 package actions;
 
 import core.MainTestBase;
-//import org.junit.Assert;
-import org.apache.logging.log4j.core.util.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;

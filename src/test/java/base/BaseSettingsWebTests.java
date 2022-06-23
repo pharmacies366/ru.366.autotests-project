@@ -85,6 +85,5 @@ public class BaseSettingsWebTests extends MainTestBase {
     //данный метод выполняется перед каждым тестом
     protected void actionsBeforeTests() {
         mainPage.clickClosePopUp();
-        mainPage.clickClosePopUpNews();
     }
 }
