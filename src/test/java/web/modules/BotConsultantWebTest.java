@@ -1,3 +1,4 @@
+/*
 package web.modules;
 
 import base.BaseSettingsWebTests;
@@ -58,3 +59,4 @@ public class BotConsultantWebTest extends BaseSettingsWebTests {
 
     }
 }
+*/

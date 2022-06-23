@@ -19,6 +19,7 @@ import java.util.stream.Stream;
 @Tag("Regression")
 public class PersonalDataWebTest extends BaseSettingsWebTests {
 
+/*
     @ParameterizedTest(name = "{index} {1}")
     @MethodSource("checkDisplayedOptions")
     public void checkDisplayedOptions(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
@@ -116,6 +117,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         personalDataPage.clickSaveButton();
         personalDataPage.checkNewName("Ivan");
     }
+*/
 
     @DisplayName("Пользователь изменяет дату рождения")
     @Test
@@ -133,7 +135,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         personalDataPage.changeBirthday("1","Февраль","1993");//Возврашаем в исходную дату
         personalDataPage.clickSaveButton();
     }
-
+/*
     @DisplayName("Пользователь изменяет пол")
     @Test
     public void changeGender() {
@@ -196,7 +198,7 @@ public class PersonalDataWebTest extends BaseSettingsWebTests {
         personalDataPage.clickReceiveNews();
         personalDataPage.clickSaveButton();
         personalDataPage.checkNotSelectedCheckboxReceiveNews();
-    }
+    }*/
 
 }
 
