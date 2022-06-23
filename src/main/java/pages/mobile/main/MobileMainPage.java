@@ -240,7 +240,7 @@ public class MobileMainPage extends MainTestBase {
         logger.info("Пользователь переключает банеры по пинам");
     }
 
-    @Step("Пользователь переключает банеры по пинам и возвращается на главную страницу")
+    @Step("Пользователь переключает банеры по пинам, затем переходит по банерам, а затем возвращается на главную страницу")
     public void checkBannersClickable() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
         int quantity = Integer.parseInt(sizeAllLi);
@@ -250,7 +250,7 @@ public class MobileMainPage extends MainTestBase {
             getBannersLocators().click();
             clickSiteLogo();
         }
-        logger.info("Пользователь переключает банеры по пинам и возвращается на главную страницу");
+        logger.info("Пользователь переключает банеры по пинам, затем переходит по банерам, а затем возвращается на главную страницу");
     }
 
     @Step("Пользователь нажимает на иконку консультант бота")
