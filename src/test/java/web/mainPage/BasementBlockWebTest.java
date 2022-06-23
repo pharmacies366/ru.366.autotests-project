@@ -35,10 +35,10 @@ public class BasementBlockWebTest extends BaseSettingsWebTests {
                 Arguments.of("/apteki/map/", "Где получить заказ", "Работает сейчас"),
                 Arguments.of("/faq/", "Вопрос-ответ", "Вопрос-ответ"),
                 Arguments.of("/feedback/", "Задать вопрос", "Обратная связь"),
-                Arguments.of("/delivery/", "Доставка", "Курьерская доставка заказов"),
-                Arguments.of("/oplata/", "Оплата", "Способы оплаты"),
-                Arguments.of("/refund/", "Обмен и возврат", "Правила обмена и возврата"),
-                Arguments.of("/warranty/", "Гарантии", "Гарантии"),
+               // Arguments.of("/delivery/", "Доставка", "Курьерская доставка заказов"),
+              //  Arguments.of("/oplata/", "Оплата", "Способы оплаты"),
+               // Arguments.of("/refund/", "Обмен и возврат", "Правила обмена и возврата"),
+              //  Arguments.of("/warranty/", "Гарантии", "Гарантии"),
                 //Сервис
                 Arguments.of("/polzovatelskoe-soglashenie/", "Пользовательское соглашение", "Пользовательское соглашение"),
                 Arguments.of("/politika-konfidencialnosti/", "Политика конфиденциальности", "Политика конфиденциальности"),
@@ -51,7 +51,7 @@ public class BasementBlockWebTest extends BaseSettingsWebTests {
                 Arguments.of("/manufacturers/", "Производители", "Производители"),
                 Arguments.of("/advertisingplacement/", "Размещение рекламы", "Размещение рекламы"),
                 Arguments.of("/license/", "Лицензии", "Лицензии"),
-                Arguments.of("/vakansii/", "Вакансии", "Вакансии сети аптек 36,6")
+                Arguments.of("/vakansii/", "Вакансии", "Вакансии")
         );
     }
 
