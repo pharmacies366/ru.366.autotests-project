@@ -198,6 +198,13 @@ public class PageElementActions extends MainTestBase {
         return hex;
     }
 
+    //Получение цвета текста элемента/заголовка
+    public String getBackgroundColor() {
+        String backgroundColorValue = waitUntilVisibilityOfElementLocated(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S).getCssValue("background-color");
+        String hex = Color.fromString(backgroundColorValue).asHex();
+        return hex;
+    }
+
     //Проверяет видимость текста {string} на странице
     public void contentIsDisplayed(String text) {
         driver.findElement(By.xpath("//*[text()='" + text + "']")).isDisplayed();
