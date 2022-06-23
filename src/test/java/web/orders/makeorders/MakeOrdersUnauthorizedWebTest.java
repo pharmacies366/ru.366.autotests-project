@@ -18,12 +18,12 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
 
     //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
 
-/*    @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
+    @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
     @Test
     public void delivery() {
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.waitPageLoad();
-        cartPage.сlickAddCartButton();
+        cartPage.clickAddCartButton();
         headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.contactDetails(
@@ -37,9 +37,9 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-        sberPage.clickOnSubmitButton();
-        thankForTheOrderPage.checkPaymentError();
-    }*/
+       // sberPage.clickOnSubmitButton();
+       // thankForTheOrderPage.checkPaymentError();
+    }
 
     @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
     @Test

@@ -18,7 +18,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
 
     //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
 
-/*    @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
+    @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
     @Test
     public void delivery() {
         headerBlock.clickToSignInButton();
@@ -29,19 +29,21 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         cartPage.checkAndClearCartQuantity();
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
         pageActions.waitPageLoad();
-        cartPage.сlickAddCartButton();
+        cartPage.clickAddCartButton();
         headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
         checkOutPage.clickDeliveryMethod();
         checkOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
+        pageActions.waitPageLoad();
         checkOutPage.clickToFinalButton();
+        pageActions.waitPageLoad();
         sberPage.bankCardDetails(
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-        sberPage.clickOnSubmitButton();
-        thankForTheOrderPage.checkPaymentError();
-    }*/
+        //sberPage.clickOnSubmitButton();
+       // thankForTheOrderPage.checkPaymentError();
+    }
 
     @DisplayName("Авторизованный пользователь покупает товар в 1клик")
     @Test

@@ -3,7 +3,6 @@ package web.privateOffice;
 import base.BaseSettingsWebTests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.apache.logging.log4j.core.util.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -73,7 +72,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         pageActions.waitPageLoad();
         headerBlock.clickFavoritesButton();
         favoritesPage.checkButtonAddToCart();
-
     }
 
     @DisplayName("Пользователь увеличивает количество шт. товара в корзине на странице избранное")
@@ -93,7 +91,7 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         logger.info("Количество товара равно 2-м");
     }
 
-/*    // TODO: проверить после bugfix
+
     @DisplayName("Пользователь уменьшает количество шт. товара в корзине на странице избранное")
     @Test
     public void decreaseQuantityMaterialOnFavoritesPage() {
@@ -103,17 +101,17 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         favoritesPage.clickAddToCardButton();
         favoritesPage.clickIncreaseQuantity();
         int firstQuantity = favoritesPage.getQuantityMaterials();
-        Assert.assertEquals(2, firstQuantity);
+        Assertions.assertEquals(2, firstQuantity);
         logger.info("Количество товара равно 2-м");
         favoritesPage.clickDecreaseQuantity();
         int secondQuantity = favoritesPage.getQuantityMaterials();
-        Assert.assertEquals(1, secondQuantity);
+        Assertions.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");
         headerBlock.clickToCartButton();
         int finalQuantity = cartPage.getQuantityMaterials();
-        Assert.assertEquals(1, finalQuantity);
+        Assertions.assertEquals(1, finalQuantity);
         logger.info("Количество товара равно 1-му");
-    }*/
+    }
 
     @DisplayName("Пользователь проверяет, что товар который был добавлен в избранное," +
             " на странице корзины так же отмечен что он находится в избранном")
@@ -125,8 +123,6 @@ public class FavoritesWebTest extends BaseSettingsWebTests {
         favoritesPage.clickAddToCardButton();
         headerBlock.clickToCartButton();
         cartPage.clickFavoritesButton();
-
     }
-
 
 }
