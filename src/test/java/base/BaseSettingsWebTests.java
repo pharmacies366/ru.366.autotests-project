@@ -50,8 +50,6 @@ public class BaseSettingsWebTests extends MainTestBase {
     protected BotConsultantPopUpPage botConsultantPopUpPage;
 
     protected BonusCardPopUpPage bonusCardPopUpPage;
-    /*
-        protected MedicationsCategoryPage medicationsCategoryPage;*/
     protected CitiesPopUpPage citiesPopUpPage;
 
 
@@ -89,9 +87,4 @@ public class BaseSettingsWebTests extends MainTestBase {
         mainPage.clickClosePopUp();
         mainPage.clickClosePopUpNews();
     }
-
- /*   @AfterEach
-    public void pagesClose() {
-        driver.close();
-    }*/
 }
