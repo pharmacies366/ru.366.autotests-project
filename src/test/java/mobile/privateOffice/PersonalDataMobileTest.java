@@ -2,11 +2,15 @@ package mobile.privateOffice;
 
 import base.BaseSettingsMobileTests;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 
 @Feature(value = "Мобильная версия")
@@ -17,24 +21,9 @@ import org.junit.jupiter.api.Test;
 @Tag("Mobile")
 public class PersonalDataMobileTest extends BaseSettingsMobileTests{
 
-/*    @DataProvider
-    public static Object[][] checkDisplaedOptions() {
-        return new Object[][]{
-                {"/my-account/orders", "Мои заказы", "Мои заказы"},
-                {"/my-account/profile", "Личные данные", "Личные данные"},
-                {"/my-account/update-password", "Изменить пароль", "Изменить пароль"},
-                {"/favorites", "Избранное", "Избранное"},
-               // {"/my-account/invite-friend", "Приведи друга", "Приведи друга"},
-                {"/logout/", "Выйти", "Как сделать заказ"}
-        };
-    }
-
-    @DisplayName("Пользователь переходит в личный кабинет и проверяет отображения списка с пунктами страниц в Л.К." +
-            " и релевантный переход")
-    @Step("В личном кабинете переходит по ссылке => {LINKTEXT}")
-    @Test
-    @UseDataProvider("checkDisplaedOptions")
-    public void checkDisplaedOptions(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
+    @ParameterizedTest(name = "{index} {1}")
+    @MethodSource("checkDisplayedOptions")
+    public void checkDisplayedOptions(String LOCATOR, String LINKTEXT, String PAGEMESSAGE) {
         mobileHeaderBlock.clickBurgerButton();
         mobileMainPopUpBlock.clickToLoginIcon();
         mobileCookiePage.reCaptchaKey();
@@ -50,7 +39,18 @@ public class PersonalDataMobileTest extends BaseSettingsMobileTests{
         mobilePersonalDataPage.selectPersonalDataButtons(LOCATOR);
         pageActions.contentIsDisplayed(PAGEMESSAGE);
         logger.info("Ссылка кликабельна и ведёт на нужную страницу");
-    }*/
+    }
+
+    private static Stream<Arguments> checkDisplayedOptions() {
+        return Stream.of(
+                Arguments.of("/my-account/orders", "Мои заказы", "Мои заказы"),
+                Arguments.of("/my-account/profile", "Личные данные", "Личные данные"),
+                Arguments.of("/my-account/update-password", "Изменить пароль", "Изменить пароль"),
+                Arguments.of("/favorites", "Избранное", "Избранное"),
+                Arguments.of("/my-account/invite-friend", "Приведи друга", "Приведи друга"),
+                Arguments.of("/logout/", "Выйти", "Как сделать заказ")
+        );
+    }
 
     @DisplayName("Пользователь заполняет фамилию и отчество и сохраняет данные")
     @Test
