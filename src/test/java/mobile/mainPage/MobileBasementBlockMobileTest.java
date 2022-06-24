@@ -77,8 +77,8 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
 
 
     @ParameterizedTest(name = "{index} {1}")
-    @MethodSource("aboutCompany")
-    public void checkBasementLinks(String LOCATOR, String LINK_TEXT, String PAGE_MESSAGE) {
+    @MethodSource("aboutCompanyTest")
+    public void aboutCompanyTest(String LOCATOR, String LINK_TEXT, String PAGE_MESSAGE) {
         mobileBasementBlock.clickAboutCompanButton();
         mobileBasementBlock.checkLinksValidation(LOCATOR, LINK_TEXT);
         logger.info("Ссылка видна на странице и написана корректно");
@@ -88,7 +88,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
     }
 
 
-    private static Stream<Arguments> aboutCompany() {
+    private static Stream<Arguments> aboutCompanyTest() {
         return Stream.of(
                 //О Компании
                 Arguments.of("/aboutus/", "О нас", "О компании"),
