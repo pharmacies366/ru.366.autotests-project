@@ -26,12 +26,14 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
         cartPage.clickAddCartButton();
         headerBlock.clickToCartButton();
         cartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         checkOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
         checkOutPage.clickDeliveryMethod();
         checkOutPage.addressDelivery("Сиреневый бульвар 68", "2", "3", "34");
+        pageActions.waitPageLoad();
         checkOutPage.clickToFinalButton();
         sberPage.bankCardDetails(
                 propertiesManager.getProperty("cardnumber"),
