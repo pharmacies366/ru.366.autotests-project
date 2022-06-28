@@ -63,8 +63,10 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
         productCardPage.checkVisibilityMap();
         productCardPage.setInputSearchAddress("Москва");
         pageActions.waitPageLoad();
+        checkOutPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         productCardPage.clickBuyOneClick();
-        cookiePage.reCaptchaKey();
+        checkOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         // checkOutPage.clickBookingButton();
         // thankForTheOrderPage.checkSuccessMessage();
     }

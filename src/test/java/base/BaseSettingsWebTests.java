@@ -55,6 +55,8 @@ public class BaseSettingsWebTests extends MainTestBase {
     @BeforeEach
     public void PagesInitialization() {
         mainPage = new MainPage(driver);
+        checkCookiesPopUp();
+
         commonActionsOnWebPages = new CommonActionsOnWebPages(driver);
         basementBlock = new BasementBlock(driver);
         pageElementActions = new PageElementActions(driver);
@@ -75,5 +77,9 @@ public class BaseSettingsWebTests extends MainTestBase {
         bonusCardPopUpPage = new BonusCardPopUpPage(driver);
         catalogPage = new CatalogPage(driver);
         citiesPopUpPage = new CitiesPopUpPage(driver);
+    }
+
+    public void checkCookiesPopUp() {
+        mainPage.clickClosePopUp();
     }
 }

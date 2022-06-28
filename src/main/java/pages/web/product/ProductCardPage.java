@@ -160,10 +160,10 @@ public class ProductCardPage extends MainTestBase {
         getPharmacyAddressInput().sendKeysAndEnter(address);
     }
 
-    @Step("Пользователь нажимает на {number} - ую кнопку 'Купить в 1 клик' напротив выбранной аптеки")
+    @Step("Пользователь нажимает на первую кнопку 'Купить в 1 клик' напротив выбранной аптеки")
     public void clickBuyOneClick() {
-        getOneClickPharmacyButtons().click();
-        logger.info("Пользователь нажимает на {number} - ую кнопку 'Купить в 1 клик' напротив выбранной аптеки");
+        getOneClickPharmacyButtons().clickJs();
+        logger.info("Пользователь нажимает на первую кнопку 'Купить в 1 клик' напротив выбранной аптеки");
     }
 
     @Step("Пользователь нажимает '+' увеличивая количество шт. товара")

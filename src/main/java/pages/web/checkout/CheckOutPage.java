@@ -169,7 +169,7 @@ public class CheckOutPage extends MainTestBase{
 
     @Step("Пользователь нажимает на список доступных Аптек")
     public void clickChangeAptekaList() {
-        getChangeAptekaList().click();
+        getChangeAptekaList().clickJs();
         logger.info("Пользователь нажимает на список доступных Аптек");
     }
 
