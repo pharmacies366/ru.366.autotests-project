@@ -88,18 +88,22 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCartPage.сlickAddCartButton();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
         pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
-        //   mobileCheckOutPage.clickMakeOrder();
-        //  mobileThankForTheOrderPage.checkSuccessMessage();
+           mobileCheckOutPage.clickMakeOrder();
+          mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Неавторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")

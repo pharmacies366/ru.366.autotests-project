@@ -106,16 +106,26 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCartPage.checkAndClearCartQuantity();
         pageActions.reloadPage();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
+        pageActions.reloadPage();
         mobileCartPage.сlickAddCartButton();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
-       // mobileCheckOutPage.clickMakeOrder();
-      //  mobileThankForTheOrderPage.checkSuccessMessage();
+        pageActions.waitPageLoad();
+        mobileCheckOutPage.contactDetails(
+                propertiesManager.getProperty("username"),
+                propertiesManager.getProperty("phonenumber"),
+                propertiesManager.getProperty("usermail"));
+        mobileCheckOutPage.clickMakeOrder();
+        mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Авторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
