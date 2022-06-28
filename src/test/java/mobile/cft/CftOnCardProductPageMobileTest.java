@@ -80,7 +80,7 @@ public class CftOnCardProductPageMobileTest extends BaseSettingsMobileTests {
     @Test
     public void checkLinkInfoProductGalleryBonus() {
         openUrl(propertiesManager.getProperty("baseurl") + "p/207185");
-        mobileProductCardPage.getcolorPlusOnMainProductAboutBonuses().click();
+        mobileProductCardPage.getcolorPlusOnMainProductAboutBonuses().clickJs();
         mobileProductCardPage.clickOnLinkMoreAboutBonuses();
         pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/pravila_programmy/");
     }
