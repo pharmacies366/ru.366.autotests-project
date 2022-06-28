@@ -145,7 +145,7 @@ public class MobilePersonalDataPage extends MainTestBase {
 
     @Step("Пользователь нажимает кнопку сохранить")
     public void ckickSaveButton() {
-        getSaveButton().click();
+        getSaveButton().clickJs();
         logger.info("Пользователь нажимает кнопку сохранить");
     }
 
