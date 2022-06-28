@@ -46,7 +46,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
        // mobileThankForTheOrderPage.checkPaymentError();
     }
 
-    @DisplayName("Аавторизованный пользователь покупает товар в 1клик")
+    @DisplayName("Авторизованный пользователь покупает товар в 1клик")
     @Test
     public void oneClick() {
         mobileHeaderBlock.clickBurgerButton();
@@ -64,7 +64,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         mobileCookiePage.reCaptchaKey();
-      //  mobileCheckOutPage.clickBookingButton();
+        mobileCheckOutPage.clickBookingButton();
       //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
