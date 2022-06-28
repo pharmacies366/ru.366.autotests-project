@@ -17,7 +17,7 @@ public class PopUpsWebTest extends BaseSettingsWebTests {
 
     @DisplayName("Проверка наличия и закрытия попапа с куки файлами")
     @Test
-    public void checkButtonSelectCities(){
+    public void checkCookiesPopUp() {
         mainPage.clickClosePopUp();
     }
 
