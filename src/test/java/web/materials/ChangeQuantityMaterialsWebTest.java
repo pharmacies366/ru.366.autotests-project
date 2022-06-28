@@ -57,6 +57,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
         productCardPage.clickAddCartButton();
         pageActions.waitPageLoad();
         productCardPage.clickIncreaseQuantity();
+        pageActions.waitPageLoad();
         int quantity = productCardPage.getQuantityProduct();
         Assertions.assertEquals(2, quantity);
         logger.info("Количество товара равно 2-м");
