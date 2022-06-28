@@ -44,7 +44,7 @@ public class MobileBasementBlockMobileTest extends BaseSettingsMobileTests {
                 Arguments.of("/apteki/map/", "Где получить заказ", "Работает сейчас"),
                 Arguments.of("/faq/", "Вопрос-ответ", "Вопрос-ответ"),
                 Arguments.of("/feedback/", "Задать вопрос", "Обратная связь"),
-                Arguments.of("/delivery/", "Доставка", "Курьерская доставка заказов"),
+                Arguments.of("/delivery/", "Доставка", "Доставка заказов"),
                 Arguments.of("/oplata/", "Оплата", "Способы оплаты"),
                 Arguments.of("/refund/", "Обмен и возврат", "Правила обмена и возврата"),
                 Arguments.of("/warranty/", "Гарантии", "Гарантии")
