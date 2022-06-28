@@ -387,7 +387,7 @@ public class CommonActionsOnMobilePages extends MainTestBase {
 
     @Step("Пользователь выбирает опцию: по рецепту - и проверяет содержание выбранной опции в блоке: Основная информация")
     public void checkCheckboxWithRecipe() {
-        getOnRecipeCheckbox().click();
+        getOnRecipeCheckbox().clickJs();
         logger.info("Пользователь нажимает на выбранную опцию");
 
         int par = getProductList().getSize();
@@ -397,7 +397,7 @@ public class CommonActionsOnMobilePages extends MainTestBase {
         } else {
             randomNumberProduct = (new Random()).ints(1, par).iterator().nextInt();
         }
-        getProductButton(String.format(PRODUCT_BUTTON_XPATH, randomNumberProduct)).click();
+        getProductButton(String.format(PRODUCT_BUTTON_XPATH, randomNumberProduct)).clickJs();
         logger.info("Пользователь проверяет содержание опции - По рецепту в блоке: Основная информация");
     }
 
