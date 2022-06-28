@@ -5,6 +5,8 @@ import blocks.web.BasementBlock;
 import blocks.web.HeaderBlock;
 import core.MainTestBase;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import pages.commonActions.web.CommonActionsOnWebPages;
 import pages.web.authorization.AuthPopUpPage;
 import pages.web.bonusCard.BonusCardPopUpPage;
@@ -56,6 +58,8 @@ public class BaseSettingsWebTests extends MainTestBase {
     @BeforeEach
     public void PagesInitialization() {
         mainPage = new MainPage(driver);
+        closePopUps();
+
         commonActionsOnWebPages = new CommonActionsOnWebPages(driver);
         basementBlock = new BasementBlock(driver);
         pageElementActions = new PageElementActions(driver);
@@ -76,6 +80,11 @@ public class BaseSettingsWebTests extends MainTestBase {
         bonusCardPopUpPage = new BonusCardPopUpPage(driver);
         catalogPage = new CatalogPage(driver);
         citiesPopUpPage = new CitiesPopUpPage(driver);
+    }
+
+    public void closePopUps(){
+        mainPage.clickClosePopUp();
+        mainPage.clickClosePopUpNews();
     }
 
 }

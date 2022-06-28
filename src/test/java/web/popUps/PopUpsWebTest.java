@@ -24,7 +24,7 @@ public class PopUpsWebTest extends BaseSettingsWebTests {
     @DisplayName("Проверка наличия и закрытия новостного попапа")
     @Test
     public void checkNewsPopUp(){
-        mainPage.clickClosePopUpNews();;
+        mainPage.clickClosePopUpNews();
     }
 
 }
