@@ -56,8 +56,6 @@ public class BaseSettingsWebTests extends MainTestBase {
     @BeforeEach
     public void PagesInitialization() {
         mainPage = new MainPage(driver);
-        actionsBeforeTests();
-
         commonActionsOnWebPages = new CommonActionsOnWebPages(driver);
         basementBlock = new BasementBlock(driver);
         pageElementActions = new PageElementActions(driver);
@@ -78,13 +76,6 @@ public class BaseSettingsWebTests extends MainTestBase {
         bonusCardPopUpPage = new BonusCardPopUpPage(driver);
         catalogPage = new CatalogPage(driver);
         citiesPopUpPage = new CitiesPopUpPage(driver);
-     /*   medicationsCategoryPage = new MedicationsCategoryPage(driver);
-        */
     }
 
-    //данный метод выполняется перед каждым тестом
-    protected void actionsBeforeTests() {
-        mainPage.clickClosePopUp();
-        mainPage.clickClosePopUpNews();
-    }
 }
