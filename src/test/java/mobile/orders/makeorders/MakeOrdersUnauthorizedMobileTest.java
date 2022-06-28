@@ -50,7 +50,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileProductCardPage.buyOneClick();
         mobileProductCardPage.checkVisibilityMap();
         mobileProductCardPage.clickChangeAptekaList();
-        mobileProductCardPage.setInputSearchAddres("метро Фили");
+        mobileProductCardPage.setInputSearchAddres("Москва");
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         // mobileCheckOutPage.clickBookingButton();
