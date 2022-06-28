@@ -19,7 +19,7 @@ public class MobileCheckOutPage extends MainTestBase {
     private static final String PhoneNumber = "phone";
     private static final String Fio = "fio";
     private static final String Email = "email";
-    private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;//button[contains(@class,'contacts')]";
+    private static final String MAKE_ORDER_BUTTON_XPATH = "xpath;(//button[contains(@class,'contacts')])[1]";
     private static final String INPUT_PHONE_NUMBER_XPATH = "xpath;//input[@name='phone']";
     private static final String BOOKING_BUTTON_XPATH = "xpath;//input[@value='Забронировать']";
     private static final String SELECT_APTEKA_XPATH = "xpath;//span[contains(.,'Выбрать аптеку')]";
@@ -114,7 +114,7 @@ public class MobileCheckOutPage extends MainTestBase {
 
     @Step("Пользователь нажимает на кнопку 'Сделать заказ'")
     public void clickMakeOrder(){
-        getMakeOrderButton().click();
+        getMakeOrderButton().clickJs();
         logger.info("Пользователь нажимает на кнопку 'Сделать заказ'");
     }
 

@@ -42,8 +42,8 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("cardnumber"),
                 propertiesManager.getProperty("monthyear"),
                 propertiesManager.getProperty("cvv"));
-        // mobileSberPage.clickOnSubmitButton();
-        // mobileThankForTheOrderPage.checkPaymentError();
+       // mobileSberPage.clickOnSubmitButton();
+       // mobileThankForTheOrderPage.checkPaymentError();
     }
 
     @DisplayName("Аавторизованный пользователь покупает товар в 1клик")
@@ -64,8 +64,8 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileProductCardPage.clickBuyOneClick();
         mobileCheckOutPage.setInputOneClickPhoneNumber(propertiesManager.getProperty("phonenumber"));
         mobileCookiePage.reCaptchaKey();
-        //  mobileCheckOutPage.clickBookingButton();
-        //  mobileThankForTheOrderPage.checkSuccessMessage();
+      //  mobileCheckOutPage.clickBookingButton();
+      //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Авторизованный пользователь покупает товар со страниц ОСП")
@@ -90,8 +90,8 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.setInputSearchAddres("Москва");
         mobileCheckOutPage.clickSelect();
-        //  mobileCheckOutPage.clickMakeOrder();
-        //  mobileThankForTheOrderPage.checkSuccessMessage();
+      //  mobileCheckOutPage.clickMakeOrder();
+      //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Авторизованный пользователь покупает товар со способом доставки - 'Самовывоз'")
@@ -106,16 +106,26 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCartPage.checkAndClearCartQuantity();
         pageActions.reloadPage();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
+        pageActions.reloadPage();
         mobileCartPage.сlickAddCartButton();
         mobileCartPage.clickToCartButton();
         mobileCartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
-        // mobileCheckOutPage.clickMakeOrder();
-        //  mobileThankForTheOrderPage.checkSuccessMessage();
+        pageActions.waitPageLoad();
+        mobileCheckOutPage.contactDetails(
+                propertiesManager.getProperty("username"),
+                propertiesManager.getProperty("phonenumber"),
+                propertiesManager.getProperty("usermail"));
+        mobileCheckOutPage.clickMakeOrder();
+        mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Авторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
@@ -140,8 +150,8 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
         mobileCheckOutPage.clickSelect();
-        // pageActions.waitPageLoad();
+       // pageActions.waitPageLoad();
         //   mobileCheckOutPage.clickMakeOrder();
         //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
-}
+    }
