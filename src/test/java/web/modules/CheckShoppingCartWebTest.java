@@ -89,15 +89,11 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "p/64844");
         productCardPage.clickAddCartButton();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/207685");
-        productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
-
         double firstPrice = Double.parseDouble(cartPage.getProductPrice("1"));
         double secondPrice = Double.parseDouble(cartPage.getProductPrice("2"));
-        double ddd = Double.parseDouble(cartPage.getProductPrice("3"));
         int totalPrice = cartPage.getPriceTotal();
-        Assertions.assertEquals(firstPrice + secondPrice + ddd, totalPrice);
+        Assertions.assertEquals(firstPrice + secondPrice, totalPrice);
     }
 
     @DisplayName("Пользователь проверяет нотификацию после удаления товара")

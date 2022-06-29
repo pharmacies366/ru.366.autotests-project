@@ -23,7 +23,7 @@ public class CartPage extends MainTestBase {
     private static final String TEXT_DO_NOT_ADD_TO_CART_XPATH = "xpath;//div[@class='c-gallery__header js-products__tabs__item active']//child::h2";
     private static final String DO_NOT_ADD_TO_CART_PRODUCTS_LIST_XPATH = "xpath;//div[@class='owl-wrapper c-gallery__content-wrapper active']";
 
-    private static final String PRICE_LABEL_XPATH = "xpath;(//div[@class='cart-item_cost__final cart-item_cost__final-disc js-item-total'])[%s]";
+    private static final String PRICE_LABEL_XPATH = "xpath;(//div[@class='cart-item_cost'])[%s]";
 
     //конструктор
     public CartPage(WebDriver driver) {
