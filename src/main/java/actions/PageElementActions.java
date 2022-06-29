@@ -84,10 +84,10 @@ public class PageElementActions extends MainTestBase {
 
         String s = driver.findElement(getBySelector(element)).getText();
         int k = s.indexOf(" ", s.indexOf(" ") + 1);
-        String text = s.substring(0,k);
+        String text = s.substring(0,k); // удаление 2-го пробела
 
-        String text2 = text.replace(" ", "");
-        String text3 = text2.replace(",", ".");
+        String text2 = text.replace(" ", "");// удаление 1-го пробела
+        String text3 = text2.replace(",", ".");// меняет , на .
 
         return Double.parseDouble(text3);
     }
