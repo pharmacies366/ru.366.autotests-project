@@ -103,7 +103,6 @@ public class MobileHeaderBlock extends MainTestBase {
             getClearAllFromCart().click();
             getConfirmCleanAll().click();
             logger.info("ТОВАРЫ В КОРЗИНЕ УДАЛЕНЫ");
-            saveAllureScreenshot();
         }
     }
 

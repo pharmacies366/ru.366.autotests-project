@@ -25,7 +25,7 @@ public class MainPage extends MainTestBase {
     private static final String PREV_BANNER_XPATH = "xpath;//button[@class='slick-prev slick-arrow']";
     private static final String NEXT_BANNER_XPATH = "xpath;//button[@class='slick-next slick-arrow']";
     private static final String BANNER_PIN_BUTTONS_XPATH = "xpath;//button[@type='button'][contains(.,'%s')]";
-    private static final String BANNERS_BUTTONS_XPATH = "xpath;(//div[@class='yCmsContentSlot'])[1]";
+    private static final String BANNERS_BUTTONS_XPATH = "xpath;/html/body/main/div[6]/div[1]/div/div/div/div/div/div[3]/div/div/a/picture/img";
     private static final String MAIN_BUTTON_XPATH = "xpath;//div[@class='breadcrumbs__item']";
     private static final String QUANTITY_BANNERS_XPATH = "xpath;//ul[contains(@role,'tablist')]";
     private static final String CATALOG_BUTTON_XPATH = "xpath;//div[@class='catalog_menu js-switch-menu']";

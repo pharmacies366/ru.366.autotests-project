@@ -97,7 +97,6 @@ public class CartPage extends MainTestBase {
             driver.get(propertiesManager.getProperty("baseurl") + "/cart");
             deleteAllMaterials();
             logger.info("ТОВАРЫ В КОРЗИНЕ УДАЛЕНЫ");
-            saveAllureScreenshot();
         }
     }
 
