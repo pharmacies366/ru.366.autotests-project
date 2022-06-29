@@ -8,6 +8,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+
 @Feature(value = "Web")
 @Story(value = "Изменения корзины на сайте 36.6")
 @DisplayName("Изменения корзины")
@@ -81,15 +85,19 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void checkTotalAmountProducts() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/2105");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/207185");
         productCardPage.clickAddCartButton();
-        int firstPrice = productCardPage.getProductPrice();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/64844");
         productCardPage.clickAddCartButton();
-        int secondPrice = productCardPage.getProductPrice();
+        openUrl(propertiesManager.getProperty("baseurl") + "p/207685");
+        productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
+
+        double firstPrice = Double.parseDouble(cartPage.getProductPrice("1"));
+        double secondPrice = Double.parseDouble(cartPage.getProductPrice("2"));
+        double ddd = Double.parseDouble(cartPage.getProductPrice("3"));
         int totalPrice = cartPage.getPriceTotal();
-        Assertions.assertEquals(firstPrice + secondPrice, totalPrice);
+        Assertions.assertEquals(firstPrice + secondPrice + ddd, totalPrice);
     }
 
     @DisplayName("Пользователь проверяет нотификацию после удаления товара")

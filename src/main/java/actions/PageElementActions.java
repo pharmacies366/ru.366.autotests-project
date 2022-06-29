@@ -77,6 +77,21 @@ public class PageElementActions extends MainTestBase {
         return Integer.parseInt(text);
     }
 
+    //Перевести строку в числовое значение Double
+    public Double formatElementToValueDouble() {
+        this.moveToElement();
+        waitUntilElementToBeClickable(getBySelector(element), DEFAULT_ELEMENT_WAIT_TIME_S);
+
+        String s = driver.findElement(getBySelector(element)).getText();
+        int k = s.indexOf(" ", s.indexOf(" ") + 1);
+        String text = s.substring(0,k);
+
+        String text2 = text.replace(" ", "");
+        String text3 = text2.replace(",", ".");
+
+        return Double.parseDouble(text3);
+    }
+
     //Перейти к элементу и ввести текст
     public void sendKeys(String keysToSend) {
         this.moveToElement();
