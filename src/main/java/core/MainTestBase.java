@@ -8,13 +8,15 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import utils.PropertiesManager;
 import utils.WebDriverFactory;
 
-public class MainTestBase {
+public class MainTestBase implements TestWatcher {
 
     protected WebDriver driver;
     protected PropertiesManager propertiesManager = new PropertiesManager();
@@ -28,10 +30,8 @@ public class MainTestBase {
     protected void openUrl(String url) {
         try {
             driver.get(url);
-            saveAllureScreenshot();
         } catch (org.openqa.selenium.TimeoutException ex) {
             driver.navigate().refresh();
-            saveAllureScreenshot();
         }
     }
 
@@ -39,11 +39,9 @@ public class MainTestBase {
         try {
             driver.get(propertiesManager.getProperty("baseurl"));
             pageActions.waitPageLoad();
-            saveAllureScreenshot();
         } catch (org.openqa.selenium.TimeoutException ex) {
             driver.navigate().refresh();
             pageActions.waitPageLoad();
-            saveAllureScreenshot();
         }
     }
 
@@ -71,12 +69,14 @@ public class MainTestBase {
         logger.info("Тест старт " + testInfo.getDisplayName());
     }
 
-
-
-
     /**
      * @return - скриншот
      */
+    @Override
+    public void testFailed(ExtensionContext extensionContext, Throwable throwable) {
+        saveAllureScreenshot();
+    }
+
     @Attachment(value = "Скриншот", type = "image/png")
     public byte[] saveAllureScreenshot() {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
