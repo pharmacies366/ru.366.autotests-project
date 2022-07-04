@@ -55,9 +55,9 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь удаляет 1 из 2-х товаров в корзине")
     @Test
     public void deleteMaterialsFromCart() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/2105");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/47497");
         productCardPage.clickAddCartButton();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         cartPage.clickDeleteMaterials();
@@ -68,9 +68,9 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь удаляет все товары в корзине")
     @Test
     public void deleteAllMaterialsFromCart() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/2105");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/47497");
         productCardPage.clickAddCartButton();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/33090");
         productCardPage.clickAddCartButton();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
         cartPage.deleteAllMaterials();
@@ -81,13 +81,13 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void checkTotalAmountProducts() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/2105");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/207185");
         productCardPage.clickAddCartButton();
-        int firstPrice = productCardPage.getProductPrice();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/64844");
         productCardPage.clickAddCartButton();
-        int secondPrice = productCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
+        double firstPrice = Double.parseDouble(cartPage.getProductPrice("1"));
+        double secondPrice = Double.parseDouble(cartPage.getProductPrice("2"));
         int totalPrice = cartPage.getPriceTotal();
         Assertions.assertEquals(firstPrice + secondPrice, totalPrice);
     }
@@ -95,7 +95,7 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь проверяет нотификацию после удаления товара")
     @Test
     public void checkNotificationCart() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/2105");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/47497");
         productCardPage.clickAddCartButton();
         int firstPrice = productCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
@@ -134,5 +134,5 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         int count = cartPage.checkDoNotAddToCartProductsList();
         Assertions.assertTrue(count > 0);
     }
-
+    
 }
