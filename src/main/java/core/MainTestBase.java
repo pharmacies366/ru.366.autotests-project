@@ -79,10 +79,6 @@ public class MainTestBase implements TestWatcher {
     public void testFailed(ExtensionContext extensionContext, Throwable throwable) {
         saveAllureScreenshot();
     }
-    /*@Attachment(value = "Скриншот", type = "image/png")
-    public byte[] saveAllureScreenshot() {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }*/
 
     @Attachment(value = "Скриншот", type = "image/png")
     public byte[] saveAllureScreenshot() {
