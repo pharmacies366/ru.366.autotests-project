@@ -20,6 +20,7 @@ public class SignInPositiveWebTest extends BaseSettingsWebTests {
     public void loginUserPhoneNumberAndPassword() {
         cookiePage.reCaptchaKey();
         headerBlock.clickToSignInButton();
+        fail();
         authPopUpPage.setPhoneAndPassword(
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("userpass"));
