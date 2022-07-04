@@ -81,13 +81,13 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void checkTotalAmountProducts() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/47497");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/207185");
         productCardPage.clickAddCartButton();
-        int firstPrice = productCardPage.getProductPrice();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/64844");
         productCardPage.clickAddCartButton();
-        int secondPrice = productCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
+        double firstPrice = Double.parseDouble(cartPage.getProductPrice("1"));
+        double secondPrice = Double.parseDouble(cartPage.getProductPrice("2"));
         int totalPrice = cartPage.getPriceTotal();
         Assertions.assertEquals(firstPrice + secondPrice, totalPrice);
     }
