@@ -89,6 +89,7 @@ public class MainTestBase implements TestWatcher {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
+
     /**
      * Прикрепить строку к отчету
      *
