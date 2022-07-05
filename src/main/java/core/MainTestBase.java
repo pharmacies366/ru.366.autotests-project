@@ -46,7 +46,7 @@ public class MainTestBase implements TestWatcher {
     }
 
     @BeforeEach
-    @Step("Открывается Главная страница сайта")
+    @Step("Открывается Главная страница сайта 36.6")
     public void beforeClass_StartBrowser(TestInfo testInfo) {
         WebDriverFactory driverFactory = new WebDriverFactory();
         starting(testInfo);
@@ -69,12 +69,6 @@ public class MainTestBase implements TestWatcher {
         logger.info("Тест старт " + testInfo.getDisplayName());
     }
 
-
-
-
-    /**
-     * @return - скриншот
-     */
     @Override
     public void testFailed(ExtensionContext extensionContext, Throwable throwable) {
         saveAllureScreenshot();
