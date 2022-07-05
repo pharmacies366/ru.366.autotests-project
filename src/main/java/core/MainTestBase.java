@@ -8,15 +8,13 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
-import org.junit.jupiter.api.extension.ExtensionContext;
-import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import utils.PropertiesManager;
 import utils.WebDriverFactory;
 
-public class MainTestBase implements TestWatcher {
+public class MainTestBase {
 
     protected WebDriver driver;
     protected PropertiesManager propertiesManager = new PropertiesManager();
@@ -58,6 +56,7 @@ public class MainTestBase implements TestWatcher {
 
     @AfterEach
     public void finish() {
+        saveAllureScreenshot();
         driver.close();
         driver.quit();
     }
@@ -67,14 +66,6 @@ public class MainTestBase implements TestWatcher {
         nameOfPackage = testInfo.getTestClass().get().getPackage().getName();
         //`  nameOfClass = testInfo.getTestClass().get().getName();
         logger.info("Тест старт " + testInfo.getDisplayName());
-    }
-
-    /**
-     * @return - скриншот
-     */
-    @Override
-    public void testFailed(ExtensionContext extensionContext, Throwable throwable) {
-        saveAllureScreenshot();
     }
 
     @Attachment(value = "Скриншот", type = "image/png")
