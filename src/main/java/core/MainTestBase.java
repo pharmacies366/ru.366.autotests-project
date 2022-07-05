@@ -64,7 +64,7 @@ public class MainTestBase {
 
     private void starting(TestInfo testInfo) {
         nameOfPackage = testInfo.getTestClass().get().getPackage().getName();
-      //`  nameOfClass = testInfo.getTestClass().get().getName();
+        //nameOfClass = testInfo.getTestClass().get().getName();
         logger.info("Тест старт " + testInfo.getDisplayName());
     }
 
