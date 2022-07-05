@@ -56,16 +56,24 @@
     </profiles>
 
     <dependencies>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId> <!--Если обновить до последний версии открывается в 2 раза больше браузеров-->
             <artifactId>selenium-java</artifactId>
             <version>${selenium-java.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
         </dependency>
+
+<!--        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.1</version>
+        </dependency>-->
 
         <dependency>
             <groupId>io.qameta.allure</groupId>

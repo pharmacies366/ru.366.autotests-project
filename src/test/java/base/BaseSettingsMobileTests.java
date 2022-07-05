@@ -6,6 +6,7 @@ import blocks.mobile.MobileHeaderBlock;
 import blocks.mobile.MobileMainPopUpBlock;
 import core.MainTestBase;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import pages.commonActions.mobile.CommonActionsOnMobilePages;
 import pages.mobile.authorization.MobileAuthPopUpPage;
 import pages.mobile.botConsultant.MobileBotConsultantPopUpPage;
@@ -27,6 +28,7 @@ import pages.mobile.subCategorys.medications.MobileAllergyPage;
 import pages.mobile.subCategorys.medications.MobileMedicationsPage;
 import pages.mobile.thanks.MobileThankForTheOrderPage;
 
+@ExtendWith(MainTestBase.class)
 public class BaseSettingsMobileTests extends MainTestBase {
 
 

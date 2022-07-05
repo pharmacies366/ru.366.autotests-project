@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import utils.PropertiesManager;
 import utils.WebDriverFactory;
 
+
 public class MainTestBase implements TestWatcher {
 
     protected WebDriver driver;
@@ -46,7 +47,7 @@ public class MainTestBase implements TestWatcher {
     }
 
     @BeforeEach
-    @Step("Открывается Главная страница сайта 36.6")
+    @Step("Открывается Главная страница сайта")
     public void beforeClass_StartBrowser(TestInfo testInfo) {
         WebDriverFactory driverFactory = new WebDriverFactory();
         starting(testInfo);
@@ -58,6 +59,7 @@ public class MainTestBase implements TestWatcher {
 
     @AfterEach
     public void finish() {
+        saveAllureScreenshot();
         driver.close();
         driver.quit();
     }
@@ -69,7 +71,13 @@ public class MainTestBase implements TestWatcher {
         logger.info("Тест старт " + testInfo.getDisplayName());
     }
 
-    @Override
+
+
+
+    /**
+     * @return - скриншот
+     */
+
     public void testFailed(ExtensionContext extensionContext, Throwable throwable) {
         saveAllureScreenshot();
     }
@@ -78,7 +86,6 @@ public class MainTestBase implements TestWatcher {
     public byte[] saveAllureScreenshot() {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
-
 
     /**
      * Прикрепить строку к отчету
@@ -95,4 +102,5 @@ public class MainTestBase implements TestWatcher {
     public String returnAttachment() {
         return "Все хорошо";
     }
+
 }

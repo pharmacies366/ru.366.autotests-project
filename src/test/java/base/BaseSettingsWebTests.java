@@ -5,8 +5,7 @@ import blocks.web.BasementBlock;
 import blocks.web.HeaderBlock;
 import core.MainTestBase;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import pages.commonActions.web.CommonActionsOnWebPages;
 import pages.web.authorization.AuthPopUpPage;
 import pages.web.bonusCard.BonusCardPopUpPage;
@@ -26,6 +25,7 @@ import pages.web.product.ProductCardPage;
 import pages.web.sber.SberPage;
 import pages.web.thanks.ThankForTheOrderPage;
 
+@ExtendWith(MainTestBase.class)
 public class BaseSettingsWebTests extends MainTestBase {
 
     protected CommonActionsOnWebPages commonActionsOnWebPages;
