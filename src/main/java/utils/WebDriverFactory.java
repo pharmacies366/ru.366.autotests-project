@@ -56,7 +56,6 @@ public class WebDriverFactory {
         chromeOptions.addArguments("--dns-prefetch-disable");
         chromeOptions.addArguments("--disable-gpu");
         chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--dns-prefetch-disable");
         chromeOptions.addArguments("--ignore-certificate-errors");
         chromeOptions.addArguments("--disabled-popup-blocking");
         //chromeOptions.addArguments("--headless");
@@ -117,7 +116,6 @@ public class WebDriverFactory {
         chromeOptions.addArguments("--dns-prefetch-disable");
         chromeOptions.addArguments("--disable-gpu");
         chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--dns-prefetch-disable");
         chromeOptions.addArguments("--ignore-certificate-errors");
         chromeOptions.addArguments("--disabled-popup-blocking");
         //chromeOptions.addArguments("--headless");
