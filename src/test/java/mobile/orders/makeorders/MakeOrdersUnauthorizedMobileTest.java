@@ -73,9 +73,12 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("username"),
                 propertiesManager.getProperty("phonenumber"),
                 propertiesManager.getProperty("usermail"));
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.setInputSearchAddres("метро Автозаводская");//возможно нужно кликнуть в пустое место
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
         //  mobileCheckOutPage.clickMakeOrder();
         //  mobileThankForTheOrderPage.checkSuccessMessage();
@@ -85,9 +88,11 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     @Test
     public void pickup() {
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode1"));
-        pageActions.reloadPage();
+        pageActions.waitPageLoad();
         mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
@@ -115,13 +120,16 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickSiteLogo();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
         mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
         mobileProductCardPage.checkVisibilityMap();
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
-        //pageActions.waitPageLoad();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
         pageActions.waitPageLoad();
         mobileCheckOutPage.contactDetails(

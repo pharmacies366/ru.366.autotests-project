@@ -1,12 +1,12 @@
 package pages.mobile.main;
 
+import actions.PageActions;
 import actions.PageElementActions;
 import core.MainTestBase;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 public class MobileMainPage extends MainTestBase {
-
 
     //элементы
     private static final String SITE_LOGO_XPATH = "xpath;//img[@alt='9477014323230.png']";
