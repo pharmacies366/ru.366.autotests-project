@@ -121,16 +121,6 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         Assertions.assertEquals(recipeInfo, "По рецепту");
     }
 
-    @DisplayName("Пользователь проверяет корректную выдачу товаров без рецепта")
-    @Test
-    public void checkCheckboxWithoutRecipe() {
-        headerBlock.clickCatalogButton();
-        catalogPage.clickMedicationsButtons();
-        commonActionsOnWebPages.checkCheckboxWithoutRecipe();
-        String recipeInfo = productCardPage.getRecipeInfo().getText();
-        Assertions.assertEquals(recipeInfo, "Без рецепта");
-    }
-
 /*
     @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
     @Test
