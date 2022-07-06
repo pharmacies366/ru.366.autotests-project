@@ -12,6 +12,8 @@ public class MainPage extends MainTestBase {
 
     //элементы
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
+
+    private static final String POP_UP_NEWS_BUTTON_XPATH = "xpath;//div[@class='popmechanic-close']";
     private static final String LETTER_N_XPATH = "xpath;//a[@href='/littera-Н/']";
     private static final String ADD_TO_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'Купить')])[1]";
     private static final String QUANTITY_MATERIALS_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
@@ -19,7 +21,8 @@ public class MainPage extends MainTestBase {
     private static final String DECREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_minus')])[1]";
     private static final String FAVORITES_ICON_XPATH = "xpath;(//button[contains(@class,'button b-star')])[1]";
     private static final String BANNER_LIST_XPATH = "xpath;(//button[@type='button'])";
-    private static final String CHECK_START_BANNER_XPATH = "xpath;//li[@class='slick-active' and @aria-controls='navigation00']";
+    private static final String CHECK_START_BANNER_XPATH = "xpath;//li[@class='slick-active']";
+   // private static final String CHECK_START_BANNER_XPATH = "xpath;//li[@class='slick-active' and @aria-controls='navigation00']";
     private static final String PREV_BANNER_XPATH = "xpath;//button[@class='slick-prev slick-arrow']";
     private static final String NEXT_BANNER_XPATH = "xpath;//button[@class='slick-next slick-arrow']";
     private static final String BANNER_PIN_BUTTONS_XPATH = "xpath;//button[@type='button'][contains(.,'%s')]";
@@ -43,6 +46,10 @@ public class MainPage extends MainTestBase {
 
     public PageElementActions getPopUpButton() {
         return new PageElementActions(POP_UP_BUTTON_XPATH, driver);
+    }
+
+    public PageElementActions getPopUpNewsButton() {
+        return new PageElementActions(POP_UP_NEWS_BUTTON_XPATH, driver);
     }
 
     public PageElementActions getLetterN() {
@@ -138,6 +145,12 @@ public class MainPage extends MainTestBase {
         logger.info("Пользователь закрывает попап куки: 'Спасибо, понятно'");
     }
 
+    @Step("Пользователь закрывает новосной попап")
+    public void clickClosePopUpNews() {
+        getPopUpNewsButton().click();
+        logger.info("Пользователь закрывает новосной попап");
+    }
+
     @Step("Пользователь нажимает на букву 'Н' Русского алфавита")
     public void clickLetterN() {
         getLetterN().clickJs();
@@ -180,7 +193,7 @@ public class MainPage extends MainTestBase {
     public void checkNextBannerList() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
         int quantity = Integer.parseInt(sizeAllLi);
-        for (int i = 0; i < quantity; i++) {
+        for (int i = 1; i <= quantity; i++) {
             getNextBannerButton().click();
             getBannerList().isElementDisplayedWithIndex(i);
         }
@@ -188,15 +201,12 @@ public class MainPage extends MainTestBase {
         logger.info("Пользователь кликает по стрелке вперед, переключает банеры и проверяет, что возвращается к первому");
     }
 
-
     @Step("Пользователь кликает по стрелке назад, переключает банеры и проверяет, что возвращается к первому")
     public void checkPrevBannerList() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
-        getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).click();
         int quantity = Integer.parseInt(sizeAllLi);
-        for (int i = quantity; i >= 1; i--) {
+        for (int i = 1; i <= quantity; i++) {
             getPrevBannerButton().click();
-            pageActions.staticWait(200);
             getBannerList().isElementDisplayedWithIndex(i);
         }
         getCheckStartBanner().isElementDisplayed();
@@ -215,7 +225,7 @@ public class MainPage extends MainTestBase {
     }
 
 
-    @Step("Пользователь переключает банеры по пинам, затем переходит по банерам, а затем возвращается на главную страницу")
+    @Step("Пользователь переключает банеры по пинам и возвращается на главную страницу")
     public void checkBannersClickable() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
         getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).click();
@@ -228,9 +238,8 @@ public class MainPage extends MainTestBase {
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).moveToElement();
 
         }
-        logger.info("Пользователь переключает банеры по пинам, затем переходит по банерам, а затем возвращается на главную страницу");
+        logger.info("Пользователь переключает банеры по пинам и возвращается на главную страницу");
     }
-
 
     @Step("Пользователь нажимает на кнопку каталог")
     public void clickCatalogButton() {
