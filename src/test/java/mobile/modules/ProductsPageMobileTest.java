@@ -122,16 +122,6 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         Assertions.assertEquals(recipeInfo, "По рецепту");
     }
 
-    @DisplayName("Пользователь проверяет корректную выдачу товаров без рецепта")
-    @Test
-    public void checkCheckboxWithoutRecipe() {
-        openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
-        commonActionsOnMobilePages.clickFiltersButton();
-        commonActionsOnMobilePages.checkCheckboxWithoutRecipe();
-        String recipeInfo = mobileProductCardPage.getWithOutRecipeInfo().getText();
-        Assertions.assertEquals(recipeInfo, "Без рецепта");
-    }
-
 /*    @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
     @Test
     public void checkSortingPriceReduction() {
