@@ -21,7 +21,8 @@ public class MainPage extends MainTestBase {
     private static final String DECREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_minus')])[1]";
     private static final String FAVORITES_ICON_XPATH = "xpath;(//button[contains(@class,'button b-star')])[1]";
     private static final String BANNER_LIST_XPATH = "xpath;(//button[@type='button'])";
-    private static final String CHECK_START_BANNER_XPATH = "xpath;//li[@class='slick-active' and @aria-controls='navigation00']";
+    private static final String CHECK_START_BANNER_XPATH = "xpath;//li[@class='slick-active']";
+   // private static final String CHECK_START_BANNER_XPATH = "xpath;//li[@class='slick-active' and @aria-controls='navigation00']";
     private static final String PREV_BANNER_XPATH = "xpath;//button[@class='slick-prev slick-arrow']";
     private static final String NEXT_BANNER_XPATH = "xpath;//button[@class='slick-next slick-arrow']";
     private static final String BANNER_PIN_BUTTONS_XPATH = "xpath;//button[@type='button'][contains(.,'%s')]";
@@ -192,7 +193,7 @@ public class MainPage extends MainTestBase {
     public void checkNextBannerList() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
         int quantity = Integer.parseInt(sizeAllLi);
-        for (int i = 0; i <= quantity; i++) {
+        for (int i = 1; i <= quantity; i++) {
             getNextBannerButton().click();
             getBannerList().isElementDisplayedWithIndex(i);
         }
@@ -203,11 +204,9 @@ public class MainPage extends MainTestBase {
     @Step("Пользователь кликает по стрелке назад, переключает банеры и проверяет, что возвращается к первому")
     public void checkPrevBannerList() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
-        getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).click();
         int quantity = Integer.parseInt(sizeAllLi);
-        for (int i = quantity; i >= 1; i--) {
+        for (int i = 1; i <= quantity; i++) {
             getPrevBannerButton().click();
-            pageActions.staticWait(200);
             getBannerList().isElementDisplayedWithIndex(i);
         }
         getCheckStartBanner().isElementDisplayed();
