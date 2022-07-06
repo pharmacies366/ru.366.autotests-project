@@ -132,7 +132,7 @@ public class MobileCheckOutPage extends MainTestBase {
 
     @Step("Пользователь нажимает кнопку 'Выбрать Аптеку'")
     public void clickSelectApteka() {
-        getSelectApteka().clickJs();
+        getSelectApteka().click();
         logger.info("Пользователь нажимает кнопку 'Выбрать Аптеку'");
     }
 
@@ -179,7 +179,7 @@ public class MobileCheckOutPage extends MainTestBase {
 
     @Step("Пользователь нажимает на кнопку 'Выбрать'")
     public void clickSelect(){
-        getSelect().clickJs();
+        getSelect().click();
         logger.info("Пользователь нажимает на кнопку 'Выбрать'");
     }
 

@@ -29,6 +29,7 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkAndClearCartQuantity();
         mobileMainPage.clickSiteLogo();
+        pageActions.waitPageLoad();
         mobileCartPage.сlickAddCartButton();
         mobileMainPage.getIncreaseQuantity().isElementDisplayed();
         mobileCartPage.clickToCartButton();
@@ -78,17 +79,23 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
                 propertiesManager.getProperty("mobilephonenumber3"),
                 propertiesManager.getProperty("userpass"));
         mobileCartPage.checkAndClearCartQuantity();
+        pageActions.waitPageLoad();
         mobileMainPage.clickSiteLogo();
         pageActions.waitPageLoad();
         mobileMainPage.clickLetterN();
         mobileOspPage.clickShowAll();
         mobileOspPage.clickProductName();
         mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.setInputSearchAddres("Москва");
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
       //  mobileCheckOutPage.clickMakeOrder();
       //  mobileThankForTheOrderPage.checkSuccessMessage();
@@ -120,12 +127,9 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
         pageActions.waitPageLoad();
-        mobileCheckOutPage.contactDetails(
-                propertiesManager.getProperty("username"),
-                propertiesManager.getProperty("phonenumber"),
-                propertiesManager.getProperty("usermail"));
-        mobileCheckOutPage.clickMakeOrder();
-        mobileThankForTheOrderPage.checkSuccessMessage();
+      //  mobileCheckOutPage.clickMakeOrder();
+       // pageActions.waitPageLoad();
+        //  mobileThankForTheOrderPage.checkSuccessMessage();
     }
 
     @DisplayName("Авторизованный пользователь оформляет заказ содержащий Партнерский товар + Не партнерский")
@@ -143,12 +147,18 @@ public class MakeOrdersAuthorizedMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickSiteLogo();
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode2"));
         mobileCartPage.сlickAddCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToCartButton();
+        pageActions.waitPageLoad();
         mobileCartPage.clickToMakeOrder();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelectApteka();
+        pageActions.waitPageLoad();
         mobileProductCardPage.checkVisibilityMap();
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickChangeAptekaList();
         mobileCheckOutPage.setInputSearchAddres("метро Фили");
+        pageActions.waitPageLoad();
         mobileCheckOutPage.clickSelect();
        // pageActions.waitPageLoad();
         //   mobileCheckOutPage.clickMakeOrder();
