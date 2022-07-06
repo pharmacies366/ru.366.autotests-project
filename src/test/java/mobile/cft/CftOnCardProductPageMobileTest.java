@@ -94,7 +94,7 @@ public class CftOnCardProductPageMobileTest extends BaseSettingsMobileTests {
 
     private static Stream<Arguments> checkCorrectEnding() {
         return Stream.of(
-                Arguments.of("p/211533", "бонус"),
+                Arguments.of("p/191211", "бонус"),
                 Arguments.of("p/334476", "бонуса"),
                 Arguments.of("p/54907", "бонусов")
         );
