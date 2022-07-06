@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 
 public class MobileMainPage extends MainTestBase {
 
+    PageActions pageActions = new PageActions(driver);
+
     //элементы
     private static final String SITE_LOGO_XPATH = "xpath;//img[@alt='9477014323230.png']";
     private static final String POP_UP_BUTTON_XPATH = "xpath;//button[contains(.,'Спасибо, понятно')]";
@@ -31,6 +33,7 @@ public class MobileMainPage extends MainTestBase {
     private static final String CASH_BACK_INFO_POP_UP_XPATH = "xpath;//div[@class='popup__title'][contains(.,'Cash back за покупку')]";
     private static final String LINK_MORE_ABOUT_BONUSES_XPATH = "xpath;//a[@href='/pravila_programmy/'][contains(.,'Подробнее о бонусах')]";
     private static final String BUTTON_BONUSES_XPATH = "xpath;(//div[@class='card-balance--inner-icon'])[1]";
+    private static final String MAIN_BUTTON_XPATH = "xpath;//div[@class='breadcrumbs__item']";
 
 
     //конструктор
@@ -125,6 +128,10 @@ public class MobileMainPage extends MainTestBase {
 
     public PageElementActions getButtonBonuses() {
         return new PageElementActions(BUTTON_BONUSES_XPATH, driver);
+    }
+
+    public PageElementActions getMainButton() {
+        return new PageElementActions(MAIN_BUTTON_XPATH, driver);
     }
 
 
@@ -229,29 +236,32 @@ public class MobileMainPage extends MainTestBase {
     }*/
 
 
-
     @Step("Пользователь переключает банеры по пинам")
     public void checkNextBannerButtons() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
         int quantity = Integer.parseInt(sizeAllLi);
-        for (int i = 0; i <= quantity; i++) {
+        for (int i = 1; i <= quantity; i++) {
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, i)).click();
         }
         logger.info("Пользователь переключает банеры по пинам");
     }
 
-    @Step("Пользователь переключает банеры по пинам, затем переходит по банерам, а затем возвращается на главную страницу")
+    @Step("Пользователь переключает банеры по пинам, нажимает на текущий банер, после перехода возвращается на главную страницу")
     public void checkBannersClickable() {
         String sizeAllLi = getStringQuantityBanners().getAttribute("childElementCount");
+        getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).click();
         int quantity = Integer.parseInt(sizeAllLi);
-        System.out.println(quantity);
         for (int i = 1; i <= quantity; i++) {
             getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, i)).click();
+            pageActions.staticWait(1000);
             getBannersLocators().click();
-            clickSiteLogo();
+            getMainButton().click();
+            getBaseInputBannersPinLocators(String.format(BANNER_PIN_BUTTONS_XPATH, 1)).moveToElement();
+
         }
-        logger.info("Пользователь переключает банеры по пинам, затем переходит по банерам, а затем возвращается на главную страницу");
+        logger.info("Пользователь переключает банеры по пинам и возвращается на главную страницу");
     }
+
 
     @Step("Пользователь нажимает на иконку консультант бота")
     public void clickBotConsultantButton() {
