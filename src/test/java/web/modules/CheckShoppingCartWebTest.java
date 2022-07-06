@@ -38,11 +38,13 @@ public class CheckShoppingCartWebTest extends BaseSettingsWebTests {
         headerBlock.clickToCartButton();
         pageActions.waitPageLoad();
         mainPage.clickIncreaseQuantity();
+        mainPage.getDecreaseQuantity().waitingForElementNullOnThePage();
         pageActions.waitPageLoad();
         int firstQuantity = mainPage.getQuantityMaterials();
         Assertions.assertEquals(2, firstQuantity);
         logger.info("Количество товара равно 2-м");
         mainPage.clickDecreaseQuantity();
+        mainPage.getDecreaseQuantity().waitingForElementNullOnThePage();
         int secondQuantity = mainPage.getQuantityMaterials();
         Assertions.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");
