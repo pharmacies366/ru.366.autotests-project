@@ -98,7 +98,7 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь проверяет нотификацию после удаления товара")
     @Test
     public void checkNotificationCart() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/2105");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/65149");
         mobileProductCardPage.clickAddCartButton();
         int firstPrice = mobileProductCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
