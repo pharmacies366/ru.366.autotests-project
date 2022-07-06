@@ -26,6 +26,7 @@ public class MobileCartPage extends MainTestBase {
     private static final String TEXT_DO_NOT_ADD_TO_CART_XPATH = "xpath;//div[@class='c-gallery__header js-products__tabs__item active']//child::h2";
     private static final String DO_NOT_ADD_TO_CART_PRODUCTS_LIST_XPATH = "xpath;//div[@class='owl-wrapper c-gallery__content-wrapper active']";
 
+    private static final String PRICE_LABEL_XPATH = "xpath;(//div[@class='cart-item_cost'])[%s]";
 
 
     //конструктор
@@ -102,6 +103,11 @@ public class MobileCartPage extends MainTestBase {
     public PageElementActions getDoNotAddToCartProductsList() {
         return new PageElementActions(DO_NOT_ADD_TO_CART_PRODUCTS_LIST_XPATH, driver);
     }
+
+    public PageElementActions getPriceLabel(String xpath) {
+        return new PageElementActions(xpath, driver);
+    }
+
 
     //Методы
     @Step("Проверка состояния корзины: Если корзина не пустая, удаляем все содержимое")
@@ -228,5 +234,10 @@ public class MobileCartPage extends MainTestBase {
         return count;
     }
 
-
+    @Step("Запоминаем цену товара")
+    public String getProductPrice(String index) {
+        String price = String.valueOf(getPriceLabel(String.format(PRICE_LABEL_XPATH, index)).formatElementToValueDouble());
+        logger.info("Запоминаем цену товара");
+        return price;
+    }
 }

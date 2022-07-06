@@ -84,13 +84,13 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
     @DisplayName("Пользователь добавляет в корзину 2 товара и проверяет общую сумму")
     @Test
     public void checkTotalAmountProducts() {
-        openUrl(propertiesManager.getProperty("baseurl") + "p/44226");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/207185");
         mobileProductCardPage.clickAddCartButton();
-        int firstPrice = mobileProductCardPage.getProductPrice();
-        openUrl(propertiesManager.getProperty("baseurl") + "p/2105");
+        openUrl(propertiesManager.getProperty("baseurl") + "p/64844");
         mobileProductCardPage.clickAddCartButton();
-        int secondPrice = mobileProductCardPage.getProductPrice();
         openUrl(propertiesManager.getProperty("baseurl") + "cart");
+        double firstPrice = Double.parseDouble(mobileCartPage.getProductPrice("1"));
+        double secondPrice = Double.parseDouble(mobileCartPage.getProductPrice("2"));
         int totalPrice = mobileCartPage.getPriceTotal();
         Assertions.assertEquals(firstPrice + secondPrice, totalPrice);
     }
