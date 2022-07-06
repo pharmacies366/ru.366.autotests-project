@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 @Tag("Smoke")
 public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
 
-    //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
+/*    //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
 
     @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
     @Test
@@ -41,7 +41,7 @@ public class MakeOrdersUnauthorizedWebTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("cvv"));
        // sberPage.clickOnSubmitButton();
        // thankForTheOrderPage.checkPaymentError();
-    }
+    }*/
 
     @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
     @Test

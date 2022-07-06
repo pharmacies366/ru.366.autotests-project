@@ -18,6 +18,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
 
     //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
 
+/*
     @DisplayName("Оформление заказа доставкой. Неавторизованный пользователь")
     @Test
     public void delivery() {
@@ -43,6 +44,7 @@ public class MakeOrdersUnauthorizedMobileTest extends BaseSettingsMobileTests {
     }
 
     @DisplayName("Неавторизованный пользователь покупает товар в 1клик")
+*/
     @Test
     public void oneClick() {
         mobileHeaderBlock.setSearchInput(propertiesManager.getProperty("productcode4"));

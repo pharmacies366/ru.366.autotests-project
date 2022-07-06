@@ -18,7 +18,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
 
     //Отключили на проде, так как формируется реальная заявка на доставку и курьеры едут за заказами
 
-    @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
+/*    @DisplayName("Оформление заказа доставкой. Авторизованный пользователь")
     @Test
     public void delivery() {
         headerBlock.clickToSignInButton();
@@ -44,7 +44,7 @@ public class MakeOrdersAuthorizedWebTest extends BaseSettingsWebTests {
                 propertiesManager.getProperty("cvv"));
         //sberPage.clickOnSubmitButton();
        // thankForTheOrderPage.checkPaymentError();
-    }
+    }*/
 
     @DisplayName("Авторизованный пользователь покупает товар в 1клик")
     @Test
