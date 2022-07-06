@@ -42,6 +42,7 @@ public class ChangeQuantityMaterialsWebTest extends BaseSettingsWebTests {
         logger.info("Количество товара равно 2-м");
         mainPage.clickDecreaseQuantity();
         int secondQuantity = mainPage.getQuantityMaterials();
+        pageActions.waitPageLoad();
         Assertions.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");
         headerBlock.clickToCartButton();
