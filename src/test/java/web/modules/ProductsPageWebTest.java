@@ -20,9 +20,11 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
     public void checkChangePricesRangeWithSlider() {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
+        pageActions.waitPageLoad();
         int startPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int finishPriceRange = commonActionsOnWebPages.getToPriceRange();
         commonActionsOnWebPages.changePricesRangeWithSlider();
+        pageActions.waitPageLoad();
         commonActionsOnWebPages.getPriceRangeFrom().waitingForElementNullOnThePage();
         int newStartPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int newFinishPriceRange = commonActionsOnWebPages.getToPriceRange();
@@ -35,7 +37,9 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
     public void checkChangePricesRangeWithHands() {
         headerBlock.clickCatalogButton();
         catalogPage.clickMedicationsButtons();
+        pageActions.waitPageLoad();
         commonActionsOnWebPages.changePricesRangeWithHands("100", "500");
+        pageActions.waitPageLoad();
         int ToPriceRange = commonActionsOnWebPages.getToPriceRange();
         int FromPriceRange = commonActionsOnWebPages.getFromPriceRange();
         int price = commonActionsOnWebPages.checkProductsPrices();
@@ -117,17 +121,8 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         Assertions.assertEquals(recipeInfo, "По рецепту");
     }
 
-    @DisplayName("Пользователь проверяет корректную выдачу товаров без рецепта")
-    @Test
-    public void checkCheckboxWithoutRecipe() {
-        headerBlock.clickCatalogButton();
-        catalogPage.clickMedicationsButtons();
-        commonActionsOnWebPages.checkCheckboxWithoutRecipe();
-        String recipeInfo = productCardPage.getRecipeInfo().getText();
-        Assertions.assertEquals(recipeInfo, "Без рецепта");
-    }
-
-/*    @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
+/*
+    @DisplayName("Пользователь проверяет сортировку выдачи товаров по уменьшению цены")
     @Test
     public void checkSortingPriceReduction() {
         headerBlock.clickCatalogButton();
@@ -159,7 +154,8 @@ public class ProductsPageWebTest extends BaseSettingsWebTests {
         commonActionsOnWebPages.clickSortingButton();
         commonActionsOnWebPages.clickSortingNameOption();
         commonActionsOnWebPages.checkSortingOption("по названию");
-    }*/
+    }
+*/
 
 
 
