@@ -28,6 +28,12 @@ public class PageActions extends MainTestBase {
         driver.get(url);
     }
 
+    //
+    public void scrollDown() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,250)", "");
+    }
+
     //Обновить страницу
     public void reloadPage() {
         logger.info("ПОЛЬЗОВАТЕЛЬ ОБНОВЛЯЕТ СТРАНИЦУ");
