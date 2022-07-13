@@ -44,7 +44,7 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
     @Test
     public void testingTheSearch() {
         headerBlock.setSearchInput(propertiesManager.getProperty("productcode4"));
-        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-p1-public.model-t.cc.commerce.ondemand.com/search/?text=44226");
+        pageActions.checkUrl("https://366.cwzw6gg24a-llcapteka1-s1-public.model-t.cc.commerce.ondemand.com/search/?text=44226");
         logger.info("Поиск работает корректно");
     }
 
@@ -97,10 +97,6 @@ public class HeaderBlockWebTest extends BaseSettingsWebTests {
         headerBlock.getPhoneNumber().elementIsClickable();
         logger.info("Номер телефона кликабелен");
     }
-
-
-
-
 
     @ParameterizedTest(name = "{index} {1}")
     @MethodSource("checkBasementLinks")
