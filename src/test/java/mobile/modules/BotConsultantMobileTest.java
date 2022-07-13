@@ -55,6 +55,7 @@ public class BotConsultantMobileTest extends BaseSettingsMobileTests {
     @Test
     public void checkCloseBot() {
         pageActions.reloadPage();
+        pageActions.scrollDown();
         mobileMainPage.clickBotConsultantButton();
         pageActions.waitPageLoad();
         mobileBotConsultantPopUpPage.clickCloseBot();
