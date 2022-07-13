@@ -214,6 +214,7 @@ public class PageElementActions extends MainTestBase {
 
     //Проверяет видимость текста {string} на странице
     public void contentIsDisplayed(String text) {
+        moveToElement();
         driver.findElement(By.xpath("//*[text()='" + text + "']")).isDisplayed();
     }
 
