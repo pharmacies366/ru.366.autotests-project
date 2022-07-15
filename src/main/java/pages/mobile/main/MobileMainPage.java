@@ -17,8 +17,8 @@ public class MobileMainPage extends MainTestBase {
     private static final String MOBILE_APP_POP_UP_BUTTON_XPATH = "xpath;//div[@class='b-apps-flyer--close js-apps-flyer--close']";
     private static final String LETTER_N_XPATH = "xpath;//a[@href='/littera-Н/']";
     private static final String ADD_CART_BUTTON_XPATH = "xpath;(//span[contains(.,'Купить')])[1]";
-    private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_plus')])[1]";
-    private static final String DECREASE_QUANTITY_XPATH = "xpath;(//div[contains(@class,'btn btn_count_minus')])[1]";
+    private static final String INCREASE_QUANTITY_XPATH = "xpath;(//div[@data-autotest='plus_button'])[1]";
+    private static final String DECREASE_QUANTITY_XPATH = "xpath;(//div[@data-autotest='minus_button'])[1]";
     private static final String QUANTITY_MATERIALS_XPATH = "xpath;(//div[contains(@class,'product_counter__qty')])[1]";
     private static final String CARD_BUTTON_XPATH = "xpath;//div[@id='js-mini-cart-link']";
     private static final String FAVORITES_ICON_XPATH = "xpath;(//button[contains(@class,'button b-star')])[1]";
