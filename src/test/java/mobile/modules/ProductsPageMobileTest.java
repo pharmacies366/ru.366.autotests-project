@@ -53,7 +53,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickCheckboxDelivery();
-        commonActionsOnMobilePages.checkSelectedCheckbox("Доставка");
+        //commonActionsOnMobilePages.checkSelectedCheckbox("Доставка");
         commonActionsOnMobilePages.checkSelectedProductsWithDeliveryMethod();
     }
 
@@ -63,7 +63,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickCheckboxDelivery();
-        commonActionsOnMobilePages.checkSelectedCheckbox("Доставка");
+        //commonActionsOnMobilePages.checkSelectedCheckbox("Доставка");
         commonActionsOnMobilePages.checkSelectedProductsWithDeliveryMethod();
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickCloseCheckboxDelivery();
@@ -76,7 +76,7 @@ public class ProductsPageMobileTest extends BaseSettingsMobileTests {
         openUrl(propertiesManager.getProperty("baseurl") + "c/lekarstva/");
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickCheckboxDelivery();
-        commonActionsOnMobilePages.checkSelectedCheckbox("Доставка");
+        //commonActionsOnMobilePages.checkSelectedCheckbox("Доставка");
         commonActionsOnMobilePages.checkSelectedProductsWithDeliveryMethod();
         commonActionsOnMobilePages.clickFiltersButton();
         commonActionsOnMobilePages.clickResetCheckboxes();
