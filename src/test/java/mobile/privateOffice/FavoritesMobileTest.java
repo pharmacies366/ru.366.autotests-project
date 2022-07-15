@@ -32,6 +32,7 @@ public class FavoritesMobileTest extends BaseSettingsMobileTests {
         mobileHeaderBlock.clickFavoritesButton();
         mobileFavoritesPage.checkButtonAddToCart();
         mobileFavoritesPage.deleteProductFromFavorites();
+        pageActions.waitPageLoad();
         mobileFavoritesPage.checkFavoritesPageEmpty();
     }
 
