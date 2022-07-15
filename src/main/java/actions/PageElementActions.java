@@ -185,7 +185,6 @@ public class PageElementActions extends MainTestBase {
 
 
     public boolean isElementVisible() {
-        moveToElement();
         boolean isVisible = false;
         try {
             isVisible = driver.findElement(getBySelector(element)).isDisplayed();
