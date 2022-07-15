@@ -24,8 +24,6 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickToCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickIncreaseQuantity();
-        mobileMainPage.getIncreaseQuantity().waitingForElementNullOnThePage();
-        mobileMainPage.getIncreaseQuantity().moveToElement();
         int quantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(2, quantity);
         logger.info("Количество товара равно 2-м");
@@ -39,13 +37,10 @@ public class CheckShoppingCartMobileTest extends BaseSettingsMobileTests {
         mobileMainPage.clickToCartButton();
         pageActions.waitPageLoad();
         mobileCartPage.clickIncreaseQuantity();
-        mobileMainPage.getIncreaseQuantity().waitingForElementNullOnThePage();
-        mobileMainPage.getIncreaseQuantity().moveToElement();
         int quantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(2, quantity);
         logger.info("Количество товара равно 2-м");
         mobileCartPage.clickDecreaseQuantity();
-        mobileCartPage.getDecreaseQuantity().waitingForElementNullOnThePage();
         mobileCartPage.getProductQuantity().isElementDisplayed();
         int secondQuantity = mobileCartPage.getQuantityMaterials();
         Assertions.assertEquals(1, secondQuantity);
