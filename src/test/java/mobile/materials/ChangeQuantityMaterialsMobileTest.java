@@ -43,7 +43,6 @@ public class ChangeQuantityMaterialsMobileTest extends BaseSettingsMobileTests {
         Assertions.assertEquals(2, firstQuantity);
         logger.info("Количество товара равно 2-м");
         mobileMainPage.clickDecreaseQuantity();
-        pageActions.waitPageLoad();
         int secondQuantity = mobileMainPage.getQuantityMaterials();
         Assertions.assertEquals(1, secondQuantity);
         logger.info("Количество товара равно 1-му");

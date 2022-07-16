@@ -192,6 +192,7 @@ public class MobileMainPage extends MainTestBase {
 
     @Step("Сохранение количества товаров")
     public int getQuantityMaterials() {
+        getMaterialsQuantity().moveToElement();
         int quantity = getMaterialsQuantity().formatElementToValue();
         logger.info("Запоминаем количество товара");
         return quantity;
